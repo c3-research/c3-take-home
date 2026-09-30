@@ -6,7 +6,7 @@ crashed workers, skewed clocks, and retries that do more harm than good.
 **Your task:** build a program (a *fixer*) that repairs distributed-systems bugs **on its own**. We'll run
 your frozen fixer, hands-off, on **12 hidden cases**. Each is a small service you've never seen, with one
 or more bugs. **Your score is the number of hidden bugs your fixer fixes, and the total time it takes is
-the tie-breaker.**
+the tie-breaker.** We also review the quality of the fixer you build and go through it with you on a call.
 
 Your fixer is a black box. Below is what goes in and what must come out. What's inside is up to you: one
 prompt, a team of agents, an agent framework, custom tools, whatever works. At run time it may call only
@@ -124,4 +124,5 @@ Send us:
 2. Your agent chat logs from building it. These are for context and aren't scored.
 3. A half-page write-up: how your fixer works and what you'd do next.
 
-About 4 hours gets a solid result. More time can improve it, but it isn't expected.
+You have **7 days** from receiving the pack. We expect it to take 2–3 hours. More time is fine but
+not expected.
