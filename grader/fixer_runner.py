@@ -26,7 +26,7 @@ MAX_IMAGE_BYTES = 4 * 1024 ** 3
 
 
 class PlatformError(GraderError):
-    """Candidate error: the image is not linux/amd64 (clarifications C10)."""
+    """Candidate error: the image is not linux/amd64."""
 
     def __init__(self, arch: str, msg: str):
         super().__init__(msg)
@@ -62,7 +62,7 @@ def resolve_fixer(ref: str, mode: str) -> FixerSpec:
         p = p.resolve()
         fid = p.name
         cmd = None
-        if (p / "run.sh").exists():                 # clarifications C10
+        if (p / "run.sh").exists():                 # 
             cmd = [str(p / "run.sh")] if os.access(p / "run.sh", os.X_OK) else ["/bin/sh", str(p / "run.sh")]
         elif (p / "fixer.json").exists():
             spec = json.loads((p / "fixer.json").read_text())
@@ -147,7 +147,7 @@ def run_process(spec: FixerSpec, *, workspace: Path, corpus: Path, budget_s: flo
     start = time.time()
     deadline = int(start + budget_s)
     if sb:
-        # clarifications C6: run.sh sets the fixer environment itself.
+        # run.sh sets the fixer environment itself.
         env = {"PATH": "/usr/local/bin:/usr/bin:/bin", "LANG": "C.UTF-8"}
         argv = [str(sb), "--workspace", str(workspace), "--corpus", str(corpus),
                 "--token", proxy_env["OPENROUTER_API_KEY"], "--budget", f"{budget_usd:.2f}",
@@ -265,7 +265,7 @@ def start_sidecar(name: str, sock: Path) -> None:
 def run_docker(spec: FixerSpec, *, workspace: Path, corpus: Path, budget_s: float,
                budget_usd: float, proxy_env: dict[str, str], scratch: Path,
                log_path: Path, grace: float = 5.0) -> FixerOutcome:
-    """clarifications C8/C10: the image's own entrypoint, no network except the
+    """the image's own entrypoint, no network except the
     proxy. The proxy's Unix socket is bind-mounted into a sidecar that forwards
     127.0.0.1:8787 to it; the fixer shares the sidecar's network namespace."""
     sock = proxy_socket()

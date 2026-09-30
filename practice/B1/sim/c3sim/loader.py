@@ -179,7 +179,7 @@ def find_root(start=None):
     env = os.environ.get("C3SIM_ROOT")
     if env:
         return os.path.abspath(env)
-    # Case layout (clarifications C1): <case>/sim/c3sim/ -> <case>
+    # Case layout: <case>/sim/c3sim/ -> <case>
     pkg = os.path.dirname(os.path.abspath(__file__))
     case = os.path.dirname(os.path.dirname(pkg))
     if (os.path.basename(os.path.dirname(pkg)) == "sim"

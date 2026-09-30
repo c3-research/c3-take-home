@@ -8,7 +8,7 @@
   16k tokens are allowed. Web search, plugins, provider routing and server-side tools are refused (400).
   Other unrecognised request fields are dropped.
 - **Spend:** the proxy charges your case budget at actual cost and refuses a request that could take you
-  over it (402).
+  over it (402). A practice run costs only what your fixer actually spends, not the case's full budget.
 - **Prompt caching** is applied automatically. Cached input costs a tenth of normal input.
 
 ## Running locally
@@ -19,7 +19,9 @@ Build with `--platform linux/amd64` on Apple Silicon.
 
 ## Scoring
 
-- **A bug is fixed** when its targeted scenario passes on every hidden seed with no invariant violations
+- **A bug is fixed** when its own targeted scenario (a harsher, bug-specific scenario like the practice
+  graders' `grading/<ID>/scenarios/bug-N.yaml`, not `public.yaml`) passes on all 20 hidden seeds, none of
+  which are listed in `case.json`, with no invariant violations
   (`python -m sim check` runs the same invariants, and `INVARIANTS.md` in each case describes them). In a
   chained case, fixing a later bug counts only once the earlier bug is fixed too.
 - **A patch that breaks the service's tests** (public or private regression) scores 0 for that case. Only tests that pass on the unfixed code, and still pass when any subset of the case's bugs is fixed, count here, so a correct partial fix is never zeroed by a test that another unfixed bug breaks.

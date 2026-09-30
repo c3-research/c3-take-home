@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""C3 assessment grader (contract: contracts/grader.md).
+"""C3 assessment grader.
 
     python grader/grade.py --fixer <image-or-fixer-dir> --cases <dir-or-ids> \\
         [--mode docker|process] [--concurrency 6] [--runs 1] --out <results-dir>
@@ -9,7 +9,7 @@ token with the case's budget_usd, run the fixer until it exits or its deadline
 (budget_s) passes (SIGTERM, then SIGKILL 5 s later), keep only src/, and score it
 in a separate process (grader/evaluate.py) against the private case. Writes
 <out>/<case>/result.json (with --runs N > 1: <out>/<case>/run-<n>/result.json,
-clarifications C10) and <out>/summary.json.
+and <out>/summary.json.
 
 --cases accepts a case directory, a directory of cases (cases/practice), or
 case IDs (A1,B2 or "A1 B2"), looked up under cases/practice and cases/hidden.
@@ -44,7 +44,7 @@ def log(msg: str) -> None:
 
 
 def default_corpus(codebase: str | None) -> Path:
-    """clarifications C9: practice cases see corpus/build/practice, hidden cases
+    """practice cases see corpus/build/practice, hidden cases
     corpus/build/grading."""
     variant = "practice" if codebase in PRACTICE_CODEBASES else "grading"
     for p in (ROOT / "corpus" / "build" / variant, ROOT / "corpus" / "build", ROOT / "corpus"):
@@ -221,7 +221,7 @@ def main(argv=None) -> int:
                 raise GraderError("an image fixer needs --mode docker")
             fr.docker_image_check(spec.ref)
     except fr.PlatformError as e:
-        # clarifications C10: a candidate error, recorded per case, and a non-zero exit.
+        # a candidate error, recorded per case, and a non-zero exit.
         for c in cases:
             meta = load_json(c / "case.json")
             try:

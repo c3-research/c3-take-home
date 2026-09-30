@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Designer / dry-run candidate sandbox (contracts: grader.md "Sandbox", clarifications C6/C14).
+# Designer / dry-run candidate sandbox (contracts: grader.md "Sandbox", .
 #   sandbox/designer.sh --workspace W --corpus C --out O --pack P --build-token T [--session NAME] -- cmd...
 # /out and /pack are writable. The only network is the proxy: Claude Code (pinned, on
 # PATH) uses it via ANTHROPIC_BASE_URL with the designer-build token T (Opus 5.5 only).

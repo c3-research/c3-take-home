@@ -32,6 +32,10 @@ other cases.
 | `README.md`, `scenario_schema.md` | The service overview, and how to write your own scenarios |
 | `case.json` | Case id, time and model budgets, public seeds |
 
+Your fixer starts with its working directory set to `$C3_WORKSPACE`. When you grade locally (a fixer
+directory rather than an image), the case and corpus aren't at `/workspace` and `/corpus` (the corpus is the
+pack's `corpus/build/practice/`), so always use the environment variables, not fixed paths.
+
 **The corpus**, at `/corpus` (`$C3_CORPUS`), read-only: about 26M tokens of platform contracts, service
 docs and background material. Start at `INDEX.md`. Many cases depend on a fact that is only in the corpus.
 
@@ -89,6 +93,11 @@ python3 proxy/server.py &
 docker build --platform linux/amd64 -t my-fixer fixers/examples/minimal-llm
 ./grade.sh --fixer my-fixer --cases practice/A2
 ```
+
+To run your fixer by hand (outside `grade.sh`), mint a proxy token with `python3 proxy/mint.py --budget 3`
+(the token is the last line it prints) and set `OPENAI_API_KEY`/`ANTHROPIC_API_KEY` to it, with
+`OPENAI_BASE_URL=http://127.0.0.1:8787/v1`, `ANTHROPIC_BASE_URL=http://127.0.0.1:8787`, and `C3_WORKSPACE`,
+`C3_CORPUS`, `C3_DEADLINE` (Unix time) and `C3_BUDGET_USD`.
 
 Results go to `results/<timestamp>/<case>/result.json` (`bugs_fixed` is what counts). Each case's folder
 also has `fixer.log` (your fixer's output), `patch.diff` (the graded change) and `eval.json` (per-seed

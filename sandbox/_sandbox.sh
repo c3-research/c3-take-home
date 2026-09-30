@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Shared implementation of sandbox/run.sh and sandbox/designer.sh.
-# Contracts: grader.md "Sandbox", fixer.md, clarifications C6, C8, C14.
+# Contracts: grader.md "Sandbox", fixer.md, .
 #
 # bwrap --unshare-all (no network namespace plumbing): the only way out is the
 # model proxy's Unix socket, bound at /run/c3-proxy.sock and exposed inside as

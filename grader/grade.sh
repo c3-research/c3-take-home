@@ -4,7 +4,7 @@
 #   ./grade.sh --fixer ./myfixer --cases practice/            # fixer directory: process or local mode
 #   ./grade.sh --fixer my-fixer:latest --cases practice/A1    # docker image: docker mode
 #
-# Fixer directories (clarifications C15) run in --mode local by default (run.sh as a plain
+# Fixer directories run in --mode local by default (run.sh as a plain
 # subprocess, no sandbox). With C3_SANDBOX=on, and when bwrap works, they run in the bwrap
 # sandbox (--mode process). Pass --mode to choose. Real grading uses Docker images.
 #

@@ -103,7 +103,7 @@ def find_case_dirs(spec: str, cases_root: Path | None = None) -> list[Path]:
 
 
 def find_private_dir(case_id: str, private_root: Path | None, case_dir: Path | None = None) -> Path:
-    """Private grading material for a case (clarifications C10: <repo>/private/<id>/).
+    """Private grading material for a case.
 
     Order: --private-root/<ID>, ROOT/private/<ID>, then next to the cases tree:
     <cases>/../private/<ID> and <cases>/../grading/<ID> (pack layout).

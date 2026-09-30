@@ -9,7 +9,7 @@ outbound connections. It passes only if every one of them is denied, the
 proxy's admin API is refused, and (unless --no-require-proxy) the model proxy
 itself is reachable at 127.0.0.1:8787. It also checks that no Anthropic
 credentials (credentials file, OAuth token) are present: designers build through
-the proxy with a designer-build token (clarification C14).
+the proxy with a designer-build token.
 
 sandbox/run.sh --probe NAME and sandbox/designer.sh run this at session start and
 write the JSON to evidence/tests/T5-<NAME>.json.

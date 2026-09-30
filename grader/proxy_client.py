@@ -67,7 +67,7 @@ class ProxyClient:
             "OPENROUTER_API_KEY": tok.token,
             "OPENAI_API_KEY": tok.token,
             "ANTHROPIC_API_KEY": tok.token,
-            "JEV_DECISIONS_URL": base + "/api/alpha/decisions",   # Jev, TypeSafe's decision model (C27)
+            "JEV_DECISIONS_URL": base + "/api/alpha/decisions",   # Jev, TypeSafe's decision model
             "JEV_MODEL": "typesafe/jev-1.13",
         }
 
@@ -109,7 +109,7 @@ def _ledger_usage(ledger: Path, token: str) -> Usage:
                 continue
             u.requests += 1
             u.spend_usd += float(row.get("cost_usd") or 0.0)
-            # clarifications C12: `input` is non-cached input; totals use input_total
+            # `input` is non-cached input; totals use input_total
             u.input_tokens += int(row.get("input_total") if row.get("input_total") is not None
                                   else (row.get("input") or 0) + (row.get("cached_input") or 0))
             u.cached_input_tokens += int(row.get("cached_input") or 0)

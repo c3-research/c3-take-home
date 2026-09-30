@@ -120,7 +120,7 @@ def check_ceiling(ctx, case, work):
     runs, ok, sigs = [], True, set()
     for k in range(int(THRESH["reference_runs"])):
         res = evaluate(case, src, work / f"run{k + 1}", workers=ctx.workers)
-        # strict for the reference: every public and regression test passes (C16)
+        # strict for the reference: every public and regression test passes
         good = bool(res["tests_ok"] and res["regression_ok"] and not res.get("tests_failed")
                     and not res.get("regression_failed") and res["bugs_fixed"] == len(case.bugs))
         ok &= good
@@ -212,7 +212,7 @@ def _front_matter_target(text: str) -> str | None:
 
 
 def _resolve_location(ctx, case, location: str) -> tuple[Path | None, str | None, str]:
-    """Find the fact's document. Built corpus first (clarifications C9: build/grading,
+    """Find the fact's document. Built corpus first build/grading,
     build/practice), then the source layer, then incident drafts whose front matter
     targets the same file (not yet merged)."""
     path, _, anchor = location.partition("#")

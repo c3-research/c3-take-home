@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Proxy forwarder for fixer containers (clarifications C8).
+"""Proxy forwarder for fixer containers.
 
 Used by grade.py as a sidecar: `python3 entry.py --serve` listens on
 127.0.0.1:8787 and forwards to /run/c3-proxy.sock; the fixer container joins the

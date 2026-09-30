@@ -1,4 +1,4 @@
-"""Case entry point: `python -m sim ...` from the case root (clarifications.md C1).
+"""Case entry point: `python -m sim ...` from the case root.
 
 Layout: case/sim/{__init__.py,__main__.py,c3sim/,invariants.py,scenarios.py?};
 case/src/ holds the service code. Both case/sim/ and case/src/ go on sys.path.

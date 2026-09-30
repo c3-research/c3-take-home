@@ -1,6 +1,6 @@
 """c3sim: deterministic discrete-event simulator for C3 service codebases.
 
-See runtime/README.md and contracts/runtime.md.
+See runtime/README.md and RULES.md.
 """
 
 import sys as _sys

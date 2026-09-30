@@ -147,7 +147,7 @@ def run_pytest(tree: Path, which: str, log: Path) -> tuple[bool, str]:
     return ok, msg
 
 
-# ---------------------------------------------------------------- regression baseline (C16)
+# ---------------------------------------------------------------- regression baseline
 
 def per_bug_fixes(case: Case) -> dict[str, str]:
     """Per-bug fix patches (buggy -> fixed for one bug): private/<ID>/fixes/<bug-id>.patch,
@@ -242,7 +242,7 @@ def compute_baseline(case: Case, work: Path) -> dict:
 
 def load_baseline(case: Case, work: Path) -> tuple[dict, str]:
     """private/<ID>/regression-baseline.json if current, else grader/.cache, else computed
-    now and cached (clarifications C16)."""
+    now and cached."""
     key = baseline_key(case)
     for p, label in ((case.private / "regression-baseline.json", "private"),
                      (GRADER / ".cache" / case.id / f"regression-baseline-{key}.json", "cache")):

@@ -61,7 +61,7 @@ def runtime_dir(runtime_root: Path | None) -> Path:
 
 
 def build_sim(dest: Path, codebase: Path, runtime: Path) -> None:
-    """case/sim/ per clarifications C1: package `sim` with __main__.py, the runtime
+    """case/sim/ per package `sim` with __main__.py, the runtime
     at sim/c3sim/, the codebase invariants at sim/invariants.py and its scenario
     loader at sim/scenarios.py when it has one."""
     sim = dest / "sim"
@@ -208,7 +208,7 @@ def build_case(a) -> Path:
 
 
 def write_baseline(case_dir: Path, priv: Path, codebases_root) -> None:
-    """private/<ID>/regression-baseline.json (clarifications C16): the tests/ and
+    """private/<ID>/regression-baseline.json: the tests/ and
     regression/ test ids that pass on the unfixed case code."""
     from evaluate import Case, compute_baseline
     case = Case(case_dir, priv, codebases_root)

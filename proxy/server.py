@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""C3 assessment model proxy (contracts/grader.md "Proxy", clarifications C6 and C8).
+"""C3 assessment model proxy.
 
 Standard library only. Serves OpenAI-format /v1/chat/completions and
 Anthropic-format /v1/messages (both with streaming) on 127.0.0.1:PORT and on a
@@ -45,12 +45,12 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 
 CANONICAL_MODEL = "anthropic/claude-sonnet-4.6"   # default and only model for fixer tokens
-# Jev (TypeSafe's decision model) on the Decisions API route only (clarifications C27). Output is free;
+# Jev (TypeSafe's decision model) on the Decisions API route only. Output is free;
 # input costs about $0.042 per million tokens. The chat routes stay Sonnet-only.
 JEV_MODELS = ("typesafe/jev-1.13", "~typesafe/jev-latest")
 JEV_INPUT_USD_PER_TOKEN = 0.042e-6
 DECISIONS_PATHS = ("/api/alpha/decisions", "/alpha/decisions")
-DESIGNER_MODEL = "anthropic/claude-opus-5.5"      # designer-build tokens only (clarification C14)
+DESIGNER_MODEL = "anthropic/claude-opus-5.5"      # designer-build tokens only
 DESIGNER_ARM = "designer-build"
 # Aliases Claude Code, litellm and friends send, per canonical model. Anything else is a 403.
 MODEL_ALIASES = {
@@ -63,7 +63,7 @@ KNOWN_MODELS = tuple(MODEL_ALIASES)
 # litellm-style provider prefixes that are harmless if they resolve to the canonical model.
 _PREFIXES = ("openrouter/",)
 
-# USD per million tokens. Sonnet 4.6 per clarification C6 ($3 / $15, cache read 0.1x,
+# USD per million tokens. Sonnet 4.6 per ($3 / $15, cache read 0.1x,
 # write 1.25x). Opus 5.5 from OpenRouter's /api/v1/models listing on 29 Sep 2026.
 MODEL_PRICING = {
     CANONICAL_MODEL: {"input": 3.00, "output": 15.00, "cache_read": 0.30, "cache_write": 3.75},
@@ -479,8 +479,11 @@ class Proxy:
 
     # --- tokens ------------------------------------------------------------------------
     def minted_total(self) -> float:
-        """Budget of every token counted against --mint-cap (all but designer-build tokens)."""
-        return sum(t.budget for t in self.tokens.values() if DESIGNER_MODEL not in t.models)
+        """Budget counted against --mint-cap (all but designer-build tokens). A live token counts
+        its full budget; a revoked one only what it spent or still holds in flight (it can spend
+        no more), so the cap bounds actual spend while letting finished grading runs free budget."""
+        return sum((t.spent + t.reserved) if t.revoked else t.budget
+                   for t in self.tokens.values() if DESIGNER_MODEL not in t.models)
 
     def mint(self, spec: dict, via_unix: bool = False) -> Token:
         budget = spec.get("budget_usd")
@@ -499,7 +502,7 @@ class Proxy:
                 canon.append(c)
         arm = spec.get("arm")
         if DESIGNER_MODEL in canon:
-            # Designer-build tokens (C14): Opus 5.5 only, always arm=designer-build.
+            # Designer-build tokens: Opus 5.5 only, always arm=designer-build.
             if canon != [DESIGNER_MODEL]:
                 raise Reject(400, f"{DESIGNER_MODEL} tokens may not allow other models")
             if arm not in (None, "", DESIGNER_ARM):
@@ -802,7 +805,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def _decisions(self):
         """Jev Decisions API (POST /api/alpha/decisions): Jev models only, charged to the token's budget
-        at the upstream-reported cost, logged to the same ledger (clarifications C27)."""
+        at the upstream-reported cost, logged to the same ledger."""
         started = time.time()
         px = self.proxy
         tok = self._client_token()
