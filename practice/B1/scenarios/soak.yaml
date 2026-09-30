@@ -1,0 +1,28 @@
+# Clean-baseline soak (T15): every fault type enabled, including clock skew and pauses.
+name: soak
+seed: 1
+end_at: 150.0
+quiesce_at: 100.0
+liveness_window: 40.0
+gpu: {capacity: 12, release_delay: {dist: uniform, low: 0.05, high: 0.3}}
+nodes:
+  - {name: coord, class: "shardmr.coordinator:Coordinator"}
+  - {name: "worker-{i}", count: 4, class: "shardmr.worker:Worker"}
+client: {target: coord}
+client_retry: {timeout: 2.0, max_attempts: 5, backoff: 0.5, retry_on: [UNAVAILABLE]}
+faults: faults/soak.yaml
+workload:
+  - {repeat: 20, at: 1.0, every: 3.0, jitter: 1.0, action: submit_job, tenant: A, job_id: "a{i}",
+     shards: 6, records: 64, units: 1, duration: 1.0}
+  - {repeat: 6, at: 4.0, every: 12.0, jitter: 2.0, action: submit_job, tenant: B, job_id: "b{i}",
+     shards: 8, records: 128, units: 2, duration: 1.5}
+  - {repeat: 5, at: 9.0, every: 15.0, jitter: 3.0, action: cancel_job, tenant: A, job_id: "a{i}"}
+  - {repeat: 3, at: 30.0, every: 20.0, jitter: 2.0, action: submit_job, tenant: A, job_id: "a{i}",
+     shards: 6, records: 64, units: 1, duration: 1.0}
+  - {repeat: 3, at: 20.0, every: 20.0, jitter: 2.0, action: cancel_job, tenant: C, job_id: "early{i}"}
+  - {repeat: 3, at: 21.0, every: 20.0, jitter: 2.0, action: submit_job, tenant: C, job_id: "early{i}",
+     shards: 4, records: 32, units: 1, duration: 1.0}
+  - {repeat: 10, at: 5.0, every: 8.0, jitter: 2.0, action: job_status, tenant: A, job_id: "a{i}"}
+expect:
+  all_actions_resolved_by: 140.0
+  no_unhandled_exceptions: true

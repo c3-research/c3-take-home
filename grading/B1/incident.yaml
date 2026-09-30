@@ -1,0 +1,18 @@
+id: B1
+codebase: B
+type: single
+budget_s: 900
+budget_usd: 3.0
+public_seeds:
+- 12
+- 14
+- 20
+- 22
+- 25
+bugs:
+- id: bug-1
+  scenario: scenarios/bug-1.yaml
+  expect:
+    all_actions_resolved_by: 85.0
+    no_unhandled_exceptions: true
+  gates: []

@@ -1,0 +1,87 @@
+name: bug-2
+seed: 1
+end_at: 90.0
+quiesce_at: 55.0
+liveness_window: 30.0
+gpu:
+  capacity: 8
+  release_delay:
+    dist: uniform
+    low: 0.8
+    high: 2.0
+nodes:
+- name: router-1
+  class: jobrouter.router:Router
+- name: worker-{i}
+  count: 4
+  class: jobrouter.worker:Worker
+service:
+  worker_slots: 2
+client:
+  target: router-1
+client_retry:
+  timeout: 1.0
+  max_attempts: 8
+  backoff: 0.5
+  retry_on:
+  - UNAVAILABLE
+faults:
+  network:
+    delay:
+      dist: exponential
+      mean: 0.005
+    drop: 0.005
+  nodes:
+    crashes:
+    - node: router-1
+      at: 8.0
+      restart_after: 1.0
+    - node: router-1
+      at: 14.0
+      restart_after: 1.0
+    - node: router-1
+      at: 20.0
+      restart_after: 1.0
+    - node: router-1
+      at: 26.0
+      restart_after: 1.0
+    - node: router-1
+      at: 32.0
+      restart_after: 1.0
+    - node: router-1
+      at: 38.0
+      restart_after: 1.0
+    - node: router-1
+      at: 44.0
+      restart_after: 1.0
+    - node: router-1
+      at: 50.0
+      restart_after: 1.0
+  gpu:
+    fail: 0.3
+    latency:
+      dist: uniform
+      low: 0.2
+      high: 1.0
+workload:
+- repeat: 25
+  at: 1.0
+  every: 1.6
+  jitter: 0.4
+  action: submit_job
+  tenant: A
+  job_id: a{i}
+  units: 2
+  duration: 1.0
+- repeat: 5
+  at: 3.0
+  every: 9.0
+  jitter: 1.0
+  action: submit_job
+  tenant: B
+  job_id: b{i}
+  units: 7
+  duration: 1.5
+expect:
+  all_actions_resolved_by: 88.0
+  no_unhandled_exceptions: true

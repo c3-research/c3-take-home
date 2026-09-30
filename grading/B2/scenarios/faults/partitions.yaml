@@ -1,0 +1,51 @@
+network:
+  delay:
+    dist: exponential
+    mean: 0.005
+  partitions:
+  - at: 6.0
+    until: 10.2
+    groups:
+    - - coord
+    - - worker-1
+  - at: 13.0
+    until: 17.2
+    groups:
+    - - coord
+    - - worker-2
+  - at: 20.0
+    until: 24.2
+    groups:
+    - - coord
+    - - worker-3
+  - at: 27.0
+    until: 31.2
+    groups:
+    - - coord
+    - - worker-4
+  - at: 34.0
+    until: 38.2
+    groups:
+    - - coord
+    - - worker-1
+  - at: 41.0
+    until: 45.2
+    groups:
+    - - coord
+    - - worker-2
+  - at: 48.0
+    until: 52.2
+    groups:
+    - - coord
+    - - worker-3
+  - at: 55.0
+    until: 59.2
+    groups:
+    - - coord
+    - - worker-4
+gpu:
+  fail: 0.2
+  latency:
+    dist: uniform
+    low: 0.1
+    high: 0.5

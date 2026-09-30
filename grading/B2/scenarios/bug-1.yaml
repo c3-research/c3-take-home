@@ -1,0 +1,173 @@
+name: bug-1
+seed: 1
+end_at: 115.0
+quiesce_at: 70.0
+liveness_window: 40.0
+gpu:
+  capacity: 16
+  release_delay:
+    dist: uniform
+    low: 0.05
+    high: 0.3
+nodes:
+- name: coord
+  class: shardmr.coordinator:Coordinator
+- name: worker-{i}
+  count: 4
+  class: shardmr.worker:Worker
+client:
+  target: coord
+client_retry:
+  timeout: 2.0
+  max_attempts: 5
+  backoff: 0.5
+  retry_on:
+  - UNAVAILABLE
+faults:
+  network:
+    delay:
+      dist: exponential
+      mean: 0.005
+    partitions:
+    - at: 5.0
+      until: 9.2
+      groups:
+      - - coord
+      - - worker-1
+    - at: 7.6
+      until: 11.8
+      groups:
+      - - coord
+      - - worker-2
+    - at: 10.2
+      until: 14.4
+      groups:
+      - - coord
+      - - worker-3
+    - at: 12.8
+      until: 17.0
+      groups:
+      - - coord
+      - - worker-4
+    - at: 15.4
+      until: 19.6
+      groups:
+      - - coord
+      - - worker-1
+    - at: 18.0
+      until: 22.2
+      groups:
+      - - coord
+      - - worker-2
+    - at: 20.6
+      until: 24.8
+      groups:
+      - - coord
+      - - worker-3
+    - at: 23.2
+      until: 27.4
+      groups:
+      - - coord
+      - - worker-4
+    - at: 25.8
+      until: 30.0
+      groups:
+      - - coord
+      - - worker-1
+    - at: 28.4
+      until: 32.6
+      groups:
+      - - coord
+      - - worker-2
+    - at: 31.0
+      until: 35.2
+      groups:
+      - - coord
+      - - worker-3
+    - at: 33.6
+      until: 37.8
+      groups:
+      - - coord
+      - - worker-4
+    - at: 36.2
+      until: 40.4
+      groups:
+      - - coord
+      - - worker-1
+    - at: 38.8
+      until: 43.0
+      groups:
+      - - coord
+      - - worker-2
+    - at: 41.4
+      until: 45.6
+      groups:
+      - - coord
+      - - worker-3
+    - at: 44.0
+      until: 48.2
+      groups:
+      - - coord
+      - - worker-4
+    - at: 46.6
+      until: 50.8
+      groups:
+      - - coord
+      - - worker-1
+    - at: 49.2
+      until: 53.4
+      groups:
+      - - coord
+      - - worker-2
+    - at: 51.8
+      until: 56.0
+      groups:
+      - - coord
+      - - worker-3
+    - at: 54.4
+      until: 58.6
+      groups:
+      - - coord
+      - - worker-4
+    - at: 57.0
+      until: 61.2
+      groups:
+      - - coord
+      - - worker-1
+    - at: 59.6
+      until: 63.8
+      groups:
+      - - coord
+      - - worker-2
+  gpu:
+    fail: 0.2
+    latency:
+      dist: uniform
+      low: 0.1
+      high: 0.4
+workload:
+- repeat: 90
+  at: 1.0
+  every: 0.6
+  jitter: 0.3
+  action: submit_job
+  tenant: A
+  job_id: a{i}
+  shards: 1
+  records: 64
+  units: 1
+  duration: 1.0
+- repeat: 20
+  at: 2.0
+  every: 3.0
+  jitter: 1.0
+  action: submit_job
+  tenant: B
+  job_id: b{i}
+  shards: 2
+  records: 64
+  units: 1
+  duration: 1.0
+expect:
+  all_actions_resolved_by: 110.0
+  no_unhandled_exceptions: true

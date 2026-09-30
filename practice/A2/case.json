@@ -1,0 +1,13 @@
+{
+  "id": "A2",
+  "codebase": "A",
+  "budget_s": 900,
+  "budget_usd": 6.0,
+  "public_seeds": [
+    12,
+    22,
+    28,
+    29,
+    33
+  ]
+}

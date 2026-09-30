@@ -1,0 +1,381 @@
+t=0.237962 node=worker-1 event=worker_start boot=0 slots=3
+t=0.249070 node=worker-1 event=worker_registered epoch=1 reg_seq=1 gen=1
+t=1.954041 node=worker-1 event=batch_received batch=worker-1/e1/b1 tasks=3 epoch=1
+t=1.954041 node=worker-1 event=task_start task=A:a0/a1/s0/g1.1 op_id=map/A:a0/a1/s0/g1.1 shard=0 speculative=false
+t=1.954041 node=worker-1 event=task_start task=A:a0/a1/s1/g1.2 op_id=map/A:a0/a1/s1/g1.2 shard=1 speculative=false
+t=1.954041 node=worker-1 event=task_start task=A:a0/a1/s2/g1.3 op_id=map/A:a0/a1/s2/g1.3 shard=2 speculative=false
+t=1.975391 node=worker-1 event=gpu_submit op_id=map/A:a0/a1/s0/g1.1 units=1 attempt=1 state=PENDING
+t=1.978150 node=worker-1 event=gpu_submit op_id=map/A:a0/a1/s1/g1.2 units=1 attempt=1 state=PENDING
+t=1.978150 node=worker-1 event=gpu_submit op_id=map/A:a0/a1/s2/g1.3 units=1 attempt=1 state=PENDING
+t=3.818759 node=worker-1 event=gpu_op_terminal op_id=map/A:a0/a1/s2/g1.3 state=SUCCEEDED
+t=3.824359 node=worker-1 event=task_committed task=A:a0/a1/s2/g1.3 shard=2
+t=3.832329 node=worker-1 event=gpu_release op_id=map/A:a0/a1/s2/g1.3
+t=4.059448 node=worker-1 event=gpu_op_terminal op_id=map/A:a0/a1/s1/g1.2 state=SUCCEEDED
+t=4.063499 node=worker-1 event=task_committed task=A:a0/a1/s1/g1.2 shard=1
+t=4.066453 node=worker-1 event=gpu_release op_id=map/A:a0/a1/s1/g1.2
+t=4.109018 node=worker-1 event=gpu_released op_id=map/A:a0/a1/s2/g1.3 via=hint
+t=4.109018 node=worker-1 event=task_done task=A:a0/a1/s2/g1.3 op_id=map/A:a0/a1/s2/g1.3 outcome=committed
+t=4.360918 node=worker-1 event=gpu_released op_id=map/A:a0/a1/s1/g1.2 via=hint
+t=4.360918 node=worker-1 event=task_done task=A:a0/a1/s1/g1.2 op_id=map/A:a0/a1/s1/g1.2 outcome=committed
+t=5.611598 node=worker-1 event=gpu_op_terminal op_id=map/A:a0/a1/s0/g1.1 state=SUCCEEDED
+t=5.632492 node=worker-1 event=task_abort task=A:a0/a1/s0/g1.1 reason=coordinator
+t=5.632492 node=worker-1 event=task_abort task=A:a0/a1/s1/g1.2 reason=coordinator
+t=5.632492 node=worker-1 event=task_abort task=A:a0/a1/s2/g1.3 reason=coordinator
+t=5.632492 node=worker-1 event=task_committed task=A:a0/a1/s0/g1.1 shard=0
+t=5.639579 node=worker-1 event=batch_received batch=worker-1/e1/b5 tasks=3 epoch=1
+t=5.639579 node=worker-1 event=task_start task=A:a1/a1/s0/g1.13 op_id=map/A:a1/a1/s0/g1.13 shard=0 speculative=false
+t=5.639579 node=worker-1 event=task_start task=A:a1/a1/s1/g1.14 op_id=map/A:a1/a1/s1/g1.14 shard=1 speculative=false
+t=5.639579 node=worker-1 event=task_start task=A:a1/a1/s2/g1.15 op_id=map/A:a1/a1/s2/g1.15 shard=2 speculative=false
+t=5.641424 node=worker-1 event=gpu_release op_id=map/A:a0/a1/s0/g1.1
+t=5.648212 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s0/g1.13 code=CAPACITY attempt=1 backoff=0.25
+t=5.648212 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s1/g1.14 code=CAPACITY attempt=1 backoff=0.25
+t=5.658855 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s2/g1.15 code=CAPACITY attempt=1 backoff=0.25
+t=5.903087 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s0/g1.13 code=CAPACITY attempt=2 backoff=0.5
+t=5.903939 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s1/g1.14 code=CAPACITY attempt=2 backoff=0.5
+t=5.903939 node=worker-1 event=gpu_released op_id=map/A:a0/a1/s0/g1.1 via=hint
+t=5.903939 node=worker-1 event=task_done task=A:a0/a1/s0/g1.1 op_id=map/A:a0/a1/s0/g1.1 outcome=committed
+t=5.909844 node=worker-1 event=gpu_submit op_id=map/A:a1/a1/s2/g1.15 units=1 attempt=2 state=PENDING
+t=5.913744 node=worker-1 event=batch_reported batch=worker-1/e1/b1 tasks=3 failed=0
+t=6.410392 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s0/g1.13 code=CAPACITY attempt=3 backoff=1.0
+t=6.417567 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s1/g1.14 code=CAPACITY attempt=3 backoff=1.0
+t=7.416984 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s0/g1.13 code=CAPACITY attempt=4 backoff=2.0
+t=7.422987 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s1/g1.14 code=CAPACITY attempt=4 backoff=2.0
+t=7.997369 node=worker-1 event=gpu_op_terminal op_id=map/A:a1/a1/s2/g1.15 state=SUCCEEDED
+t=8.002865 node=worker-1 event=task_committed task=A:a1/a1/s2/g1.15 shard=2
+t=8.011301 node=worker-1 event=gpu_release op_id=map/A:a1/a1/s2/g1.15
+t=8.261495 node=worker-1 event=gpu_released op_id=map/A:a1/a1/s2/g1.15 via=hint
+t=8.261495 node=worker-1 event=task_done task=A:a1/a1/s2/g1.15 op_id=map/A:a1/a1/s2/g1.15 outcome=committed
+t=9.426241 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s0/g1.13 code=CAPACITY attempt=5 backoff=2.0
+t=9.426241 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s1/g1.14 code=CAPACITY attempt=5 backoff=2.0
+t=9.481456 node=worker-1 event=node_crash boot=0
+t=12.044439 node=worker-1 event=node_restart boot=1
+t=12.044439 node=worker-1 event=worker_start boot=1 slots=3
+t=12.056104 node=worker-1 event=worker_registered epoch=2 reg_seq=1 gen=1
+t=13.054019 node=worker-1 event=recovery_op op_id=map/A:a1/a1/s0/g1.13 state=null
+t=13.081042 node=worker-1 event=recovery_op op_id=map/A:a1/a1/s1/g1.14 state=null
+t=17.645343 node=worker-1 event=worker_fenced epoch=2 tasks=0
+t=17.664748 node=worker-1 event=worker_registered epoch=4 reg_seq=2 gen=1
+t=17.738939 node=worker-1 event=batch_received batch=worker-1/e4/b17 tasks=1 epoch=4
+t=17.738939 node=worker-1 event=task_start task=A:a1/a1/s1/g1.41 op_id=map/A:a1/a1/s1/g1.41 shard=1 speculative=false
+t=17.744182 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s1/g1.41 code=CAPACITY attempt=1 backoff=0.25
+t=18.745653 node=worker-1 event=batch_received batch=worker-1/e4/b18 tasks=1 epoch=4
+t=18.745653 node=worker-1 event=task_start task=A:a4/a1/s1/g1.42 op_id=map/A:a4/a1/s1/g1.42 shard=1 speculative=true
+t=18.753244 node=worker-1 event=gpu_submit op_id=map/A:a4/a1/s1/g1.42 units=1 attempt=1 state=PENDING
+t=18.939165 node=worker-1 event=batch_received batch=worker-1/e4/b19 tasks=1 epoch=4
+t=18.939165 node=worker-1 event=task_start task=B:b2/a1/s0/g1.43 op_id=map/B:b2/a1/s0/g1.43 shard=0 speculative=false
+t=18.944392 node=worker-1 event=gpu_submit op_id=map/B:b2/a1/s0/g1.43 units=2 attempt=1 state=PENDING
+t=18.994182 node=worker-1 event=gpu_submit_unknown op_id=map/A:a1/a1/s1/g1.41 code=TIMEOUT attempt=2
+t=19.110089 node=worker-1 event=gpu_submit_retry op_id=map/A:a1/a1/s1/g1.41 code=CAPACITY attempt=3 backoff=0.5
+t=19.617135 node=worker-1 event=gpu_submit op_id=map/A:a1/a1/s1/g1.41 units=1 attempt=4 state=PENDING
+t=19.938587 node=worker-1 event=task_abort task=A:a4/a1/s1/g1.42 reason=coordinator
+t=19.939630 node=worker-1 event=batch_received batch=worker-1/e4/b21 tasks=1 epoch=4
+t=19.939630 node=worker-1 event=task_start task=B:b2/a1/s4/g1.47 op_id=map/B:b2/a1/s4/g1.47 shard=4 speculative=false
+t=19.957120 node=worker-1 event=gpu_submit_retry op_id=map/B:b2/a1/s4/g1.47 code=CAPACITY attempt=1 backoff=0.25
+t=20.043781 node=worker-1 event=gpu_cancel op_id=map/A:a4/a1/s1/g1.42
+t=20.061604 node=worker-1 event=gpu_op_terminal op_id=map/A:a4/a1/s1/g1.42 state=CANCELLED
+t=20.072855 node=worker-1 event=gpu_release op_id=map/A:a4/a1/s1/g1.42
+t=20.189864 node=worker-1 event=gpu_released op_id=map/A:a4/a1/s1/g1.42 via=hint
+t=20.189864 node=worker-1 event=task_done task=A:a4/a1/s1/g1.42 op_id=map/A:a4/a1/s1/g1.42 outcome=aborted
+t=20.197180 node=worker-1 event=batch_reported batch=worker-1/e4/b18 tasks=1 failed=0
+t=20.215619 node=worker-1 event=gpu_submit_retry op_id=map/B:b2/a1/s4/g1.47 code=CAPACITY attempt=2 backoff=0.5
+t=20.723595 node=worker-1 event=gpu_submit op_id=map/B:b2/a1/s4/g1.47 units=2 attempt=3 state=PENDING
+t=21.959148 node=worker-1 event=gpu_op_terminal op_id=map/A:a1/a1/s1/g1.41 state=SUCCEEDED
+t=21.967846 node=worker-1 event=task_abort task=A:a1/a1/s1/g1.41 reason=coordinator
+t=21.967846 node=worker-1 event=task_committed task=A:a1/a1/s1/g1.41 shard=1
+t=21.971008 node=worker-1 event=gpu_release op_id=map/A:a1/a1/s1/g1.41
+t=22.139879 node=worker-1 event=gpu_released op_id=map/A:a1/a1/s1/g1.41 via=hint
+t=22.139879 node=worker-1 event=task_done task=A:a1/a1/s1/g1.41 op_id=map/A:a1/a1/s1/g1.41 outcome=committed
+t=22.151171 node=worker-1 event=batch_reported batch=worker-1/e4/b17 tasks=1 failed=0
+t=22.347844 node=worker-1 event=batch_received batch=worker-1/e4/b25 tasks=1 epoch=4
+t=22.347844 node=worker-1 event=task_start task=A:a6/a1/s1/g1.53 op_id=map/A:a6/a1/s1/g1.53 shard=1 speculative=false
+t=22.351609 node=worker-1 event=gpu_submit op_id=map/A:a6/a1/s1/g1.53 units=1 attempt=1 state=PENDING
+t=22.841051 node=worker-1 event=gpu_op_terminal op_id=map/B:b2/a1/s0/g1.43 state=SUCCEEDED
+t=22.847484 node=worker-1 event=task_committed task=B:b2/a1/s0/g1.43 shard=0
+t=22.854962 node=worker-1 event=gpu_release op_id=map/B:b2/a1/s0/g1.43
+t=22.993895 node=worker-1 event=gpu_released op_id=map/B:b2/a1/s0/g1.43 via=hint
+t=22.993895 node=worker-1 event=task_done task=B:b2/a1/s0/g1.43 op_id=map/B:b2/a1/s0/g1.43 outcome=committed
+t=22.995023 node=worker-1 event=batch_reported batch=worker-1/e4/b19 tasks=1 failed=0
+t=23.593987 node=worker-1 event=gpu_op_terminal op_id=map/B:b2/a1/s4/g1.47 state=SUCCEEDED
+t=23.606644 node=worker-1 event=task_committed task=B:b2/a1/s4/g1.47 shard=4
+t=23.609250 node=worker-1 event=gpu_release op_id=map/B:b2/a1/s4/g1.47
+t=23.743016 node=worker-1 event=batch_received batch=worker-1/e4/b28 tasks=1 epoch=4
+t=23.743016 node=worker-1 event=task_start task=B:b2/a1/s1/g1.58 op_id=map/B:b2/a1/s1/g1.58 shard=1 speculative=true
+t=23.746724 node=worker-1 event=gpu_submit op_id=map/B:b2/a1/s1/g1.58 units=2 attempt=1 state=PENDING
+t=23.902108 node=worker-1 event=gpu_released op_id=map/B:b2/a1/s4/g1.47 via=hint
+t=23.902108 node=worker-1 event=task_done task=B:b2/a1/s4/g1.47 op_id=map/B:b2/a1/s4/g1.47 outcome=committed
+t=23.911492 node=worker-1 event=batch_reported batch=worker-1/e4/b21 tasks=1 failed=0
+t=23.940732 node=worker-1 event=batch_received batch=worker-1/e4/b29 tasks=1 epoch=4
+t=23.940732 node=worker-1 event=task_start task=B:b2/a1/s2/g1.59 op_id=map/B:b2/a1/s2/g1.59 shard=2 speculative=true
+t=23.946761 node=worker-1 event=gpu_submit op_id=map/B:b2/a1/s2/g1.59 units=2 attempt=1 state=PENDING
+t=25.452550 node=worker-1 event=gpu_op_terminal op_id=map/A:a6/a1/s1/g1.53 state=SUCCEEDED
+t=25.478882 node=worker-1 event=task_abort task=A:a6/a1/s1/g1.53 reason=coordinator
+t=25.486981 node=worker-1 event=task_committed task=A:a6/a1/s1/g1.53 shard=1
+t=25.505802 node=worker-1 event=gpu_release op_id=map/A:a6/a1/s1/g1.53
+t=25.642619 node=worker-1 event=batch_received batch=worker-1/e4/b33 tasks=1 epoch=4
+t=25.642619 node=worker-1 event=task_start task=A:a8/a1/s2/g1.64 op_id=map/A:a8/a1/s2/g1.64 shard=2 speculative=false
+t=25.656561 node=worker-1 event=gpu_submit_retry op_id=map/A:a8/a1/s2/g1.64 code=CAPACITY attempt=1 backoff=0.25
+t=25.762748 node=worker-1 event=gpu_released op_id=map/A:a6/a1/s1/g1.53 via=hint
+t=25.762748 node=worker-1 event=task_done task=A:a6/a1/s1/g1.53 op_id=map/A:a6/a1/s1/g1.53 outcome=committed
+t=25.767613 node=worker-1 event=batch_reported batch=worker-1/e4/b25 tasks=1 failed=0
+t=25.907426 node=worker-1 event=gpu_submit op_id=map/A:a8/a1/s2/g1.64 units=1 attempt=2 state=PENDING
+t=26.820864 node=worker-1 event=task_abort task=B:b2/a1/s2/g1.59 reason=heartbeat
+t=27.036402 node=worker-1 event=gpu_cancel op_id=map/B:b2/a1/s2/g1.59
+t=27.046629 node=worker-1 event=gpu_op_terminal op_id=map/B:b2/a1/s2/g1.59 state=SUCCEEDED
+t=27.067707 node=worker-1 event=gpu_release op_id=map/B:b2/a1/s2/g1.59
+t=27.187600 node=worker-1 event=gpu_released op_id=map/B:b2/a1/s2/g1.59 via=hint
+t=27.187600 node=worker-1 event=task_done task=B:b2/a1/s2/g1.59 op_id=map/B:b2/a1/s2/g1.59 outcome=aborted
+t=27.193908 node=worker-1 event=batch_reported batch=worker-1/e4/b29 tasks=1 failed=0
+t=27.244276 node=worker-1 event=batch_received batch=worker-1/e4/b34 tasks=1 epoch=4
+t=27.244276 node=worker-1 event=task_start task=A:a7/a1/s2/g1.65 op_id=map/A:a7/a1/s2/g1.65 shard=2 speculative=true
+t=27.254181 node=worker-1 event=gpu_submit op_id=map/A:a7/a1/s2/g1.65 units=1 attempt=1 state=PENDING
+t=27.603657 node=worker-1 event=gpu_op_terminal op_id=map/B:b2/a1/s1/g1.58 state=SUCCEEDED
+t=27.621212 node=worker-1 event=task_commit_lost task=B:b2/a1/s1/g1.58 winner=B:b2/a1/s1/g1.44
+t=27.625201 node=worker-1 event=gpu_release op_id=map/B:b2/a1/s1/g1.58
+t=27.715483 node=worker-1 event=gpu_released op_id=map/B:b2/a1/s1/g1.58 via=hint
+t=27.715483 node=worker-1 event=task_done task=B:b2/a1/s1/g1.58 op_id=map/B:b2/a1/s1/g1.58 outcome=duplicate
+t=27.728507 node=worker-1 event=batch_reported batch=worker-1/e4/b28 tasks=1 failed=0
+t=27.739049 node=worker-1 event=batch_received batch=worker-1/e4/b35 tasks=1 epoch=4
+t=27.739049 node=worker-1 event=task_start task=B:b3/a1/s0/g1.66 op_id=map/B:b3/a1/s0/g1.66 shard=0 speculative=false
+t=27.747005 node=worker-1 event=gpu_submit op_id=map/B:b3/a1/s0/g1.66 units=2 attempt=1 state=PENDING
+t=29.081066 node=worker-1 event=gpu_op_terminal op_id=map/A:a7/a1/s2/g1.65 state=SUCCEEDED
+t=29.095653 node=worker-1 event=task_abort task=A:a7/a1/s2/g1.65 reason=coordinator
+t=29.095653 node=worker-1 event=task_committed task=A:a7/a1/s2/g1.65 shard=2
+t=29.100645 node=worker-1 event=gpu_release op_id=map/A:a7/a1/s2/g1.65
+t=29.140112 node=worker-1 event=batch_received batch=worker-1/e4/b39 tasks=1 epoch=4
+t=29.140112 node=worker-1 event=task_start task=A:a9/a1/s2/g1.74 op_id=map/A:a9/a1/s2/g1.74 shard=2 speculative=false
+t=29.147157 node=worker-1 event=gpu_submit op_id=map/A:a9/a1/s2/g1.74 units=1 attempt=1 state=PENDING
+t=29.262735 node=worker-1 event=gpu_op_terminal op_id=map/A:a8/a1/s2/g1.64 state=SUCCEEDED
+t=29.265415 node=worker-1 event=task_abort task=A:a8/a1/s2/g1.64 reason=coordinator
+t=29.265415 node=worker-1 event=task_committed task=A:a8/a1/s2/g1.64 shard=2
+t=29.272151 node=worker-1 event=gpu_release op_id=map/A:a8/a1/s2/g1.64
+t=29.338790 node=worker-1 event=gpu_released op_id=map/A:a7/a1/s2/g1.65 via=hint
+t=29.338790 node=worker-1 event=task_done task=A:a7/a1/s2/g1.65 op_id=map/A:a7/a1/s2/g1.65 outcome=committed
+t=29.353137 node=worker-1 event=batch_reported batch=worker-1/e4/b34 tasks=1 failed=0
+t=29.563234 node=worker-1 event=gpu_released op_id=map/A:a8/a1/s2/g1.64 via=hint
+t=29.563234 node=worker-1 event=task_done task=A:a8/a1/s2/g1.64 op_id=map/A:a8/a1/s2/g1.64 outcome=committed
+t=29.577010 node=worker-1 event=batch_reported batch=worker-1/e4/b33 tasks=1 failed=0
+t=31.416471 node=worker-1 event=gpu_op_terminal op_id=map/B:b3/a1/s0/g1.66 state=SUCCEEDED
+t=31.419999 node=worker-1 event=task_committed task=B:b3/a1/s0/g1.66 shard=0
+t=31.425957 node=worker-1 event=gpu_release op_id=map/B:b3/a1/s0/g1.66
+t=31.583839 node=worker-1 event=gpu_released op_id=map/B:b3/a1/s0/g1.66 via=hint
+t=31.583839 node=worker-1 event=task_done task=B:b3/a1/s0/g1.66 op_id=map/B:b3/a1/s0/g1.66 outcome=committed
+t=31.594659 node=worker-1 event=batch_reported batch=worker-1/e4/b35 tasks=1 failed=0
+t=31.771364 node=worker-1 event=gpu_op_terminal op_id=map/A:a9/a1/s2/g1.74 state=SUCCEEDED
+t=31.775326 node=worker-1 event=task_committed task=A:a9/a1/s2/g1.74 shard=2
+t=31.804039 node=worker-1 event=gpu_release op_id=map/A:a9/a1/s2/g1.74
+t=32.066743 node=worker-1 event=gpu_released op_id=map/A:a9/a1/s2/g1.74 via=hint
+t=32.066743 node=worker-1 event=task_done task=A:a9/a1/s2/g1.74 op_id=map/A:a9/a1/s2/g1.74 outcome=committed
+t=32.094245 node=worker-1 event=batch_reported batch=worker-1/e4/b39 tasks=1 failed=0
+t=32.144432 node=worker-1 event=batch_received batch=worker-1/e4/b40 tasks=3 epoch=4
+t=32.144432 node=worker-1 event=task_start task=A:a10/a1/s0/g1.75 op_id=map/A:a10/a1/s0/g1.75 shard=0 speculative=false
+t=32.144432 node=worker-1 event=task_start task=A:a10/a1/s1/g1.76 op_id=map/A:a10/a1/s1/g1.76 shard=1 speculative=false
+t=32.144432 node=worker-1 event=task_start task=A:a10/a1/s2/g1.77 op_id=map/A:a10/a1/s2/g1.77 shard=2 speculative=false
+t=32.164323 node=worker-1 event=gpu_submit op_id=map/A:a10/a1/s0/g1.75 units=1 attempt=1 state=PENDING
+t=32.164323 node=worker-1 event=gpu_submit op_id=map/A:a10/a1/s1/g1.76 units=1 attempt=1 state=PENDING
+t=32.164323 node=worker-1 event=gpu_submit op_id=map/A:a10/a1/s2/g1.77 units=1 attempt=1 state=PENDING
+t=33.769419 node=worker-1 event=gpu_op_terminal op_id=map/A:a10/a1/s0/g1.75 state=SUCCEEDED
+t=33.786320 node=worker-1 event=task_committed task=A:a10/a1/s0/g1.75 shard=0
+t=33.788727 node=worker-1 event=gpu_release op_id=map/A:a10/a1/s0/g1.75
+t=34.116859 node=worker-1 event=gpu_released op_id=map/A:a10/a1/s0/g1.75 via=hint
+t=34.116859 node=worker-1 event=task_done task=A:a10/a1/s0/g1.75 op_id=map/A:a10/a1/s0/g1.75 outcome=committed
+t=34.291502 node=worker-1 event=gpu_op_terminal op_id=map/A:a10/a1/s1/g1.76 state=SUCCEEDED
+t=34.306886 node=worker-1 event=task_committed task=A:a10/a1/s1/g1.76 shard=1
+t=34.318806 node=worker-1 event=gpu_release op_id=map/A:a10/a1/s1/g1.76
+t=34.458054 node=worker-1 event=gpu_released op_id=map/A:a10/a1/s1/g1.76 via=hint
+t=34.458054 node=worker-1 event=task_done task=A:a10/a1/s1/g1.76 op_id=map/A:a10/a1/s1/g1.76 outcome=committed
+t=35.601525 node=worker-1 event=gpu_op_terminal op_id=map/A:a10/a1/s2/g1.77 state=SUCCEEDED
+t=35.627662 node=worker-1 event=task_abort task=A:a10/a1/s0/g1.75 reason=coordinator
+t=35.627662 node=worker-1 event=task_abort task=A:a10/a1/s1/g1.76 reason=coordinator
+t=35.627662 node=worker-1 event=task_abort task=A:a10/a1/s2/g1.77 reason=coordinator
+t=35.627662 node=worker-1 event=task_committed task=A:a10/a1/s2/g1.77 shard=2
+t=35.635967 node=worker-1 event=gpu_release op_id=map/A:a10/a1/s2/g1.77
+t=35.738828 node=worker-1 event=batch_received batch=worker-1/e4/b47 tasks=3 epoch=4
+t=35.738828 node=worker-1 event=task_start task=B:b4/a1/s0/g1.85 op_id=map/B:b4/a1/s0/g1.85 shard=0 speculative=false
+t=35.738828 node=worker-1 event=task_start task=B:b4/a1/s1/g1.86 op_id=map/B:b4/a1/s1/g1.86 shard=1 speculative=false
+t=35.738828 node=worker-1 event=task_start task=B:b4/a1/s2/g1.87 op_id=map/B:b4/a1/s2/g1.87 shard=2 speculative=false
+t=35.746385 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s0/g1.85 code=CAPACITY attempt=1 backoff=0.25
+t=35.746385 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s1/g1.86 code=CAPACITY attempt=1 backoff=0.25
+t=35.747128 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s2/g1.87 code=CAPACITY attempt=1 backoff=0.25
+t=36.015296 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s0/g1.85 code=CAPACITY attempt=2 backoff=0.5
+t=36.015296 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s1/g1.86 code=CAPACITY attempt=2 backoff=0.5
+t=36.029778 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s2/g1.87 code=CAPACITY attempt=2 backoff=0.5
+t=36.517376 node=worker-1 event=gpu_submit op_id=map/B:b4/a1/s0/g1.85 units=2 attempt=3 state=PENDING
+t=36.521375 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s1/g1.86 code=CAPACITY attempt=3 backoff=1.0
+t=36.536098 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s2/g1.87 code=CAPACITY attempt=3 backoff=1.0
+t=36.635967 node=worker-1 event=gpu_released op_id=map/A:a10/a1/s2/g1.77 via=hint
+t=36.635967 node=worker-1 event=task_done task=A:a10/a1/s2/g1.77 op_id=map/A:a10/a1/s2/g1.77 outcome=committed
+t=36.645934 node=worker-1 event=batch_reported batch=worker-1/e4/b40 tasks=3 failed=0
+t=37.537801 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s1/g1.86 code=CAPACITY attempt=4 backoff=2.0
+t=37.541896 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s2/g1.87 code=CAPACITY attempt=4 backoff=2.0
+t=39.544210 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s1/g1.86 code=CAPACITY attempt=5 backoff=2.0
+t=39.552960 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s2/g1.87 code=CAPACITY attempt=5 backoff=2.0
+t=40.184482 node=worker-1 event=gpu_op_terminal op_id=map/B:b4/a1/s0/g1.85 state=SUCCEEDED
+t=40.191613 node=worker-1 event=task_committed task=B:b4/a1/s0/g1.85 shard=0
+t=40.204174 node=worker-1 event=gpu_release op_id=map/B:b4/a1/s0/g1.85
+t=40.420167 node=worker-1 event=gpu_released op_id=map/B:b4/a1/s0/g1.85 via=hint
+t=40.420167 node=worker-1 event=task_done task=B:b4/a1/s0/g1.85 op_id=map/B:b4/a1/s0/g1.85 outcome=committed
+t=41.509103 node=worker-1 event=node_pause duration=0.6647082936410901
+t=42.173841 node=worker-1 event=node_resume
+t=42.184238 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s1/g1.86 code=CAPACITY attempt=6 backoff=2.0
+t=42.189052 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s2/g1.87 code=CAPACITY attempt=6 backoff=2.0
+t=44.186151 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s1/g1.86 code=CAPACITY attempt=7 backoff=2.0
+t=44.189769 node=worker-1 event=gpu_submit_retry op_id=map/B:b4/a1/s2/g1.87 code=CAPACITY attempt=7 backoff=2.0
+t=45.774413 node=worker-1 event=task_abort task=B:b4/a1/s1/g1.86 reason=heartbeat
+t=46.186151 node=worker-1 event=gpu_submit_skipped op_id=map/B:b4/a1/s1/g1.86
+t=46.195584 node=worker-1 event=gpu_submit op_id=map/B:b4/a1/s2/g1.87 units=2 attempt=8 state=PENDING
+t=47.152698 node=worker-1 event=task_abort task=B:b4/a1/s0/g1.85 reason=coordinator
+t=47.152698 node=worker-1 event=task_abort task=B:b4/a1/s2/g1.87 reason=coordinator
+t=47.236354 node=worker-1 event=gpu_cancel op_id=map/B:b4/a1/s2/g1.87
+t=47.239356 node=worker-1 event=batch_received batch=worker-1/e4/b68 tasks=3 epoch=4
+t=47.239356 node=worker-1 event=task_start task=A:a14/a1/s2/g1.111 op_id=map/A:a14/a1/s2/g1.111 shard=2 speculative=false
+t=47.239356 node=worker-1 event=task_start task=A:a13/a1/s2/g1.112 op_id=map/A:a13/a1/s2/g1.112 shard=2 speculative=false
+t=47.239356 node=worker-1 event=task_start task=B:b5/a1/s2/g1.113 op_id=map/B:b5/a1/s2/g1.113 shard=2 speculative=false
+t=47.246566 node=worker-1 event=gpu_op_terminal op_id=map/B:b4/a1/s2/g1.87 state=CANCELLED
+t=47.254571 node=worker-1 event=gpu_submit op_id=map/A:a14/a1/s2/g1.111 units=1 attempt=1 state=PENDING
+t=47.274872 node=worker-1 event=gpu_submit_retry op_id=map/A:a13/a1/s2/g1.112 code=CAPACITY attempt=1 backoff=0.25
+t=47.274872 node=worker-1 event=gpu_submit_retry op_id=map/B:b5/a1/s2/g1.113 code=CAPACITY attempt=1 backoff=0.25
+t=47.274872 node=worker-1 event=gpu_release op_id=map/B:b4/a1/s2/g1.87
+t=47.337677 node=worker-1 event=gpu_released op_id=map/B:b4/a1/s2/g1.87 via=hint
+t=47.337677 node=worker-1 event=task_done task=B:b4/a1/s2/g1.87 op_id=map/B:b4/a1/s2/g1.87 outcome=aborted
+t=47.341687 node=worker-1 event=batch_reported batch=worker-1/e4/b47 tasks=3 failed=0
+t=47.526937 node=worker-1 event=gpu_submit op_id=map/A:a13/a1/s2/g1.112 units=1 attempt=2 state=PENDING
+t=47.526937 node=worker-1 event=gpu_submit op_id=map/B:b5/a1/s2/g1.113 units=2 attempt=2 state=PENDING
+t=50.145958 node=worker-1 event=gpu_op_terminal op_id=map/B:b5/a1/s2/g1.113 state=SUCCEEDED
+t=50.150480 node=worker-1 event=task_committed task=B:b5/a1/s2/g1.113 shard=2
+t=50.162845 node=worker-1 event=gpu_release op_id=map/B:b5/a1/s2/g1.113
+t=50.217713 node=worker-1 event=gpu_released op_id=map/B:b5/a1/s2/g1.113 via=hint
+t=50.217713 node=worker-1 event=task_done task=B:b5/a1/s2/g1.113 op_id=map/B:b5/a1/s2/g1.113 outcome=committed
+t=50.633930 node=worker-1 event=gpu_op_terminal op_id=map/A:a14/a1/s2/g1.111 state=SUCCEEDED
+t=50.635957 node=worker-1 event=task_abort task=A:a14/a1/s2/g1.111 reason=coordinator
+t=50.644518 node=worker-1 event=task_committed task=A:a14/a1/s2/g1.111 shard=2
+t=50.660024 node=worker-1 event=batch_received batch=worker-1/e4/b77 tasks=1 epoch=4
+t=50.660024 node=worker-1 event=task_start task=A:a15/a1/s2/g1.124 op_id=map/A:a15/a1/s2/g1.124 shard=2 speculative=true
+t=50.667000 node=worker-1 event=gpu_release op_id=map/A:a14/a1/s2/g1.111
+t=50.682997 node=worker-1 event=gpu_submit op_id=map/A:a15/a1/s2/g1.124 units=1 attempt=1 state=PENDING
+t=50.807192 node=worker-1 event=gpu_released op_id=map/A:a14/a1/s2/g1.111 via=hint
+t=50.807192 node=worker-1 event=task_done task=A:a14/a1/s2/g1.111 op_id=map/A:a14/a1/s2/g1.111 outcome=committed
+t=51.454649 node=worker-1 event=gpu_op_terminal op_id=map/A:a13/a1/s2/g1.112 state=SUCCEEDED
+t=51.467820 node=worker-1 event=task_abort task=A:a13/a1/s2/g1.112 reason=coordinator
+t=51.467820 node=worker-1 event=task_committed task=A:a13/a1/s2/g1.112 shard=2
+t=51.471558 node=worker-1 event=gpu_release op_id=map/A:a13/a1/s2/g1.112
+t=51.540297 node=worker-1 event=batch_received batch=worker-1/e4/b79 tasks=1 epoch=4
+t=51.540297 node=worker-1 event=task_start task=B:b6/a1/s0/g1.126 op_id=map/B:b6/a1/s0/g1.126 shard=0 speculative=false
+t=51.562676 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s0/g1.126 code=CAPACITY attempt=1 backoff=0.25
+t=51.622137 node=worker-1 event=gpu_released op_id=map/A:a13/a1/s2/g1.112 via=hint
+t=51.622137 node=worker-1 event=task_done task=A:a13/a1/s2/g1.112 op_id=map/A:a13/a1/s2/g1.112 outcome=committed
+t=51.626368 node=worker-1 event=batch_reported batch=worker-1/e4/b68 tasks=3 failed=0
+t=51.645822 node=worker-1 event=batch_received batch=worker-1/e4/b81 tasks=1 epoch=4
+t=51.645822 node=worker-1 event=task_start task=B:b6/a1/s2/g1.128 op_id=map/B:b6/a1/s2/g1.128 shard=2 speculative=false
+t=51.648174 node=worker-1 event=gpu_submit op_id=map/B:b6/a1/s2/g1.128 units=2 attempt=1 state=PENDING
+t=51.820377 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s0/g1.126 code=CAPACITY attempt=2 backoff=0.5
+t=52.051536 node=worker-1 event=task_abort task=A:a15/a1/s2/g1.124 reason=coordinator
+t=52.140506 node=worker-1 event=batch_received batch=worker-1/e4/b82 tasks=1 epoch=4
+t=52.140506 node=worker-1 event=task_start task=B:b6/a1/s3/g1.129 op_id=map/B:b6/a1/s3/g1.129 shard=3 speculative=false
+t=52.147715 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s3/g1.129 code=CAPACITY attempt=1 backoff=0.25
+t=52.225385 node=worker-1 event=gpu_cancel op_id=map/A:a15/a1/s2/g1.124
+t=52.231191 node=worker-1 event=gpu_op_terminal op_id=map/A:a15/a1/s2/g1.124 state=CANCELLED
+t=52.235002 node=worker-1 event=gpu_release op_id=map/A:a15/a1/s2/g1.124
+t=52.330752 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s0/g1.126 code=CAPACITY attempt=3 backoff=1.0
+t=52.407635 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s3/g1.129 code=CAPACITY attempt=2 backoff=0.5
+t=52.462226 node=worker-1 event=gpu_released op_id=map/A:a15/a1/s2/g1.124 via=hint
+t=52.462226 node=worker-1 event=task_done task=A:a15/a1/s2/g1.124 op_id=map/A:a15/a1/s2/g1.124 outcome=aborted
+t=52.464232 node=worker-1 event=batch_reported batch=worker-1/e4/b77 tasks=1 failed=0
+t=52.940313 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s3/g1.129 code=CAPACITY attempt=3 backoff=1.0
+t=53.332560 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s0/g1.126 code=CAPACITY attempt=4 backoff=2.0
+t=53.952416 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s3/g1.129 code=CAPACITY attempt=4 backoff=2.0
+t=54.013477 node=worker-1 event=gpu_op_terminal op_id=map/B:b6/a1/s2/g1.128 state=SUCCEEDED
+t=54.021230 node=worker-1 event=task_committed task=B:b6/a1/s2/g1.128 shard=2
+t=54.051781 node=worker-1 event=gpu_release op_id=map/B:b6/a1/s2/g1.128
+t=54.288635 node=worker-1 event=gpu_released op_id=map/B:b6/a1/s2/g1.128 via=hint
+t=54.288635 node=worker-1 event=task_done task=B:b6/a1/s2/g1.128 op_id=map/B:b6/a1/s2/g1.128 outcome=committed
+t=54.304369 node=worker-1 event=batch_reported batch=worker-1/e4/b81 tasks=1 failed=0
+t=55.340510 node=worker-1 event=gpu_submit op_id=map/B:b6/a1/s0/g1.126 units=2 attempt=5 state=PENDING
+t=55.549600 node=worker-1 event=batch_received batch=worker-1/e4/b87 tasks=1 epoch=4
+t=55.549600 node=worker-1 event=task_start task=B:b6/a1/s1/g1.135 op_id=map/B:b6/a1/s1/g1.135 shard=1 speculative=false
+t=55.582361 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s1/g1.135 code=CAPACITY attempt=1 backoff=0.25
+t=55.850095 node=worker-1 event=gpu_submit op_id=map/B:b6/a1/s1/g1.135 units=2 attempt=2 state=PENDING
+t=55.954695 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s3/g1.129 code=CAPACITY attempt=5 backoff=2.0
+t=57.960034 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s3/g1.129 code=CAPACITY attempt=6 backoff=2.0
+t=59.414482 node=worker-1 event=gpu_op_terminal op_id=map/B:b6/a1/s1/g1.135 state=SUCCEEDED
+t=59.437718 node=worker-1 event=task_committed task=B:b6/a1/s1/g1.135 shard=1
+t=59.461241 node=worker-1 event=gpu_release op_id=map/B:b6/a1/s1/g1.135
+t=59.727016 node=worker-1 event=gpu_released op_id=map/B:b6/a1/s1/g1.135 via=hint
+t=59.727016 node=worker-1 event=task_done task=B:b6/a1/s1/g1.135 op_id=map/B:b6/a1/s1/g1.135 outcome=committed
+t=59.739903 node=worker-1 event=batch_reported batch=worker-1/e4/b87 tasks=1 failed=0
+t=59.748475 node=worker-1 event=batch_received batch=worker-1/e4/b94 tasks=1 epoch=4
+t=59.748475 node=worker-1 event=task_start task=B:b7/a1/s0/g1.145 op_id=map/B:b7/a1/s0/g1.145 shard=0 speculative=false
+t=59.758566 node=worker-1 event=gpu_submit op_id=map/B:b7/a1/s0/g1.145 units=2 attempt=1 state=PENDING
+t=59.789751 node=worker-1 event=gpu_op_terminal op_id=map/B:b6/a1/s0/g1.126 state=SUCCEEDED
+t=59.796716 node=worker-1 event=task_committed task=B:b6/a1/s0/g1.126 shard=0
+t=59.803732 node=worker-1 event=gpu_release op_id=map/B:b6/a1/s0/g1.126
+t=59.964047 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s3/g1.129 code=CAPACITY attempt=7 backoff=2.0
+t=60.059677 node=worker-1 event=gpu_released op_id=map/B:b6/a1/s0/g1.126 via=hint
+t=60.059677 node=worker-1 event=task_done task=B:b6/a1/s0/g1.126 op_id=map/B:b6/a1/s0/g1.126 outcome=committed
+t=60.076781 node=worker-1 event=batch_reported batch=worker-1/e4/b79 tasks=1 failed=0
+t=60.145519 node=worker-1 event=batch_received batch=worker-1/e4/b95 tasks=1 epoch=4
+t=60.145519 node=worker-1 event=task_start task=B:b7/a1/s1/g1.146 op_id=map/B:b7/a1/s1/g1.146 shard=1 speculative=false
+t=60.150295 node=worker-1 event=gpu_submit op_id=map/B:b7/a1/s1/g1.146 units=2 attempt=1 state=PENDING
+t=61.971306 node=worker-1 event=gpu_submit_retry op_id=map/B:b6/a1/s3/g1.129 code=CAPACITY attempt=8 backoff=2.0
+t=62.240551 node=worker-1 event=task_abort task=B:b6/a1/s3/g1.129 reason=coordinator
+t=62.757847 node=worker-1 event=gpu_op_terminal op_id=map/B:b7/a1/s1/g1.146 state=SUCCEEDED
+t=62.767806 node=worker-1 event=task_committed task=B:b7/a1/s1/g1.146 shard=1
+t=62.777053 node=worker-1 event=gpu_release op_id=map/B:b7/a1/s1/g1.146
+t=62.973168 node=worker-1 event=gpu_released op_id=map/B:b7/a1/s1/g1.146 via=hint
+t=62.973168 node=worker-1 event=task_done task=B:b7/a1/s1/g1.146 op_id=map/B:b7/a1/s1/g1.146 outcome=committed
+t=62.977997 node=worker-1 event=batch_reported batch=worker-1/e4/b95 tasks=1 failed=0
+t=63.685330 node=worker-1 event=node_crash boot=1
+t=64.248084 node=worker-1 event=node_restart boot=2
+t=64.248084 node=worker-1 event=worker_start boot=2 slots=3
+t=64.275634 node=worker-1 event=worker_registered epoch=5 reg_seq=1 gen=1
+t=64.291553 node=worker-1 event=gpu_release op_id=map/B:b7/a1/s0/g1.145
+t=64.545571 node=worker-1 event=batch_received batch=worker-1/e5/b100 tasks=1 epoch=5
+t=64.545571 node=worker-1 event=task_start task=B:b7/a1/s4/g1.154 op_id=map/B:b7/a1/s4/g1.154 shard=4 speculative=true
+t=64.549995 node=worker-1 event=gpu_released op_id=map/B:b7/a1/s0/g1.145 via=hint
+t=64.549995 node=worker-1 event=recovery_op op_id=map/B:b7/a1/s0/g1.145 state=SUCCEEDED
+t=64.554726 node=worker-1 event=gpu_submit op_id=map/B:b7/a1/s4/g1.154 units=2 attempt=1 state=PENDING
+t=65.042816 node=worker-1 event=batch_received batch=worker-1/e5/b101 tasks=1 epoch=5
+t=65.042816 node=worker-1 event=task_start task=B:b7/a1/s5/g1.155 op_id=map/B:b7/a1/s5/g1.155 shard=5 speculative=true
+t=65.046752 node=worker-1 event=gpu_submit op_id=map/B:b7/a1/s5/g1.155 units=2 attempt=1 state=PENDING
+t=65.266439 node=worker-1 event=recovery_op op_id=map/B:b6/a1/s3/g1.129 state=null
+t=66.943041 node=worker-1 event=gpu_op_terminal op_id=map/B:b7/a1/s4/g1.154 state=SUCCEEDED
+t=66.949053 node=worker-1 event=task_committed task=B:b7/a1/s4/g1.154 shard=4
+t=66.952604 node=worker-1 event=gpu_release op_id=map/B:b7/a1/s4/g1.154
+t=67.141917 node=worker-1 event=gpu_released op_id=map/B:b7/a1/s4/g1.154 via=hint
+t=67.141917 node=worker-1 event=task_done task=B:b7/a1/s4/g1.154 op_id=map/B:b7/a1/s4/g1.154 outcome=committed
+t=67.169806 node=worker-1 event=batch_reported batch=worker-1/e5/b100 tasks=1 failed=0
+t=67.952176 node=worker-1 event=gpu_op_terminal op_id=map/B:b7/a1/s5/g1.155 state=SUCCEEDED
+t=67.970260 node=worker-1 event=task_committed task=B:b7/a1/s5/g1.155 shard=5
+t=67.978418 node=worker-1 event=gpu_release op_id=map/B:b7/a1/s5/g1.155
+t=68.226130 node=worker-1 event=gpu_released op_id=map/B:b7/a1/s5/g1.155 via=hint
+t=68.226130 node=worker-1 event=task_done task=B:b7/a1/s5/g1.155 op_id=map/B:b7/a1/s5/g1.155 outcome=committed
+t=68.231774 node=worker-1 event=batch_reported batch=worker-1/e5/b101 tasks=1 failed=0
+t=69.898777 node=worker-1 event=worker_fenced epoch=5 tasks=0
+t=69.899535 node=worker-1 event=worker_registered epoch=7 reg_seq=2 gen=1
+t=70.240396 node=worker-1 event=batch_received batch=worker-1/e7/b103 tasks=1 epoch=7
+t=70.240396 node=worker-1 event=task_start task=B:b5/a1/s0/g1.157 op_id=map/B:b5/a1/s0/g1.157 shard=0 speculative=false
+t=70.245407 node=worker-1 event=gpu_submit op_id=map/B:b5/a1/s0/g1.157 units=2 attempt=1 state=PENDING
+t=73.862296 node=worker-1 event=gpu_op_terminal op_id=map/B:b5/a1/s0/g1.157 state=SUCCEEDED
+t=73.870265 node=worker-1 event=task_abort task=B:b5/a1/s0/g1.157 reason=coordinator
+t=73.870265 node=worker-1 event=task_committed task=B:b5/a1/s0/g1.157 shard=0
+t=73.895866 node=worker-1 event=gpu_release op_id=map/B:b5/a1/s0/g1.157
+t=73.971962 node=worker-1 event=gpu_released op_id=map/B:b5/a1/s0/g1.157 via=hint
+t=73.971962 node=worker-1 event=task_done task=B:b5/a1/s0/g1.157 op_id=map/B:b5/a1/s0/g1.157 outcome=committed
+t=73.975844 node=worker-1 event=batch_reported batch=worker-1/e7/b103 tasks=1 failed=0
+t=74.991258 node=worker-1 event=node_crash boot=2
+t=77.621778 node=worker-1 event=node_restart boot=3
+t=77.621778 node=worker-1 event=worker_start boot=3 slots=3
+t=77.643492 node=worker-1 event=worker_registered epoch=9 reg_seq=1 gen=1
+t=83.230902 node=worker-1 event=worker_fenced epoch=9 tasks=0
+t=83.243277 node=worker-1 event=worker_registered epoch=11 reg_seq=2 gen=1
+t=88.345487 node=worker-1 event=worker_fenced epoch=11 tasks=0
+t=88.350356 node=worker-1 event=worker_registered epoch=13 reg_seq=3 gen=1
+t=93.941913 node=worker-1 event=worker_fenced epoch=13 tasks=0
+t=93.957485 node=worker-1 event=worker_registered epoch=15 reg_seq=4 gen=1
+t=99.057885 node=worker-1 event=worker_fenced epoch=15 tasks=0
+t=99.079076 node=worker-1 event=worker_registered epoch=17 reg_seq=5 gen=1
+t=104.670530 node=worker-1 event=worker_fenced epoch=17 tasks=0
+t=104.691114 node=worker-1 event=worker_registered epoch=19 reg_seq=6 gen=1
+t=109.821699 node=worker-1 event=worker_fenced epoch=19 tasks=0
+t=109.833692 node=worker-1 event=worker_registered epoch=21 reg_seq=7 gen=1
+t=115.428266 node=worker-1 event=worker_fenced epoch=21 tasks=0
+t=115.430936 node=worker-1 event=worker_registered epoch=23 reg_seq=8 gen=1

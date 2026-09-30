@@ -1,0 +1,36 @@
+id: B3
+codebase: B
+type: shared-file-pair
+budget_s: 900
+budget_usd: 6.0
+public_seeds:
+- 12
+- 11
+- 13
+- 15
+- 17
+bugs:
+- id: bug-1
+  scenario: scenarios/bug-1.yaml
+  expect:
+    all_actions_resolved_by: 125.0
+    no_unhandled_exceptions: true
+    rpc_requests_per_group_max:
+    - src: worker-*
+      dst: coord
+      method: register
+      group_by: worker
+      max: 8
+  gates: []
+- id: bug-2
+  scenario: scenarios/bug-2.yaml
+  expect:
+    all_actions_resolved_by: 115.0
+    no_unhandled_exceptions: true
+    rpc_requests_per_group_max:
+    - src: worker-*
+      dst: coord
+      method: register
+      group_by: worker
+      max: 8
+  gates: []

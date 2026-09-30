@@ -1,0 +1,8 @@
+[
+ {"kind": "log", "event": "job_terminal", "key": "C/long*", "state": "CANCELLED", "min_count": 1, "bug": "bug-1"},
+ {"kind": "gpu_effect", "effect": "finished", "op_id": "C/long*", "state": "SUCCEEDED", "min_count": 1, "bug": "bug-1"},
+ {"kind": "log", "event": "router_start", "min_count": 5, "bug": "bug-2"},
+ {"kind": "log", "event": "report_applied", "op_state": "FAILED", "min_count": 1, "bug": "bug-2"},
+ {"kind": "log", "event": "dispatch_blocked", "units": 7, "min_count": 1, "bug": "bug-2"},
+ {"kind": "log", "event": "worker_register_retry", "min_count": 45, "bug": "bug-3"}
+]

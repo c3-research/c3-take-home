@@ -1,0 +1,26 @@
+id: A2
+codebase: A
+type: chained
+budget_s: 900
+budget_usd: 6.0
+public_seeds:
+- 12
+- 22
+- 28
+- 29
+- 33
+bugs:
+- id: bug-1
+  scenario: scenarios/bug-1.yaml
+  expect:
+    all_actions_resolved_by: 78.0
+    no_unhandled_exceptions: true
+  gates: []
+- id: bug-2
+  scenario: scenarios/bug-2.yaml
+  expect:
+    all_actions_resolved_by: 88.0
+    no_unhandled_exceptions: true
+    max_capacity_waits: 0
+  gates:
+  - bug-1

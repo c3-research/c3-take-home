@@ -1,0 +1,10 @@
+# your key and local run output: never commit these
+.env
+results/
+evidence/
+venv/
+.venv/
+__pycache__/
+*.pyc
+grader/.cache/
+proxy/.state/

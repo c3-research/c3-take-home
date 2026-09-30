@@ -1,0 +1,21 @@
+name: public
+seed: 1
+end_at: 120.0
+quiesce_at: 80.0
+liveness_window: 30.0
+gpu: {capacity: 12, release_delay: {dist: uniform, low: 0.05, high: 0.3}}
+nodes:
+  - {name: coord, class: "shardmr.coordinator:Coordinator"}
+  - {name: "worker-{i}", count: 4, class: "shardmr.worker:Worker"}
+client: {target: coord}
+client_retry: {timeout: 2.0, max_attempts: 5, backoff: 0.5, retry_on: [UNAVAILABLE]}
+faults: faults/public.yaml
+workload:
+  - {repeat: 60, at: 1.0, every: 0.9, jitter: 0.4, action: submit_job, tenant: A, job_id: "q{i}",
+     shards: 1, records: 64, units: 1, duration: 1.0}
+  - {repeat: 10, at: 3.0, every: 5.0, jitter: 1.0, action: submit_job, tenant: B, job_id: "b{i}",
+     shards: 6, records: 128, units: 1, duration: 1.0}
+  - {repeat: 8, at: 5.0, every: 7.0, jitter: 2.0, action: job_status, tenant: B, job_id: "b{i}"}
+expect:
+  all_actions_resolved_by: 115.0
+  no_unhandled_exceptions: true

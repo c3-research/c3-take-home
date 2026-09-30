@@ -1,0 +1,19 @@
+[
+ {
+  "kind": "log",
+  "event": "worker_dead",
+  "reason": "heartbeat_timeout",
+  "min_count": 10
+ },
+ {
+  "kind": "crash",
+  "min_count": 1
+ },
+ {
+  "kind": "log",
+  "node": "coord",
+  "event": "worker_registered",
+  "boot": 1,
+  "min_count": 1
+ }
+]

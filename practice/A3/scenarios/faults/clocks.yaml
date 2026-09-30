@@ -1,0 +1,13 @@
+# Clock drift and offset on every node, up to the deployment's documented drift
+# bound, plus process pauses (GC-style freezes) on workers and the router.
+network:
+  delay: {dist: exponential, mean: 0.005}
+nodes:
+  clocks:
+    - {node: "worker-*", drift_ppm: [-1000, 1000], offset: [-0.5, 0.5]}
+    - {node: "router-1", drift_ppm: [-1000, 1000], offset: [-0.5, 0.5]}
+  pauses:
+    - {node: "worker-*", rate_per_hour: 90, duration: [0.2, 3.0]}
+    - {node: "router-1", rate_per_hour: 60, duration: [0.2, 2.5]}
+gpu:
+  latency: {dist: uniform, low: 0.2, high: 1.5}

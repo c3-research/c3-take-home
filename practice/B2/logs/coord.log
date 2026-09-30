@@ -1,0 +1,1635 @@
+t=0.000000 node=coord event=coord_start gen=1 boot=0 dead_after=5.0006
+t=0.000000 node=coord event=coord_recovered jobs=0
+t=0.000965 node=coord event=worker_registered worker=worker-4 epoch=1 boot=0 reg_seq=1
+t=0.001744 node=coord event=worker_registered worker=worker-2 epoch=1 boot=0 reg_seq=1
+t=0.006209 node=coord event=worker_registered worker=worker-1 epoch=1 boot=0 reg_seq=1
+t=0.178051 node=coord event=worker_registered worker=worker-3 epoch=1 boot=0 reg_seq=1
+t=1.237382 node=coord event=job_accepted job=A:q0 shards=1 records=64 units=1
+t=1.237382 node=coord event=job_state job=A:q0 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=1.237382 node=coord event=attempt_start job=A:q0 attempt=1 max_attempts=3
+t=1.237382 node=coord event=job_scheduled job=A:q0 attempt=1 shards=1 queued=1
+t=1.300000 node=coord event=task_dispatch task=A:q0/a1/s0/g1.1 job=A:q0 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b1
+t=1.325328 node=coord event=batch_assigned batch=worker-1/e1/b1 worker=worker-1 tasks=1 accepted=1 hb_seq=2
+t=2.205620 node=coord event=job_accepted job=A:q1 shards=1 records=64 units=1
+t=2.205620 node=coord event=job_state job=A:q1 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=2.205620 node=coord event=attempt_start job=A:q1 attempt=1 max_attempts=3
+t=2.205620 node=coord event=job_scheduled job=A:q1 attempt=1 shards=1 queued=1
+t=2.300000 node=coord event=task_dispatch task=A:q1/a1/s0/g1.2 job=A:q1 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b2
+t=2.378622 node=coord event=batch_assigned batch=worker-2/e1/b2 worker=worker-2 tasks=1 accepted=1 hb_seq=4
+t=2.869896 node=coord event=shard_committed job=A:q0 attempt=1 shard=0 task=A:q0/a1/s0/g1.1 worker=worker-1 speculative=false committed=1 shards=1
+t=2.869896 node=coord event=job_state job=A:q0 attempt=1 old=MAPPING new=REDUCING reason=null
+t=2.869896 node=coord event=task_finished task=A:q0/a1/s0/g1.1 worker=worker-1 state=revoked outcome=map_complete
+t=2.869896 node=coord event=reduce_submit job=A:q0 attempt=1 op_id=reduce/A:q0/a1/r0 inputs=1
+t=2.872682 node=coord event=job_accepted job=A:q2 shards=1 records=64 units=1
+t=2.872682 node=coord event=job_state job=A:q2 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=2.872682 node=coord event=attempt_start job=A:q2 attempt=1 max_attempts=3
+t=2.872682 node=coord event=job_scheduled job=A:q2 attempt=1 shards=1 queued=1
+t=2.884638 node=coord event=gpu_submit op_id=reduce/A:q0/a1/r0 units=1 attempt=1 state=PENDING
+t=2.900000 node=coord event=task_dispatch task=A:q2/a1/s0/g1.3 job=A:q2 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b3
+t=2.902286 node=coord event=batch_assigned batch=worker-1/e1/b3 worker=worker-1 tasks=1 accepted=1 hb_seq=5
+t=3.197435 node=coord event=batch_report batch=worker-1/e1/b1 worker=worker-1 tasks=1 failed=0
+t=3.642819 node=coord event=job_accepted job=B:b0 shards=6 records=128 units=1
+t=3.642819 node=coord event=job_state job=B:b0 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=3.642819 node=coord event=attempt_start job=B:b0 attempt=1 max_attempts=3
+t=3.642819 node=coord event=job_scheduled job=B:b0 attempt=1 shards=6 queued=6
+t=3.700000 node=coord event=task_dispatch task=B:b0/a1/s0/g1.4 job=B:b0 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b4
+t=3.700000 node=coord event=task_dispatch task=B:b0/a1/s1/g1.5 job=B:b0 attempt=1 shard=1 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b4
+t=3.700000 node=coord event=task_dispatch task=B:b0/a1/s2/g1.6 job=B:b0 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b4
+t=3.700000 node=coord event=task_dispatch task=B:b0/a1/s3/g1.7 job=B:b0 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b5
+t=3.700000 node=coord event=task_dispatch task=B:b0/a1/s4/g1.8 job=B:b0 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b5
+t=3.700000 node=coord event=task_dispatch task=B:b0/a1/s5/g1.9 job=B:b0 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b5
+t=3.722247 node=coord event=batch_assigned batch=worker-3/e1/b4 worker=worker-3 tasks=3 accepted=3 hb_seq=6
+t=3.740818 node=coord event=job_duplicate job=A:q0 state=REDUCING
+t=3.759442 node=coord event=job_accepted job=A:q3 shards=1 records=64 units=1
+t=3.759442 node=coord event=job_state job=A:q3 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=3.759442 node=coord event=attempt_start job=A:q3 attempt=1 max_attempts=3
+t=3.759442 node=coord event=job_scheduled job=A:q3 attempt=1 shards=1 queued=1
+t=3.763367 node=coord event=batch_assigned batch=worker-4/e1/b5 worker=worker-4 tasks=3 accepted=3 hb_seq=6
+t=3.800000 node=coord event=task_dispatch task=A:q3/a1/s0/g1.10 job=A:q3 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b6
+t=3.804729 node=coord event=batch_assigned batch=worker-1/e1/b6 worker=worker-1 tasks=1 accepted=1 hb_seq=7
+t=4.093698 node=coord event=shard_committed job=A:q1 attempt=1 shard=0 task=A:q1/a1/s0/g1.2 worker=worker-2 speculative=false committed=1 shards=1
+t=4.093698 node=coord event=job_state job=A:q1 attempt=1 old=MAPPING new=REDUCING reason=null
+t=4.093698 node=coord event=task_finished task=A:q1/a1/s0/g1.2 worker=worker-2 state=revoked outcome=map_complete
+t=4.093698 node=coord event=reduce_submit job=A:q1 attempt=1 op_id=reduce/A:q1/a1/r0 inputs=1
+t=4.104678 node=coord event=gpu_submit op_id=reduce/A:q1/a1/r0 units=1 attempt=1 state=PENDING
+t=4.266766 node=coord event=gpu_op_terminal op_id=reduce/A:q0/a1/r0 state=SUCCEEDED
+t=4.266766 node=coord event=job_state job=A:q0 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=4.266766 node=coord event=job_succeeded job=A:q0 attempt=1 op_id=reduce/A:q0/a1/r0 count=64 checksum=a131444d4a789a92
+t=4.274517 node=coord event=gpu_release op_id=reduce/A:q0/a1/r0
+t=4.424207 node=coord event=batch_report batch=worker-2/e1/b2 worker=worker-2 tasks=1 failed=0
+t=4.451328 node=coord event=gpu_released op_id=reduce/A:q0/a1/r0 via=hint
+t=4.754028 node=coord event=job_accepted job=A:q4 shards=1 records=64 units=1
+t=4.754028 node=coord event=job_state job=A:q4 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=4.754028 node=coord event=attempt_start job=A:q4 attempt=1 max_attempts=3
+t=4.754028 node=coord event=job_scheduled job=A:q4 attempt=1 shards=1 queued=1
+t=4.800000 node=coord event=task_dispatch task=A:q4/a1/s0/g1.11 job=A:q4 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b7
+t=4.807109 node=coord event=batch_assigned batch=worker-2/e1/b7 worker=worker-2 tasks=1 accepted=1 hb_seq=9
+t=4.961309 node=coord event=shard_committed job=A:q2 attempt=1 shard=0 task=A:q2/a1/s0/g1.3 worker=worker-1 speculative=false committed=1 shards=1
+t=4.961309 node=coord event=job_state job=A:q2 attempt=1 old=MAPPING new=REDUCING reason=null
+t=4.961309 node=coord event=task_finished task=A:q2/a1/s0/g1.3 worker=worker-1 state=revoked outcome=map_complete
+t=4.961309 node=coord event=reduce_submit job=A:q2 attempt=1 op_id=reduce/A:q2/a1/r0 inputs=1
+t=4.964506 node=coord event=gpu_submit op_id=reduce/A:q2/a1/r0 units=1 attempt=1 state=PENDING
+t=5.035896 node=coord event=shard_committed job=B:b0 attempt=1 shard=3 task=B:b0/a1/s3/g1.7 worker=worker-4 speculative=false committed=1 shards=6
+t=5.196934 node=coord event=gpu_op_terminal op_id=reduce/A:q1/a1/r0 state=SUCCEEDED
+t=5.196934 node=coord event=job_state job=A:q1 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=5.196934 node=coord event=job_succeeded job=A:q1 attempt=1 op_id=reduce/A:q1/a1/r0 count=64 checksum=bdc877ad1a233fd8
+t=5.201188 node=coord event=gpu_release op_id=reduce/A:q1/a1/r0
+t=5.255802 node=coord event=shard_committed job=A:q3 attempt=1 shard=0 task=A:q3/a1/s0/g1.10 worker=worker-1 speculative=false committed=1 shards=1
+t=5.255802 node=coord event=job_state job=A:q3 attempt=1 old=MAPPING new=REDUCING reason=null
+t=5.255802 node=coord event=task_finished task=A:q3/a1/s0/g1.10 worker=worker-1 state=revoked outcome=map_complete
+t=5.255802 node=coord event=reduce_submit job=A:q3 attempt=1 op_id=reduce/A:q3/a1/r0 inputs=1
+t=5.258261 node=coord event=gpu_submit op_id=reduce/A:q3/a1/r0 units=1 attempt=1 state=PENDING
+t=5.307154 node=coord event=gpu_released op_id=reduce/A:q1/a1/r0 via=hint
+t=5.328613 node=coord event=batch_report batch=worker-1/e1/b3 worker=worker-1 tasks=1 failed=0
+t=5.416433 node=coord event=shard_committed job=B:b0 attempt=1 shard=5 task=B:b0/a1/s5/g1.9 worker=worker-4 speculative=false committed=2 shards=6
+t=5.461356 node=coord event=shard_committed job=B:b0 attempt=1 shard=1 task=B:b0/a1/s1/g1.5 worker=worker-3 speculative=false committed=3 shards=6
+t=5.499093 node=coord event=shard_committed job=B:b0 attempt=1 shard=4 task=B:b0/a1/s4/g1.8 worker=worker-4 speculative=false committed=4 shards=6
+t=5.602548 node=coord event=shard_committed job=B:b0 attempt=1 shard=0 task=B:b0/a1/s0/g1.4 worker=worker-3 speculative=false committed=5 shards=6
+t=5.727198 node=coord event=batch_report batch=worker-1/e1/b6 worker=worker-1 tasks=1 failed=0
+t=6.138554 node=coord event=task_finished task=B:b0/a1/s0/g1.4 worker=worker-3 state=done outcome=committed
+t=6.138554 node=coord event=task_finished task=B:b0/a1/s1/g1.5 worker=worker-3 state=done outcome=committed
+t=6.138554 node=coord event=task_finished task=B:b0/a1/s2/g1.6 worker=worker-3 state=done outcome=failed
+t=6.138554 node=coord event=shard_requeued job=B:b0 attempt=1 shard=2 failures=1
+t=6.138554 node=coord event=batch_report batch=worker-3/e1/b4 worker=worker-3 tasks=3 failed=1
+t=6.187154 node=coord event=gpu_op_terminal op_id=reduce/A:q3/a1/r0 state=SUCCEEDED
+t=6.187154 node=coord event=job_state job=A:q3 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=6.187154 node=coord event=job_succeeded job=A:q3 attempt=1 op_id=reduce/A:q3/a1/r0 count=64 checksum=f23a6fb7e3983afa
+t=6.200000 node=coord event=task_dispatch task=B:b0/a1/s2/g1.12 job=B:b0 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b8
+t=6.202858 node=coord event=gpu_release op_id=reduce/A:q3/a1/r0
+t=6.265956 node=coord event=gpu_released op_id=reduce/A:q3/a1/r0 via=hint
+t=6.376383 node=coord event=batch_assigned batch=worker-1/e1/b8 worker=worker-1 tasks=1 accepted=1 hb_seq=11
+t=6.425552 node=coord event=job_accepted job=A:q6 shards=1 records=64 units=1
+t=6.425552 node=coord event=job_state job=A:q6 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=6.425552 node=coord event=attempt_start job=A:q6 attempt=1 max_attempts=3
+t=6.425552 node=coord event=job_scheduled job=A:q6 attempt=1 shards=1 queued=1
+t=6.500000 node=coord event=task_dispatch task=A:q6/a1/s0/g1.13 job=A:q6 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b9
+t=6.549014 node=coord event=gpu_op_terminal op_id=reduce/A:q2/a1/r0 state=SUCCEEDED
+t=6.549014 node=coord event=job_state job=A:q2 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=6.549014 node=coord event=job_succeeded job=A:q2 attempt=1 op_id=reduce/A:q2/a1/r0 count=64 checksum=6eca5eab54f3b016
+t=6.552289 node=coord event=task_finished task=B:b0/a1/s3/g1.7 worker=worker-4 state=done outcome=committed
+t=6.552289 node=coord event=task_finished task=B:b0/a1/s4/g1.8 worker=worker-4 state=done outcome=committed
+t=6.552289 node=coord event=task_finished task=B:b0/a1/s5/g1.9 worker=worker-4 state=done outcome=committed
+t=6.552289 node=coord event=batch_report batch=worker-4/e1/b5 worker=worker-4 tasks=3 failed=0
+t=6.565452 node=coord event=task_finished task=A:q4/a1/s0/g1.11 worker=worker-2 state=done outcome=failed
+t=6.565452 node=coord event=shard_requeued job=A:q4 attempt=1 shard=0 failures=1
+t=6.565452 node=coord event=batch_report batch=worker-2/e1/b7 worker=worker-2 tasks=1 failed=1
+t=6.569892 node=coord event=gpu_release op_id=reduce/A:q2/a1/r0
+t=6.600000 node=coord event=task_dispatch task=A:q4/a1/s0/g1.14 job=A:q4 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b10
+t=6.611982 node=coord event=batch_assigned batch=worker-2/e1/b10 worker=worker-2 tasks=1 accepted=1 hb_seq=12
+t=6.657608 node=coord event=gpu_released op_id=reduce/A:q2/a1/r0 via=hint
+t=6.729277 node=coord event=batch_assigned batch=worker-3/e1/b9 worker=worker-3 tasks=1 accepted=1 hb_seq=12
+t=7.593321 node=coord event=job_accepted job=A:q7 shards=1 records=64 units=1
+t=7.593321 node=coord event=job_state job=A:q7 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=7.593321 node=coord event=attempt_start job=A:q7 attempt=1 max_attempts=3
+t=7.593321 node=coord event=job_scheduled job=A:q7 attempt=1 shards=1 queued=1
+t=7.600000 node=coord event=task_dispatch task=A:q7/a1/s0/g1.15 job=A:q7 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b11
+t=7.765669 node=coord event=batch_assigned batch=worker-4/e1/b11 worker=worker-4 tasks=1 accepted=1 hb_seq=12
+t=8.291670 node=coord event=shard_committed job=A:q4 attempt=1 shard=0 task=A:q4/a1/s0/g1.14 worker=worker-2 speculative=false committed=1 shards=1
+t=8.291670 node=coord event=job_state job=A:q4 attempt=1 old=MAPPING new=REDUCING reason=null
+t=8.291670 node=coord event=task_finished task=A:q4/a1/s0/g1.14 worker=worker-2 state=revoked outcome=map_complete
+t=8.291670 node=coord event=reduce_submit job=A:q4 attempt=1 op_id=reduce/A:q4/a1/r0 inputs=1
+t=8.311751 node=coord event=job_accepted job=A:q5 shards=1 records=64 units=1
+t=8.311751 node=coord event=job_state job=A:q5 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=8.311751 node=coord event=attempt_start job=A:q5 attempt=1 max_attempts=3
+t=8.311751 node=coord event=job_scheduled job=A:q5 attempt=1 shards=1 queued=1
+t=8.381625 node=coord event=job_accepted job=A:q8 shards=1 records=64 units=1
+t=8.381625 node=coord event=job_state job=A:q8 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=8.381625 node=coord event=attempt_start job=A:q8 attempt=1 max_attempts=3
+t=8.381625 node=coord event=job_scheduled job=A:q8 attempt=1 shards=1 queued=1
+t=8.400000 node=coord event=task_dispatch task=A:q5/a1/s0/g1.16 job=A:q5 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b12
+t=8.400000 node=coord event=task_dispatch task=A:q8/a1/s0/g1.17 job=A:q8 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b12
+t=8.540412 node=coord event=job_accepted job=B:b1 shards=6 records=128 units=1
+t=8.540412 node=coord event=job_state job=B:b1 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=8.540412 node=coord event=attempt_start job=B:b1 attempt=1 max_attempts=3
+t=8.540412 node=coord event=job_scheduled job=B:b1 attempt=1 shards=6 queued=6
+t=8.575669 node=coord event=gpu_submit op_id=reduce/A:q4/a1/r0 units=1 attempt=1 state=PENDING
+t=8.588137 node=coord event=batch_assigned batch=worker-2/e1/b12 worker=worker-2 tasks=2 accepted=2 hb_seq=15
+t=8.600000 node=coord event=task_dispatch task=B:b1/a1/s0/g1.18 job=B:b1 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b13
+t=8.600000 node=coord event=task_dispatch task=B:b1/a1/s1/g1.19 job=B:b1 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b13
+t=8.600000 node=coord event=task_dispatch task=B:b1/a1/s2/g1.20 job=B:b1 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b14
+t=8.600000 node=coord event=task_dispatch task=B:b1/a1/s3/g1.21 job=B:b1 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b14
+t=8.600000 node=coord event=task_dispatch task=B:b1/a1/s4/g1.22 job=B:b1 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b15
+t=8.600000 node=coord event=task_dispatch task=B:b1/a1/s5/g1.23 job=B:b1 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b15
+t=8.616393 node=coord event=batch_assigned batch=worker-1/e1/b13 worker=worker-1 tasks=2 accepted=2 hb_seq=16
+t=8.616694 node=coord event=batch_assigned batch=worker-3/e1/b14 worker=worker-3 tasks=2 accepted=2 hb_seq=15
+t=8.625169 node=coord event=batch_report batch=worker-2/e1/b10 worker=worker-2 tasks=1 failed=0
+t=8.643911 node=coord event=batch_assigned batch=worker-4/e1/b15 worker=worker-4 tasks=2 accepted=2 hb_seq=14
+t=9.183355 node=coord event=job_accepted job=A:q9 shards=1 records=64 units=1
+t=9.183355 node=coord event=job_state job=A:q9 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=9.183355 node=coord event=attempt_start job=A:q9 attempt=1 max_attempts=3
+t=9.183355 node=coord event=job_scheduled job=A:q9 attempt=1 shards=1 queued=1
+t=9.200000 node=coord event=task_dispatch task=A:q9/a1/s0/g1.24 job=A:q9 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b16
+t=9.231310 node=coord event=batch_assigned batch=worker-2/e1/b16 worker=worker-2 tasks=1 accepted=1 hb_seq=17
+t=9.331309 node=coord event=gpu_op_terminal op_id=reduce/A:q4/a1/r0 state=SUCCEEDED
+t=9.331309 node=coord event=job_state job=A:q4 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=9.331309 node=coord event=job_succeeded job=A:q4 attempt=1 op_id=reduce/A:q4/a1/r0 count=64 checksum=7047dc44ba9faebc
+t=9.332080 node=coord event=gpu_release op_id=reduce/A:q4/a1/r0
+t=9.580940 node=coord event=gpu_released op_id=reduce/A:q4/a1/r0 via=hint
+t=9.672224 node=coord event=shard_committed job=A:q6 attempt=1 shard=0 task=A:q6/a1/s0/g1.13 worker=worker-3 speculative=false committed=1 shards=1
+t=9.672224 node=coord event=job_state job=A:q6 attempt=1 old=MAPPING new=REDUCING reason=null
+t=9.672224 node=coord event=task_finished task=A:q6/a1/s0/g1.13 worker=worker-3 state=revoked outcome=map_complete
+t=9.672224 node=coord event=reduce_submit job=A:q6 attempt=1 op_id=reduce/A:q6/a1/r0 inputs=1
+t=9.679127 node=coord event=gpu_submit op_id=reduce/A:q6/a1/r0 units=1 attempt=1 state=PENDING
+t=9.700000 node=coord event=speculation_launch job=B:b0 attempt=1 shard=2 straggler=B:b0/a1/s2/g1.12 worker=worker-3 elapsed=3.5 straggler_after=3.0
+t=9.700000 node=coord event=task_dispatch task=B:b0/a1/s2/g1.25 job=B:b0 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b17
+t=9.702018 node=coord event=batch_assigned batch=worker-3/e1/b17 worker=worker-3 tasks=1 accepted=1 hb_seq=17
+t=9.877227 node=coord event=shard_committed job=B:b1 attempt=1 shard=5 task=B:b1/a1/s5/g1.23 worker=worker-4 speculative=false committed=1 shards=6
+t=9.882329 node=coord event=batch_report batch=worker-3/e1/b9 worker=worker-3 tasks=1 failed=0
+t=10.205354 node=coord event=shard_committed job=A:q8 attempt=1 shard=0 task=A:q8/a1/s0/g1.17 worker=worker-2 speculative=false committed=1 shards=1
+t=10.205354 node=coord event=job_state job=A:q8 attempt=1 old=MAPPING new=REDUCING reason=null
+t=10.205354 node=coord event=task_finished task=A:q8/a1/s0/g1.17 worker=worker-2 state=revoked outcome=map_complete
+t=10.205354 node=coord event=reduce_submit job=A:q8 attempt=1 op_id=reduce/A:q8/a1/r0 inputs=1
+t=10.207924 node=coord event=gpu_submit op_id=reduce/A:q8/a1/r0 units=1 attempt=1 state=PENDING
+t=10.269708 node=coord event=job_accepted job=A:q10 shards=1 records=64 units=1
+t=10.269708 node=coord event=job_state job=A:q10 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=10.269708 node=coord event=attempt_start job=A:q10 attempt=1 max_attempts=3
+t=10.269708 node=coord event=job_scheduled job=A:q10 attempt=1 shards=1 queued=1
+t=10.283663 node=coord event=shard_committed job=A:q5 attempt=1 shard=0 task=A:q5/a1/s0/g1.16 worker=worker-2 speculative=false committed=1 shards=1
+t=10.283663 node=coord event=job_state job=A:q5 attempt=1 old=MAPPING new=REDUCING reason=null
+t=10.283663 node=coord event=task_finished task=A:q5/a1/s0/g1.16 worker=worker-2 state=revoked outcome=map_complete
+t=10.283663 node=coord event=reduce_submit job=A:q5 attempt=1 op_id=reduce/A:q5/a1/r0 inputs=1
+t=10.299656 node=coord event=gpu_submit op_id=reduce/A:q5/a1/r0 units=1 attempt=1 state=PENDING
+t=10.300000 node=coord event=task_dispatch task=A:q10/a1/s0/g1.26 job=A:q10 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b18
+t=10.309587 node=coord event=batch_assigned batch=worker-2/e1/b18 worker=worker-2 tasks=1 accepted=1 hb_seq=19
+t=10.358162 node=coord event=shard_committed job=B:b1 attempt=1 shard=1 task=B:b1/a1/s1/g1.19 worker=worker-1 speculative=false committed=2 shards=6
+t=10.465622 node=coord event=task_finished task=A:q7/a1/s0/g1.15 worker=worker-4 state=done outcome=failed
+t=10.465622 node=coord event=shard_requeued job=A:q7 attempt=1 shard=0 failures=1
+t=10.465622 node=coord event=batch_report batch=worker-4/e1/b11 worker=worker-4 tasks=1 failed=1
+t=10.471512 node=coord event=shard_committed job=B:b1 attempt=1 shard=3 task=B:b1/a1/s3/g1.21 worker=worker-3 speculative=false committed=3 shards=6
+t=10.500000 node=coord event=task_dispatch task=A:q7/a1/s0/g1.27 job=A:q7 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b19
+t=10.514011 node=coord event=batch_assigned batch=worker-2/e1/b19 worker=worker-2 tasks=1 accepted=1 hb_seq=19
+t=10.611186 node=coord event=task_finished task=B:b1/a1/s2/g1.20 worker=worker-3 state=done outcome=failed
+t=10.611186 node=coord event=shard_requeued job=B:b1 attempt=1 shard=2 failures=1
+t=10.611186 node=coord event=task_finished task=B:b1/a1/s3/g1.21 worker=worker-3 state=done outcome=committed
+t=10.611186 node=coord event=batch_report batch=worker-3/e1/b14 worker=worker-3 tasks=2 failed=1
+t=10.612986 node=coord event=shard_committed job=B:b1 attempt=1 shard=0 task=B:b1/a1/s0/g1.18 worker=worker-1 speculative=false committed=4 shards=6
+t=10.687731 node=coord event=gpu_op_terminal op_id=reduce/A:q6/a1/r0 state=SUCCEEDED
+t=10.687731 node=coord event=job_state job=A:q6 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=10.687731 node=coord event=job_succeeded job=A:q6 attempt=1 op_id=reduce/A:q6/a1/r0 count=64 checksum=c3f7f9e0f1f5b8f3
+t=10.691018 node=coord event=gpu_release op_id=reduce/A:q6/a1/r0
+t=10.700000 node=coord event=task_dispatch task=B:b1/a1/s2/g1.28 job=B:b1 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b20
+t=10.700842 node=coord event=shard_committed job=B:b1 attempt=1 shard=4 task=B:b1/a1/s4/g1.22 worker=worker-4 speculative=false committed=5 shards=6
+t=10.801879 node=coord event=batch_report batch=worker-2/e1/b12 worker=worker-2 tasks=2 failed=0
+t=10.833059 node=coord event=task_finished task=B:b1/a1/s4/g1.22 worker=worker-4 state=done outcome=committed
+t=10.833059 node=coord event=task_finished task=B:b1/a1/s5/g1.23 worker=worker-4 state=done outcome=committed
+t=10.833059 node=coord event=batch_report batch=worker-4/e1/b15 worker=worker-4 tasks=2 failed=0
+t=10.853825 node=coord event=task_finished task=B:b1/a1/s0/g1.18 worker=worker-1 state=done outcome=committed
+t=10.853825 node=coord event=task_finished task=B:b1/a1/s1/g1.19 worker=worker-1 state=done outcome=committed
+t=10.853825 node=coord event=batch_report batch=worker-1/e1/b13 worker=worker-1 tasks=2 failed=0
+t=10.863854 node=coord event=batch_assigned batch=worker-3/e1/b20 worker=worker-3 tasks=1 accepted=1 hb_seq=19
+t=10.947822 node=coord event=gpu_released op_id=reduce/A:q6/a1/r0 via=hint
+t=11.064087 node=coord event=job_accepted job=A:q11 shards=1 records=64 units=1
+t=11.064087 node=coord event=job_state job=A:q11 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=11.064087 node=coord event=attempt_start job=A:q11 attempt=1 max_attempts=3
+t=11.064087 node=coord event=job_scheduled job=A:q11 attempt=1 shards=1 queued=1
+t=11.100000 node=coord event=task_dispatch task=A:q11/a1/s0/g1.29 job=A:q11 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b21
+t=11.109519 node=coord event=batch_assigned batch=worker-4/e1/b21 worker=worker-4 tasks=1 accepted=1 hb_seq=18
+t=11.320544 node=coord event=gpu_op_terminal op_id=reduce/A:q8/a1/r0 state=FAILED
+t=11.320544 node=coord event=reduce_failed job=A:q8 attempt=1 op_id=reduce/A:q8/a1/r0 tries=1 max_tries=3
+t=11.416256 node=coord event=gpu_release op_id=reduce/A:q8/a1/r0
+t=11.501130 node=coord event=gpu_released op_id=reduce/A:q8/a1/r0 via=hint
+t=11.501130 node=coord event=reduce_submit job=A:q8 attempt=1 op_id=reduce/A:q8/a1/r1 inputs=1
+t=11.559396 node=coord event=shard_committed job=B:b0 attempt=1 shard=2 task=B:b0/a1/s2/g1.25 worker=worker-3 speculative=true committed=6 shards=6
+t=11.559396 node=coord event=task_abort_request job=B:b0 shard=2 worker=worker-1 tasks=1 reason=shard_committed
+t=11.559396 node=coord event=job_state job=B:b0 attempt=1 old=MAPPING new=REDUCING reason=null
+t=11.559396 node=coord event=task_finished task=B:b0/a1/s2/g1.12 worker=worker-1 state=revoked outcome=map_complete
+t=11.559396 node=coord event=task_finished task=B:b0/a1/s2/g1.25 worker=worker-3 state=revoked outcome=map_complete
+t=11.559396 node=coord event=reduce_submit job=B:b0 attempt=1 op_id=reduce/B:b0/a1/r0 inputs=6
+t=11.676427 node=coord event=gpu_submit op_id=reduce/B:b0/a1/r0 units=1 attempt=1 state=PENDING
+t=11.707228 node=coord event=task_finished task=A:q9/a1/s0/g1.24 worker=worker-2 state=done outcome=failed
+t=11.707228 node=coord event=shard_requeued job=A:q9 attempt=1 shard=0 failures=1
+t=11.707228 node=coord event=batch_report batch=worker-2/e1/b16 worker=worker-2 tasks=1 failed=1
+t=11.800000 node=coord event=task_dispatch task=A:q9/a1/s0/g1.30 job=A:q9 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b22
+t=11.800803 node=coord event=batch_assigned batch=worker-1/e1/b22 worker=worker-1 tasks=1 accepted=1 hb_seq=21
+t=12.052540 node=coord event=batch_report batch=worker-3/e1/b17 worker=worker-3 tasks=1 failed=0
+t=12.138165 node=coord event=job_accepted job=A:q12 shards=1 records=64 units=1
+t=12.138165 node=coord event=job_state job=A:q12 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=12.138165 node=coord event=attempt_start job=A:q12 attempt=1 max_attempts=3
+t=12.138165 node=coord event=job_scheduled job=A:q12 attempt=1 shards=1 queued=1
+t=12.200000 node=coord event=task_dispatch task=A:q12/a1/s0/g1.31 job=A:q12 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b23
+t=12.201294 node=coord event=batch_assigned batch=worker-1/e1/b23 worker=worker-1 tasks=1 accepted=1 hb_seq=22
+t=12.501130 node=coord event=gpu_submit_unknown op_id=reduce/A:q8/a1/r1 code=TIMEOUT attempt=1
+t=12.532238 node=coord event=gpu_submit_confirmed op_id=reduce/A:q8/a1/r1 state=FAILED
+t=12.544123 node=coord event=gpu_op_terminal op_id=reduce/A:q8/a1/r1 state=FAILED
+t=12.544123 node=coord event=reduce_failed job=A:q8 attempt=1 op_id=reduce/A:q8/a1/r1 tries=2 max_tries=3
+t=12.550195 node=coord event=gpu_release op_id=reduce/A:q8/a1/r1
+t=12.630974 node=coord event=gpu_released op_id=reduce/A:q8/a1/r1 via=hint
+t=12.630974 node=coord event=reduce_submit job=A:q8 attempt=1 op_id=reduce/A:q8/a1/r2 inputs=1
+t=12.798268 node=coord event=shard_committed job=B:b1 attempt=1 shard=2 task=B:b1/a1/s2/g1.28 worker=worker-3 speculative=false committed=6 shards=6
+t=12.798268 node=coord event=job_state job=B:b1 attempt=1 old=MAPPING new=REDUCING reason=null
+t=12.798268 node=coord event=task_finished task=B:b1/a1/s2/g1.28 worker=worker-3 state=revoked outcome=map_complete
+t=12.798268 node=coord event=reduce_submit job=B:b1 attempt=1 op_id=reduce/B:b1/a1/r0 inputs=6
+t=12.802375 node=coord event=shard_committed job=A:q11 attempt=1 shard=0 task=A:q11/a1/s0/g1.29 worker=worker-4 speculative=false committed=1 shards=1
+t=12.802375 node=coord event=job_state job=A:q11 attempt=1 old=MAPPING new=REDUCING reason=null
+t=12.802375 node=coord event=task_finished task=A:q11/a1/s0/g1.29 worker=worker-4 state=revoked outcome=map_complete
+t=12.802375 node=coord event=reduce_submit job=A:q11 attempt=1 op_id=reduce/A:q11/a1/r0 inputs=1
+t=12.806518 node=coord event=gpu_submit op_id=reduce/B:b1/a1/r0 units=1 attempt=1 state=PENDING
+t=12.813224 node=coord event=gpu_submit op_id=reduce/A:q11/a1/r0 units=1 attempt=1 state=PENDING
+t=12.839156 node=coord event=gpu_submit op_id=reduce/A:q8/a1/r2 units=1 attempt=1 state=PENDING
+t=12.966180 node=coord event=job_accepted job=A:q13 shards=1 records=64 units=1
+t=12.966180 node=coord event=job_state job=A:q13 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=12.966180 node=coord event=attempt_start job=A:q13 attempt=1 max_attempts=3
+t=12.966180 node=coord event=job_scheduled job=A:q13 attempt=1 shards=1 queued=1
+t=13.000000 node=coord event=task_dispatch task=A:q13/a1/s0/g1.32 job=A:q13 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b24
+t=13.015469 node=coord event=batch_assigned batch=worker-3/e1/b24 worker=worker-3 tasks=1 accepted=1 hb_seq=23
+t=13.069115 node=coord event=batch_report batch=worker-3/e1/b20 worker=worker-3 tasks=1 failed=0
+t=13.204844 node=coord event=job_accepted job=B:b2 shards=6 records=128 units=1
+t=13.204844 node=coord event=job_state job=B:b2 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=13.204844 node=coord event=attempt_start job=B:b2 attempt=1 max_attempts=3
+t=13.204844 node=coord event=job_scheduled job=B:b2 attempt=1 shards=6 queued=6
+t=13.275630 node=coord event=batch_report batch=worker-4/e1/b21 worker=worker-4 tasks=1 failed=0
+t=13.300000 node=coord event=task_dispatch task=B:b2/a1/s0/g1.33 job=B:b2 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b25
+t=13.300000 node=coord event=task_dispatch task=B:b2/a1/s1/g1.34 job=B:b2 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b25
+t=13.300000 node=coord event=task_dispatch task=B:b2/a1/s2/g1.35 job=B:b2 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b25
+t=13.300000 node=coord event=task_dispatch task=B:b2/a1/s3/g1.36 job=B:b2 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b26
+t=13.300000 node=coord event=task_dispatch task=B:b2/a1/s4/g1.37 job=B:b2 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b26
+t=13.300000 node=coord event=task_dispatch task=B:b2/a1/s5/g1.38 job=B:b2 attempt=1 shard=5 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b27
+t=13.300627 node=coord event=batch_assigned batch=worker-1/e1/b27 worker=worker-1 tasks=1 accepted=1 hb_seq=24
+t=13.301570 node=coord event=batch_assigned batch=worker-4/e1/b25 worker=worker-4 tasks=3 accepted=3 hb_seq=23
+t=13.341565 node=coord event=batch_assigned batch=worker-3/e1/b26 worker=worker-3 tasks=2 accepted=2 hb_seq=24
+t=13.524934 node=coord event=gpu_op_terminal op_id=reduce/B:b0/a1/r0 state=SUCCEEDED
+t=13.524934 node=coord event=job_state job=B:b0 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=13.524934 node=coord event=job_succeeded job=B:b0 attempt=1 op_id=reduce/B:b0/a1/r0 count=768 checksum=0194d124590621be
+t=13.541147 node=coord event=gpu_release op_id=reduce/B:b0/a1/r0
+t=13.590432 node=coord event=gpu_released op_id=reduce/B:b0/a1/r0 via=hint
+t=13.697618 node=coord event=gpu_op_terminal op_id=reduce/A:q5/a1/r0 state=SUCCEEDED
+t=13.697618 node=coord event=job_state job=A:q5 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=13.697618 node=coord event=job_succeeded job=A:q5 attempt=1 op_id=reduce/A:q5/a1/r0 count=64 checksum=467376e6945762c9
+t=13.737961 node=coord event=job_accepted job=A:q14 shards=1 records=64 units=1
+t=13.737961 node=coord event=job_state job=A:q14 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=13.737961 node=coord event=attempt_start job=A:q14 attempt=1 max_attempts=3
+t=13.737961 node=coord event=job_scheduled job=A:q14 attempt=1 shards=1 queued=1
+t=13.800000 node=coord event=task_dispatch task=A:q14/a1/s0/g1.39 job=A:q14 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b28
+t=13.800916 node=coord event=gpu_op_terminal op_id=reduce/B:b1/a1/r0 state=SUCCEEDED
+t=13.800916 node=coord event=job_state job=B:b1 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=13.800916 node=coord event=job_succeeded job=B:b1 attempt=1 op_id=reduce/B:b1/a1/r0 count=768 checksum=6802cee67d1756fc
+t=13.839973 node=coord event=gpu_release op_id=reduce/A:q5/a1/r0
+t=13.858723 node=coord event=shard_committed job=A:q12 attempt=1 shard=0 task=A:q12/a1/s0/g1.31 worker=worker-1 speculative=false committed=1 shards=1
+t=13.858723 node=coord event=job_state job=A:q12 attempt=1 old=MAPPING new=REDUCING reason=null
+t=13.858723 node=coord event=task_finished task=A:q12/a1/s0/g1.31 worker=worker-1 state=revoked outcome=map_complete
+t=13.858723 node=coord event=reduce_submit job=A:q12 attempt=1 op_id=reduce/A:q12/a1/r0 inputs=1
+t=13.880585 node=coord event=gpu_submit_retry op_id=reduce/A:q12/a1/r0 code=CAPACITY attempt=1 backoff=0.25
+t=13.886663 node=coord event=shard_committed job=A:q9 attempt=1 shard=0 task=A:q9/a1/s0/g1.30 worker=worker-1 speculative=false committed=1 shards=1
+t=13.886663 node=coord event=job_state job=A:q9 attempt=1 old=MAPPING new=REDUCING reason=null
+t=13.886663 node=coord event=task_finished task=A:q9/a1/s0/g1.30 worker=worker-1 state=revoked outcome=map_complete
+t=13.886663 node=coord event=reduce_submit job=A:q9 attempt=1 op_id=reduce/A:q9/a1/r0 inputs=1
+t=13.894727 node=coord event=gpu_submit_retry op_id=reduce/A:q9/a1/r0 code=CAPACITY attempt=1 backoff=0.25
+t=13.894727 node=coord event=gpu_op_terminal op_id=reduce/A:q8/a1/r2 state=SUCCEEDED
+t=13.894727 node=coord event=job_state job=A:q8 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=13.894727 node=coord event=job_succeeded job=A:q8 attempt=1 op_id=reduce/A:q8/a1/r2 count=64 checksum=708906ea1e01c994
+t=13.901348 node=coord event=gpu_release op_id=reduce/A:q8/a1/r2
+t=13.997653 node=coord event=gpu_released op_id=reduce/A:q5/a1/r0 via=hint
+t=14.000627 node=coord event=batch_report batch=worker-1/e1/b22 worker=worker-1 tasks=1 failed=0
+t=14.008420 node=coord event=gpu_release op_id=reduce/B:b1/a1/r0
+t=14.118544 node=coord event=gpu_released op_id=reduce/B:b1/a1/r0 via=hint
+t=14.180397 node=coord event=gpu_op_terminal op_id=reduce/A:q11/a1/r0 state=SUCCEEDED
+t=14.180397 node=coord event=job_state job=A:q11 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=14.180397 node=coord event=job_succeeded job=A:q11 attempt=1 op_id=reduce/A:q11/a1/r0 count=64 checksum=9f04fc33ff78ae1d
+t=14.189466 node=coord event=gpu_released op_id=reduce/A:q8/a1/r2 via=hint
+t=14.202194 node=coord event=batch_report batch=worker-1/e1/b23 worker=worker-1 tasks=1 failed=0
+t=14.219850 node=coord event=gpu_submit op_id=reduce/A:q12/a1/r0 units=1 attempt=2 state=PENDING
+t=14.254310 node=coord event=gpu_submit op_id=reduce/A:q9/a1/r0 units=1 attempt=2 state=PENDING
+t=14.300000 node=coord event=batch_assign_retry batch=worker-2/e1/b28 worker=worker-2 attempt=1
+t=14.343848 node=coord event=gpu_release op_id=reduce/A:q11/a1/r0
+t=14.343848 node=coord event=gpu_released op_id=reduce/A:q11/a1/r0 via=hint
+t=14.472485 node=coord event=shard_committed job=A:q13 attempt=1 shard=0 task=A:q13/a1/s0/g1.32 worker=worker-3 speculative=false committed=1 shards=1
+t=14.472485 node=coord event=job_state job=A:q13 attempt=1 old=MAPPING new=REDUCING reason=null
+t=14.472485 node=coord event=task_finished task=A:q13/a1/s0/g1.32 worker=worker-3 state=revoked outcome=map_complete
+t=14.472485 node=coord event=reduce_submit job=A:q13 attempt=1 op_id=reduce/A:q13/a1/r0 inputs=1
+t=14.552743 node=coord event=batch_report batch=worker-3/e1/b24 worker=worker-3 tasks=1 failed=0
+t=14.564705 node=coord event=job_accepted job=A:q15 shards=1 records=64 units=1
+t=14.564705 node=coord event=job_state job=A:q15 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=14.564705 node=coord event=attempt_start job=A:q15 attempt=1 max_attempts=3
+t=14.564705 node=coord event=job_scheduled job=A:q15 attempt=1 shards=1 queued=1
+t=14.574956 node=coord event=gpu_submit op_id=reduce/A:q13/a1/r0 units=1 attempt=1 state=PENDING
+t=14.600000 node=coord event=task_dispatch task=A:q15/a1/s0/g1.40 job=A:q15 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b29
+t=14.623622 node=coord event=batch_assigned batch=worker-1/e1/b29 worker=worker-1 tasks=1 accepted=1 hb_seq=26
+t=14.800000 node=coord event=batch_assign_retry batch=worker-2/e1/b28 worker=worker-2 attempt=2
+t=14.961655 node=coord event=shard_committed job=B:b2 attempt=1 shard=2 task=B:b2/a1/s2/g1.35 worker=worker-4 speculative=false committed=1 shards=6
+t=15.210615 node=coord event=gpu_op_terminal op_id=reduce/A:q9/a1/r0 state=SUCCEEDED
+t=15.210615 node=coord event=job_state job=A:q9 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=15.210615 node=coord event=job_succeeded job=A:q9 attempt=1 op_id=reduce/A:q9/a1/r0 count=64 checksum=6015fa8175adc0ab
+t=15.216505 node=coord event=gpu_release op_id=reduce/A:q9/a1/r0
+t=15.300000 node=coord event=batch_assign_retry batch=worker-2/e1/b28 worker=worker-2 attempt=3
+t=15.300000 node=coord event=batch_assign_failed batch=worker-2/e1/b28 worker=worker-2 attempts=3
+t=15.300000 node=coord event=task_finished task=A:q14/a1/s0/g1.39 worker=worker-2 state=lost outcome=assign_timeout
+t=15.300000 node=coord event=shard_requeued job=A:q14 attempt=1 shard=0 failures=0
+t=15.400000 node=coord event=task_dispatch task=A:q14/a1/s0/g1.41 job=A:q14 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b30
+t=15.414069 node=coord event=batch_assigned batch=worker-1/e1/b30 worker=worker-1 tasks=1 accepted=1 hb_seq=27
+t=15.464705 node=coord event=gpu_released op_id=reduce/A:q9/a1/r0 via=hint
+t=15.474491 node=coord event=job_accepted job=A:q16 shards=1 records=64 units=1
+t=15.474491 node=coord event=job_state job=A:q16 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=15.474491 node=coord event=attempt_start job=A:q16 attempt=1 max_attempts=3
+t=15.474491 node=coord event=job_scheduled job=A:q16 attempt=1 shards=1 queued=1
+t=15.500000 node=coord event=task_dispatch task=A:q16/a1/s0/g1.42 job=A:q16 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b31
+t=15.686295 node=coord event=shard_committed job=B:b2 attempt=1 shard=0 task=B:b2/a1/s0/g1.33 worker=worker-4 speculative=false committed=2 shards=6
+t=15.729114 node=coord event=gpu_op_terminal op_id=reduce/A:q12/a1/r0 state=SUCCEEDED
+t=15.729114 node=coord event=job_state job=A:q12 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=15.729114 node=coord event=job_succeeded job=A:q12 attempt=1 op_id=reduce/A:q12/a1/r0 count=64 checksum=6373c8bf39fa1822
+t=15.805080 node=coord event=gpu_release op_id=reduce/A:q12/a1/r0
+t=15.980081 node=coord event=gpu_released op_id=reduce/A:q12/a1/r0 via=hint
+t=15.987267 node=coord event=shard_committed job=B:b2 attempt=1 shard=5 task=B:b2/a1/s5/g1.38 worker=worker-1 speculative=false committed=3 shards=6
+t=16.000000 node=coord event=batch_assign_retry batch=worker-2/e1/b31 worker=worker-2 attempt=1
+t=16.220597 node=coord event=task_finished task=B:b2/a1/s0/g1.33 worker=worker-4 state=done outcome=committed
+t=16.220597 node=coord event=task_finished task=B:b2/a1/s1/g1.34 worker=worker-4 state=done outcome=failed
+t=16.220597 node=coord event=shard_requeued job=B:b2 attempt=1 shard=1 failures=1
+t=16.220597 node=coord event=task_finished task=B:b2/a1/s2/g1.35 worker=worker-4 state=done outcome=committed
+t=16.220597 node=coord event=batch_report batch=worker-4/e1/b25 worker=worker-4 tasks=3 failed=1
+t=16.300000 node=coord event=task_dispatch task=B:b2/a1/s1/g1.43 job=B:b2 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b32
+t=16.302178 node=coord event=batch_assigned batch=worker-4/e1/b32 worker=worker-4 tasks=1 accepted=1 hb_seq=28
+t=16.347703 node=coord event=task_finished task=B:b2/a1/s5/g1.38 worker=worker-1 state=done outcome=committed
+t=16.347703 node=coord event=batch_report batch=worker-1/e1/b27 worker=worker-1 tasks=1 failed=0
+t=16.400000 node=coord event=speculation_launch job=B:b2 attempt=1 shard=3 straggler=B:b2/a1/s3/g1.36 worker=worker-4 elapsed=3.1 straggler_after=3.0
+t=16.400000 node=coord event=task_dispatch task=B:b2/a1/s3/g1.44 job=B:b2 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b33
+t=16.400000 node=coord event=speculation_launch job=B:b2 attempt=1 shard=4 straggler=B:b2/a1/s4/g1.37 worker=worker-1 elapsed=3.1 straggler_after=3.0
+t=16.400000 node=coord event=task_dispatch task=B:b2/a1/s4/g1.45 job=B:b2 attempt=1 shard=4 worker=worker-1 epoch=1 speculative=true batch=worker-1/e1/b34
+t=16.406197 node=coord event=batch_assigned batch=worker-4/e1/b33 worker=worker-4 tasks=1 accepted=1 hb_seq=28
+t=16.444692 node=coord event=shard_committed job=A:q15 attempt=1 shard=0 task=A:q15/a1/s0/g1.40 worker=worker-1 speculative=false committed=1 shards=1
+t=16.444692 node=coord event=job_state job=A:q15 attempt=1 old=MAPPING new=REDUCING reason=null
+t=16.444692 node=coord event=task_finished task=A:q15/a1/s0/g1.40 worker=worker-1 state=revoked outcome=map_complete
+t=16.444692 node=coord event=reduce_submit job=A:q15 attempt=1 op_id=reduce/A:q15/a1/r0 inputs=1
+t=16.500000 node=coord event=batch_assign_retry batch=worker-2/e1/b31 worker=worker-2 attempt=2
+t=16.512885 node=coord event=batch_assigned batch=worker-2/e1/b31 worker=worker-2 tasks=1 accepted=1 hb_seq=22
+t=16.521430 node=coord event=gpu_submit op_id=reduce/A:q15/a1/r0 units=1 attempt=1 state=PENDING
+t=16.585187 node=coord event=job_accepted job=A:q17 shards=1 records=64 units=1
+t=16.585187 node=coord event=job_state job=A:q17 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=16.585187 node=coord event=attempt_start job=A:q17 attempt=1 max_attempts=3
+t=16.585187 node=coord event=job_scheduled job=A:q17 attempt=1 shards=1 queued=1
+t=16.600000 node=coord event=task_dispatch task=A:q17/a1/s0/g1.46 job=A:q17 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b35
+t=16.603155 node=coord event=batch_assigned batch=worker-1/e1/b35 worker=worker-1 tasks=1 accepted=1 hb_seq=29
+t=16.632856 node=coord event=task_finished task=A:q17/a1/s0/g1.46 worker=worker-1 state=lost outcome=missing_from_heartbeat
+t=16.632856 node=coord event=shard_requeued job=A:q17 attempt=1 shard=0 failures=0
+t=16.679770 node=coord event=gpu_op_terminal op_id=reduce/A:q13/a1/r0 state=SUCCEEDED
+t=16.679770 node=coord event=job_state job=A:q13 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=16.679770 node=coord event=job_succeeded job=A:q13 attempt=1 op_id=reduce/A:q13/a1/r0 count=64 checksum=80d6c3b8cd726648
+t=16.700000 node=coord event=task_dispatch task=A:q17/a1/s0/g1.47 job=A:q17 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b36
+t=16.807774 node=coord event=gpu_release op_id=reduce/A:q13/a1/r0
+t=16.832852 node=coord event=batch_assigned batch=worker-1/e1/b36 worker=worker-1 tasks=1 accepted=1 hb_seq=30
+t=16.866834 node=coord event=gpu_released op_id=reduce/A:q13/a1/r0 via=hint
+t=16.895112 node=coord event=shard_committed job=A:q7 attempt=1 shard=0 task=A:q7/a1/s0/g1.27 worker=worker-2 speculative=false committed=1 shards=1
+t=16.895112 node=coord event=job_state job=A:q7 attempt=1 old=MAPPING new=REDUCING reason=null
+t=16.895112 node=coord event=task_finished task=A:q7/a1/s0/g1.27 worker=worker-2 state=revoked outcome=map_complete
+t=16.895112 node=coord event=reduce_submit job=A:q7 attempt=1 op_id=reduce/A:q7/a1/r0 inputs=1
+t=16.900000 node=coord event=batch_assign_retry batch=worker-1/e1/b34 worker=worker-1 attempt=1
+t=16.983894 node=coord event=gpu_submit op_id=reduce/A:q7/a1/r0 units=1 attempt=1 state=PENDING
+t=17.006787 node=coord event=batch_assigned batch=worker-1/e1/b34 worker=worker-1 tasks=1 accepted=1 hb_seq=30
+t=17.237063 node=coord event=batch_report batch=worker-2/e1/b19 worker=worker-2 tasks=1 failed=0
+t=17.255527 node=coord event=shard_committed job=A:q10 attempt=1 shard=0 task=A:q10/a1/s0/g1.26 worker=worker-2 speculative=false committed=1 shards=1
+t=17.255527 node=coord event=job_state job=A:q10 attempt=1 old=MAPPING new=REDUCING reason=null
+t=17.255527 node=coord event=task_finished task=A:q10/a1/s0/g1.26 worker=worker-2 state=revoked outcome=map_complete
+t=17.255527 node=coord event=reduce_submit job=A:q10 attempt=1 op_id=reduce/A:q10/a1/r0 inputs=1
+t=17.352415 node=coord event=gpu_op_terminal op_id=reduce/A:q15/a1/r0 state=SUCCEEDED
+t=17.352415 node=coord event=job_state job=A:q15 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=17.352415 node=coord event=job_succeeded job=A:q15 attempt=1 op_id=reduce/A:q15/a1/r0 count=64 checksum=ba09453be71f15f2
+t=17.359798 node=coord event=gpu_release op_id=reduce/A:q15/a1/r0
+t=17.373523 node=coord event=shard_committed job=A:q14 attempt=1 shard=0 task=A:q14/a1/s0/g1.41 worker=worker-1 speculative=false committed=1 shards=1
+t=17.373523 node=coord event=job_state job=A:q14 attempt=1 old=MAPPING new=REDUCING reason=null
+t=17.373523 node=coord event=task_finished task=A:q14/a1/s0/g1.41 worker=worker-1 state=revoked outcome=map_complete
+t=17.373523 node=coord event=reduce_submit job=A:q14 attempt=1 op_id=reduce/A:q14/a1/r0 inputs=1
+t=17.393276 node=coord event=gpu_submit op_id=reduce/A:q14/a1/r0 units=1 attempt=1 state=PENDING
+t=17.448062 node=coord event=gpu_submit op_id=reduce/A:q10/a1/r0 units=1 attempt=1 state=PENDING
+t=17.566947 node=coord event=batch_report batch=worker-2/e1/b18 worker=worker-2 tasks=1 failed=0
+t=17.606406 node=coord event=batch_report batch=worker-1/e1/b29 worker=worker-1 tasks=1 failed=0
+t=17.607667 node=coord event=gpu_released op_id=reduce/A:q15/a1/r0 via=hint
+t=17.632843 node=coord event=batch_report batch=worker-1/e1/b35 worker=worker-1 tasks=1 failed=0
+t=17.658082 node=coord event=shard_committed job=B:b2 attempt=1 shard=1 task=B:b2/a1/s1/g1.43 worker=worker-4 speculative=false committed=4 shards=6
+t=17.680879 node=coord event=job_accepted job=A:q18 shards=1 records=64 units=1
+t=17.680879 node=coord event=job_state job=A:q18 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=17.680879 node=coord event=attempt_start job=A:q18 attempt=1 max_attempts=3
+t=17.680879 node=coord event=job_scheduled job=A:q18 attempt=1 shards=1 queued=1
+t=17.683657 node=coord event=batch_report batch=worker-1/e1/b30 worker=worker-1 tasks=1 failed=0
+t=17.700000 node=coord event=task_dispatch task=A:q18/a1/s0/g1.48 job=A:q18 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b37
+t=17.720468 node=coord event=batch_assigned batch=worker-2/e1/b37 worker=worker-2 tasks=1 accepted=1 hb_seq=29
+t=17.732653 node=coord event=shard_committed job=B:b2 attempt=1 shard=4 task=B:b2/a1/s4/g1.45 worker=worker-1 speculative=true committed=5 shards=6
+t=17.732653 node=coord event=task_abort_request job=B:b2 shard=4 worker=worker-3 tasks=1 reason=shard_committed
+t=17.815423 node=coord event=task_finished task=B:b2/a1/s1/g1.43 worker=worker-4 state=done outcome=committed
+t=17.815423 node=coord event=batch_report batch=worker-4/e1/b32 worker=worker-4 tasks=1 failed=0
+t=17.869992 node=coord event=gpu_op_terminal op_id=reduce/A:q7/a1/r0 state=SUCCEEDED
+t=17.869992 node=coord event=job_state job=A:q7 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=17.869992 node=coord event=job_succeeded job=A:q7 attempt=1 op_id=reduce/A:q7/a1/r0 count=64 checksum=8f84050e3665ab64
+t=17.890569 node=coord event=gpu_release op_id=reduce/A:q7/a1/r0
+t=18.019260 node=coord event=task_finished task=B:b2/a1/s4/g1.45 worker=worker-1 state=done outcome=committed
+t=18.019260 node=coord event=batch_report batch=worker-1/e1/b34 worker=worker-1 tasks=1 failed=0
+t=18.059288 node=coord event=gpu_released op_id=reduce/A:q7/a1/r0 via=hint
+t=18.120024 node=coord event=shard_committed job=A:q16 attempt=1 shard=0 task=A:q16/a1/s0/g1.42 worker=worker-2 speculative=false committed=1 shards=1
+t=18.120024 node=coord event=job_state job=A:q16 attempt=1 old=MAPPING new=REDUCING reason=null
+t=18.120024 node=coord event=task_finished task=A:q16/a1/s0/g1.42 worker=worker-2 state=revoked outcome=map_complete
+t=18.120024 node=coord event=reduce_submit job=A:q16 attempt=1 op_id=reduce/A:q16/a1/r0 inputs=1
+t=18.207928 node=coord event=task_finished task=B:b2/a1/s3/g1.44 worker=worker-4 state=done outcome=failed
+t=18.207928 node=coord event=batch_report batch=worker-4/e1/b33 worker=worker-4 tasks=1 failed=1
+t=18.236505 node=coord event=job_accepted job=A:q19 shards=1 records=64 units=1
+t=18.236505 node=coord event=job_state job=A:q19 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=18.236505 node=coord event=attempt_start job=A:q19 attempt=1 max_attempts=3
+t=18.236505 node=coord event=job_scheduled job=A:q19 attempt=1 shards=1 queued=1
+t=18.275830 node=coord event=gpu_submit op_id=reduce/A:q16/a1/r0 units=1 attempt=1 state=PENDING
+t=18.300000 node=coord event=task_dispatch task=A:q19/a1/s0/g1.49 job=A:q19 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b38
+t=18.345972 node=coord event=gpu_op_terminal op_id=reduce/A:q10/a1/r0 state=FAILED
+t=18.345972 node=coord event=reduce_failed job=A:q10 attempt=1 op_id=reduce/A:q10/a1/r0 tries=1 max_tries=3
+t=18.351755 node=coord event=batch_report batch=worker-2/e1/b31 worker=worker-2 tasks=1 failed=0
+t=18.366752 node=coord event=gpu_release op_id=reduce/A:q10/a1/r0
+t=18.398309 node=coord event=job_accepted job=B:b3 shards=6 records=128 units=1
+t=18.398309 node=coord event=job_state job=B:b3 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=18.398309 node=coord event=attempt_start job=B:b3 attempt=1 max_attempts=3
+t=18.398309 node=coord event=job_scheduled job=B:b3 attempt=1 shards=6 queued=6
+t=18.400000 node=coord event=task_dispatch task=B:b3/a1/s0/g1.50 job=B:b3 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b39
+t=18.400000 node=coord event=task_dispatch task=B:b3/a1/s1/g1.51 job=B:b3 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b39
+t=18.400000 node=coord event=task_dispatch task=B:b3/a1/s2/g1.52 job=B:b3 attempt=1 shard=2 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b40
+t=18.400000 node=coord event=task_dispatch task=B:b3/a1/s3/g1.53 job=B:b3 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b40
+t=18.400000 node=coord event=task_dispatch task=B:b3/a1/s4/g1.54 job=B:b3 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b41
+t=18.400000 node=coord event=task_dispatch task=B:b3/a1/s5/g1.55 job=B:b3 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b41
+t=18.412850 node=coord event=batch_assigned batch=worker-2/e1/b40 worker=worker-2 tasks=2 accepted=2 hb_seq=31
+t=18.415561 node=coord event=batch_assigned batch=worker-1/e1/b39 worker=worker-1 tasks=2 accepted=2 hb_seq=32
+t=18.419502 node=coord event=batch_assigned batch=worker-4/e1/b41 worker=worker-4 tasks=2 accepted=2 hb_seq=32
+t=18.452595 node=coord event=gpu_released op_id=reduce/A:q10/a1/r0 via=hint
+t=18.452595 node=coord event=reduce_submit job=A:q10 attempt=1 op_id=reduce/A:q10/a1/r1 inputs=1
+t=18.456444 node=coord event=gpu_submit op_id=reduce/A:q10/a1/r1 units=1 attempt=1 state=PENDING
+t=18.506470 node=coord event=batch_assigned batch=worker-4/e1/b38 worker=worker-4 tasks=1 accepted=1 hb_seq=32
+t=18.634582 node=coord event=shard_committed job=A:q17 attempt=1 shard=0 task=A:q17/a1/s0/g1.47 worker=worker-1 speculative=false committed=1 shards=1
+t=18.634582 node=coord event=job_state job=A:q17 attempt=1 old=MAPPING new=REDUCING reason=null
+t=18.634582 node=coord event=task_finished task=A:q17/a1/s0/g1.47 worker=worker-1 state=revoked outcome=map_complete
+t=18.634582 node=coord event=reduce_submit job=A:q17 attempt=1 op_id=reduce/A:q17/a1/r0 inputs=1
+t=18.648073 node=coord event=gpu_submit_retry op_id=reduce/A:q17/a1/r0 code=CAPACITY attempt=1 backoff=0.25
+t=18.877767 node=coord event=gpu_op_terminal op_id=reduce/A:q14/a1/r0 state=SUCCEEDED
+t=18.877767 node=coord event=job_state job=A:q14 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=18.877767 node=coord event=job_succeeded job=A:q14 attempt=1 op_id=reduce/A:q14/a1/r0 count=64 checksum=9f8374661c2831a9
+t=18.902651 node=coord event=gpu_release op_id=reduce/A:q14/a1/r0
+t=18.910951 node=coord event=gpu_submit op_id=reduce/A:q17/a1/r0 units=1 attempt=2 state=PENDING
+t=19.021801 node=coord event=batch_report batch=worker-1/e1/b36 worker=worker-1 tasks=1 failed=0
+t=19.026486 node=coord event=gpu_released op_id=reduce/A:q14/a1/r0 via=hint
+t=19.413101 node=coord event=job_accepted job=A:q20 shards=1 records=64 units=1
+t=19.413101 node=coord event=job_state job=A:q20 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=19.413101 node=coord event=attempt_start job=A:q20 attempt=1 max_attempts=3
+t=19.413101 node=coord event=job_scheduled job=A:q20 attempt=1 shards=1 queued=1
+t=19.450417 node=coord event=gpu_op_terminal op_id=reduce/A:q16/a1/r0 state=FAILED
+t=19.450417 node=coord event=reduce_failed job=A:q16 attempt=1 op_id=reduce/A:q16/a1/r0 tries=1 max_tries=3
+t=19.455595 node=coord event=gpu_release op_id=reduce/A:q16/a1/r0
+t=19.481157 node=coord event=gpu_op_terminal op_id=reduce/A:q10/a1/r1 state=FAILED
+t=19.481157 node=coord event=reduce_failed job=A:q10 attempt=1 op_id=reduce/A:q10/a1/r1 tries=2 max_tries=3
+t=19.488471 node=coord event=gpu_release op_id=reduce/A:q10/a1/r1
+t=19.500000 node=coord event=task_dispatch task=A:q20/a1/s0/g1.56 job=A:q20 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b42
+t=19.620172 node=coord event=batch_assigned batch=worker-1/e1/b42 worker=worker-1 tasks=1 accepted=1 hb_seq=35
+t=19.656450 node=coord event=gpu_released op_id=reduce/A:q16/a1/r0 via=hint
+t=19.656450 node=coord event=reduce_submit job=A:q16 attempt=1 op_id=reduce/A:q16/a1/r1 inputs=1
+t=19.676925 node=coord event=gpu_submit op_id=reduce/A:q16/a1/r1 units=1 attempt=1 state=PENDING
+t=19.739733 node=coord event=gpu_released op_id=reduce/A:q10/a1/r1 via=hint
+t=19.739733 node=coord event=reduce_submit job=A:q10 attempt=1 op_id=reduce/A:q10/a1/r2 inputs=1
+t=19.748115 node=coord event=shard_committed job=B:b3 attempt=1 shard=5 task=B:b3/a1/s5/g1.55 worker=worker-4 speculative=false committed=1 shards=6
+t=19.754926 node=coord event=gpu_submit op_id=reduce/A:q10/a1/r2 units=1 attempt=1 state=PENDING
+t=19.870554 node=coord event=shard_committed job=B:b3 attempt=1 shard=3 task=B:b3/a1/s3/g1.53 worker=worker-2 speculative=false committed=2 shards=6
+t=19.984951 node=coord event=shard_committed job=B:b3 attempt=1 shard=2 task=B:b3/a1/s2/g1.52 worker=worker-2 speculative=false committed=3 shards=6
+t=20.034061 node=coord event=gpu_op_terminal op_id=reduce/A:q17/a1/r0 state=SUCCEEDED
+t=20.034061 node=coord event=job_state job=A:q17 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=20.034061 node=coord event=job_succeeded job=A:q17 attempt=1 op_id=reduce/A:q17/a1/r0 count=64 checksum=fbe6002aa5b371ad
+t=20.040880 node=coord event=gpu_release op_id=reduce/A:q17/a1/r0
+t=20.165817 node=coord event=shard_committed job=B:b3 attempt=1 shard=0 task=B:b3/a1/s0/g1.50 worker=worker-1 speculative=false committed=4 shards=6
+t=20.209826 node=coord event=gpu_released op_id=reduce/A:q17/a1/r0 via=hint
+t=20.271501 node=coord event=shard_committed job=B:b3 attempt=1 shard=4 task=B:b3/a1/s4/g1.54 worker=worker-4 speculative=false committed=5 shards=6
+t=20.405817 node=coord event=task_finished task=A:q19/a1/s0/g1.49 worker=worker-4 state=done outcome=failed
+t=20.405817 node=coord event=shard_requeued job=A:q19 attempt=1 shard=0 failures=1
+t=20.405817 node=coord event=batch_report batch=worker-4/e1/b38 worker=worker-4 tasks=1 failed=1
+t=20.500000 node=coord event=task_dispatch task=A:q19/a1/s0/g1.57 job=A:q19 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b43
+t=20.506937 node=coord event=batch_assigned batch=worker-3/e1/b43 worker=worker-3 tasks=1 accepted=1 hb_seq=36
+t=20.523410 node=coord event=task_finished task=B:b3/a1/s2/g1.52 worker=worker-2 state=done outcome=committed
+t=20.523410 node=coord event=task_finished task=B:b3/a1/s3/g1.53 worker=worker-2 state=done outcome=committed
+t=20.523410 node=coord event=batch_report batch=worker-2/e1/b40 worker=worker-2 tasks=2 failed=0
+t=20.659239 node=coord event=task_finished task=B:b3/a1/s4/g1.54 worker=worker-4 state=done outcome=committed
+t=20.659239 node=coord event=task_finished task=B:b3/a1/s5/g1.55 worker=worker-4 state=done outcome=committed
+t=20.659239 node=coord event=batch_report batch=worker-4/e1/b41 worker=worker-4 tasks=2 failed=0
+t=20.777695 node=coord event=gpu_op_terminal op_id=reduce/A:q16/a1/r1 state=FAILED
+t=20.777695 node=coord event=reduce_failed job=A:q16 attempt=1 op_id=reduce/A:q16/a1/r1 tries=2 max_tries=3
+t=20.906433 node=coord event=job_accepted job=A:q22 shards=1 records=64 units=1
+t=20.906433 node=coord event=job_state job=A:q22 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=20.906433 node=coord event=attempt_start job=A:q22 attempt=1 max_attempts=3
+t=20.906433 node=coord event=job_scheduled job=A:q22 attempt=1 shards=1 queued=1
+t=20.967150 node=coord event=gpu_op_terminal op_id=reduce/A:q10/a1/r2 state=SUCCEEDED
+t=20.967150 node=coord event=job_state job=A:q10 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=20.967150 node=coord event=job_succeeded job=A:q10 attempt=1 op_id=reduce/A:q10/a1/r2 count=64 checksum=b9eb3f33039bdc26
+t=20.975437 node=coord event=gpu_release op_id=reduce/A:q16/a1/r1
+t=21.000000 node=coord event=task_dispatch task=A:q22/a1/s0/g1.58 job=A:q22 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b44
+t=21.015988 node=coord event=batch_assigned batch=worker-4/e1/b44 worker=worker-4 tasks=1 accepted=1 hb_seq=36
+t=21.113554 node=coord event=gpu_released op_id=reduce/A:q16/a1/r1 via=hint
+t=21.113554 node=coord event=reduce_submit job=A:q16 attempt=1 op_id=reduce/A:q16/a1/r2 inputs=1
+t=21.118025 node=coord event=gpu_submit op_id=reduce/A:q16/a1/r2 units=1 attempt=1 state=PENDING
+t=21.155271 node=coord event=gpu_release op_id=reduce/A:q10/a1/r2
+t=21.293737 node=coord event=gpu_released op_id=reduce/A:q10/a1/r2 via=hint
+t=21.400000 node=coord event=speculation_launch job=B:b3 attempt=1 shard=1 straggler=B:b3/a1/s1/g1.51 worker=worker-2 elapsed=3.0 straggler_after=3.0
+t=21.400000 node=coord event=task_dispatch task=B:b3/a1/s1/g1.59 job=B:b3 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b45
+t=21.503540 node=coord event=shard_committed job=A:q20 attempt=1 shard=0 task=A:q20/a1/s0/g1.56 worker=worker-1 speculative=false committed=1 shards=1
+t=21.503540 node=coord event=job_state job=A:q20 attempt=1 old=MAPPING new=REDUCING reason=null
+t=21.503540 node=coord event=task_finished task=A:q20/a1/s0/g1.56 worker=worker-1 state=revoked outcome=map_complete
+t=21.503540 node=coord event=reduce_submit job=A:q20 attempt=1 op_id=reduce/A:q20/a1/r0 inputs=1
+t=21.515472 node=coord event=gpu_submit op_id=reduce/A:q20/a1/r0 units=1 attempt=1 state=PENDING
+t=21.636879 node=coord event=shard_committed job=A:q18 attempt=1 shard=0 task=A:q18/a1/s0/g1.48 worker=worker-2 speculative=false committed=1 shards=1
+t=21.636879 node=coord event=job_state job=A:q18 attempt=1 old=MAPPING new=REDUCING reason=null
+t=21.636879 node=coord event=task_finished task=A:q18/a1/s0/g1.48 worker=worker-2 state=revoked outcome=map_complete
+t=21.636879 node=coord event=reduce_submit job=A:q18 attempt=1 op_id=reduce/A:q18/a1/r0 inputs=1
+t=21.716244 node=coord event=batch_report batch=worker-1/e1/b42 worker=worker-1 tasks=1 failed=0
+t=21.723168 node=coord event=gpu_submit op_id=reduce/A:q18/a1/r0 units=1 attempt=1 state=PENDING
+t=21.740870 node=coord event=batch_assigned batch=worker-2/e1/b45 worker=worker-2 tasks=1 accepted=1 hb_seq=37
+t=21.792583 node=coord event=batch_report batch=worker-2/e1/b37 worker=worker-2 tasks=1 failed=0
+t=21.976527 node=coord event=job_accepted job=A:q23 shards=1 records=64 units=1
+t=21.976527 node=coord event=job_state job=A:q23 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=21.976527 node=coord event=attempt_start job=A:q23 attempt=1 max_attempts=3
+t=21.976527 node=coord event=job_scheduled job=A:q23 attempt=1 shards=1 queued=1
+t=22.000000 node=coord event=task_dispatch task=A:q23/a1/s0/g1.60 job=A:q23 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b46
+t=22.074379 node=coord event=batch_assigned batch=worker-2/e1/b46 worker=worker-2 tasks=1 accepted=1 hb_seq=37
+t=22.370795 node=coord event=gpu_op_terminal op_id=reduce/A:q16/a1/r2 state=FAILED
+t=22.370795 node=coord event=reduce_failed job=A:q16 attempt=1 op_id=reduce/A:q16/a1/r2 tries=3 max_tries=3
+t=22.370795 node=coord event=job_state job=A:q16 attempt=1 old=REDUCING new=FAILED reason=reduce_failures
+t=22.379620 node=coord event=gpu_release op_id=reduce/A:q16/a1/r2
+t=22.594490 node=coord event=shard_committed job=B:b3 attempt=1 shard=1 task=B:b3/a1/s1/g1.51 worker=worker-1 speculative=false committed=6 shards=6
+t=22.594490 node=coord event=task_abort_request job=B:b3 shard=1 worker=worker-2 tasks=1 reason=shard_committed
+t=22.594490 node=coord event=job_state job=B:b3 attempt=1 old=MAPPING new=REDUCING reason=null
+t=22.594490 node=coord event=task_finished task=B:b3/a1/s0/g1.50 worker=worker-1 state=revoked outcome=map_complete
+t=22.594490 node=coord event=task_finished task=B:b3/a1/s1/g1.51 worker=worker-1 state=revoked outcome=map_complete
+t=22.594490 node=coord event=task_finished task=B:b3/a1/s1/g1.59 worker=worker-2 state=revoked outcome=map_complete
+t=22.594490 node=coord event=reduce_submit job=B:b3 attempt=1 op_id=reduce/B:b3/a1/r0 inputs=6
+t=22.599721 node=coord event=gpu_submit op_id=reduce/B:b3/a1/r0 units=1 attempt=1 state=PENDING
+t=22.656523 node=coord event=task_finished task=A:q22/a1/s0/g1.58 worker=worker-4 state=done outcome=failed
+t=22.656523 node=coord event=shard_requeued job=A:q22 attempt=1 shard=0 failures=1
+t=22.656523 node=coord event=batch_report batch=worker-4/e1/b44 worker=worker-4 tasks=1 failed=1
+t=22.669330 node=coord event=job_accepted job=A:q21 shards=1 records=64 units=1
+t=22.669330 node=coord event=job_state job=A:q21 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=22.669330 node=coord event=attempt_start job=A:q21 attempt=1 max_attempts=3
+t=22.669330 node=coord event=job_scheduled job=A:q21 attempt=1 shards=1 queued=1
+t=22.700000 node=coord event=task_dispatch task=A:q22/a1/s0/g1.61 job=A:q22 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b47
+t=22.700000 node=coord event=task_dispatch task=A:q21/a1/s0/g1.62 job=A:q21 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b47
+t=22.713878 node=coord event=batch_assigned batch=worker-1/e1/b47 worker=worker-1 tasks=2 accepted=2 hb_seq=40
+t=22.752952 node=coord event=gpu_op_terminal op_id=reduce/A:q18/a1/r0 state=SUCCEEDED
+t=22.752952 node=coord event=job_state job=A:q18 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=22.752952 node=coord event=job_succeeded job=A:q18 attempt=1 op_id=reduce/A:q18/a1/r0 count=64 checksum=2815e62c7af8cdc4
+t=22.760691 node=coord event=gpu_release op_id=reduce/A:q18/a1/r0
+t=22.803934 node=coord event=job_accepted job=A:q24 shards=1 records=64 units=1
+t=22.803934 node=coord event=job_state job=A:q24 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=22.803934 node=coord event=attempt_start job=A:q24 attempt=1 max_attempts=3
+t=22.803934 node=coord event=job_scheduled job=A:q24 attempt=1 shards=1 queued=1
+t=22.804739 node=coord event=gpu_released op_id=reduce/A:q16/a1/r2 via=hint
+t=22.867682 node=coord event=gpu_released op_id=reduce/A:q18/a1/r0 via=hint
+t=22.870246 node=coord event=gpu_op_terminal op_id=reduce/A:q20/a1/r0 state=SUCCEEDED
+t=22.870246 node=coord event=job_state job=A:q20 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=22.870246 node=coord event=job_succeeded job=A:q20 attempt=1 op_id=reduce/A:q20/a1/r0 count=64 checksum=e174f0b61950a204
+t=22.879318 node=coord event=gpu_release op_id=reduce/A:q20/a1/r0
+t=22.900000 node=coord event=task_dispatch task=A:q24/a1/s0/g1.63 job=A:q24 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b48
+t=22.914715 node=coord event=batch_assigned batch=worker-4/e1/b48 worker=worker-4 tasks=1 accepted=1 hb_seq=39
+t=23.100245 node=coord event=shard_committed job=A:q19 attempt=1 shard=0 task=A:q19/a1/s0/g1.57 worker=worker-3 speculative=false committed=1 shards=1
+t=23.100245 node=coord event=job_state job=A:q19 attempt=1 old=MAPPING new=REDUCING reason=null
+t=23.100245 node=coord event=task_finished task=A:q19/a1/s0/g1.57 worker=worker-3 state=revoked outcome=map_complete
+t=23.100245 node=coord event=reduce_submit job=A:q19 attempt=1 op_id=reduce/A:q19/a1/r0 inputs=1
+t=23.118853 node=coord event=gpu_submit op_id=reduce/A:q19/a1/r0 units=1 attempt=1 state=PENDING
+t=23.138003 node=coord event=gpu_released op_id=reduce/A:q20/a1/r0 via=hint
+t=23.399709 node=coord event=batch_report batch=worker-3/e1/b43 worker=worker-3 tasks=1 failed=0
+t=23.670349 node=coord event=batch_report batch=worker-2/e1/b45 worker=worker-2 tasks=1 failed=0
+t=23.783539 node=coord event=shard_committed job=A:q23 attempt=1 shard=0 task=A:q23/a1/s0/g1.60 worker=worker-2 speculative=false committed=1 shards=1
+t=23.783539 node=coord event=job_state job=A:q23 attempt=1 old=MAPPING new=REDUCING reason=null
+t=23.783539 node=coord event=task_finished task=A:q23/a1/s0/g1.60 worker=worker-2 state=revoked outcome=map_complete
+t=23.783539 node=coord event=reduce_submit job=A:q23 attempt=1 op_id=reduce/A:q23/a1/r0 inputs=1
+t=23.811659 node=coord event=batch_report batch=worker-1/e1/b39 worker=worker-1 tasks=2 failed=0
+t=23.841578 node=coord event=job_accepted job=A:q25 shards=1 records=64 units=1
+t=23.841578 node=coord event=job_state job=A:q25 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=23.841578 node=coord event=attempt_start job=A:q25 attempt=1 max_attempts=3
+t=23.841578 node=coord event=job_scheduled job=A:q25 attempt=1 shards=1 queued=1
+t=23.900000 node=coord event=task_dispatch task=A:q25/a1/s0/g1.64 job=A:q25 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b49
+t=23.968327 node=coord event=gpu_op_terminal op_id=reduce/B:b3/a1/r0 state=SUCCEEDED
+t=23.968327 node=coord event=job_state job=B:b3 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=23.968327 node=coord event=job_succeeded job=B:b3 attempt=1 op_id=reduce/B:b3/a1/r0 count=768 checksum=b62da95402141c7a
+t=23.973952 node=coord event=gpu_release op_id=reduce/B:b3/a1/r0
+t=24.007598 node=coord event=batch_assigned batch=worker-2/e1/b49 worker=worker-2 tasks=1 accepted=1 hb_seq=41
+t=24.013626 node=coord event=job_accepted job=B:b4 shards=6 records=128 units=1
+t=24.013626 node=coord event=job_state job=B:b4 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=24.013626 node=coord event=attempt_start job=B:b4 attempt=1 max_attempts=3
+t=24.013626 node=coord event=job_scheduled job=B:b4 attempt=1 shards=6 queued=6
+t=24.023317 node=coord event=batch_report batch=worker-2/e1/b46 worker=worker-2 tasks=1 failed=0
+t=24.036693 node=coord event=gpu_released op_id=reduce/B:b3/a1/r0 via=hint
+t=24.100000 node=coord event=task_dispatch task=B:b4/a1/s0/g1.65 job=B:b4 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b50
+t=24.100000 node=coord event=task_dispatch task=B:b4/a1/s1/g1.66 job=B:b4 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b50
+t=24.100000 node=coord event=task_dispatch task=B:b4/a1/s2/g1.67 job=B:b4 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b51
+t=24.100000 node=coord event=task_dispatch task=B:b4/a1/s3/g1.68 job=B:b4 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b51
+t=24.100000 node=coord event=task_dispatch task=B:b4/a1/s4/g1.69 job=B:b4 attempt=1 shard=4 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b52
+t=24.100000 node=coord event=task_dispatch task=B:b4/a1/s5/g1.70 job=B:b4 attempt=1 shard=5 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b53
+t=24.118712 node=coord event=batch_assigned batch=worker-3/e1/b53 worker=worker-3 tasks=1 accepted=1 hb_seq=43
+t=24.122203 node=coord event=batch_assigned batch=worker-2/e1/b50 worker=worker-2 tasks=2 accepted=2 hb_seq=41
+t=24.194767 node=coord event=batch_assigned batch=worker-1/e1/b52 worker=worker-1 tasks=1 accepted=1 hb_seq=43
+t=24.244454 node=coord event=shard_committed job=A:q22 attempt=1 shard=0 task=A:q22/a1/s0/g1.61 worker=worker-1 speculative=false committed=1 shards=1
+t=24.244454 node=coord event=job_state job=A:q22 attempt=1 old=MAPPING new=REDUCING reason=null
+t=24.244454 node=coord event=task_finished task=A:q22/a1/s0/g1.61 worker=worker-1 state=revoked outcome=map_complete
+t=24.244454 node=coord event=reduce_submit job=A:q22 attempt=1 op_id=reduce/A:q22/a1/r0 inputs=1
+t=24.259514 node=coord event=gpu_submit op_id=reduce/A:q22/a1/r0 units=1 attempt=1 state=PENDING
+t=24.271152 node=coord event=batch_assigned batch=worker-4/e1/b51 worker=worker-4 tasks=2 accepted=2 hb_seq=42
+t=24.400551 node=coord event=gpu_op_terminal op_id=reduce/A:q19/a1/r0 state=FAILED
+t=24.400551 node=coord event=reduce_failed job=A:q19 attempt=1 op_id=reduce/A:q19/a1/r0 tries=1 max_tries=3
+t=24.426546 node=coord event=gpu_release op_id=reduce/A:q19/a1/r0
+t=24.475147 node=coord event=shard_committed job=A:q21 attempt=1 shard=0 task=A:q21/a1/s0/g1.62 worker=worker-1 speculative=false committed=1 shards=1
+t=24.475147 node=coord event=job_state job=A:q21 attempt=1 old=MAPPING new=REDUCING reason=null
+t=24.475147 node=coord event=task_finished task=A:q21/a1/s0/g1.62 worker=worker-1 state=revoked outcome=map_complete
+t=24.475147 node=coord event=reduce_submit job=A:q21 attempt=1 op_id=reduce/A:q21/a1/r0 inputs=1
+t=24.491316 node=coord event=gpu_submit op_id=reduce/A:q21/a1/r0 units=1 attempt=1 state=PENDING
+t=24.546051 node=coord event=job_accepted job=A:q26 shards=1 records=64 units=1
+t=24.546051 node=coord event=job_state job=A:q26 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=24.546051 node=coord event=attempt_start job=A:q26 attempt=1 max_attempts=3
+t=24.546051 node=coord event=job_scheduled job=A:q26 attempt=1 shards=1 queued=1
+t=24.596910 node=coord event=gpu_released op_id=reduce/A:q19/a1/r0 via=hint
+t=24.596910 node=coord event=reduce_submit job=A:q19 attempt=1 op_id=reduce/A:q19/a1/r1 inputs=1
+t=24.600000 node=coord event=task_dispatch task=A:q26/a1/s0/g1.71 job=A:q26 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b54
+t=24.605812 node=coord event=gpu_submit op_id=reduce/A:q19/a1/r1 units=1 attempt=1 state=PENDING
+t=24.606240 node=coord event=batch_assigned batch=worker-1/e1/b54 worker=worker-1 tasks=1 accepted=1 hb_seq=44
+t=24.783539 node=coord event=gpu_submit_unknown op_id=reduce/A:q23/a1/r0 code=TIMEOUT attempt=1
+t=24.799872 node=coord event=batch_report batch=worker-1/e1/b47 worker=worker-1 tasks=2 failed=0
+t=25.007424 node=coord event=task_finished task=A:q24/a1/s0/g1.63 worker=worker-4 state=done outcome=failed
+t=25.007424 node=coord event=shard_requeued job=A:q24 attempt=1 shard=0 failures=1
+t=25.007424 node=coord event=batch_report batch=worker-4/e1/b48 worker=worker-4 tasks=1 failed=1
+t=25.100000 node=coord event=task_dispatch task=A:q24/a1/s0/g1.72 job=A:q24 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b55
+t=25.111932 node=coord event=batch_assigned batch=worker-1/e1/b55 worker=worker-1 tasks=1 accepted=1 hb_seq=45
+t=25.401390 node=coord event=job_accepted job=A:q27 shards=1 records=64 units=1
+t=25.401390 node=coord event=job_state job=A:q27 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=25.401390 node=coord event=attempt_start job=A:q27 attempt=1 max_attempts=3
+t=25.401390 node=coord event=job_scheduled job=A:q27 attempt=1 shards=1 queued=1
+t=25.423163 node=coord event=gpu_op_terminal op_id=reduce/A:q22/a1/r0 state=SUCCEEDED
+t=25.423163 node=coord event=job_state job=A:q22 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=25.423163 node=coord event=job_succeeded job=A:q22 attempt=1 op_id=reduce/A:q22/a1/r0 count=64 checksum=fecea52d58dc33c4
+t=25.500000 node=coord event=task_dispatch task=A:q27/a1/s0/g1.73 job=A:q27 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b56
+t=25.518652 node=coord event=gpu_release op_id=reduce/A:q22/a1/r0
+t=25.640283 node=coord event=gpu_op_terminal op_id=reduce/A:q21/a1/r0 state=SUCCEEDED
+t=25.640283 node=coord event=job_state job=A:q21 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=25.640283 node=coord event=job_succeeded job=A:q21 attempt=1 op_id=reduce/A:q21/a1/r0 count=64 checksum=c16e5487926656f4
+t=25.673364 node=coord event=gpu_released op_id=reduce/A:q22/a1/r0 via=hint
+t=25.722980 node=coord event=batch_assigned batch=worker-4/e1/b56 worker=worker-4 tasks=1 accepted=1 hb_seq=44
+t=25.743969 node=coord event=gpu_op_terminal op_id=reduce/A:q19/a1/r1 state=SUCCEEDED
+t=25.743969 node=coord event=job_state job=A:q19 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=25.743969 node=coord event=job_succeeded job=A:q19 attempt=1 op_id=reduce/A:q19/a1/r1 count=64 checksum=f39ce0b104342953
+t=25.752992 node=coord event=gpu_release op_id=reduce/A:q19/a1/r1
+t=25.758832 node=coord event=gpu_release op_id=reduce/A:q21/a1/r0
+t=25.781367 node=coord event=gpu_released op_id=reduce/A:q21/a1/r0 via=hint
+t=25.821291 node=coord event=shard_committed job=A:q25 attempt=1 shard=0 task=A:q25/a1/s0/g1.64 worker=worker-2 speculative=false committed=1 shards=1
+t=25.821291 node=coord event=job_state job=A:q25 attempt=1 old=MAPPING new=REDUCING reason=null
+t=25.821291 node=coord event=task_finished task=A:q25/a1/s0/g1.64 worker=worker-2 state=revoked outcome=map_complete
+t=25.821291 node=coord event=reduce_submit job=A:q25 attempt=1 op_id=reduce/A:q25/a1/r0 inputs=1
+t=25.822939 node=coord event=gpu_released op_id=reduce/A:q19/a1/r1 via=hint
+t=25.824491 node=coord event=gpu_submit op_id=reduce/A:q25/a1/r0 units=1 attempt=1 state=PENDING
+t=25.880974 node=coord event=shard_committed job=B:b4 attempt=1 shard=4 task=B:b4/a1/s4/g1.69 worker=worker-1 speculative=false committed=1 shards=6
+t=26.066665 node=coord event=shard_committed job=A:q26 attempt=1 shard=0 task=A:q26/a1/s0/g1.71 worker=worker-1 speculative=false committed=1 shards=1
+t=26.066665 node=coord event=job_state job=A:q26 attempt=1 old=MAPPING new=REDUCING reason=null
+t=26.066665 node=coord event=task_finished task=A:q26/a1/s0/g1.71 worker=worker-1 state=revoked outcome=map_complete
+t=26.066665 node=coord event=reduce_submit job=A:q26 attempt=1 op_id=reduce/A:q26/a1/r0 inputs=1
+t=26.168590 node=coord event=task_finished task=B:b4/a1/s4/g1.69 worker=worker-1 state=done outcome=committed
+t=26.168590 node=coord event=batch_report batch=worker-1/e1/b52 worker=worker-1 tasks=1 failed=0
+t=26.190049 node=coord event=shard_committed job=B:b4 attempt=1 shard=1 task=B:b4/a1/s1/g1.66 worker=worker-2 speculative=false committed=2 shards=6
+t=26.293037 node=coord event=batch_report batch=worker-2/e1/b49 worker=worker-2 tasks=1 failed=0
+t=26.313326 node=coord event=task_finished task=B:b4/a1/s2/g1.67 worker=worker-4 state=done outcome=failed
+t=26.313326 node=coord event=shard_requeued job=B:b4 attempt=1 shard=2 failures=1
+t=26.313326 node=coord event=task_finished task=B:b4/a1/s3/g1.68 worker=worker-4 state=done outcome=failed
+t=26.313326 node=coord event=shard_requeued job=B:b4 attempt=1 shard=3 failures=1
+t=26.313326 node=coord event=batch_report batch=worker-4/e1/b51 worker=worker-4 tasks=2 failed=2
+t=26.400000 node=coord event=task_dispatch task=B:b4/a1/s2/g1.74 job=B:b4 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b57
+t=26.400000 node=coord event=task_dispatch task=B:b4/a1/s3/g1.75 job=B:b4 attempt=1 shard=3 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b57
+t=26.461366 node=coord event=job_accepted job=A:q28 shards=1 records=64 units=1
+t=26.461366 node=coord event=job_state job=A:q28 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=26.461366 node=coord event=attempt_start job=A:q28 attempt=1 max_attempts=3
+t=26.461366 node=coord event=job_scheduled job=A:q28 attempt=1 shards=1 queued=1
+t=26.496692 node=coord event=batch_report batch=worker-1/e1/b54 worker=worker-1 tasks=1 failed=0
+t=26.500000 node=coord event=task_dispatch task=A:q28/a1/s0/g1.76 job=A:q28 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b58
+t=26.506403 node=coord event=batch_assigned batch=worker-4/e1/b58 worker=worker-4 tasks=1 accepted=1 hb_seq=46
+t=26.557902 node=coord event=batch_assigned batch=worker-1/e1/b57 worker=worker-1 tasks=2 accepted=2 hb_seq=48
+t=26.615890 node=coord event=batch_report batch=worker-4/e1/b48 worker=worker-4 tasks=1 failed=0
+t=26.986650 node=coord event=gpu_op_terminal op_id=reduce/A:q25/a1/r0 state=SUCCEEDED
+t=26.986650 node=coord event=job_state job=A:q25 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=26.986650 node=coord event=job_succeeded job=A:q25 attempt=1 op_id=reduce/A:q25/a1/r0 count=64 checksum=504daa8217f2fd34
+t=27.014254 node=coord event=gpu_release op_id=reduce/A:q25/a1/r0
+t=27.066665 node=coord event=gpu_submit_unknown op_id=reduce/A:q26/a1/r0 code=TIMEOUT attempt=1
+t=27.076076 node=coord event=gpu_submit_confirmed op_id=reduce/A:q26/a1/r0 state=RUNNING
+t=27.133888 node=coord event=shard_committed job=A:q27 attempt=1 shard=0 task=A:q27/a1/s0/g1.73 worker=worker-4 speculative=false committed=1 shards=1
+t=27.133888 node=coord event=job_state job=A:q27 attempt=1 old=MAPPING new=REDUCING reason=null
+t=27.133888 node=coord event=task_finished task=A:q27/a1/s0/g1.73 worker=worker-4 state=revoked outcome=map_complete
+t=27.133888 node=coord event=reduce_submit job=A:q27 attempt=1 op_id=reduce/A:q27/a1/r0 inputs=1
+t=27.142968 node=coord event=gpu_released op_id=reduce/A:q25/a1/r0 via=hint
+t=27.168547 node=coord event=gpu_submit op_id=reduce/A:q27/a1/r0 units=1 attempt=1 state=PENDING
+t=27.339336 node=coord event=gpu_op_terminal op_id=reduce/A:q26/a1/r0 state=SUCCEEDED
+t=27.339336 node=coord event=job_state job=A:q26 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=27.339336 node=coord event=job_succeeded job=A:q26 attempt=1 op_id=reduce/A:q26/a1/r0 count=64 checksum=80188548a55e85d5
+t=27.465641 node=coord event=gpu_release op_id=reduce/A:q26/a1/r0
+t=27.474752 node=coord event=gpu_released op_id=reduce/A:q26/a1/r0 via=status
+t=27.502147 node=coord event=job_accepted job=A:q29 shards=1 records=64 units=1
+t=27.502147 node=coord event=job_state job=A:q29 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=27.502147 node=coord event=attempt_start job=A:q29 attempt=1 max_attempts=3
+t=27.502147 node=coord event=job_scheduled job=A:q29 attempt=1 shards=1 queued=1
+t=27.600000 node=coord event=task_dispatch task=A:q29/a1/s0/g1.77 job=A:q29 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b59
+t=27.605807 node=coord event=batch_assigned batch=worker-4/e1/b59 worker=worker-4 tasks=1 accepted=1 hb_seq=48
+t=27.673790 node=coord event=batch_report batch=worker-4/e1/b56 worker=worker-4 tasks=1 failed=0
+t=27.924765 node=coord event=shard_committed job=A:q28 attempt=1 shard=0 task=A:q28/a1/s0/g1.76 worker=worker-4 speculative=false committed=1 shards=1
+t=27.924765 node=coord event=job_state job=A:q28 attempt=1 old=MAPPING new=REDUCING reason=null
+t=27.924765 node=coord event=task_finished task=A:q28/a1/s0/g1.76 worker=worker-4 state=revoked outcome=map_complete
+t=27.924765 node=coord event=reduce_submit job=A:q28 attempt=1 op_id=reduce/A:q28/a1/r0 inputs=1
+t=27.930343 node=coord event=shard_committed job=B:b4 attempt=1 shard=3 task=B:b4/a1/s3/g1.75 worker=worker-1 speculative=false committed=3 shards=6
+t=28.000000 node=coord event=speculation_launch job=B:b4 attempt=1 shard=0 straggler=B:b4/a1/s0/g1.65 worker=worker-4 elapsed=3.9 straggler_after=3.0
+t=28.000000 node=coord event=task_dispatch task=B:b4/a1/s0/g1.78 job=B:b4 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b60
+t=28.000000 node=coord event=speculation_launch job=B:b4 attempt=1 shard=5 straggler=B:b4/a1/s5/g1.70 worker=worker-2 elapsed=3.9 straggler_after=3.0
+t=28.000000 node=coord event=task_dispatch task=B:b4/a1/s5/g1.79 job=B:b4 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b61
+t=28.012721 node=coord event=batch_assigned batch=worker-4/e1/b60 worker=worker-4 tasks=1 accepted=1 hb_seq=49
+t=28.043201 node=coord event=batch_assigned batch=worker-2/e1/b61 worker=worker-2 tasks=1 accepted=1 hb_seq=48
+t=28.074996 node=coord event=gpu_op_terminal op_id=reduce/A:q27/a1/r0 state=SUCCEEDED
+t=28.074996 node=coord event=job_state job=A:q27 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=28.074996 node=coord event=job_succeeded job=A:q27 attempt=1 op_id=reduce/A:q27/a1/r0 count=64 checksum=f0991ab25c7b0233
+t=28.087433 node=coord event=gpu_release op_id=reduce/A:q27/a1/r0
+t=28.104578 node=coord event=gpu_submit op_id=reduce/A:q28/a1/r0 units=1 attempt=1 state=PENDING
+t=28.138129 node=coord event=batch_report batch=worker-4/e1/b58 worker=worker-4 tasks=1 failed=0
+t=28.339821 node=coord event=gpu_released op_id=reduce/A:q27/a1/r0 via=hint
+t=28.340127 node=coord event=job_accepted job=B:b5 shards=6 records=128 units=1
+t=28.340127 node=coord event=job_state job=B:b5 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=28.340127 node=coord event=attempt_start job=B:b5 attempt=1 max_attempts=3
+t=28.340127 node=coord event=job_scheduled job=B:b5 attempt=1 shards=6 queued=6
+t=28.388173 node=coord event=job_accepted job=A:q30 shards=1 records=64 units=1
+t=28.388173 node=coord event=job_state job=A:q30 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=28.388173 node=coord event=attempt_start job=A:q30 attempt=1 max_attempts=3
+t=28.388173 node=coord event=job_scheduled job=A:q30 attempt=1 shards=1 queued=1
+t=28.400000 node=coord event=task_dispatch task=B:b5/a1/s0/g1.80 job=B:b5 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b62
+t=28.411795 node=coord event=batch_assigned batch=worker-4/e1/b62 worker=worker-4 tasks=1 accepted=1 hb_seq=50
+t=28.585430 node=coord event=shard_committed job=B:b4 attempt=1 shard=2 task=B:b4/a1/s2/g1.74 worker=worker-1 speculative=false committed=4 shards=6
+t=28.952945 node=coord event=task_finished task=B:b4/a1/s2/g1.74 worker=worker-1 state=done outcome=committed
+t=28.952945 node=coord event=task_finished task=B:b4/a1/s3/g1.75 worker=worker-1 state=done outcome=committed
+t=28.952945 node=coord event=batch_report batch=worker-1/e1/b57 worker=worker-1 tasks=2 failed=0
+t=29.000000 node=coord event=task_dispatch task=B:b5/a1/s1/g1.81 job=B:b5 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b63
+t=29.000000 node=coord event=task_dispatch task=B:b5/a1/s2/g1.82 job=B:b5 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b63
+t=29.006691 node=coord event=batch_assigned batch=worker-1/e1/b63 worker=worker-1 tasks=2 accepted=2 hb_seq=52
+t=29.024721 node=coord event=gpu_op_terminal op_id=reduce/A:q28/a1/r0 state=FAILED
+t=29.024721 node=coord event=reduce_failed job=A:q28 attempt=1 op_id=reduce/A:q28/a1/r0 tries=1 max_tries=3
+t=29.039039 node=coord event=gpu_release op_id=reduce/A:q28/a1/r0
+t=29.177185 node=coord event=gpu_released op_id=reduce/A:q28/a1/r0 via=hint
+t=29.177185 node=coord event=reduce_submit job=A:q28 attempt=1 op_id=reduce/A:q28/a1/r1 inputs=1
+t=29.296096 node=coord event=job_accepted job=A:q31 shards=1 records=64 units=1
+t=29.296096 node=coord event=job_state job=A:q31 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=29.296096 node=coord event=attempt_start job=A:q31 attempt=1 max_attempts=3
+t=29.296096 node=coord event=job_scheduled job=A:q31 attempt=1 shards=1 queued=1
+t=29.310554 node=coord event=gpu_submit op_id=reduce/A:q28/a1/r1 units=1 attempt=1 state=PENDING
+t=29.440950 node=coord event=shard_committed job=B:b4 attempt=1 shard=0 task=B:b4/a1/s0/g1.78 worker=worker-4 speculative=true committed=5 shards=6
+t=29.440950 node=coord event=task_abort_request job=B:b4 shard=0 worker=worker-2 tasks=1 reason=shard_committed
+t=29.735023 node=coord event=task_finished task=B:b4/a1/s0/g1.78 worker=worker-4 state=done outcome=committed
+t=29.735023 node=coord event=batch_report batch=worker-4/e1/b60 worker=worker-4 tasks=1 failed=0
+t=29.786115 node=coord event=shard_committed job=A:q29 attempt=1 shard=0 task=A:q29/a1/s0/g1.77 worker=worker-4 speculative=false committed=1 shards=1
+t=29.786115 node=coord event=job_state job=A:q29 attempt=1 old=MAPPING new=REDUCING reason=null
+t=29.786115 node=coord event=task_finished task=A:q29/a1/s0/g1.77 worker=worker-4 state=revoked outcome=map_complete
+t=29.786115 node=coord event=reduce_submit job=A:q29 attempt=1 op_id=reduce/A:q29/a1/r0 inputs=1
+t=29.792042 node=coord event=gpu_submit op_id=reduce/A:q29/a1/r0 units=1 attempt=1 state=PENDING
+t=29.800000 node=coord event=task_dispatch task=B:b5/a1/s3/g1.83 job=B:b5 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b64
+t=29.800000 node=coord event=task_dispatch task=B:b5/a1/s4/g1.84 job=B:b5 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b64
+t=29.814674 node=coord event=batch_assigned batch=worker-4/e1/b64 worker=worker-4 tasks=2 accepted=2 hb_seq=52
+t=29.879217 node=coord event=job_accepted job=A:q32 shards=1 records=64 units=1
+t=29.879217 node=coord event=job_state job=A:q32 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=29.879217 node=coord event=attempt_start job=A:q32 attempt=1 max_attempts=3
+t=29.879217 node=coord event=job_scheduled job=A:q32 attempt=1 shards=1 queued=1
+t=29.888996 node=coord event=shard_committed job=B:b4 attempt=1 shard=5 task=B:b4/a1/s5/g1.79 worker=worker-2 speculative=true committed=6 shards=6
+t=29.888996 node=coord event=task_abort_request job=B:b4 shard=5 worker=worker-3 tasks=1 reason=shard_committed
+t=29.888996 node=coord event=job_state job=B:b4 attempt=1 old=MAPPING new=REDUCING reason=null
+t=29.888996 node=coord event=task_finished task=B:b4/a1/s0/g1.65 worker=worker-2 state=revoked outcome=map_complete
+t=29.888996 node=coord event=task_finished task=B:b4/a1/s1/g1.66 worker=worker-2 state=revoked outcome=map_complete
+t=29.888996 node=coord event=task_finished task=B:b4/a1/s5/g1.70 worker=worker-3 state=revoked outcome=map_complete
+t=29.888996 node=coord event=task_finished task=B:b4/a1/s5/g1.79 worker=worker-2 state=revoked outcome=map_complete
+t=29.888996 node=coord event=reduce_submit job=B:b4 attempt=1 op_id=reduce/B:b4/a1/r0 inputs=6
+t=29.900000 node=coord event=task_dispatch task=B:b5/a1/s5/g1.85 job=B:b5 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b65
+t=29.900000 node=coord event=task_dispatch task=A:q30/a1/s0/g1.86 job=A:q30 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b65
+t=29.900000 node=coord event=task_dispatch task=A:q31/a1/s0/g1.87 job=A:q31 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b65
+t=29.900000 node=coord event=task_dispatch task=A:q32/a1/s0/g1.88 job=A:q32 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b66
+t=29.939861 node=coord event=gpu_submit op_id=reduce/B:b4/a1/r0 units=1 attempt=1 state=PENDING
+t=30.040399 node=coord event=batch_assigned batch=worker-3/e1/b66 worker=worker-3 tasks=1 accepted=1 hb_seq=50
+t=30.115510 node=coord event=commit_lost task=B:b4/a1/s5/g1.70 worker=worker-3 winner=B:b4/a1/s5/g1.79
+t=30.155017 node=coord event=batch_assigned batch=worker-2/e1/b65 worker=worker-2 tasks=3 accepted=3 hb_seq=52
+t=30.228502 node=coord event=batch_report batch=worker-3/e1/b53 worker=worker-3 tasks=1 failed=0
+t=30.356647 node=coord event=batch_report batch=worker-4/e1/b59 worker=worker-4 tasks=1 failed=0
+t=30.438081 node=coord event=shard_committed job=B:b5 attempt=1 shard=0 task=B:b5/a1/s0/g1.80 worker=worker-4 speculative=false committed=1 shards=6
+t=30.617447 node=coord event=shard_committed job=B:b5 attempt=1 shard=2 task=B:b5/a1/s2/g1.82 worker=worker-1 speculative=false committed=2 shards=6
+t=30.659615 node=coord event=shard_committed job=B:b5 attempt=1 shard=1 task=B:b5/a1/s1/g1.81 worker=worker-1 speculative=false committed=3 shards=6
+t=30.791331 node=coord event=gpu_op_terminal op_id=reduce/B:b4/a1/r0 state=SUCCEEDED
+t=30.791331 node=coord event=job_state job=B:b4 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=30.791331 node=coord event=job_succeeded job=B:b4 attempt=1 op_id=reduce/B:b4/a1/r0 count=768 checksum=002a530e08934875
+t=30.881032 node=coord event=gpu_release op_id=reduce/B:b4/a1/r0
+t=30.942090 node=coord event=gpu_op_terminal op_id=reduce/A:q28/a1/r1 state=SUCCEEDED
+t=30.942090 node=coord event=job_state job=A:q28 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=30.942090 node=coord event=job_succeeded job=A:q28 attempt=1 op_id=reduce/A:q28/a1/r1 count=64 checksum=3a47a2c264f76c12
+t=30.992341 node=coord event=gpu_released op_id=reduce/B:b4/a1/r0 via=hint
+t=31.032844 node=coord event=task_finished task=B:b5/a1/s1/g1.81 worker=worker-1 state=done outcome=committed
+t=31.032844 node=coord event=task_finished task=B:b5/a1/s2/g1.82 worker=worker-1 state=done outcome=committed
+t=31.032844 node=coord event=batch_report batch=worker-1/e1/b63 worker=worker-1 tasks=2 failed=0
+t=31.043470 node=coord event=job_accepted job=A:q33 shards=1 records=64 units=1
+t=31.043470 node=coord event=job_state job=A:q33 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=31.043470 node=coord event=attempt_start job=A:q33 attempt=1 max_attempts=3
+t=31.043470 node=coord event=job_scheduled job=A:q33 attempt=1 shards=1 queued=1
+t=31.079373 node=coord event=batch_report batch=worker-2/e1/b61 worker=worker-2 tasks=1 failed=0
+t=31.100000 node=coord event=task_dispatch task=A:q33/a1/s0/g1.89 job=A:q33 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b67
+t=31.103257 node=coord event=batch_assigned batch=worker-1/e1/b67 worker=worker-1 tasks=1 accepted=1 hb_seq=56
+t=31.393676 node=coord event=shard_committed job=B:b5 attempt=1 shard=5 task=B:b5/a1/s5/g1.85 worker=worker-2 speculative=false committed=4 shards=6
+t=31.447518 node=coord event=task_finished task=B:b5/a1/s0/g1.80 worker=worker-4 state=done outcome=committed
+t=31.447518 node=coord event=batch_report batch=worker-4/e1/b62 worker=worker-4 tasks=1 failed=0
+t=31.643420 node=coord event=shard_committed job=B:b5 attempt=1 shard=3 task=B:b5/a1/s3/g1.83 worker=worker-4 speculative=false committed=5 shards=6
+t=31.675200 node=coord event=shard_committed job=A:q31 attempt=1 shard=0 task=A:q31/a1/s0/g1.87 worker=worker-2 speculative=false committed=1 shards=1
+t=31.675200 node=coord event=job_state job=A:q31 attempt=1 old=MAPPING new=REDUCING reason=null
+t=31.675200 node=coord event=task_finished task=A:q31/a1/s0/g1.87 worker=worker-2 state=revoked outcome=map_complete
+t=31.675200 node=coord event=reduce_submit job=A:q31 attempt=1 op_id=reduce/A:q31/a1/r0 inputs=1
+t=31.811409 node=coord event=gpu_submit op_id=reduce/A:q31/a1/r0 units=1 attempt=1 state=PENDING
+t=31.843505 node=coord event=shard_committed job=A:q32 attempt=1 shard=0 task=A:q32/a1/s0/g1.88 worker=worker-3 speculative=false committed=1 shards=1
+t=31.843505 node=coord event=job_state job=A:q32 attempt=1 old=MAPPING new=REDUCING reason=null
+t=31.843505 node=coord event=task_finished task=A:q32/a1/s0/g1.88 worker=worker-3 state=revoked outcome=map_complete
+t=31.843505 node=coord event=reduce_submit job=A:q32 attempt=1 op_id=reduce/A:q32/a1/r0 inputs=1
+t=31.845810 node=coord event=job_accepted job=A:q34 shards=1 records=64 units=1
+t=31.845810 node=coord event=job_state job=A:q34 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=31.845810 node=coord event=attempt_start job=A:q34 attempt=1 max_attempts=3
+t=31.845810 node=coord event=job_scheduled job=A:q34 attempt=1 shards=1 queued=1
+t=31.871375 node=coord event=shard_committed job=B:b5 attempt=1 shard=4 task=B:b5/a1/s4/g1.84 worker=worker-4 speculative=false committed=6 shards=6
+t=31.871375 node=coord event=job_state job=B:b5 attempt=1 old=MAPPING new=REDUCING reason=null
+t=31.871375 node=coord event=task_finished task=B:b5/a1/s3/g1.83 worker=worker-4 state=revoked outcome=map_complete
+t=31.871375 node=coord event=task_finished task=B:b5/a1/s4/g1.84 worker=worker-4 state=revoked outcome=map_complete
+t=31.871375 node=coord event=task_finished task=B:b5/a1/s5/g1.85 worker=worker-2 state=revoked outcome=map_complete
+t=31.871375 node=coord event=reduce_submit job=B:b5 attempt=1 op_id=reduce/B:b5/a1/r0 inputs=6
+t=31.900000 node=coord event=task_dispatch task=A:q34/a1/s0/g1.90 job=A:q34 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b68
+t=31.949957 node=coord event=gpu_submit op_id=reduce/A:q32/a1/r0 units=1 attempt=1 state=PENDING
+t=31.988088 node=coord event=gpu_submit op_id=reduce/B:b5/a1/r0 units=1 attempt=1 state=PENDING
+t=32.046168 node=coord event=gpu_release op_id=reduce/A:q28/a1/r1
+t=32.062948 node=coord event=batch_assigned batch=worker-4/e1/b68 worker=worker-4 tasks=1 accepted=1 hb_seq=57
+t=32.099748 node=coord event=shard_committed job=A:q30 attempt=1 shard=0 task=A:q30/a1/s0/g1.86 worker=worker-2 speculative=false committed=1 shards=1
+t=32.099748 node=coord event=job_state job=A:q30 attempt=1 old=MAPPING new=REDUCING reason=null
+t=32.099748 node=coord event=task_finished task=A:q30/a1/s0/g1.86 worker=worker-2 state=revoked outcome=map_complete
+t=32.099748 node=coord event=reduce_submit job=A:q30 attempt=1 op_id=reduce/A:q30/a1/r0 inputs=1
+t=32.103222 node=coord event=gpu_submit op_id=reduce/A:q30/a1/r0 units=1 attempt=1 state=PENDING
+t=32.149297 node=coord event=gpu_released op_id=reduce/A:q28/a1/r1 via=hint
+t=32.199127 node=coord event=gpu_op_terminal op_id=reduce/A:q29/a1/r0 state=SUCCEEDED
+t=32.199127 node=coord event=job_state job=A:q29 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=32.199127 node=coord event=job_succeeded job=A:q29 attempt=1 op_id=reduce/A:q29/a1/r0 count=64 checksum=314252ff3a921ad5
+t=32.205961 node=coord event=gpu_release op_id=reduce/A:q29/a1/r0
+t=32.240179 node=coord event=batch_report batch=worker-4/e1/b64 worker=worker-4 tasks=2 failed=0
+t=32.328755 node=coord event=gpu_released op_id=reduce/A:q29/a1/r0 via=hint
+t=32.608522 node=coord event=job_accepted job=A:q35 shards=1 records=64 units=1
+t=32.608522 node=coord event=job_state job=A:q35 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=32.608522 node=coord event=attempt_start job=A:q35 attempt=1 max_attempts=3
+t=32.608522 node=coord event=job_scheduled job=A:q35 attempt=1 shards=1 queued=1
+t=32.700000 node=coord event=task_dispatch task=A:q35/a1/s0/g1.91 job=A:q35 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b69
+t=32.721493 node=coord event=batch_report batch=worker-3/e1/b66 worker=worker-3 tasks=1 failed=0
+t=32.724035 node=coord event=gpu_op_terminal op_id=reduce/A:q31/a1/r0 state=SUCCEEDED
+t=32.724035 node=coord event=job_state job=A:q31 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=32.724035 node=coord event=job_succeeded job=A:q31 attempt=1 op_id=reduce/A:q31/a1/r0 count=64 checksum=76889e66dbac8bc0
+t=32.726930 node=coord event=gpu_release op_id=reduce/A:q31/a1/r0
+t=32.762867 node=coord event=shard_committed job=A:q33 attempt=1 shard=0 task=A:q33/a1/s0/g1.89 worker=worker-1 speculative=false committed=1 shards=1
+t=32.762867 node=coord event=job_state job=A:q33 attempt=1 old=MAPPING new=REDUCING reason=null
+t=32.762867 node=coord event=task_finished task=A:q33/a1/s0/g1.89 worker=worker-1 state=revoked outcome=map_complete
+t=32.762867 node=coord event=reduce_submit job=A:q33 attempt=1 op_id=reduce/A:q33/a1/r0 inputs=1
+t=32.837769 node=coord event=batch_assigned batch=worker-2/e1/b69 worker=worker-2 tasks=1 accepted=1 hb_seq=57
+t=32.934018 node=coord event=gpu_submit op_id=reduce/A:q33/a1/r0 units=1 attempt=1 state=PENDING
+t=32.972709 node=coord event=batch_report batch=worker-1/e1/b67 worker=worker-1 tasks=1 failed=0
+t=33.017918 node=coord event=batch_report batch=worker-2/e1/b65 worker=worker-2 tasks=3 failed=0
+t=33.071595 node=coord event=gpu_released op_id=reduce/A:q31/a1/r0 via=hint
+t=33.080687 node=coord event=gpu_op_terminal op_id=reduce/B:b5/a1/r0 state=SUCCEEDED
+t=33.080687 node=coord event=job_state job=B:b5 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=33.080687 node=coord event=job_succeeded job=B:b5 attempt=1 op_id=reduce/B:b5/a1/r0 count=768 checksum=d06def8907cdc818
+t=33.082794 node=coord event=gpu_release op_id=reduce/B:b5/a1/r0
+t=33.220476 node=coord event=gpu_op_terminal op_id=reduce/A:q32/a1/r0 state=SUCCEEDED
+t=33.220476 node=coord event=job_state job=A:q32 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=33.220476 node=coord event=job_succeeded job=A:q32 attempt=1 op_id=reduce/A:q32/a1/r0 count=64 checksum=84e93d5713f4de2b
+t=33.222072 node=coord event=gpu_release op_id=reduce/A:q32/a1/r0
+t=33.278711 node=coord event=gpu_released op_id=reduce/B:b5/a1/r0 via=hint
+t=33.575535 node=coord event=job_accepted job=B:b6 shards=6 records=128 units=1
+t=33.575535 node=coord event=job_state job=B:b6 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=33.575535 node=coord event=attempt_start job=B:b6 attempt=1 max_attempts=3
+t=33.575535 node=coord event=job_scheduled job=B:b6 attempt=1 shards=6 queued=6
+t=33.600000 node=coord event=task_dispatch task=B:b6/a1/s0/g1.92 job=B:b6 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b70
+t=33.600000 node=coord event=task_dispatch task=B:b6/a1/s1/g1.93 job=B:b6 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b70
+t=33.600000 node=coord event=task_dispatch task=B:b6/a1/s2/g1.94 job=B:b6 attempt=1 shard=2 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b71
+t=33.600000 node=coord event=task_dispatch task=B:b6/a1/s3/g1.95 job=B:b6 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b71
+t=33.600000 node=coord event=task_dispatch task=B:b6/a1/s4/g1.96 job=B:b6 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b72
+t=33.600000 node=coord event=task_dispatch task=B:b6/a1/s5/g1.97 job=B:b6 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b72
+t=33.606228 node=coord event=batch_assigned batch=worker-4/e1/b72 worker=worker-4 tasks=2 accepted=2 hb_seq=60
+t=33.669044 node=coord event=batch_assigned batch=worker-1/e1/b70 worker=worker-1 tasks=2 accepted=2 hb_seq=60
+t=33.691159 node=coord event=gpu_released op_id=reduce/A:q32/a1/r0 via=hint
+t=33.752666 node=coord event=job_accepted job=A:q36 shards=1 records=64 units=1
+t=33.752666 node=coord event=job_state job=A:q36 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=33.752666 node=coord event=attempt_start job=A:q36 attempt=1 max_attempts=3
+t=33.752666 node=coord event=job_scheduled job=A:q36 attempt=1 shards=1 queued=1
+t=33.799520 node=coord event=batch_assigned batch=worker-2/e1/b71 worker=worker-2 tasks=2 accepted=2 hb_seq=58
+t=33.800000 node=coord event=task_dispatch task=A:q36/a1/s0/g1.98 job=A:q36 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b73
+t=33.803065 node=coord event=batch_assigned batch=worker-3/e1/b73 worker=worker-3 tasks=1 accepted=1 hb_seq=57
+t=33.815691 node=coord event=shard_committed job=A:q34 attempt=1 shard=0 task=A:q34/a1/s0/g1.90 worker=worker-4 speculative=false committed=1 shards=1
+t=33.815691 node=coord event=job_state job=A:q34 attempt=1 old=MAPPING new=REDUCING reason=null
+t=33.815691 node=coord event=task_finished task=A:q34/a1/s0/g1.90 worker=worker-4 state=revoked outcome=map_complete
+t=33.815691 node=coord event=reduce_submit job=A:q34 attempt=1 op_id=reduce/A:q34/a1/r0 inputs=1
+t=33.821982 node=coord event=gpu_submit op_id=reduce/A:q34/a1/r0 units=1 attempt=1 state=PENDING
+t=34.597839 node=coord event=job_accepted job=A:q37 shards=1 records=64 units=1
+t=34.597839 node=coord event=job_state job=A:q37 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=34.597839 node=coord event=attempt_start job=A:q37 attempt=1 max_attempts=3
+t=34.597839 node=coord event=job_scheduled job=A:q37 attempt=1 shards=1 queued=1
+t=34.600000 node=coord event=task_dispatch task=A:q37/a1/s0/g1.99 job=A:q37 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b74
+t=34.601923 node=coord event=batch_assigned batch=worker-4/e1/b74 worker=worker-4 tasks=1 accepted=1 hb_seq=61
+t=34.604826 node=coord event=batch_report batch=worker-4/e1/b68 worker=worker-4 tasks=1 failed=0
+t=34.868392 node=coord event=gpu_op_terminal op_id=reduce/A:q30/a1/r0 state=SUCCEEDED
+t=34.868392 node=coord event=job_state job=A:q30 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=34.868392 node=coord event=job_succeeded job=A:q30 attempt=1 op_id=reduce/A:q30/a1/r0 count=64 checksum=6c7ea38e7e6cf62e
+t=35.113354 node=coord event=gpu_op_terminal op_id=reduce/A:q34/a1/r0 state=FAILED
+t=35.113354 node=coord event=reduce_failed job=A:q34 attempt=1 op_id=reduce/A:q34/a1/r0 tries=1 max_tries=3
+t=35.116795 node=coord event=gpu_release op_id=reduce/A:q34/a1/r0
+t=35.157433 node=coord event=shard_committed job=B:b6 attempt=1 shard=0 task=B:b6/a1/s0/g1.92 worker=worker-1 speculative=false committed=1 shards=6
+t=35.199507 node=coord event=shard_committed job=B:b6 attempt=1 shard=4 task=B:b6/a1/s4/g1.96 worker=worker-4 speculative=false committed=2 shards=6
+t=35.280835 node=coord event=gpu_released op_id=reduce/A:q34/a1/r0 via=hint
+t=35.280835 node=coord event=reduce_submit job=A:q34 attempt=1 op_id=reduce/A:q34/a1/r1 inputs=1
+t=35.282150 node=coord event=gpu_submit op_id=reduce/A:q34/a1/r1 units=1 attempt=1 state=PENDING
+t=35.287931 node=coord event=task_finished task=A:q35/a1/s0/g1.91 worker=worker-2 state=done outcome=failed
+t=35.287931 node=coord event=shard_requeued job=A:q35 attempt=1 shard=0 failures=1
+t=35.287931 node=coord event=batch_report batch=worker-2/e1/b69 worker=worker-2 tasks=1 failed=1
+t=35.300000 node=coord event=task_dispatch task=A:q35/a1/s0/g1.100 job=A:q35 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b75
+t=35.329020 node=coord event=batch_assigned batch=worker-2/e1/b75 worker=worker-2 tasks=1 accepted=1 hb_seq=61
+t=35.348436 node=coord event=gpu_op_terminal op_id=reduce/A:q33/a1/r0 state=SUCCEEDED
+t=35.348436 node=coord event=job_state job=A:q33 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=35.348436 node=coord event=job_succeeded job=A:q33 attempt=1 op_id=reduce/A:q33/a1/r0 count=64 checksum=2e76efa9e001b328
+t=35.358234 node=coord event=shard_committed job=B:b6 attempt=1 shard=1 task=B:b6/a1/s1/g1.93 worker=worker-1 speculative=false committed=3 shards=6
+t=35.374971 node=coord event=shard_committed job=B:b6 attempt=1 shard=2 task=B:b6/a1/s2/g1.94 worker=worker-2 speculative=false committed=4 shards=6
+t=35.380063 node=coord event=job_accepted job=A:q38 shards=1 records=64 units=1
+t=35.380063 node=coord event=job_state job=A:q38 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=35.380063 node=coord event=attempt_start job=A:q38 attempt=1 max_attempts=3
+t=35.380063 node=coord event=job_scheduled job=A:q38 attempt=1 shards=1 queued=1
+t=35.500477 node=coord event=gpu_release op_id=reduce/A:q33/a1/r0
+t=35.500477 node=coord event=gpu_released op_id=reduce/A:q33/a1/r0 via=hint
+t=35.541292 node=coord event=shard_committed job=B:b6 attempt=1 shard=3 task=B:b6/a1/s3/g1.95 worker=worker-2 speculative=false committed=5 shards=6
+t=35.609098 node=coord event=shard_committed job=B:b6 attempt=1 shard=5 task=B:b6/a1/s5/g1.97 worker=worker-4 speculative=false committed=6 shards=6
+t=35.609098 node=coord event=job_state job=B:b6 attempt=1 old=MAPPING new=REDUCING reason=null
+t=35.609098 node=coord event=task_finished task=B:b6/a1/s0/g1.92 worker=worker-1 state=revoked outcome=map_complete
+t=35.609098 node=coord event=task_finished task=B:b6/a1/s1/g1.93 worker=worker-1 state=revoked outcome=map_complete
+t=35.609098 node=coord event=task_finished task=B:b6/a1/s2/g1.94 worker=worker-2 state=revoked outcome=map_complete
+t=35.609098 node=coord event=task_finished task=B:b6/a1/s3/g1.95 worker=worker-2 state=revoked outcome=map_complete
+t=35.609098 node=coord event=task_finished task=B:b6/a1/s4/g1.96 worker=worker-4 state=revoked outcome=map_complete
+t=35.609098 node=coord event=task_finished task=B:b6/a1/s5/g1.97 worker=worker-4 state=revoked outcome=map_complete
+t=35.609098 node=coord event=reduce_submit job=B:b6 attempt=1 op_id=reduce/B:b6/a1/r0 inputs=6
+t=35.629521 node=coord event=shard_committed job=A:q36 attempt=1 shard=0 task=A:q36/a1/s0/g1.98 worker=worker-3 speculative=false committed=1 shards=1
+t=35.629521 node=coord event=job_state job=A:q36 attempt=1 old=MAPPING new=REDUCING reason=null
+t=35.629521 node=coord event=task_finished task=A:q36/a1/s0/g1.98 worker=worker-3 state=revoked outcome=map_complete
+t=35.629521 node=coord event=reduce_submit job=A:q36 attempt=1 op_id=reduce/A:q36/a1/r0 inputs=1
+t=35.637652 node=coord event=gpu_submit op_id=reduce/A:q36/a1/r0 units=1 attempt=1 state=PENDING
+t=35.700000 node=coord event=task_dispatch task=A:q38/a1/s0/g1.101 job=A:q38 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b76
+t=35.704052 node=coord event=batch_report batch=worker-1/e1/b70 worker=worker-1 tasks=2 failed=0
+t=35.735158 node=coord event=gpu_submit op_id=reduce/B:b6/a1/r0 units=1 attempt=1 state=PENDING
+t=35.814045 node=coord event=batch_report batch=worker-3/e1/b73 worker=worker-3 tasks=1 failed=0
+t=35.850937 node=coord event=batch_assigned batch=worker-1/e1/b76 worker=worker-1 tasks=1 accepted=1 hb_seq=64
+t=35.968351 node=coord event=batch_report batch=worker-2/e1/b71 worker=worker-2 tasks=2 failed=0
+t=35.974435 node=coord event=gpu_release op_id=reduce/A:q30/a1/r0
+t=36.008672 node=coord event=batch_report batch=worker-4/e1/b72 worker=worker-4 tasks=2 failed=0
+t=36.179388 node=coord event=gpu_released op_id=reduce/A:q30/a1/r0 via=hint
+t=36.282580 node=coord event=job_accepted job=A:q39 shards=1 records=64 units=1
+t=36.282580 node=coord event=job_state job=A:q39 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=36.282580 node=coord event=attempt_start job=A:q39 attempt=1 max_attempts=3
+t=36.282580 node=coord event=job_scheduled job=A:q39 attempt=1 shards=1 queued=1
+t=36.300000 node=coord event=task_dispatch task=A:q39/a1/s0/g1.102 job=A:q39 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b77
+t=36.334349 node=coord event=batch_assigned batch=worker-2/e1/b77 worker=worker-2 tasks=1 accepted=1 hb_seq=63
+t=36.407900 node=coord event=gpu_op_terminal op_id=reduce/A:q34/a1/r1 state=SUCCEEDED
+t=36.407900 node=coord event=job_state job=A:q34 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=36.407900 node=coord event=job_succeeded job=A:q34 attempt=1 op_id=reduce/A:q34/a1/r1 count=64 checksum=bf81c644635e6ee9
+t=36.502421 node=coord event=gpu_release op_id=reduce/A:q34/a1/r1
+t=36.607308 node=coord event=task_finished task=A:q37/a1/s0/g1.99 worker=worker-4 state=done outcome=failed
+t=36.607308 node=coord event=shard_requeued job=A:q37 attempt=1 shard=0 failures=1
+t=36.607308 node=coord event=batch_report batch=worker-4/e1/b74 worker=worker-4 tasks=1 failed=1
+t=36.700000 node=coord event=task_dispatch task=A:q37/a1/s0/g1.103 job=A:q37 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b78
+t=36.719069 node=coord event=gpu_released op_id=reduce/A:q34/a1/r1 via=hint
+t=36.731622 node=coord event=batch_assigned batch=worker-4/e1/b78 worker=worker-4 tasks=1 accepted=1 hb_seq=65
+t=36.818915 node=coord event=gpu_op_terminal op_id=reduce/A:q36/a1/r0 state=FAILED
+t=36.818915 node=coord event=reduce_failed job=A:q36 attempt=1 op_id=reduce/A:q36/a1/r0 tries=1 max_tries=3
+t=36.821699 node=coord event=gpu_release op_id=reduce/A:q36/a1/r0
+t=36.935675 node=coord event=gpu_op_terminal op_id=reduce/B:b6/a1/r0 state=SUCCEEDED
+t=36.935675 node=coord event=job_state job=B:b6 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=36.935675 node=coord event=job_succeeded job=B:b6 attempt=1 op_id=reduce/B:b6/a1/r0 count=768 checksum=f612f5507132e9eb
+t=37.030787 node=coord event=gpu_released op_id=reduce/A:q36/a1/r0 via=hint
+t=37.030787 node=coord event=reduce_submit job=A:q36 attempt=1 op_id=reduce/A:q36/a1/r1 inputs=1
+t=37.037005 node=coord event=gpu_submit op_id=reduce/A:q36/a1/r1 units=1 attempt=1 state=PENDING
+t=37.112466 node=coord event=gpu_release op_id=reduce/B:b6/a1/r0
+t=37.126189 node=coord event=gpu_released op_id=reduce/B:b6/a1/r0 via=status
+t=37.225092 node=coord event=job_accepted job=A:q40 shards=1 records=64 units=1
+t=37.225092 node=coord event=job_state job=A:q40 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=37.225092 node=coord event=attempt_start job=A:q40 attempt=1 max_attempts=3
+t=37.225092 node=coord event=job_scheduled job=A:q40 attempt=1 shards=1 queued=1
+t=37.300000 node=coord event=task_dispatch task=A:q40/a1/s0/g1.104 job=A:q40 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b79
+t=37.396876 node=coord event=shard_committed job=A:q35 attempt=1 shard=0 task=A:q35/a1/s0/g1.100 worker=worker-2 speculative=false committed=1 shards=1
+t=37.396876 node=coord event=job_state job=A:q35 attempt=1 old=MAPPING new=REDUCING reason=null
+t=37.396876 node=coord event=task_finished task=A:q35/a1/s0/g1.100 worker=worker-2 state=revoked outcome=map_complete
+t=37.396876 node=coord event=reduce_submit job=A:q35 attempt=1 op_id=reduce/A:q35/a1/r0 inputs=1
+t=37.421327 node=coord event=batch_assigned batch=worker-4/e1/b79 worker=worker-4 tasks=1 accepted=1 hb_seq=67
+t=37.494871 node=coord event=gpu_submit op_id=reduce/A:q35/a1/r0 units=1 attempt=1 state=PENDING
+t=37.694424 node=coord event=batch_report batch=worker-2/e1/b75 worker=worker-2 tasks=1 failed=0
+t=37.930624 node=coord event=shard_committed job=A:q39 attempt=1 shard=0 task=A:q39/a1/s0/g1.102 worker=worker-2 speculative=false committed=1 shards=1
+t=37.930624 node=coord event=job_state job=A:q39 attempt=1 old=MAPPING new=REDUCING reason=null
+t=37.930624 node=coord event=task_finished task=A:q39/a1/s0/g1.102 worker=worker-2 state=revoked outcome=map_complete
+t=37.930624 node=coord event=reduce_submit job=A:q39 attempt=1 op_id=reduce/A:q39/a1/r0 inputs=1
+t=37.934344 node=coord event=gpu_submit op_id=reduce/A:q39/a1/r0 units=1 attempt=1 state=PENDING
+t=38.210644 node=coord event=job_accepted job=A:q41 shards=1 records=64 units=1
+t=38.210644 node=coord event=job_state job=A:q41 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=38.210644 node=coord event=attempt_start job=A:q41 attempt=1 max_attempts=3
+t=38.210644 node=coord event=job_scheduled job=A:q41 attempt=1 shards=1 queued=1
+t=38.242950 node=coord event=gpu_op_terminal op_id=reduce/A:q36/a1/r1 state=SUCCEEDED
+t=38.242950 node=coord event=job_state job=A:q36 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=38.242950 node=coord event=job_succeeded job=A:q36 attempt=1 op_id=reduce/A:q36/a1/r1 count=64 checksum=4183a987fea96061
+t=38.243592 node=coord event=gpu_release op_id=reduce/A:q36/a1/r1
+t=38.300000 node=coord event=task_dispatch task=A:q41/a1/s0/g1.105 job=A:q41 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b80
+t=38.306711 node=coord event=batch_assigned batch=worker-2/e1/b80 worker=worker-2 tasks=1 accepted=1 hb_seq=65
+t=38.315643 node=coord event=job_accepted job=B:b7 shards=6 records=128 units=1
+t=38.315643 node=coord event=job_state job=B:b7 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=38.315643 node=coord event=attempt_start job=B:b7 attempt=1 max_attempts=3
+t=38.315643 node=coord event=job_scheduled job=B:b7 attempt=1 shards=6 queued=6
+t=38.372102 node=coord event=batch_report batch=worker-2/e1/b77 worker=worker-2 tasks=1 failed=0
+t=38.400000 node=coord event=task_dispatch task=B:b7/a1/s0/g1.106 job=B:b7 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b81
+t=38.400000 node=coord event=task_dispatch task=B:b7/a1/s1/g1.107 job=B:b7 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b81
+t=38.400000 node=coord event=task_dispatch task=B:b7/a1/s2/g1.108 job=B:b7 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b82
+t=38.400000 node=coord event=task_dispatch task=B:b7/a1/s3/g1.109 job=B:b7 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b83
+t=38.400000 node=coord event=task_dispatch task=B:b7/a1/s4/g1.110 job=B:b7 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b84
+t=38.419164 node=coord event=batch_assigned batch=worker-2/e1/b81 worker=worker-2 tasks=2 accepted=2 hb_seq=65
+t=38.517417 node=coord event=batch_assigned batch=worker-4/e1/b84 worker=worker-4 tasks=1 accepted=1 hb_seq=69
+t=38.603080 node=coord event=batch_assigned batch=worker-3/e1/b83 worker=worker-3 tasks=1 accepted=1 hb_seq=66
+t=38.664037 node=coord event=gpu_op_terminal op_id=reduce/A:q35/a1/r0 state=SUCCEEDED
+t=38.664037 node=coord event=job_state job=A:q35 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=38.664037 node=coord event=job_succeeded job=A:q35 attempt=1 op_id=reduce/A:q35/a1/r0 count=64 checksum=3629104b1221661b
+t=38.879463 node=coord event=gpu_release op_id=reduce/A:q35/a1/r0
+t=38.900000 node=coord event=batch_assign_retry batch=worker-1/e1/b82 worker=worker-1 attempt=1
+t=39.135406 node=coord event=job_accepted job=A:q42 shards=1 records=64 units=1
+t=39.135406 node=coord event=job_state job=A:q42 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=39.135406 node=coord event=attempt_start job=A:q42 attempt=1 max_attempts=3
+t=39.135406 node=coord event=job_scheduled job=A:q42 attempt=1 shards=1 queued=1
+t=39.137138 node=coord event=gpu_op_terminal op_id=reduce/A:q39/a1/r0 state=SUCCEEDED
+t=39.137138 node=coord event=job_state job=A:q39 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=39.137138 node=coord event=job_succeeded job=A:q39 attempt=1 op_id=reduce/A:q39/a1/r0 count=64 checksum=cb87b0cf7f6f3ba1
+t=39.176925 node=coord event=gpu_released op_id=reduce/A:q35/a1/r0 via=hint
+t=39.243592 node=coord event=gpu_released op_id=reduce/A:q36/a1/r1 via=hint
+t=39.262956 node=coord event=task_finished task=A:q37/a1/s0/g1.103 worker=worker-4 state=done outcome=failed
+t=39.262956 node=coord event=shard_exhausted job=A:q37 attempt=1 shard=0 failures=2 max_failures=2
+t=39.262956 node=coord event=attempt_abandoned job=A:q37 attempt=1 reason=shard_failures
+t=39.262956 node=coord event=job_state job=A:q37 attempt=2 old=MAPPING new=MAPPING reason=shard_failures
+t=39.262956 node=coord event=attempt_start job=A:q37 attempt=2 max_attempts=3
+t=39.262956 node=coord event=job_scheduled job=A:q37 attempt=2 shards=1 queued=1
+t=39.262956 node=coord event=batch_report batch=worker-4/e1/b78 worker=worker-4 tasks=1 failed=1
+t=39.300000 node=coord event=task_dispatch task=B:b7/a1/s5/g1.111 job=B:b7 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b85
+t=39.310520 node=coord event=batch_assigned batch=worker-4/e1/b85 worker=worker-4 tasks=1 accepted=1 hb_seq=70
+t=39.310687 node=coord event=gpu_release op_id=reduce/A:q39/a1/r0
+t=39.400000 node=coord event=batch_assign_retry batch=worker-1/e1/b82 worker=worker-1 attempt=2
+t=39.516618 node=coord event=gpu_released op_id=reduce/A:q39/a1/r0 via=hint
+t=39.900000 node=coord event=batch_assign_retry batch=worker-1/e1/b82 worker=worker-1 attempt=3
+t=39.900000 node=coord event=batch_assign_failed batch=worker-1/e1/b82 worker=worker-1 attempts=3
+t=39.900000 node=coord event=task_finished task=B:b7/a1/s2/g1.108 worker=worker-1 state=lost outcome=assign_timeout
+t=39.900000 node=coord event=shard_requeued job=B:b7 attempt=1 shard=2 failures=0
+t=39.900000 node=coord event=task_dispatch task=A:q42/a1/s0/g1.112 job=A:q42 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b86
+t=40.030612 node=coord event=job_accepted job=A:q43 shards=1 records=64 units=1
+t=40.030612 node=coord event=job_state job=A:q43 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=40.030612 node=coord event=attempt_start job=A:q43 attempt=1 max_attempts=3
+t=40.030612 node=coord event=job_scheduled job=A:q43 attempt=1 shards=1 queued=1
+t=40.088144 node=coord event=shard_committed job=B:b7 attempt=1 shard=3 task=B:b7/a1/s3/g1.109 worker=worker-3 speculative=false committed=1 shards=6
+t=40.121968 node=coord event=shard_committed job=A:q40 attempt=1 shard=0 task=A:q40/a1/s0/g1.104 worker=worker-4 speculative=false committed=1 shards=1
+t=40.121968 node=coord event=job_state job=A:q40 attempt=1 old=MAPPING new=REDUCING reason=null
+t=40.121968 node=coord event=task_finished task=A:q40/a1/s0/g1.104 worker=worker-4 state=revoked outcome=map_complete
+t=40.121968 node=coord event=reduce_submit job=A:q40 attempt=1 op_id=reduce/A:q40/a1/r0 inputs=1
+t=40.132083 node=coord event=gpu_submit op_id=reduce/A:q40/a1/r0 units=1 attempt=1 state=PENDING
+t=40.200000 node=coord event=task_dispatch task=A:q37/a2/s0/g1.113 job=A:q37 attempt=2 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b87
+t=40.213077 node=coord event=batch_assigned batch=worker-4/e1/b87 worker=worker-4 tasks=1 accepted=1 hb_seq=72
+t=40.249096 node=coord event=batch_report batch=worker-4/e1/b79 worker=worker-4 tasks=1 failed=0
+t=40.346950 node=coord event=shard_committed job=B:b7 attempt=1 shard=0 task=B:b7/a1/s0/g1.106 worker=worker-2 speculative=false committed=2 shards=6
+t=40.382237 node=coord event=task_finished task=B:b7/a1/s3/g1.109 worker=worker-3 state=done outcome=committed
+t=40.382237 node=coord event=batch_report batch=worker-3/e1/b83 worker=worker-3 tasks=1 failed=0
+t=40.400000 node=coord event=batch_assign_retry batch=worker-1/e1/b86 worker=worker-1 attempt=1
+t=40.400000 node=coord event=task_dispatch task=B:b7/a1/s2/g1.114 job=B:b7 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b88
+t=40.401539 node=coord event=batch_assigned batch=worker-3/e1/b88 worker=worker-3 tasks=1 accepted=1 hb_seq=68
+t=40.557058 node=coord event=shard_committed job=A:q41 attempt=1 shard=0 task=A:q41/a1/s0/g1.105 worker=worker-2 speculative=false committed=1 shards=1
+t=40.557058 node=coord event=job_state job=A:q41 attempt=1 old=MAPPING new=REDUCING reason=null
+t=40.557058 node=coord event=task_finished task=A:q41/a1/s0/g1.105 worker=worker-2 state=revoked outcome=map_complete
+t=40.557058 node=coord event=reduce_submit job=A:q41 attempt=1 op_id=reduce/A:q41/a1/r0 inputs=1
+t=40.558326 node=coord event=gpu_submit op_id=reduce/A:q41/a1/r0 units=1 attempt=1 state=PENDING
+t=40.575049 node=coord event=task_finished task=B:b7/a1/s4/g1.110 worker=worker-4 state=done outcome=failed
+t=40.575049 node=coord event=shard_requeued job=B:b7 attempt=1 shard=4 failures=1
+t=40.575049 node=coord event=batch_report batch=worker-4/e1/b84 worker=worker-4 tasks=1 failed=1
+t=40.600000 node=coord event=task_dispatch task=A:q43/a1/s0/g1.115 job=A:q43 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b89
+t=40.600000 node=coord event=task_dispatch task=B:b7/a1/s4/g1.116 job=B:b7 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b90
+t=40.602928 node=coord event=batch_assigned batch=worker-2/e1/b89 worker=worker-2 tasks=1 accepted=1 hb_seq=70
+t=40.629900 node=coord event=batch_assigned batch=worker-4/e1/b90 worker=worker-4 tasks=1 accepted=1 hb_seq=73
+t=40.720767 node=coord event=shard_committed job=B:b7 attempt=1 shard=5 task=B:b7/a1/s5/g1.111 worker=worker-4 speculative=false committed=3 shards=6
+t=40.747082 node=coord event=task_finished task=B:b7/a1/s0/g1.106 worker=worker-2 state=done outcome=committed
+t=40.747082 node=coord event=task_finished task=B:b7/a1/s1/g1.107 worker=worker-2 state=done outcome=failed
+t=40.747082 node=coord event=shard_requeued job=B:b7 attempt=1 shard=1 failures=1
+t=40.747082 node=coord event=batch_report batch=worker-2/e1/b81 worker=worker-2 tasks=2 failed=1
+t=40.800000 node=coord event=task_dispatch task=B:b7/a1/s1/g1.117 job=B:b7 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b91
+t=40.900000 node=coord event=batch_assign_retry batch=worker-1/e1/b86 worker=worker-1 attempt=2
+t=40.915760 node=coord event=batch_assigned batch=worker-2/e1/b91 worker=worker-2 tasks=1 accepted=1 hb_seq=70
+t=40.922009 node=coord event=batch_report batch=worker-2/e1/b80 worker=worker-2 tasks=1 failed=0
+t=40.987556 node=coord event=job_accepted job=A:q44 shards=1 records=64 units=1
+t=40.987556 node=coord event=job_state job=A:q44 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=40.987556 node=coord event=attempt_start job=A:q44 attempt=1 max_attempts=3
+t=40.987556 node=coord event=job_scheduled job=A:q44 attempt=1 shards=1 queued=1
+t=41.000000 node=coord event=task_dispatch task=A:q44/a1/s0/g1.118 job=A:q44 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b92
+t=41.060762 node=coord event=gpu_op_terminal op_id=reduce/A:q40/a1/r0 state=SUCCEEDED
+t=41.060762 node=coord event=job_state job=A:q40 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=41.060762 node=coord event=job_succeeded job=A:q40 attempt=1 op_id=reduce/A:q40/a1/r0 count=64 checksum=8c8011c1873e56e8
+t=41.074353 node=coord event=gpu_release op_id=reduce/A:q40/a1/r0
+t=41.204930 node=coord event=batch_assigned batch=worker-2/e1/b92 worker=worker-2 tasks=1 accepted=1 hb_seq=71
+t=41.357205 node=coord event=gpu_released op_id=reduce/A:q40/a1/r0 via=hint
+t=41.400000 node=coord event=batch_assign_retry batch=worker-1/e1/b86 worker=worker-1 attempt=3
+t=41.400000 node=coord event=batch_assign_failed batch=worker-1/e1/b86 worker=worker-1 attempts=3
+t=41.400000 node=coord event=task_finished task=A:q42/a1/s0/g1.112 worker=worker-1 state=lost outcome=assign_timeout
+t=41.400000 node=coord event=shard_requeued job=A:q42 attempt=1 shard=0 failures=0
+t=41.400000 node=coord event=task_dispatch task=A:q42/a1/s0/g1.119 job=A:q42 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b93
+t=41.691239 node=coord event=shard_committed job=A:q37 attempt=2 shard=0 task=A:q37/a2/s0/g1.113 worker=worker-4 speculative=false committed=1 shards=1
+t=41.691239 node=coord event=job_state job=A:q37 attempt=2 old=MAPPING new=REDUCING reason=null
+t=41.691239 node=coord event=task_finished task=A:q37/a2/s0/g1.113 worker=worker-4 state=revoked outcome=map_complete
+t=41.691239 node=coord event=reduce_submit job=A:q37 attempt=2 op_id=reduce/A:q37/a2/r0 inputs=1
+t=41.758163 node=coord event=gpu_op_terminal op_id=reduce/A:q41/a1/r0 state=SUCCEEDED
+t=41.758163 node=coord event=job_state job=A:q41 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=41.758163 node=coord event=job_succeeded job=A:q41 attempt=1 op_id=reduce/A:q41/a1/r0 count=64 checksum=d9d7ff136c7d0dfc
+t=41.765947 node=coord event=gpu_release op_id=reduce/A:q41/a1/r0
+t=41.771060 node=coord event=task_finished task=B:b7/a1/s5/g1.111 worker=worker-4 state=done outcome=committed
+t=41.771060 node=coord event=batch_report batch=worker-4/e1/b85 worker=worker-4 tasks=1 failed=0
+t=41.781833 node=coord event=job_accepted job=A:q45 shards=1 records=64 units=1
+t=41.781833 node=coord event=job_state job=A:q45 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=41.781833 node=coord event=attempt_start job=A:q45 attempt=1 max_attempts=3
+t=41.781833 node=coord event=job_scheduled job=A:q45 attempt=1 shards=1 queued=1
+t=41.786936 node=coord event=gpu_submit op_id=reduce/A:q37/a2/r0 units=1 attempt=1 state=PENDING
+t=41.800000 node=coord event=task_dispatch task=A:q45/a1/s0/g1.120 job=A:q45 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b94
+t=41.806778 node=coord event=batch_assigned batch=worker-4/e1/b94 worker=worker-4 tasks=1 accepted=1 hb_seq=75
+t=41.817721 node=coord event=batch_report batch=worker-4/e1/b87 worker=worker-4 tasks=1 failed=0
+t=41.823030 node=coord event=gpu_released op_id=reduce/A:q41/a1/r0 via=hint
+t=41.900000 node=coord event=batch_assign_retry batch=worker-1/e1/b93 worker=worker-1 attempt=1
+t=42.133694 node=coord event=shard_committed job=B:b7 attempt=1 shard=2 task=B:b7/a1/s2/g1.114 worker=worker-3 speculative=false committed=4 shards=6
+t=42.244446 node=coord event=task_finished task=B:b7/a1/s2/g1.114 worker=worker-3 state=done outcome=committed
+t=42.244446 node=coord event=batch_report batch=worker-3/e1/b88 worker=worker-3 tasks=1 failed=0
+t=42.370504 node=coord event=shard_committed job=A:q43 attempt=1 shard=0 task=A:q43/a1/s0/g1.115 worker=worker-2 speculative=false committed=1 shards=1
+t=42.370504 node=coord event=job_state job=A:q43 attempt=1 old=MAPPING new=REDUCING reason=null
+t=42.370504 node=coord event=task_finished task=A:q43/a1/s0/g1.115 worker=worker-2 state=revoked outcome=map_complete
+t=42.370504 node=coord event=reduce_submit job=A:q43 attempt=1 op_id=reduce/A:q43/a1/r0 inputs=1
+t=42.371160 node=coord event=gpu_submit op_id=reduce/A:q43/a1/r0 units=1 attempt=1 state=PENDING
+t=42.400000 node=coord event=batch_assign_retry batch=worker-1/e1/b93 worker=worker-1 attempt=2
+t=42.472261 node=coord event=batch_assigned batch=worker-1/e1/b93 worker=worker-1 tasks=1 accepted=1 hb_seq=67
+t=42.578267 node=coord event=shard_committed job=B:b7 attempt=1 shard=4 task=B:b7/a1/s4/g1.116 worker=worker-4 speculative=false committed=5 shards=6
+t=42.635085 node=coord event=shard_committed job=A:q44 attempt=1 shard=0 task=A:q44/a1/s0/g1.118 worker=worker-2 speculative=false committed=1 shards=1
+t=42.635085 node=coord event=job_state job=A:q44 attempt=1 old=MAPPING new=REDUCING reason=null
+t=42.635085 node=coord event=task_finished task=A:q44/a1/s0/g1.118 worker=worker-2 state=revoked outcome=map_complete
+t=42.635085 node=coord event=reduce_submit job=A:q44 attempt=1 op_id=reduce/A:q44/a1/r0 inputs=1
+t=42.645676 node=coord event=gpu_submit op_id=reduce/A:q44/a1/r0 units=1 attempt=1 state=PENDING
+t=42.678391 node=coord event=batch_report batch=worker-2/e1/b89 worker=worker-2 tasks=1 failed=0
+t=42.735491 node=coord event=task_finished task=A:q38/a1/s0/g1.101 worker=worker-1 state=done outcome=commit_unknown
+t=42.735491 node=coord event=shard_requeued job=A:q38 attempt=1 shard=0 failures=0
+t=42.735491 node=coord event=batch_report batch=worker-1/e1/b76 worker=worker-1 tasks=1 failed=0
+t=42.786107 node=coord event=job_accepted job=A:q46 shards=1 records=64 units=1
+t=42.786107 node=coord event=job_state job=A:q46 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=42.786107 node=coord event=attempt_start job=A:q46 attempt=1 max_attempts=3
+t=42.786107 node=coord event=job_scheduled job=A:q46 attempt=1 shards=1 queued=1
+t=42.800000 node=coord event=task_dispatch task=A:q38/a1/s0/g1.121 job=A:q38 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b95
+t=42.800000 node=coord event=task_dispatch task=A:q46/a1/s0/g1.122 job=A:q46 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b95
+t=42.803987 node=coord event=batch_assigned batch=worker-2/e1/b95 worker=worker-2 tasks=2 accepted=2 hb_seq=74
+t=42.929021 node=coord event=gpu_op_terminal op_id=reduce/A:q37/a2/r0 state=FAILED
+t=42.929021 node=coord event=reduce_failed job=A:q37 attempt=2 op_id=reduce/A:q37/a2/r0 tries=1 max_tries=3
+t=42.931825 node=coord event=gpu_release op_id=reduce/A:q37/a2/r0
+t=43.081616 node=coord event=shard_committed job=B:b7 attempt=1 shard=1 task=B:b7/a1/s1/g1.117 worker=worker-2 speculative=false committed=6 shards=6
+t=43.081616 node=coord event=job_state job=B:b7 attempt=1 old=MAPPING new=REDUCING reason=null
+t=43.081616 node=coord event=task_finished task=B:b7/a1/s1/g1.117 worker=worker-2 state=revoked outcome=map_complete
+t=43.081616 node=coord event=task_finished task=B:b7/a1/s4/g1.116 worker=worker-4 state=revoked outcome=map_complete
+t=43.081616 node=coord event=reduce_submit job=B:b7 attempt=1 op_id=reduce/B:b7/a1/r0 inputs=6
+t=43.096273 node=coord event=batch_report batch=worker-4/e1/b90 worker=worker-4 tasks=1 failed=0
+t=43.114370 node=coord event=gpu_submit op_id=reduce/B:b7/a1/r0 units=1 attempt=1 state=PENDING
+t=43.141472 node=coord event=gpu_released op_id=reduce/A:q37/a2/r0 via=hint
+t=43.141472 node=coord event=reduce_submit job=A:q37 attempt=2 op_id=reduce/A:q37/a2/r1 inputs=1
+t=43.143681 node=coord event=gpu_submit op_id=reduce/A:q37/a2/r1 units=1 attempt=1 state=PENDING
+t=43.371552 node=coord event=batch_report batch=worker-2/e1/b91 worker=worker-2 tasks=1 failed=0
+t=43.461425 node=coord event=job_duplicate job=A:q44 state=REDUCING
+t=43.471859 node=coord event=job_accepted job=A:q47 shards=1 records=64 units=1
+t=43.471859 node=coord event=job_state job=A:q47 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=43.471859 node=coord event=attempt_start job=A:q47 attempt=1 max_attempts=3
+t=43.471859 node=coord event=job_scheduled job=A:q47 attempt=1 shards=1 queued=1
+t=43.471895 node=coord event=batch_report batch=worker-2/e1/b92 worker=worker-2 tasks=1 failed=0
+t=43.500000 node=coord event=task_dispatch task=A:q47/a1/s0/g1.123 job=A:q47 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b96
+t=43.526526 node=coord event=batch_assigned batch=worker-4/e1/b96 worker=worker-4 tasks=1 accepted=1 hb_seq=78
+t=43.607708 node=coord event=shard_committed job=A:q45 attempt=1 shard=0 task=A:q45/a1/s0/g1.120 worker=worker-4 speculative=false committed=1 shards=1
+t=43.607708 node=coord event=job_state job=A:q45 attempt=1 old=MAPPING new=REDUCING reason=null
+t=43.607708 node=coord event=task_finished task=A:q45/a1/s0/g1.120 worker=worker-4 state=revoked outcome=map_complete
+t=43.607708 node=coord event=reduce_submit job=A:q45 attempt=1 op_id=reduce/A:q45/a1/r0 inputs=1
+t=43.719983 node=coord event=gpu_submit op_id=reduce/A:q45/a1/r0 units=1 attempt=1 state=PENDING
+t=43.888096 node=coord event=job_accepted job=B:b8 shards=6 records=128 units=1
+t=43.888096 node=coord event=job_state job=B:b8 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=43.888096 node=coord event=attempt_start job=B:b8 attempt=1 max_attempts=3
+t=43.888096 node=coord event=job_scheduled job=B:b8 attempt=1 shards=6 queued=6
+t=43.899656 node=coord event=gpu_op_terminal op_id=reduce/A:q44/a1/r0 state=SUCCEEDED
+t=43.899656 node=coord event=job_state job=A:q44 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=43.899656 node=coord event=job_succeeded job=A:q44 attempt=1 op_id=reduce/A:q44/a1/r0 count=64 checksum=68a3ce7bf2fb6eb9
+t=43.900000 node=coord event=task_dispatch task=B:b8/a1/s0/g1.124 job=B:b8 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b97
+t=43.900000 node=coord event=task_dispatch task=B:b8/a1/s1/g1.125 job=B:b8 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b97
+t=43.900000 node=coord event=task_dispatch task=B:b8/a1/s2/g1.126 job=B:b8 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b98
+t=43.900000 node=coord event=task_dispatch task=B:b8/a1/s3/g1.127 job=B:b8 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b99
+t=43.900000 node=coord event=task_dispatch task=B:b8/a1/s4/g1.128 job=B:b8 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b100
+t=43.906468 node=coord event=batch_assigned batch=worker-3/e1/b100 worker=worker-3 tasks=1 accepted=1 hb_seq=75
+t=43.907205 node=coord event=batch_assigned batch=worker-2/e1/b99 worker=worker-2 tasks=1 accepted=1 hb_seq=76
+t=43.973357 node=coord event=batch_assigned batch=worker-4/e1/b97 worker=worker-4 tasks=2 accepted=2 hb_seq=79
+t=44.026884 node=coord event=gpu_release op_id=reduce/A:q44/a1/r0
+t=44.090023 node=coord event=shard_committed job=A:q42 attempt=1 shard=0 task=A:q42/a1/s0/g1.119 worker=worker-1 speculative=false committed=1 shards=1
+t=44.090023 node=coord event=job_state job=A:q42 attempt=1 old=MAPPING new=REDUCING reason=null
+t=44.090023 node=coord event=task_finished task=A:q42/a1/s0/g1.119 worker=worker-1 state=revoked outcome=map_complete
+t=44.090023 node=coord event=reduce_submit job=A:q42 attempt=1 op_id=reduce/A:q42/a1/r0 inputs=1
+t=44.091738 node=coord event=gpu_submit_retry op_id=reduce/A:q42/a1/r0 code=CAPACITY attempt=1 backoff=0.25
+t=44.095530 node=coord event=batch_assigned batch=worker-1/e1/b98 worker=worker-1 tasks=1 accepted=1 hb_seq=76
+t=44.100000 node=coord event=task_dispatch task=B:b8/a1/s5/g1.129 job=B:b8 attempt=1 shard=5 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b101
+t=44.121738 node=coord event=batch_assigned batch=worker-1/e1/b101 worker=worker-1 tasks=1 accepted=1 hb_seq=76
+t=44.163531 node=coord event=gpu_released op_id=reduce/A:q44/a1/r0 via=hint
+t=44.202892 node=coord event=job_accepted job=A:q48 shards=1 records=64 units=1
+t=44.202892 node=coord event=job_state job=A:q48 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=44.202892 node=coord event=attempt_start job=A:q48 attempt=1 max_attempts=3
+t=44.202892 node=coord event=job_scheduled job=A:q48 attempt=1 shards=1 queued=1
+t=44.312336 node=coord event=batch_report batch=worker-1/e1/b93 worker=worker-1 tasks=1 failed=0
+t=44.339481 node=coord event=gpu_op_terminal op_id=reduce/B:b7/a1/r0 state=FAILED
+t=44.339481 node=coord event=reduce_failed job=B:b7 attempt=1 op_id=reduce/B:b7/a1/r0 tries=1 max_tries=3
+t=44.350264 node=coord event=gpu_submit_retry op_id=reduce/A:q42/a1/r0 code=CAPACITY attempt=2 backoff=0.5
+t=44.392229 node=coord event=gpu_op_terminal op_id=reduce/A:q37/a2/r1 state=SUCCEEDED
+t=44.392229 node=coord event=job_state job=A:q37 attempt=2 old=REDUCING new=SUCCEEDED reason=null
+t=44.392229 node=coord event=job_succeeded job=A:q37 attempt=2 op_id=reduce/A:q37/a2/r1 count=64 checksum=b54f92575c1c5251
+t=44.396581 node=coord event=gpu_release op_id=reduce/A:q37/a2/r1
+t=44.544429 node=coord event=gpu_release op_id=reduce/B:b7/a1/r0
+t=44.640407 node=coord event=gpu_released op_id=reduce/A:q37/a2/r1 via=hint
+t=44.710698 node=coord event=gpu_released op_id=reduce/B:b7/a1/r0 via=hint
+t=44.710698 node=coord event=reduce_submit job=B:b7 attempt=1 op_id=reduce/B:b7/a1/r1 inputs=6
+t=44.727723 node=coord event=gpu_submit op_id=reduce/B:b7/a1/r1 units=1 attempt=1 state=PENDING
+t=44.857368 node=coord event=gpu_op_terminal op_id=reduce/A:q43/a1/r0 state=SUCCEEDED
+t=44.857368 node=coord event=job_state job=A:q43 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=44.857368 node=coord event=job_succeeded job=A:q43 attempt=1 op_id=reduce/A:q43/a1/r0 count=64 checksum=60acb7531668a170
+t=44.857368 node=coord event=gpu_submit op_id=reduce/A:q42/a1/r0 units=1 attempt=3 state=PENDING
+t=44.859398 node=coord event=gpu_release op_id=reduce/A:q43/a1/r0
+t=44.884602 node=coord event=gpu_op_terminal op_id=reduce/A:q45/a1/r0 state=SUCCEEDED
+t=44.884602 node=coord event=job_state job=A:q45 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=44.884602 node=coord event=job_succeeded job=A:q45 attempt=1 op_id=reduce/A:q45/a1/r0 count=64 checksum=b2b24d75aeb401a6
+t=44.890765 node=coord event=gpu_release op_id=reduce/A:q45/a1/r0
+t=44.916139 node=coord event=task_finished task=A:q38/a1/s0/g1.121 worker=worker-2 state=done outcome=failed
+t=44.916139 node=coord event=shard_requeued job=A:q38 attempt=1 shard=0 failures=1
+t=44.916139 node=coord event=task_finished task=A:q46/a1/s0/g1.122 worker=worker-2 state=done outcome=failed
+t=44.916139 node=coord event=shard_requeued job=A:q46 attempt=1 shard=0 failures=1
+t=44.916139 node=coord event=batch_report batch=worker-2/e1/b95 worker=worker-2 tasks=2 failed=2
+t=44.952675 node=coord event=gpu_released op_id=reduce/A:q43/a1/r0 via=hint
+t=44.965313 node=coord event=batch_report batch=worker-4/e1/b94 worker=worker-4 tasks=1 failed=0
+t=45.000000 node=coord event=task_dispatch task=A:q48/a1/s0/g1.130 job=A:q48 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b102
+t=45.000000 node=coord event=task_dispatch task=A:q38/a1/s0/g1.131 job=A:q38 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b102
+t=45.171622 node=coord event=gpu_released op_id=reduce/A:q45/a1/r0 via=hint
+t=45.193021 node=coord event=batch_assigned batch=worker-2/e1/b102 worker=worker-2 tasks=2 accepted=2 hb_seq=78
+t=45.233137 node=coord event=job_accepted job=A:q49 shards=1 records=64 units=1
+t=45.233137 node=coord event=job_state job=A:q49 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=45.233137 node=coord event=attempt_start job=A:q49 attempt=1 max_attempts=3
+t=45.233137 node=coord event=job_scheduled job=A:q49 attempt=1 shards=1 queued=1
+t=45.296243 node=coord event=shard_committed job=A:q47 attempt=1 shard=0 task=A:q47/a1/s0/g1.123 worker=worker-4 speculative=false committed=1 shards=1
+t=45.296243 node=coord event=job_state job=A:q47 attempt=1 old=MAPPING new=REDUCING reason=null
+t=45.296243 node=coord event=task_finished task=A:q47/a1/s0/g1.123 worker=worker-4 state=revoked outcome=map_complete
+t=45.296243 node=coord event=reduce_submit job=A:q47 attempt=1 op_id=reduce/A:q47/a1/r0 inputs=1
+t=45.300000 node=coord event=task_dispatch task=A:q46/a1/s0/g1.132 job=A:q46 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b103
+t=45.300908 node=coord event=gpu_submit op_id=reduce/A:q47/a1/r0 units=1 attempt=1 state=PENDING
+t=45.312070 node=coord event=batch_assigned batch=worker-4/e1/b103 worker=worker-4 tasks=1 accepted=1 hb_seq=81
+t=45.344097 node=coord event=shard_committed job=B:b8 attempt=1 shard=3 task=B:b8/a1/s3/g1.127 worker=worker-2 speculative=false committed=1 shards=6
+t=45.537791 node=coord event=batch_report batch=worker-4/e1/b96 worker=worker-4 tasks=1 failed=0
+t=45.664505 node=coord event=shard_committed job=B:b8 attempt=1 shard=0 task=B:b8/a1/s0/g1.124 worker=worker-4 speculative=false committed=2 shards=6
+t=46.072448 node=coord event=shard_committed job=B:b8 attempt=1 shard=1 task=B:b8/a1/s1/g1.125 worker=worker-4 speculative=false committed=3 shards=6
+t=46.078895 node=coord event=gpu_op_terminal op_id=reduce/A:q47/a1/r0 state=FAILED
+t=46.078895 node=coord event=reduce_failed job=A:q47 attempt=1 op_id=reduce/A:q47/a1/r0 tries=1 max_tries=3
+t=46.094848 node=coord event=gpu_release op_id=reduce/A:q47/a1/r0
+t=46.293547 node=coord event=gpu_released op_id=reduce/A:q47/a1/r0 via=hint
+t=46.293547 node=coord event=reduce_submit job=A:q47 attempt=1 op_id=reduce/A:q47/a1/r1 inputs=1
+t=46.297055 node=coord event=task_finished task=B:b8/a1/s0/g1.124 worker=worker-4 state=done outcome=committed
+t=46.297055 node=coord event=task_finished task=B:b8/a1/s1/g1.125 worker=worker-4 state=done outcome=committed
+t=46.297055 node=coord event=batch_report batch=worker-4/e1/b97 worker=worker-4 tasks=2 failed=0
+t=46.298850 node=coord event=shard_committed job=B:b8 attempt=1 shard=5 task=B:b8/a1/s5/g1.129 worker=worker-1 speculative=false committed=4 shards=6
+t=46.300000 node=coord event=task_dispatch task=A:q49/a1/s0/g1.133 job=A:q49 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b104
+t=46.303977 node=coord event=shard_committed job=B:b8 attempt=1 shard=2 task=B:b8/a1/s2/g1.126 worker=worker-1 speculative=false committed=5 shards=6
+t=46.305261 node=coord event=gpu_submit op_id=reduce/A:q47/a1/r1 units=1 attempt=1 state=PENDING
+t=46.307085 node=coord event=batch_assigned batch=worker-4/e1/b104 worker=worker-4 tasks=1 accepted=1 hb_seq=83
+t=46.377691 node=coord event=job_accepted job=A:q50 shards=1 records=64 units=1
+t=46.377691 node=coord event=job_state job=A:q50 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=46.377691 node=coord event=attempt_start job=A:q50 attempt=1 max_attempts=3
+t=46.377691 node=coord event=job_scheduled job=A:q50 attempt=1 shards=1 queued=1
+t=46.400000 node=coord event=task_dispatch task=A:q50/a1/s0/g1.134 job=A:q50 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b105
+t=46.400606 node=coord event=batch_assigned batch=worker-4/e1/b105 worker=worker-4 tasks=1 accepted=1 hb_seq=83
+t=46.422043 node=coord event=task_finished task=B:b8/a1/s2/g1.126 worker=worker-1 state=done outcome=committed
+t=46.422043 node=coord event=batch_report batch=worker-1/e1/b98 worker=worker-1 tasks=1 failed=0
+t=46.644766 node=coord event=task_finished task=B:b8/a1/s3/g1.127 worker=worker-2 state=done outcome=committed
+t=46.644766 node=coord event=batch_report batch=worker-2/e1/b99 worker=worker-2 tasks=1 failed=0
+t=46.821670 node=coord event=task_finished task=B:b8/a1/s4/g1.128 worker=worker-3 state=done outcome=failed
+t=46.821670 node=coord event=shard_requeued job=B:b8 attempt=1 shard=4 failures=1
+t=46.821670 node=coord event=batch_report batch=worker-3/e1/b100 worker=worker-3 tasks=1 failed=1
+t=46.821728 node=coord event=shard_committed job=A:q48 attempt=1 shard=0 task=A:q48/a1/s0/g1.130 worker=worker-2 speculative=false committed=1 shards=1
+t=46.821728 node=coord event=job_state job=A:q48 attempt=1 old=MAPPING new=REDUCING reason=null
+t=46.821728 node=coord event=task_finished task=A:q48/a1/s0/g1.130 worker=worker-2 state=revoked outcome=map_complete
+t=46.821728 node=coord event=reduce_submit job=A:q48 attempt=1 op_id=reduce/A:q48/a1/r0 inputs=1
+t=46.900000 node=coord event=task_dispatch task=B:b8/a1/s4/g1.135 job=B:b8 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b106
+t=46.902398 node=coord event=task_finished task=B:b8/a1/s5/g1.129 worker=worker-1 state=done outcome=committed
+t=46.902398 node=coord event=batch_report batch=worker-1/e1/b101 worker=worker-1 tasks=1 failed=0
+t=46.911313 node=coord event=batch_assigned batch=worker-2/e1/b106 worker=worker-2 tasks=1 accepted=1 hb_seq=82
+t=46.962005 node=coord event=job_accepted job=A:q51 shards=1 records=64 units=1
+t=46.962005 node=coord event=job_state job=A:q51 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=46.962005 node=coord event=attempt_start job=A:q51 attempt=1 max_attempts=3
+t=46.962005 node=coord event=job_scheduled job=A:q51 attempt=1 shards=1 queued=1
+t=47.000000 node=coord event=task_dispatch task=A:q51/a1/s0/g1.136 job=A:q51 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b107
+t=47.001986 node=coord event=batch_assigned batch=worker-1/e1/b107 worker=worker-1 tasks=1 accepted=1 hb_seq=81
+t=47.041628 node=coord event=gpu_op_terminal op_id=reduce/B:b7/a1/r1 state=SUCCEEDED
+t=47.041628 node=coord event=job_state job=B:b7 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=47.041628 node=coord event=job_succeeded job=B:b7 attempt=1 op_id=reduce/B:b7/a1/r1 count=768 checksum=a801037769daaae0
+t=47.113909 node=coord event=shard_committed job=A:q46 attempt=1 shard=0 task=A:q46/a1/s0/g1.132 worker=worker-4 speculative=false committed=1 shards=1
+t=47.113909 node=coord event=job_state job=A:q46 attempt=1 old=MAPPING new=REDUCING reason=null
+t=47.113909 node=coord event=task_finished task=A:q46/a1/s0/g1.132 worker=worker-4 state=revoked outcome=map_complete
+t=47.113909 node=coord event=reduce_submit job=A:q46 attempt=1 op_id=reduce/A:q46/a1/r0 inputs=1
+t=47.133793 node=coord event=gpu_submit op_id=reduce/A:q46/a1/r0 units=1 attempt=1 state=PENDING
+t=47.185383 node=coord event=gpu_release op_id=reduce/B:b7/a1/r1
+t=47.382582 node=coord event=gpu_released op_id=reduce/B:b7/a1/r1 via=hint
+t=47.620497 node=coord event=gpu_op_terminal op_id=reduce/A:q42/a1/r0 state=SUCCEEDED
+t=47.620497 node=coord event=job_state job=A:q42 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=47.620497 node=coord event=job_succeeded job=A:q42 attempt=1 op_id=reduce/A:q42/a1/r0 count=64 checksum=e0ad4e2e0de51222
+t=47.627744 node=coord event=gpu_release op_id=reduce/A:q42/a1/r0
+t=47.743795 node=coord event=shard_committed job=A:q50 attempt=1 shard=0 task=A:q50/a1/s0/g1.134 worker=worker-4 speculative=false committed=1 shards=1
+t=47.743795 node=coord event=job_state job=A:q50 attempt=1 old=MAPPING new=REDUCING reason=null
+t=47.743795 node=coord event=task_finished task=A:q50/a1/s0/g1.134 worker=worker-4 state=revoked outcome=map_complete
+t=47.743795 node=coord event=reduce_submit job=A:q50 attempt=1 op_id=reduce/A:q50/a1/r0 inputs=1
+t=47.765792 node=coord event=gpu_submit op_id=reduce/A:q50/a1/r0 units=1 attempt=1 state=PENDING
+t=47.766533 node=coord event=gpu_op_terminal op_id=reduce/A:q47/a1/r1 state=SUCCEEDED
+t=47.766533 node=coord event=job_state job=A:q47 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=47.766533 node=coord event=job_succeeded job=A:q47 attempt=1 op_id=reduce/A:q47/a1/r1 count=64 checksum=59f2673cf4aad294
+t=47.821728 node=coord event=gpu_submit_unknown op_id=reduce/A:q48/a1/r0 code=TIMEOUT attempt=1
+t=47.831897 node=coord event=gpu_released op_id=reduce/A:q42/a1/r0 via=status
+t=47.942032 node=coord event=gpu_release op_id=reduce/A:q47/a1/r1
+t=48.075353 node=coord event=gpu_released op_id=reduce/A:q47/a1/r1 via=hint
+t=48.131441 node=coord event=job_accepted job=B:b9 shards=6 records=128 units=1
+t=48.131441 node=coord event=job_state job=B:b9 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=48.131441 node=coord event=attempt_start job=B:b9 attempt=1 max_attempts=3
+t=48.131441 node=coord event=job_scheduled job=B:b9 attempt=1 shards=6 queued=6
+t=48.151651 node=coord event=batch_report batch=worker-4/e1/b105 worker=worker-4 tasks=1 failed=0
+t=48.178678 node=coord event=job_accepted job=A:q52 shards=1 records=64 units=1
+t=48.178678 node=coord event=job_state job=A:q52 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=48.178678 node=coord event=attempt_start job=A:q52 attempt=1 max_attempts=3
+t=48.178678 node=coord event=job_scheduled job=A:q52 attempt=1 shards=1 queued=1
+t=48.198528 node=coord event=shard_committed job=A:q38 attempt=1 shard=0 task=A:q38/a1/s0/g1.131 worker=worker-2 speculative=false committed=1 shards=1
+t=48.198528 node=coord event=job_state job=A:q38 attempt=1 old=MAPPING new=REDUCING reason=null
+t=48.198528 node=coord event=task_finished task=A:q38/a1/s0/g1.131 worker=worker-2 state=revoked outcome=map_complete
+t=48.198528 node=coord event=reduce_submit job=A:q38 attempt=1 op_id=reduce/A:q38/a1/r0 inputs=1
+t=48.200000 node=coord event=task_dispatch task=B:b9/a1/s0/g1.137 job=B:b9 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b108
+t=48.200000 node=coord event=task_dispatch task=B:b9/a1/s1/g1.138 job=B:b9 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b108
+t=48.200000 node=coord event=task_dispatch task=B:b9/a1/s2/g1.139 job=B:b9 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b109
+t=48.200000 node=coord event=task_dispatch task=B:b9/a1/s3/g1.140 job=B:b9 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b109
+t=48.200000 node=coord event=task_dispatch task=B:b9/a1/s4/g1.141 job=B:b9 attempt=1 shard=4 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b110
+t=48.200000 node=coord event=task_dispatch task=B:b9/a1/s5/g1.142 job=B:b9 attempt=1 shard=5 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b111
+t=48.205040 node=coord event=batch_assigned batch=worker-2/e1/b108 worker=worker-2 tasks=2 accepted=2 hb_seq=84
+t=48.208344 node=coord event=batch_assigned batch=worker-4/e1/b109 worker=worker-4 tasks=2 accepted=2 hb_seq=86
+t=48.330073 node=coord event=batch_report batch=worker-4/e1/b103 worker=worker-4 tasks=1 failed=0
+t=48.385166 node=coord event=batch_assigned batch=worker-1/e1/b110 worker=worker-1 tasks=1 accepted=1 hb_seq=83
+t=48.468548 node=coord event=gpu_op_terminal op_id=reduce/A:q46/a1/r0 state=SUCCEEDED
+t=48.468548 node=coord event=job_state job=A:q46 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=48.468548 node=coord event=job_succeeded job=A:q46 attempt=1 op_id=reduce/A:q46/a1/r0 count=64 checksum=16b4f5052cd7d28a
+t=48.479502 node=coord event=gpu_release op_id=reduce/A:q46/a1/r0
+t=48.685398 node=coord event=gpu_released op_id=reduce/A:q46/a1/r0 via=hint
+t=48.700000 node=coord event=batch_assign_retry batch=worker-3/e1/b111 worker=worker-3 attempt=1
+t=48.715113 node=coord event=batch_assigned batch=worker-3/e1/b111 worker=worker-3 tasks=1 accepted=1 hb_seq=83
+t=48.720290 node=coord event=task_finished task=B:b9/a1/s5/g1.142 worker=worker-3 state=lost outcome=missing_from_heartbeat
+t=48.720290 node=coord event=shard_requeued job=B:b9 attempt=1 shard=5 failures=0
+t=48.773582 node=coord event=batch_report batch=worker-2/e1/b102 worker=worker-2 tasks=2 failed=0
+t=48.800000 node=coord event=task_dispatch task=A:q52/a1/s0/g1.143 job=A:q52 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b112
+t=48.821997 node=coord event=batch_assigned batch=worker-3/e1/b112 worker=worker-3 tasks=1 accepted=1 hb_seq=83
+t=48.835831 node=coord event=shard_committed job=A:q51 attempt=1 shard=0 task=A:q51/a1/s0/g1.136 worker=worker-1 speculative=false committed=1 shards=1
+t=48.835831 node=coord event=job_state job=A:q51 attempt=1 old=MAPPING new=REDUCING reason=null
+t=48.835831 node=coord event=task_finished task=A:q51/a1/s0/g1.136 worker=worker-1 state=revoked outcome=map_complete
+t=48.835831 node=coord event=reduce_submit job=A:q51 attempt=1 op_id=reduce/A:q51/a1/r0 inputs=1
+t=48.841111 node=coord event=gpu_submit op_id=reduce/A:q51/a1/r0 units=1 attempt=1 state=PENDING
+t=48.900000 node=coord event=task_dispatch task=B:b9/a1/s5/g1.144 job=B:b9 attempt=1 shard=5 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b113
+t=48.909880 node=coord event=batch_assigned batch=worker-1/e1/b113 worker=worker-1 tasks=1 accepted=1 hb_seq=84
+t=48.928963 node=coord event=task_finished task=A:q49/a1/s0/g1.133 worker=worker-4 state=done outcome=failed
+t=48.928963 node=coord event=shard_requeued job=A:q49 attempt=1 shard=0 failures=1
+t=48.928963 node=coord event=batch_report batch=worker-4/e1/b104 worker=worker-4 tasks=1 failed=1
+t=48.931154 node=coord event=gpu_op_terminal op_id=reduce/A:q50/a1/r0 state=SUCCEEDED
+t=48.931154 node=coord event=job_state job=A:q50 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=48.931154 node=coord event=job_succeeded job=A:q50 attempt=1 op_id=reduce/A:q50/a1/r0 count=64 checksum=91fae32078b5a7b6
+t=48.938681 node=coord event=gpu_release op_id=reduce/A:q50/a1/r0
+t=48.944792 node=coord event=job_accepted job=A:q53 shards=1 records=64 units=1
+t=48.944792 node=coord event=job_state job=A:q53 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=48.944792 node=coord event=attempt_start job=A:q53 attempt=1 max_attempts=3
+t=48.944792 node=coord event=job_scheduled job=A:q53 attempt=1 shards=1 queued=1
+t=49.000000 node=coord event=task_dispatch task=A:q49/a1/s0/g1.145 job=A:q49 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b114
+t=49.008731 node=coord event=batch_assigned batch=worker-4/e1/b114 worker=worker-4 tasks=1 accepted=1 hb_seq=87
+t=49.115187 node=coord event=shard_committed job=B:b8 attempt=1 shard=4 task=B:b8/a1/s4/g1.135 worker=worker-2 speculative=false committed=6 shards=6
+t=49.115187 node=coord event=job_state job=B:b8 attempt=1 old=MAPPING new=REDUCING reason=null
+t=49.115187 node=coord event=task_finished task=B:b8/a1/s4/g1.135 worker=worker-2 state=revoked outcome=map_complete
+t=49.115187 node=coord event=reduce_submit job=B:b8 attempt=1 op_id=reduce/B:b8/a1/r0 inputs=6
+t=49.165561 node=coord event=gpu_submit op_id=reduce/B:b8/a1/r0 units=1 attempt=1 state=PENDING
+t=49.165561 node=coord event=gpu_released op_id=reduce/A:q50/a1/r0 via=hint
+t=49.198528 node=coord event=gpu_submit_unknown op_id=reduce/A:q38/a1/r0 code=TIMEOUT attempt=1
+t=49.200000 node=coord event=task_dispatch task=A:q53/a1/s0/g1.146 job=A:q53 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b115
+t=49.206464 node=coord event=batch_assigned batch=worker-2/e1/b115 worker=worker-2 tasks=1 accepted=1 hb_seq=86
+t=49.253972 node=coord event=batch_report batch=worker-1/e1/b107 worker=worker-1 tasks=1 failed=0
+t=49.272206 node=coord event=batch_report batch=worker-2/e1/b106 worker=worker-2 tasks=1 failed=0
+t=49.637311 node=coord event=shard_committed job=B:b9 attempt=1 shard=1 task=B:b9/a1/s1/g1.138 worker=worker-2 speculative=false committed=1 shards=6
+t=49.685180 node=coord event=batch_report batch=worker-3/e1/b111 worker=worker-3 tasks=1 failed=0
+t=49.772927 node=coord event=job_accepted job=A:q54 shards=1 records=64 units=1
+t=49.772927 node=coord event=job_state job=A:q54 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=49.772927 node=coord event=attempt_start job=A:q54 attempt=1 max_attempts=3
+t=49.772927 node=coord event=job_scheduled job=A:q54 attempt=1 shards=1 queued=1
+t=49.773155 node=coord event=shard_committed job=B:b9 attempt=1 shard=3 task=B:b9/a1/s3/g1.140 worker=worker-4 speculative=false committed=2 shards=6
+t=49.805851 node=coord event=gpu_op_terminal op_id=reduce/A:q51/a1/r0 state=FAILED
+t=49.805851 node=coord event=reduce_failed job=A:q51 attempt=1 op_id=reduce/A:q51/a1/r0 tries=1 max_tries=3
+t=49.818751 node=coord event=gpu_release op_id=reduce/A:q51/a1/r0
+t=49.983756 node=coord event=shard_committed job=B:b9 attempt=1 shard=0 task=B:b9/a1/s0/g1.137 worker=worker-2 speculative=false committed=3 shards=6
+t=50.091070 node=coord event=shard_committed job=B:b9 attempt=1 shard=4 task=B:b9/a1/s4/g1.141 worker=worker-1 speculative=false committed=4 shards=6
+t=50.187954 node=coord event=shard_committed job=B:b9 attempt=1 shard=2 task=B:b9/a1/s2/g1.139 worker=worker-4 speculative=false committed=5 shards=6
+t=50.215672 node=coord event=gpu_op_terminal op_id=reduce/B:b8/a1/r0 state=SUCCEEDED
+t=50.215672 node=coord event=job_state job=B:b8 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=50.215672 node=coord event=job_succeeded job=B:b8 attempt=1 op_id=reduce/B:b8/a1/r0 count=768 checksum=1fd93b98ef9b6766
+t=50.384062 node=coord event=gpu_release op_id=reduce/B:b8/a1/r0
+t=50.448904 node=coord event=gpu_released op_id=reduce/A:q51/a1/r0 via=status
+t=50.448904 node=coord event=reduce_submit job=A:q51 attempt=1 op_id=reduce/A:q51/a1/r1 inputs=1
+t=50.449915 node=coord event=task_finished task=B:b9/a1/s4/g1.141 worker=worker-1 state=done outcome=committed
+t=50.449915 node=coord event=batch_report batch=worker-1/e1/b110 worker=worker-1 tasks=1 failed=0
+t=50.460065 node=coord event=shard_committed job=B:b9 attempt=1 shard=5 task=B:b9/a1/s5/g1.144 worker=worker-1 speculative=false committed=6 shards=6
+t=50.460065 node=coord event=job_state job=B:b9 attempt=1 old=MAPPING new=REDUCING reason=null
+t=50.460065 node=coord event=task_finished task=B:b9/a1/s0/g1.137 worker=worker-2 state=revoked outcome=map_complete
+t=50.460065 node=coord event=task_finished task=B:b9/a1/s1/g1.138 worker=worker-2 state=revoked outcome=map_complete
+t=50.460065 node=coord event=task_finished task=B:b9/a1/s2/g1.139 worker=worker-4 state=revoked outcome=map_complete
+t=50.460065 node=coord event=task_finished task=B:b9/a1/s3/g1.140 worker=worker-4 state=revoked outcome=map_complete
+t=50.460065 node=coord event=task_finished task=B:b9/a1/s5/g1.144 worker=worker-1 state=revoked outcome=map_complete
+t=50.460065 node=coord event=reduce_submit job=B:b9 attempt=1 op_id=reduce/B:b9/a1/r0 inputs=6
+t=50.468796 node=coord event=gpu_submit op_id=reduce/A:q51/a1/r1 units=1 attempt=1 state=PENDING
+t=50.477232 node=coord event=gpu_submit op_id=reduce/B:b9/a1/r0 units=1 attempt=1 state=PENDING
+t=50.483811 node=coord event=gpu_released op_id=reduce/B:b8/a1/r0 via=hint
+t=50.500000 node=coord event=task_dispatch task=A:q54/a1/s0/g1.147 job=A:q54 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b116
+t=50.520573 node=coord event=batch_assigned batch=worker-1/e1/b116 worker=worker-1 tasks=1 accepted=1 hb_seq=88
+t=50.603034 node=coord event=batch_report batch=worker-1/e1/b113 worker=worker-1 tasks=1 failed=0
+t=50.728458 node=coord event=shard_committed job=A:q53 attempt=1 shard=0 task=A:q53/a1/s0/g1.146 worker=worker-2 speculative=false committed=1 shards=1
+t=50.728458 node=coord event=job_state job=A:q53 attempt=1 old=MAPPING new=REDUCING reason=null
+t=50.728458 node=coord event=task_finished task=A:q53/a1/s0/g1.146 worker=worker-2 state=revoked outcome=map_complete
+t=50.728458 node=coord event=reduce_submit job=A:q53 attempt=1 op_id=reduce/A:q53/a1/r0 inputs=1
+t=50.741840 node=coord event=gpu_submit op_id=reduce/A:q53/a1/r0 units=1 attempt=1 state=PENDING
+t=50.798268 node=coord event=job_accepted job=A:q55 shards=1 records=64 units=1
+t=50.798268 node=coord event=job_state job=A:q55 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=50.798268 node=coord event=attempt_start job=A:q55 attempt=1 max_attempts=3
+t=50.798268 node=coord event=job_scheduled job=A:q55 attempt=1 shards=1 queued=1
+t=50.800000 node=coord event=task_dispatch task=A:q55/a1/s0/g1.148 job=A:q55 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b117
+t=50.826361 node=coord event=batch_assigned batch=worker-2/e1/b117 worker=worker-2 tasks=1 accepted=1 hb_seq=89
+t=50.892675 node=coord event=shard_committed job=A:q49 attempt=1 shard=0 task=A:q49/a1/s0/g1.145 worker=worker-4 speculative=false committed=1 shards=1
+t=50.892675 node=coord event=job_state job=A:q49 attempt=1 old=MAPPING new=REDUCING reason=null
+t=50.892675 node=coord event=task_finished task=A:q49/a1/s0/g1.145 worker=worker-4 state=revoked outcome=map_complete
+t=50.892675 node=coord event=reduce_submit job=A:q49 attempt=1 op_id=reduce/A:q49/a1/r0 inputs=1
+t=50.896989 node=coord event=shard_committed job=A:q52 attempt=1 shard=0 task=A:q52/a1/s0/g1.143 worker=worker-3 speculative=false committed=1 shards=1
+t=50.896989 node=coord event=job_state job=A:q52 attempt=1 old=MAPPING new=REDUCING reason=null
+t=50.896989 node=coord event=task_finished task=A:q52/a1/s0/g1.143 worker=worker-3 state=revoked outcome=map_complete
+t=50.896989 node=coord event=reduce_submit job=A:q52 attempt=1 op_id=reduce/A:q52/a1/r0 inputs=1
+t=50.904850 node=coord event=gpu_submit op_id=reduce/A:q49/a1/r0 units=1 attempt=1 state=PENDING
+t=50.918665 node=coord event=gpu_submit op_id=reduce/A:q52/a1/r0 units=1 attempt=1 state=PENDING
+t=51.182460 node=coord event=batch_report batch=worker-2/e1/b108 worker=worker-2 tasks=2 failed=0
+t=51.210528 node=coord event=batch_report batch=worker-2/e1/b115 worker=worker-2 tasks=1 failed=0
+t=51.464014 node=coord event=batch_report batch=worker-3/e1/b112 worker=worker-3 tasks=1 failed=0
+t=51.553953 node=coord event=gpu_op_terminal op_id=reduce/B:b9/a1/r0 state=SUCCEEDED
+t=51.553953 node=coord event=job_state job=B:b9 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=51.553953 node=coord event=job_succeeded job=B:b9 attempt=1 op_id=reduce/B:b9/a1/r0 count=768 checksum=fe11bc9f77a9c08d
+t=51.557513 node=coord event=gpu_release op_id=reduce/B:b9/a1/r0
+t=51.601264 node=coord event=gpu_op_terminal op_id=reduce/A:q53/a1/r0 state=SUCCEEDED
+t=51.601264 node=coord event=job_state job=A:q53 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=51.601264 node=coord event=job_succeeded job=A:q53 attempt=1 op_id=reduce/A:q53/a1/r0 count=64 checksum=f370cdb919949ded
+t=51.604492 node=coord event=gpu_release op_id=reduce/A:q53/a1/r0
+t=51.728613 node=coord event=gpu_op_terminal op_id=reduce/A:q49/a1/r0 state=SUCCEEDED
+t=51.728613 node=coord event=job_state job=A:q49 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=51.728613 node=coord event=job_succeeded job=A:q49 attempt=1 op_id=reduce/A:q49/a1/r0 count=64 checksum=ba21f10d4d8a2b56
+t=51.756613 node=coord event=gpu_release op_id=reduce/A:q49/a1/r0
+t=51.808797 node=coord event=gpu_released op_id=reduce/A:q49/a1/r0 via=hint
+t=51.813560 node=coord event=job_accepted job=A:q56 shards=1 records=64 units=1
+t=51.813560 node=coord event=job_state job=A:q56 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=51.813560 node=coord event=attempt_start job=A:q56 attempt=1 max_attempts=3
+t=51.813560 node=coord event=job_scheduled job=A:q56 attempt=1 shards=1 queued=1
+t=51.837989 node=coord event=gpu_released op_id=reduce/B:b9/a1/r0 via=hint
+t=51.855575 node=coord event=gpu_released op_id=reduce/A:q53/a1/r0 via=hint
+t=51.900000 node=coord event=task_dispatch task=A:q56/a1/s0/g1.149 job=A:q56 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b118
+t=51.990864 node=coord event=gpu_op_terminal op_id=reduce/A:q51/a1/r1 state=SUCCEEDED
+t=51.990864 node=coord event=job_state job=A:q51 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=51.990864 node=coord event=job_succeeded job=A:q51 attempt=1 op_id=reduce/A:q51/a1/r1 count=64 checksum=4f9e6e84388aed1a
+t=52.193840 node=coord event=gpu_release op_id=reduce/A:q51/a1/r1
+t=52.193840 node=coord event=gpu_released op_id=reduce/A:q51/a1/r1 via=hint
+t=52.370541 node=coord event=job_accepted job=A:q57 shards=1 records=64 units=1
+t=52.370541 node=coord event=job_state job=A:q57 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=52.370541 node=coord event=attempt_start job=A:q57 attempt=1 max_attempts=3
+t=52.370541 node=coord event=job_scheduled job=A:q57 attempt=1 shards=1 queued=1
+t=52.400000 node=coord event=batch_assign_retry batch=worker-4/e1/b118 worker=worker-4 attempt=1
+t=52.400000 node=coord event=task_dispatch task=A:q57/a1/s0/g1.150 job=A:q57 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b119
+t=52.411001 node=coord event=batch_assigned batch=worker-2/e1/b119 worker=worker-2 tasks=1 accepted=1 hb_seq=92
+t=52.653877 node=coord event=shard_committed job=A:q55 attempt=1 shard=0 task=A:q55/a1/s0/g1.148 worker=worker-2 speculative=false committed=1 shards=1
+t=52.653877 node=coord event=job_state job=A:q55 attempt=1 old=MAPPING new=REDUCING reason=null
+t=52.653877 node=coord event=task_finished task=A:q55/a1/s0/g1.148 worker=worker-2 state=revoked outcome=map_complete
+t=52.653877 node=coord event=reduce_submit job=A:q55 attempt=1 op_id=reduce/A:q55/a1/r0 inputs=1
+t=52.671309 node=coord event=gpu_submit op_id=reduce/A:q55/a1/r0 units=1 attempt=1 state=PENDING
+t=52.900000 node=coord event=batch_assign_retry batch=worker-4/e1/b118 worker=worker-4 attempt=2
+t=52.964637 node=coord event=gpu_op_terminal op_id=reduce/A:q52/a1/r0 state=SUCCEEDED
+t=52.964637 node=coord event=job_state job=A:q52 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=52.964637 node=coord event=job_succeeded job=A:q52 attempt=1 op_id=reduce/A:q52/a1/r0 count=64 checksum=b4c5ae220ba0235b
+t=52.968306 node=coord event=shard_committed job=A:q54 attempt=1 shard=0 task=A:q54/a1/s0/g1.147 worker=worker-1 speculative=false committed=1 shards=1
+t=52.968306 node=coord event=job_state job=A:q54 attempt=1 old=MAPPING new=REDUCING reason=null
+t=52.968306 node=coord event=task_finished task=A:q54/a1/s0/g1.147 worker=worker-1 state=revoked outcome=map_complete
+t=52.968306 node=coord event=reduce_submit job=A:q54 attempt=1 op_id=reduce/A:q54/a1/r0 inputs=1
+t=52.970076 node=coord event=gpu_release op_id=reduce/A:q52/a1/r0
+t=52.973183 node=coord event=gpu_submit op_id=reduce/A:q54/a1/r0 units=1 attempt=1 state=PENDING
+t=53.083073 node=coord event=gpu_released op_id=reduce/A:q52/a1/r0 via=hint
+t=53.120962 node=coord event=batch_report batch=worker-1/e1/b116 worker=worker-1 tasks=1 failed=0
+t=53.275937 node=coord event=batch_report batch=worker-2/e1/b117 worker=worker-2 tasks=1 failed=0
+t=53.348690 node=coord event=job_accepted job=A:q58 shards=1 records=64 units=1
+t=53.348690 node=coord event=job_state job=A:q58 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=53.348690 node=coord event=attempt_start job=A:q58 attempt=1 max_attempts=3
+t=53.348690 node=coord event=job_scheduled job=A:q58 attempt=1 shards=1 queued=1
+t=53.400000 node=coord event=batch_assign_retry batch=worker-4/e1/b118 worker=worker-4 attempt=3
+t=53.400000 node=coord event=batch_assign_failed batch=worker-4/e1/b118 worker=worker-4 attempts=3
+t=53.400000 node=coord event=task_finished task=A:q56/a1/s0/g1.149 worker=worker-4 state=lost outcome=assign_timeout
+t=53.400000 node=coord event=shard_requeued job=A:q56 attempt=1 shard=0 failures=0
+t=53.400000 node=coord event=task_dispatch task=A:q58/a1/s0/g1.151 job=A:q58 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b120
+t=53.400000 node=coord event=task_dispatch task=A:q56/a1/s0/g1.152 job=A:q56 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b120
+t=53.850780 node=coord event=gpu_op_terminal op_id=reduce/A:q55/a1/r0 state=SUCCEEDED
+t=53.850780 node=coord event=job_state job=A:q55 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=53.850780 node=coord event=job_succeeded job=A:q55 attempt=1 op_id=reduce/A:q55/a1/r0 count=64 checksum=612108531749e1e7
+t=53.867275 node=coord event=gpu_release op_id=reduce/A:q55/a1/r0
+t=53.900000 node=coord event=batch_assign_retry batch=worker-4/e1/b120 worker=worker-4 attempt=1
+t=53.920917 node=coord event=shard_committed job=A:q57 attempt=1 shard=0 task=A:q57/a1/s0/g1.150 worker=worker-2 speculative=false committed=1 shards=1
+t=53.920917 node=coord event=job_state job=A:q57 attempt=1 old=MAPPING new=REDUCING reason=null
+t=53.920917 node=coord event=task_finished task=A:q57/a1/s0/g1.150 worker=worker-2 state=revoked outcome=map_complete
+t=53.920917 node=coord event=reduce_submit job=A:q57 attempt=1 op_id=reduce/A:q57/a1/r0 inputs=1
+t=53.925136 node=coord event=gpu_submit op_id=reduce/A:q57/a1/r0 units=1 attempt=1 state=PENDING
+t=53.956536 node=coord event=gpu_op_terminal op_id=reduce/A:q54/a1/r0 state=SUCCEEDED
+t=53.956536 node=coord event=job_state job=A:q54 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=53.956536 node=coord event=job_succeeded job=A:q54 attempt=1 op_id=reduce/A:q54/a1/r0 count=64 checksum=e92bae0efed154b2
+t=54.086583 node=coord event=gpu_release op_id=reduce/A:q54/a1/r0
+t=54.115907 node=coord event=gpu_released op_id=reduce/A:q55/a1/r0 via=hint
+t=54.207570 node=coord event=batch_report batch=worker-2/e1/b119 worker=worker-2 tasks=1 failed=0
+t=54.313476 node=coord event=gpu_released op_id=reduce/A:q54/a1/r0 via=hint
+t=54.400000 node=coord event=batch_assign_retry batch=worker-4/e1/b120 worker=worker-4 attempt=2
+t=54.450010 node=coord event=job_accepted job=A:q59 shards=1 records=64 units=1
+t=54.450010 node=coord event=job_state job=A:q59 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=54.450010 node=coord event=attempt_start job=A:q59 attempt=1 max_attempts=3
+t=54.450010 node=coord event=job_scheduled job=A:q59 attempt=1 shards=1 queued=1
+t=54.500000 node=coord event=task_dispatch task=A:q59/a1/s0/g1.153 job=A:q59 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b121
+t=54.507917 node=coord event=batch_assigned batch=worker-2/e1/b121 worker=worker-2 tasks=1 accepted=1 hb_seq=95
+t=54.892769 node=coord event=gpu_op_terminal op_id=reduce/A:q57/a1/r0 state=SUCCEEDED
+t=54.892769 node=coord event=job_state job=A:q57 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=54.892769 node=coord event=job_succeeded job=A:q57 attempt=1 op_id=reduce/A:q57/a1/r0 count=64 checksum=cac20b58627daae5
+t=54.900000 node=coord event=batch_assign_retry batch=worker-4/e1/b120 worker=worker-4 attempt=3
+t=54.900000 node=coord event=batch_assign_failed batch=worker-4/e1/b120 worker=worker-4 attempts=3
+t=54.900000 node=coord event=task_finished task=A:q58/a1/s0/g1.151 worker=worker-4 state=lost outcome=assign_timeout
+t=54.900000 node=coord event=shard_requeued job=A:q58 attempt=1 shard=0 failures=0
+t=54.900000 node=coord event=task_finished task=A:q56/a1/s0/g1.152 worker=worker-4 state=lost outcome=assign_timeout
+t=54.900000 node=coord event=shard_requeued job=A:q56 attempt=1 shard=0 failures=0
+t=54.900000 node=coord event=task_dispatch task=A:q58/a1/s0/g1.154 job=A:q58 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b122
+t=54.900000 node=coord event=task_dispatch task=A:q56/a1/s0/g1.155 job=A:q56 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b122
+t=54.905848 node=coord event=gpu_release op_id=reduce/A:q57/a1/r0
+t=54.966290 node=coord event=gpu_released op_id=reduce/A:q57/a1/r0 via=hint
+t=55.400000 node=coord event=batch_assign_retry batch=worker-4/e1/b122 worker=worker-4 attempt=1
+t=55.900000 node=coord event=batch_assign_retry batch=worker-4/e1/b122 worker=worker-4 attempt=2
+t=55.921734 node=coord event=batch_assigned batch=worker-4/e1/b122 worker=worker-4 tasks=2 accepted=2 hb_seq=97
+t=56.291249 node=coord event=shard_committed job=A:q59 attempt=1 shard=0 task=A:q59/a1/s0/g1.153 worker=worker-2 speculative=false committed=1 shards=1
+t=56.291249 node=coord event=job_state job=A:q59 attempt=1 old=MAPPING new=REDUCING reason=null
+t=56.291249 node=coord event=task_finished task=A:q59/a1/s0/g1.153 worker=worker-2 state=revoked outcome=map_complete
+t=56.291249 node=coord event=reduce_submit job=A:q59 attempt=1 op_id=reduce/A:q59/a1/r0 inputs=1
+t=56.295591 node=coord event=gpu_submit op_id=reduce/A:q59/a1/r0 units=1 attempt=1 state=PENDING
+t=56.529710 node=coord event=batch_report batch=worker-2/e1/b121 worker=worker-2 tasks=1 failed=0
+t=57.259593 node=coord event=gpu_op_terminal op_id=reduce/A:q59/a1/r0 state=SUCCEEDED
+t=57.259593 node=coord event=job_state job=A:q59 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=57.259593 node=coord event=job_succeeded job=A:q59 attempt=1 op_id=reduce/A:q59/a1/r0 count=64 checksum=cd7cd637e4b0b301
+t=57.269294 node=coord event=gpu_release op_id=reduce/A:q59/a1/r0
+t=57.435195 node=coord event=gpu_released op_id=reduce/A:q59/a1/r0 via=hint
+t=57.625670 node=coord event=shard_committed job=A:q58 attempt=1 shard=0 task=A:q58/a1/s0/g1.154 worker=worker-4 speculative=false committed=1 shards=1
+t=57.625670 node=coord event=job_state job=A:q58 attempt=1 old=MAPPING new=REDUCING reason=null
+t=57.625670 node=coord event=task_finished task=A:q58/a1/s0/g1.154 worker=worker-4 state=revoked outcome=map_complete
+t=57.625670 node=coord event=reduce_submit job=A:q58 attempt=1 op_id=reduce/A:q58/a1/r0 inputs=1
+t=57.757443 node=coord event=shard_committed job=A:q56 attempt=1 shard=0 task=A:q56/a1/s0/g1.155 worker=worker-4 speculative=false committed=1 shards=1
+t=57.757443 node=coord event=job_state job=A:q56 attempt=1 old=MAPPING new=REDUCING reason=null
+t=57.757443 node=coord event=task_finished task=A:q56/a1/s0/g1.155 worker=worker-4 state=revoked outcome=map_complete
+t=57.757443 node=coord event=reduce_submit job=A:q56 attempt=1 op_id=reduce/A:q56/a1/r0 inputs=1
+t=57.787148 node=coord event=gpu_submit op_id=reduce/A:q56/a1/r0 units=1 attempt=1 state=PENDING
+t=57.805747 node=coord event=gpu_submit op_id=reduce/A:q58/a1/r0 units=1 attempt=1 state=PENDING
+t=58.016482 node=coord event=batch_report batch=worker-4/e1/b122 worker=worker-4 tasks=2 failed=0
+t=59.046270 node=coord event=gpu_op_terminal op_id=reduce/A:q58/a1/r0 state=SUCCEEDED
+t=59.046270 node=coord event=job_state job=A:q58 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=59.046270 node=coord event=job_succeeded job=A:q58 attempt=1 op_id=reduce/A:q58/a1/r0 count=64 checksum=23b582057a6020c8
+t=59.216429 node=coord event=gpu_release op_id=reduce/A:q58/a1/r0
+t=59.330659 node=coord event=gpu_released op_id=reduce/A:q58/a1/r0 via=hint
+t=61.067252 node=coord event=gpu_op_terminal op_id=reduce/A:q56/a1/r0 state=SUCCEEDED
+t=61.067252 node=coord event=job_state job=A:q56 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=61.067252 node=coord event=job_succeeded job=A:q56 attempt=1 op_id=reduce/A:q56/a1/r0 count=64 checksum=326c10ac6a59dc4e
+t=61.081748 node=coord event=gpu_release op_id=reduce/A:q56/a1/r0
+t=61.375668 node=coord event=gpu_released op_id=reduce/A:q56/a1/r0 via=hint

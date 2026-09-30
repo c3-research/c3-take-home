@@ -1,0 +1,146 @@
+t=0.000000 node=worker-1 event=worker_start boot=0 slots=2 lease_budget=1.748 max_drift=0.25 drift_rate=0.001
+t=0.022522 node=worker-1 event=worker_registered boot=0
+t=2.851577 node=worker-1 event=lease_acquired key=A/a1 epoch=1 op_id=A/a1/a1 mode=run attempt=1 valid_for=1.739238
+t=2.851577 node=worker-1 event=gpu_submit op_id=A/a1/a1 key=A/a1 epoch=1 attempt=1
+t=2.855080 node=worker-1 event=gpu_submitted op_id=A/a1/a1 state=PENDING attempt=1
+t=4.331826 node=worker-1 event=lease_acquired key=A/a2 epoch=1 op_id=A/a2/a1 mode=run attempt=1 valid_for=1.741547
+t=4.331826 node=worker-1 event=gpu_submit op_id=A/a2/a1 key=A/a2 epoch=1 attempt=1
+t=4.353673 node=worker-1 event=gpu_submitted op_id=A/a2/a1 state=PENDING attempt=1
+t=4.417262 node=worker-1 event=gpu_op_state key=A/a1 op_id=A/a1/a1 state=RUNNING
+t=4.967493 node=worker-1 event=gpu_op_state key=A/a2 op_id=A/a2/a1 state=RUNNING
+t=5.332705 node=worker-1 event=gpu_op_state key=A/a1 op_id=A/a1/a1 state=SUCCEEDED
+t=5.332705 node=worker-1 event=job_report key=A/a1 epoch=1 op_id=A/a1/a1 state=SUCCEEDED
+t=5.336599 node=worker-1 event=job_reported key=A/a1 epoch=1 op_id=A/a1/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=5.336599 node=worker-1 event=slot_done slot=0 key=A/a1 epoch=1 outcome=reported
+t=5.911432 node=worker-1 event=gpu_op_state key=A/a2 op_id=A/a2/a1 state=SUCCEEDED
+t=5.911432 node=worker-1 event=job_report key=A/a2 epoch=1 op_id=A/a2/a1 state=SUCCEEDED
+t=5.920421 node=worker-1 event=job_reported key=A/a2 epoch=1 op_id=A/a2/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=5.920421 node=worker-1 event=slot_done slot=1 key=A/a2 epoch=1 outcome=reported
+t=7.196529 node=worker-1 event=lease_acquired key=A/a4 epoch=1 op_id=A/a4/a1 mode=run attempt=1 valid_for=1.742693
+t=7.196529 node=worker-1 event=gpu_submit op_id=A/a4/a1 key=A/a4 epoch=1 attempt=1
+t=7.240236 node=worker-1 event=gpu_submitted op_id=A/a4/a1 state=PENDING attempt=1
+t=7.871707 node=worker-1 event=gpu_op_state key=A/a4 op_id=A/a4/a1 state=RUNNING
+t=9.784269 node=worker-1 event=gpu_op_state key=A/a4 op_id=A/a4/a1 state=SUCCEEDED
+t=9.784269 node=worker-1 event=job_report key=A/a4 epoch=1 op_id=A/a4/a1 state=SUCCEEDED
+t=9.804806 node=worker-1 event=job_reported key=A/a4 epoch=1 op_id=A/a4/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=9.804806 node=worker-1 event=slot_done slot=1 key=A/a4 epoch=1 outcome=reported
+t=10.923759 node=worker-1 event=acquire_retry req_id=worker-1.b0.s1.27 attempt=1
+t=10.945065 node=worker-1 event=acquire_retry req_id=worker-1.b0.s0.28 attempt=1
+t=11.445065 node=worker-1 event=acquire_retry req_id=worker-1.b0.s0.28 attempt=2
+t=13.148607 node=worker-1 event=lease_acquired key=A/a8 epoch=1 op_id=A/a8/a1 mode=run attempt=1 valid_for=1.729484
+t=13.148607 node=worker-1 event=gpu_submit op_id=A/a8/a1 key=A/a8 epoch=1 attempt=1
+t=13.161094 node=worker-1 event=gpu_submitted op_id=A/a8/a1 state=PENDING attempt=1
+t=14.400558 node=worker-1 event=gpu_op_state key=A/a8 op_id=A/a8/a1 state=RUNNING
+t=15.337406 node=worker-1 event=gpu_op_state key=A/a8 op_id=A/a8/a1 state=SUCCEEDED
+t=15.337406 node=worker-1 event=job_report key=A/a8 epoch=1 op_id=A/a8/a1 state=SUCCEEDED
+t=15.340604 node=worker-1 event=job_reported key=A/a8 epoch=1 op_id=A/a8/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=15.340604 node=worker-1 event=slot_done slot=0 key=A/a8 epoch=1 outcome=reported
+t=16.430600 node=worker-1 event=lease_acquired key=A/a10 epoch=1 op_id=A/a10/a1 mode=run attempt=1 valid_for=1.737609
+t=16.430600 node=worker-1 event=gpu_submit op_id=A/a10/a1 key=A/a10 epoch=1 attempt=1
+t=17.430600 node=worker-1 event=gpu_submit_unknown op_id=A/a10/a1 reason=timeout attempt=1
+t=17.460756 node=worker-1 event=gpu_submitted op_id=A/a10/a1 state=PENDING attempt=1 via=status
+t=17.770305 node=worker-1 event=gpu_op_state key=A/a10 op_id=A/a10/a1 state=RUNNING
+t=17.830897 node=worker-1 event=lease_acquired key=B/b4 epoch=1 op_id=B/b4/a1 mode=run attempt=1 valid_for=1.711031
+t=17.830897 node=worker-1 event=gpu_submit op_id=B/b4/a1 key=B/b4 epoch=1 attempt=1
+t=17.859935 node=worker-1 event=gpu_submitted op_id=B/b4/a1 state=PENDING attempt=1
+t=18.705378 node=worker-1 event=gpu_op_state key=A/a10 op_id=A/a10/a1 state=SUCCEEDED
+t=18.705378 node=worker-1 event=job_report key=A/a10 epoch=1 op_id=A/a10/a1 state=SUCCEEDED
+t=18.716365 node=worker-1 event=job_reported key=A/a10 epoch=1 op_id=A/a10/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=18.716365 node=worker-1 event=slot_done slot=1 key=A/a10 epoch=1 outcome=reported
+t=18.730897 node=worker-1 event=lease_renew_timeout key=B/b4 epoch=1
+t=19.126088 node=worker-1 event=gpu_op_state key=B/b4 op_id=B/b4/a1 state=RUNNING
+t=20.984236 node=worker-1 event=gpu_op_state key=B/b4 op_id=B/b4/a1 state=SUCCEEDED
+t=20.984236 node=worker-1 event=job_report key=B/b4 epoch=1 op_id=B/b4/a1 state=SUCCEEDED
+t=20.984938 node=worker-1 event=job_reported key=B/b4 epoch=1 op_id=B/b4/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=20.984938 node=worker-1 event=slot_done slot=0 key=B/b4 epoch=1 outcome=reported
+t=22.137746 node=worker-1 event=lease_acquired key=B/b5 epoch=1 op_id=B/b5/a1 mode=run attempt=1 valid_for=1.743729
+t=22.137746 node=worker-1 event=gpu_submit op_id=B/b5/a1 key=B/b5 epoch=1 attempt=1
+t=22.149653 node=worker-1 event=gpu_submitted op_id=B/b5/a1 state=PENDING attempt=1
+t=22.449321 node=worker-1 event=lease_acquired key=A/a14 epoch=1 op_id=A/a14/a1 mode=run attempt=1 valid_for=1.742534
+t=22.449321 node=worker-1 event=gpu_submit op_id=A/a14/a1 key=A/a14 epoch=1 attempt=1
+t=22.464698 node=worker-1 event=gpu_submitted op_id=A/a14/a1 state=PENDING attempt=1
+t=23.384020 node=worker-1 event=gpu_op_state key=B/b5 op_id=B/b5/a1 state=RUNNING
+t=24.071329 node=worker-1 event=gpu_op_state key=A/a14 op_id=A/a14/a1 state=SUCCEEDED
+t=24.071329 node=worker-1 event=job_report key=A/a14 epoch=1 op_id=A/a14/a1 state=SUCCEEDED
+t=24.079932 node=worker-1 event=job_reported key=A/a14 epoch=1 op_id=A/a14/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=24.079932 node=worker-1 event=slot_done slot=1 key=A/a14 epoch=1 outcome=reported
+t=25.548126 node=worker-1 event=gpu_op_state key=B/b5 op_id=B/b5/a1 state=SUCCEEDED
+t=25.548126 node=worker-1 event=job_report key=B/b5 epoch=1 op_id=B/b5/a1 state=SUCCEEDED
+t=25.553122 node=worker-1 event=job_reported key=B/b5 epoch=1 op_id=B/b5/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=25.553122 node=worker-1 event=slot_done slot=0 key=B/b5 epoch=1 outcome=reported
+t=32.772758 node=worker-1 event=acquire_retry req_id=worker-1.b0.s1.82 attempt=1
+t=34.062134 node=worker-1 event=lease_acquired key=B/b8 epoch=1 op_id=B/b8/a1 mode=run attempt=1 valid_for=1.746231
+t=34.062134 node=worker-1 event=gpu_submit op_id=B/b8/a1 key=B/b8 epoch=1 attempt=1
+t=34.065727 node=worker-1 event=gpu_submitted op_id=B/b8/a1 state=PENDING attempt=1
+t=34.680034 node=worker-1 event=gpu_op_state key=B/b8 op_id=B/b8/a1 state=RUNNING
+t=36.550053 node=worker-1 event=gpu_op_state key=B/b8 op_id=B/b8/a1 state=SUCCEEDED
+t=36.550053 node=worker-1 event=job_report key=B/b8 epoch=1 op_id=B/b8/a1 state=SUCCEEDED
+t=36.556849 node=worker-1 event=job_reported key=B/b8 epoch=1 op_id=B/b8/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=36.556849 node=worker-1 event=slot_done slot=1 key=B/b8 epoch=1 outcome=reported
+t=37.321191 node=worker-1 event=lease_acquired key=A/a24 epoch=1 op_id=A/a24/a1 mode=run attempt=1 valid_for=1.737694
+t=37.321191 node=worker-1 event=gpu_submit op_id=A/a24/a1 key=A/a24 epoch=1 attempt=1
+t=37.335039 node=worker-1 event=gpu_submitted op_id=A/a24/a1 state=PENDING attempt=1
+t=37.948156 node=worker-1 event=gpu_op_state key=A/a24 op_id=A/a24/a1 state=RUNNING
+t=38.857007 node=worker-1 event=gpu_op_state key=A/a24 op_id=A/a24/a1 state=SUCCEEDED
+t=38.857007 node=worker-1 event=job_report key=A/a24 epoch=1 op_id=A/a24/a1 state=SUCCEEDED
+t=38.871854 node=worker-1 event=job_reported key=A/a24 epoch=1 op_id=A/a24/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=38.871854 node=worker-1 event=slot_done slot=0 key=A/a24 epoch=1 outcome=reported
+t=40.512823 node=worker-1 event=lease_acquired key=A/a26 epoch=1 op_id=A/a26/a1 mode=run attempt=1 valid_for=1.742049
+t=40.512823 node=worker-1 event=gpu_submit op_id=A/a26/a1 key=A/a26 epoch=1 attempt=1
+t=40.528705 node=worker-1 event=gpu_submitted op_id=A/a26/a1 state=PENDING attempt=1
+t=41.137496 node=worker-1 event=gpu_op_state key=A/a26 op_id=A/a26/a1 state=RUNNING
+t=42.063519 node=worker-1 event=gpu_op_state key=A/a26 op_id=A/a26/a1 state=SUCCEEDED
+t=42.063519 node=worker-1 event=job_report key=A/a26 epoch=1 op_id=A/a26/a1 state=SUCCEEDED
+t=42.071616 node=worker-1 event=job_reported key=A/a26 epoch=1 op_id=A/a26/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=42.071616 node=worker-1 event=slot_done slot=0 key=A/a26 epoch=1 outcome=reported
+t=42.090622 node=worker-1 event=lease_acquired key=B/b10 epoch=1 op_id=B/b10/a1 mode=run attempt=1 valid_for=1.728994
+t=42.090622 node=worker-1 event=gpu_submit op_id=B/b10/a1 key=B/b10 epoch=1 attempt=1
+t=42.103006 node=worker-1 event=gpu_submitted op_id=B/b10/a1 state=PENDING attempt=1
+t=42.723054 node=worker-1 event=gpu_op_state key=B/b10 op_id=B/b10/a1 state=RUNNING
+t=44.579407 node=worker-1 event=gpu_op_state key=B/b10 op_id=B/b10/a1 state=SUCCEEDED
+t=44.579407 node=worker-1 event=job_report key=B/b10 epoch=1 op_id=B/b10/a1 state=SUCCEEDED
+t=44.584678 node=worker-1 event=job_reported key=B/b10 epoch=1 op_id=B/b10/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=44.584678 node=worker-1 event=slot_done slot=0 key=B/b10 epoch=1 outcome=reported
+t=45.778556 node=worker-1 event=lease_acquired key=B/b11 epoch=1 op_id=B/b11/a1 mode=run attempt=1 valid_for=1.746328
+t=45.778556 node=worker-1 event=gpu_submit op_id=B/b11/a1 key=B/b11 epoch=1 attempt=1
+t=45.781715 node=worker-1 event=gpu_submitted op_id=B/b11/a1 state=PENDING attempt=1
+t=46.708978 node=worker-1 event=gpu_op_state key=B/b11 op_id=B/b11/a1 state=RUNNING
+t=48.891316 node=worker-1 event=gpu_op_state key=B/b11 op_id=B/b11/a1 state=FAILED
+t=48.891316 node=worker-1 event=job_report key=B/b11 epoch=1 op_id=B/b11/a1 state=FAILED
+t=49.335131 node=worker-1 event=lease_lost key=B/b11 epoch=1 reason=FENCED
+t=49.391316 node=worker-1 event=job_report_retry key=B/b11 epoch=1 reason=timeout
+t=49.593752 node=worker-1 event=lease_abandoned key=B/b11 epoch=1 op_id=B/b11/a1 step=report reason=fenced
+t=49.593752 node=worker-1 event=slot_done slot=1 key=B/b11 epoch=1 outcome=abandoned
+t=53.790373 node=worker-1 event=lease_acquired key=D/n9 epoch=1 op_id=D/n9/a1 mode=run attempt=1 valid_for=1.736416
+t=53.790373 node=worker-1 event=gpu_submit op_id=D/n9/a1 key=D/n9 epoch=1 attempt=1
+t=53.795570 node=worker-1 event=gpu_submitted op_id=D/n9/a1 state=PENDING attempt=1
+t=55.014544 node=worker-1 event=gpu_op_state key=D/n9 op_id=D/n9/a1 state=RUNNING
+t=56.592034 node=worker-1 event=gpu_op_state key=D/n9 op_id=D/n9/a1 state=SUCCEEDED
+t=56.592034 node=worker-1 event=job_report key=D/n9 epoch=1 op_id=D/n9/a1 state=SUCCEEDED
+t=56.606822 node=worker-1 event=job_reported key=D/n9 epoch=1 op_id=D/n9/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=56.606822 node=worker-1 event=slot_done slot=0 key=D/n9 epoch=1 outcome=reported
+t=57.409807 node=worker-1 event=acquire_retry req_id=worker-1.b0.s1.144 attempt=1
+t=57.711149 node=worker-1 event=acquire_retry req_id=worker-1.b0.s0.145 attempt=1
+t=57.909807 node=worker-1 event=acquire_retry req_id=worker-1.b0.s1.144 attempt=2
+t=58.211149 node=worker-1 event=acquire_retry req_id=worker-1.b0.s0.145 attempt=2
+t=58.409807 node=worker-1 event=acquire_retry req_id=worker-1.b0.s1.144 attempt=3
+t=58.711149 node=worker-1 event=acquire_retry req_id=worker-1.b0.s0.145 attempt=3
+t=59.456211 node=worker-1 event=acquire_retry req_id=worker-1.b0.s1.146 attempt=1
+t=59.748743 node=worker-1 event=acquire_retry req_id=worker-1.b0.s0.147 attempt=1
+t=62.183740 node=worker-1 event=acquire_retry req_id=worker-1.b0.s0.153 attempt=1
+t=62.397946 node=worker-1 event=lease_acquired key=B/b14 epoch=1 op_id=B/b14/a1 mode=run attempt=1 valid_for=1.744053
+t=62.397946 node=worker-1 event=gpu_submit op_id=B/b14/a1 key=B/b14 epoch=1 attempt=1
+t=62.402187 node=worker-1 event=gpu_submitted op_id=B/b14/a1 state=PENDING attempt=1
+t=62.753793 node=worker-1 event=lease_acquired key=D/n15 epoch=1 op_id=D/n15/a1 mode=run attempt=1 valid_for=1.740481
+t=62.753793 node=worker-1 event=gpu_submit op_id=D/n15/a1 key=D/n15 epoch=1 attempt=1
+t=62.765642 node=worker-1 event=gpu_submitted op_id=D/n15/a1 state=PENDING attempt=1
+t=63.068927 node=worker-1 event=gpu_op_state key=D/n15 op_id=D/n15/a1 state=RUNNING
+t=63.645711 node=worker-1 event=gpu_op_state key=B/b14 op_id=B/b14/a1 state=RUNNING
+t=64.601901 node=worker-1 event=gpu_op_state key=D/n15 op_id=D/n15/a1 state=SUCCEEDED
+t=64.601901 node=worker-1 event=job_report key=D/n15 epoch=1 op_id=D/n15/a1 state=SUCCEEDED
+t=64.607145 node=worker-1 event=job_reported key=D/n15 epoch=1 op_id=D/n15/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=64.607145 node=worker-1 event=slot_done slot=0 key=D/n15 epoch=1 outcome=reported
+t=65.803326 node=worker-1 event=gpu_op_state key=B/b14 op_id=B/b14/a1 state=SUCCEEDED
+t=65.803326 node=worker-1 event=job_report key=B/b14 epoch=1 op_id=B/b14/a1 state=SUCCEEDED
+t=65.811264 node=worker-1 event=job_reported key=B/b14 epoch=1 op_id=B/b14/a1 state=SUCCEEDED job_state=SUCCEEDED
+t=65.811264 node=worker-1 event=slot_done slot=1 key=B/b14 epoch=1 outcome=reported

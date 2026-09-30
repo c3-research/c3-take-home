@@ -1,0 +1,10 @@
+network:
+  delay:
+    dist: exponential
+    mean: 0.005
+  drop: 0.06
+gpu:
+  latency:
+    dist: uniform
+    low: 0.5
+    high: 1.5

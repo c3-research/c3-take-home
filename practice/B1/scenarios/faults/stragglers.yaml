@@ -1,0 +1,8 @@
+# Heavy-tailed GPU scheduling latency and a slow, reordering network: many
+# stragglers, so speculative duplicates race their originals to commit.
+network:
+  delay: {dist: exponential, mean: 0.02}
+  reorder: 0.05
+  reorder_window: 0.3
+gpu:
+  latency: {dist: exponential, mean: 1.5, min: 0.1}

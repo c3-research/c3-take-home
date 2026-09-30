@@ -1,0 +1,32 @@
+id: A3
+codebase: A
+type: parallel
+budget_s: 900
+budget_usd: 9.0
+public_seeds:
+- 13
+- 11
+- 12
+- 14
+- 15
+bugs:
+- id: bug-1
+  scenario: scenarios/bug-1.yaml
+  expect:
+    all_actions_resolved_by: 83.0
+    no_unhandled_exceptions: true
+  gates: []
+- id: bug-2
+  scenario: scenarios/bug-2.yaml
+  expect:
+    all_actions_resolved_by: 88.0
+    no_unhandled_exceptions: true
+  gates: []
+- id: bug-3
+  scenario: scenarios/bug-3.yaml
+  expect:
+    all_actions_resolved_by: 88.0
+    no_unhandled_exceptions: true
+    log_events_max:
+      worker_register_retry: 50
+  gates: []

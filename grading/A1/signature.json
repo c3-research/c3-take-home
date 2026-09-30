@@ -1,0 +1,5 @@
+[
+  {"kind": "log", "event": "router_start", "min_count": 2},
+  {"kind": "client", "action": "cancel_job", "tenant": "D", "state": "CANCELLED", "min_count": 1},
+  {"kind": "gpu_effect", "effect": "finished", "op_id": "D/n[0-7]/a1", "state": "SUCCEEDED", "min_count": 1}
+]

@@ -1,0 +1,27 @@
+# Every fault type: network delay/drop/duplicate/reorder, partitions, crashes and
+# restarts of the router and workers, clock skew on every node, process pauses,
+# and all three GPU faults (fail, lost_reply, accepted_reported_failed).
+network:
+  delay: {dist: exponential, mean: 0.005}
+  drop: 0.02
+  duplicate: 0.01
+  reorder: 0.03
+  reorder_window: 0.05
+  partitions:
+    - {at: 30.0, until: 33.0, groups: [["router-1"], ["worker-1", "worker-2"]]}
+    - {at: 55.0, until: 57.5, groups: [["gpu"], ["worker-3", "worker-4"]]}
+nodes:
+  crashes:
+    - {node: "worker-*", rate_per_hour: 40, restart_after: [0.5, 5.0]}
+    - {node: "router-1", rate_per_hour: 30, restart_after: [0.5, 4.0]}
+  clocks:
+    - {node: "worker-*", drift_ppm: [-500, 500], offset: [-0.5, 0.5]}
+    - {node: "router-1", drift_ppm: [-500, 500], offset: [-0.5, 0.5]}
+  pauses:
+    - {node: "worker-*", rate_per_hour: 40, duration: [0.2, 3.0]}
+    - {node: "router-1", rate_per_hour: 30, duration: [0.2, 2.5]}
+gpu:
+  fail: 0.05
+  lost_reply: 0.03
+  accepted_reported_failed: 0.05
+  latency: {dist: uniform, low: 0.2, high: 1.5}

@@ -1,0 +1,27 @@
+# Rough afternoon on a small GPU pool: steady tenant A work, occasional large
+# tenant B jobs, tenant C jobs that are often cancelled while they run.
+name: public
+seed: 11
+end_at: 105.0
+quiesce_at: 60.0
+liveness_window: 40.0
+gpu: {capacity: 8, release_delay: {dist: uniform, low: 0.8, high: 2.0}}
+nodes:
+  - {name: router-1, class: "jobrouter.router:Router"}
+  - {name: "worker-{i}", count: 4, class: "jobrouter.worker:Worker"}
+service: {worker_slots: 2}
+client: {target: router-1}
+client_retry: {timeout: 1.0, max_attempts: 8, backoff: 0.5, retry_on: [UNAVAILABLE]}
+faults: faults/rough-day.yaml
+workload:
+  - {repeat: 20, at: 1.0, every: 2.5, jitter: 0.4, action: submit_job, tenant: A, job_id: "a{i}", units: 2, duration: 1.0}
+  - {repeat: 5, at: 3.0, every: 10.0, jitter: 1.0, action: submit_job, tenant: B, job_id: "b{i}", units: 7, duration: 1.5}
+  - {repeat: 20, at: 2.0, every: 2.5, action: submit_job, tenant: C, job_id: "c{i}", units: 1, duration: 2.0}
+  - {repeat: 20, at: 8.0, every: 2.5, jitter: 3.0, action: cancel_job, tenant: C, job_id: "c{i}"}
+  - {repeat: 3, at: 0.5, every: 0.3, action: submit_job, tenant: C, job_id: "long{i}", units: 1, duration: 23.0}
+  - {repeat: 3, at: 29.0, every: 1.5, jitter: 2.0, action: cancel_job, tenant: C, job_id: "long{i}"}
+expect:
+  all_actions_resolved_by: 103.0
+  no_unhandled_exceptions: true
+  rpc_requests_per_group_max:
+    - {src: "worker-*", dst: router-1, method: hello, group_by: boot, max: 34}

@@ -1,0 +1,11 @@
+network:
+  delay:
+    dist: exponential
+    mean: 0.02
+  reorder: 0.05
+  reorder_window: 0.3
+gpu:
+  latency:
+    dist: exponential
+    mean: 1.5
+    min: 0.1

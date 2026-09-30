@@ -1,0 +1,41 @@
+id: B2
+codebase: B
+type: parallel
+budget_s: 900
+budget_usd: 9.0
+public_seeds:
+- 1
+- 3
+- 5
+- 6
+- 7
+bugs:
+- id: bug-1
+  scenario: scenarios/bug-1.yaml
+  expect:
+    all_actions_resolved_by: 110.0
+    no_unhandled_exceptions: true
+  gates: []
+- id: bug-2
+  scenario: scenarios/bug-2.yaml
+  expect:
+    all_actions_resolved_by: 95.0
+    no_unhandled_exceptions: true
+    rpc_requests_max:
+    - src: worker-*
+      dst: gpu
+      method: cancel
+      max: 0
+    rpc_requests_per_group_max:
+    - src: worker-*
+      dst: coord
+      method: commit
+      group_by: output.digest
+      max: 5
+  gates: []
+- id: bug-3
+  scenario: scenarios/bug-3.yaml
+  expect:
+    all_actions_resolved_by: 95.0
+    no_unhandled_exceptions: true
+  gates: []

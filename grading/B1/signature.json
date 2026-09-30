@@ -1,0 +1,4 @@
+[
+  {"kind": "log", "event": "task_committed", "min_count": 141, "note": "140 shards in public.yaml; one extra grant"},
+  {"kind": "log", "event": "task_finished", "outcome": "map_complete", "min_count": 1}
+]

@@ -1,0 +1,9 @@
+# GPU faults: failed operations, lost submit replies and the platform's
+# UNAVAILABLE-after-acceptance quirk, with slow and variable scheduling latency.
+network:
+  delay: {dist: exponential, mean: 0.005}
+gpu:
+  fail: 0.1
+  lost_reply: 0.08
+  accepted_reported_failed: 0.15
+  latency: {dist: uniform, low: 0.2, high: 2.5}

@@ -1,0 +1,19 @@
+network:
+  delay:
+    dist: exponential
+    mean: 0.005
+  drop: 0.01
+  duplicate: 0.005
+nodes:
+  crashes:
+  - node: router-1
+    rate_per_hour: 120
+    restart_after:
+    - 0.5
+    - 3.0
+gpu:
+  fail: 0.02
+  latency:
+    dist: uniform
+    low: 0.2
+    high: 1.5

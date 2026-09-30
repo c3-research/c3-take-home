@@ -1,0 +1,1029 @@
+t=0.000000 node=coord event=coord_start gen=1 boot=0 dead_after=5.0006
+t=0.000000 node=coord event=coord_recovered jobs=0
+t=0.026186 node=coord event=worker_registered worker=worker-3 epoch=1 boot=0 reg_seq=1
+t=0.035440 node=coord event=worker_registered worker=worker-1 epoch=1 boot=0 reg_seq=1
+t=0.049915 node=coord event=worker_registered worker=worker-2 epoch=1 boot=0 reg_seq=1
+t=0.071903 node=coord event=worker_registered worker=worker-4 epoch=1 boot=0 reg_seq=1
+t=1.644653 node=coord event=job_accepted job=A:agg-0 shards=8 records=64 units=1
+t=1.644653 node=coord event=job_state job=A:agg-0 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=1.644653 node=coord event=attempt_start job=A:agg-0 attempt=1 max_attempts=3
+t=1.644653 node=coord event=job_scheduled job=A:agg-0 attempt=1 shards=8 queued=8
+t=1.700000 node=coord event=task_dispatch task=A:agg-0/a1/s0/g1.1 job=A:agg-0 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b1
+t=1.700000 node=coord event=task_dispatch task=A:agg-0/a1/s1/g1.2 job=A:agg-0 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b1
+t=1.700000 node=coord event=task_dispatch task=A:agg-0/a1/s2/g1.3 job=A:agg-0 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b1
+t=1.700000 node=coord event=task_dispatch task=A:agg-0/a1/s3/g1.4 job=A:agg-0 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b2
+t=1.700000 node=coord event=task_dispatch task=A:agg-0/a1/s4/g1.5 job=A:agg-0 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b2
+t=1.700000 node=coord event=task_dispatch task=A:agg-0/a1/s5/g1.6 job=A:agg-0 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b2
+t=1.700000 node=coord event=task_dispatch task=A:agg-0/a1/s6/g1.7 job=A:agg-0 attempt=1 shard=6 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b3
+t=1.700000 node=coord event=task_dispatch task=A:agg-0/a1/s7/g1.8 job=A:agg-0 attempt=1 shard=7 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b3
+t=1.788478 node=coord event=batch_assigned batch=worker-2/e1/b2 worker=worker-2 tasks=3 accepted=3 hb_seq=3
+t=1.792909 node=coord event=batch_assigned batch=worker-3/e1/b3 worker=worker-3 tasks=2 accepted=2 hb_seq=3
+t=1.812151 node=coord event=batch_assigned batch=worker-1/e1/b1 worker=worker-1 tasks=3 accepted=3 hb_seq=3
+t=2.783590 node=coord event=shard_committed job=A:agg-0 attempt=1 shard=0 task=A:agg-0/a1/s0/g1.1 worker=worker-1 speculative=false committed=1 shards=8
+t=2.803902 node=coord event=shard_committed job=A:agg-0 attempt=1 shard=3 task=A:agg-0/a1/s3/g1.4 worker=worker-2 speculative=false committed=2 shards=8
+t=3.216349 node=coord event=shard_committed job=A:agg-0 attempt=1 shard=5 task=A:agg-0/a1/s5/g1.6 worker=worker-2 speculative=false committed=3 shards=8
+t=3.374609 node=coord event=job_accepted job=B:roll-0 shards=6 records=32 units=1
+t=3.374609 node=coord event=job_state job=B:roll-0 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=3.374609 node=coord event=attempt_start job=B:roll-0 attempt=1 max_attempts=3
+t=3.374609 node=coord event=job_scheduled job=B:roll-0 attempt=1 shards=6 queued=6
+t=3.400000 node=coord event=task_dispatch task=B:roll-0/a1/s0/g1.9 job=B:roll-0 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b4
+t=3.400000 node=coord event=task_dispatch task=B:roll-0/a1/s1/g1.10 job=B:roll-0 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b4
+t=3.400000 node=coord event=task_dispatch task=B:roll-0/a1/s2/g1.11 job=B:roll-0 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b4
+t=3.400000 node=coord event=task_dispatch task=B:roll-0/a1/s3/g1.12 job=B:roll-0 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b5
+t=3.415996 node=coord event=batch_assigned batch=worker-4/e1/b4 worker=worker-4 tasks=3 accepted=3 hb_seq=6
+t=3.423846 node=coord event=batch_assigned batch=worker-3/e1/b5 worker=worker-3 tasks=1 accepted=1 hb_seq=6
+t=3.451613 node=coord event=shard_committed job=A:agg-0 attempt=1 shard=4 task=A:agg-0/a1/s4/g1.5 worker=worker-2 speculative=false committed=4 shards=8
+t=3.869952 node=coord event=task_finished task=A:agg-0/a1/s3/g1.4 worker=worker-2 state=done outcome=committed
+t=3.869952 node=coord event=task_finished task=A:agg-0/a1/s4/g1.5 worker=worker-2 state=done outcome=committed
+t=3.869952 node=coord event=task_finished task=A:agg-0/a1/s5/g1.6 worker=worker-2 state=done outcome=committed
+t=3.869952 node=coord event=batch_report batch=worker-2/e1/b2 worker=worker-2 tasks=3 failed=0
+t=3.900000 node=coord event=task_dispatch task=B:roll-0/a1/s4/g1.13 job=B:roll-0 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b6
+t=3.900000 node=coord event=task_dispatch task=B:roll-0/a1/s5/g1.14 job=B:roll-0 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b6
+t=4.077256 node=coord event=batch_assigned batch=worker-2/e1/b6 worker=worker-2 tasks=2 accepted=2 hb_seq=7
+t=4.200000 node=coord event=speculation_launch job=A:agg-0 attempt=1 shard=1 straggler=A:agg-0/a1/s1/g1.2 worker=worker-2 elapsed=2.5 straggler_after=2.5
+t=4.200000 node=coord event=task_dispatch task=A:agg-0/a1/s1/g1.15 job=A:agg-0 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b7
+t=4.201810 node=coord event=shard_committed job=A:agg-0 attempt=1 shard=7 task=A:agg-0/a1/s7/g1.8 worker=worker-3 speculative=false committed=5 shards=8
+t=4.222533 node=coord event=batch_assigned batch=worker-2/e1/b7 worker=worker-2 tasks=1 accepted=1 hb_seq=7
+t=4.426317 node=coord event=shard_committed job=B:roll-0 attempt=1 shard=1 task=B:roll-0/a1/s1/g1.10 worker=worker-4 speculative=false committed=1 shards=6
+t=4.683980 node=coord event=shard_committed job=B:roll-0 attempt=1 shard=3 task=B:roll-0/a1/s3/g1.12 worker=worker-3 speculative=false committed=2 shards=6
+t=4.776888 node=coord event=shard_committed job=B:roll-0 attempt=1 shard=5 task=B:roll-0/a1/s5/g1.14 worker=worker-2 speculative=false committed=3 shards=6
+t=4.929901 node=coord event=task_finished task=B:roll-0/a1/s3/g1.12 worker=worker-3 state=done outcome=committed
+t=4.929901 node=coord event=batch_report batch=worker-3/e1/b5 worker=worker-3 tasks=1 failed=0
+t=5.000000 node=coord event=speculation_launch job=A:agg-0 attempt=1 shard=2 straggler=A:agg-0/a1/s2/g1.3 worker=worker-3 elapsed=3.3 straggler_after=2.5
+t=5.000000 node=coord event=task_dispatch task=A:agg-0/a1/s2/g1.16 job=A:agg-0 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b8
+t=5.086673 node=coord event=shard_committed job=A:agg-0 attempt=1 shard=6 task=A:agg-0/a1/s6/g1.7 worker=worker-3 speculative=false committed=6 shards=8
+t=5.162855 node=coord event=shard_committed job=A:agg-0 attempt=1 shard=1 task=A:agg-0/a1/s1/g1.2 worker=worker-1 speculative=false committed=7 shards=8
+t=5.162855 node=coord event=task_abort_request job=A:agg-0 shard=1 worker=worker-2 tasks=1 reason=shard_committed
+t=5.195083 node=coord event=shard_committed job=A:agg-0 attempt=1 shard=2 task=A:agg-0/a1/s2/g1.3 worker=worker-1 speculative=false committed=8 shards=8
+t=5.195083 node=coord event=task_abort_request job=A:agg-0 shard=2 worker=worker-3 tasks=1 reason=shard_committed
+t=5.195083 node=coord event=job_state job=A:agg-0 attempt=1 old=MAPPING new=REDUCING reason=null
+t=5.195083 node=coord event=task_finished task=A:agg-0/a1/s0/g1.1 worker=worker-1 state=revoked outcome=map_complete
+t=5.195083 node=coord event=task_finished task=A:agg-0/a1/s1/g1.15 worker=worker-2 state=revoked outcome=map_complete
+t=5.195083 node=coord event=task_finished task=A:agg-0/a1/s1/g1.2 worker=worker-1 state=revoked outcome=map_complete
+t=5.195083 node=coord event=task_finished task=A:agg-0/a1/s2/g1.16 worker=worker-3 state=revoked outcome=map_complete
+t=5.195083 node=coord event=task_finished task=A:agg-0/a1/s2/g1.3 worker=worker-1 state=revoked outcome=map_complete
+t=5.195083 node=coord event=task_finished task=A:agg-0/a1/s6/g1.7 worker=worker-3 state=revoked outcome=map_complete
+t=5.195083 node=coord event=task_finished task=A:agg-0/a1/s7/g1.8 worker=worker-3 state=revoked outcome=map_complete
+t=5.195083 node=coord event=reduce_submit job=A:agg-0 attempt=1 op_id=reduce/A:agg-0/a1/r0 inputs=8
+t=5.232204 node=coord event=gpu_submit op_id=reduce/A:agg-0/a1/r0 units=1 attempt=1 state=PENDING
+t=5.260022 node=coord event=batch_assigned batch=worker-3/e1/b8 worker=worker-3 tasks=1 accepted=0 hb_seq=9
+t=5.260022 node=coord event=batch_report batch=worker-3/e1/b8 worker=worker-3 tasks=0 failed=0
+t=5.419498 node=coord event=batch_report batch=worker-2/e1/b7 worker=worker-2 tasks=1 failed=0
+t=5.501883 node=coord event=batch_report batch=worker-1/e1/b1 worker=worker-1 tasks=3 failed=0
+t=5.520818 node=coord event=batch_report batch=worker-3/e1/b3 worker=worker-3 tasks=2 failed=0
+t=5.913948 node=coord event=shard_committed job=B:roll-0 attempt=1 shard=4 task=B:roll-0/a1/s4/g1.13 worker=worker-2 speculative=false committed=4 shards=6
+t=6.000000 node=coord event=speculation_launch job=B:roll-0 attempt=1 shard=0 straggler=B:roll-0/a1/s0/g1.9 worker=worker-1 elapsed=2.6 straggler_after=2.5
+t=6.000000 node=coord event=task_dispatch task=B:roll-0/a1/s0/g1.17 job=B:roll-0 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=true batch=worker-1/e1/b9
+t=6.000000 node=coord event=speculation_launch job=B:roll-0 attempt=1 shard=2 straggler=B:roll-0/a1/s2/g1.11 worker=worker-3 elapsed=2.6 straggler_after=2.5
+t=6.000000 node=coord event=task_dispatch task=B:roll-0/a1/s2/g1.18 job=B:roll-0 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b10
+t=6.035090 node=coord event=batch_assigned batch=worker-3/e1/b10 worker=worker-3 tasks=1 accepted=1 hb_seq=11
+t=6.087061 node=coord event=batch_assigned batch=worker-1/e1/b9 worker=worker-1 tasks=1 accepted=1 hb_seq=11
+t=6.097872 node=coord event=task_finished task=B:roll-0/a1/s4/g1.13 worker=worker-2 state=done outcome=committed
+t=6.097872 node=coord event=task_finished task=B:roll-0/a1/s5/g1.14 worker=worker-2 state=done outcome=committed
+t=6.097872 node=coord event=batch_report batch=worker-2/e1/b6 worker=worker-2 tasks=2 failed=0
+t=6.152284 node=coord event=shard_committed job=B:roll-0 attempt=1 shard=2 task=B:roll-0/a1/s2/g1.11 worker=worker-4 speculative=false committed=5 shards=6
+t=6.152284 node=coord event=task_abort_request job=B:roll-0 shard=2 worker=worker-3 tasks=1 reason=shard_committed
+t=6.585575 node=coord event=job_accepted job=A:agg-1 shards=8 records=64 units=1
+t=6.585575 node=coord event=job_state job=A:agg-1 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=6.585575 node=coord event=attempt_start job=A:agg-1 attempt=1 max_attempts=3
+t=6.585575 node=coord event=job_scheduled job=A:agg-1 attempt=1 shards=8 queued=8
+t=6.600000 node=coord event=task_dispatch task=A:agg-1/a1/s0/g1.19 job=A:agg-1 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b11
+t=6.600000 node=coord event=task_dispatch task=A:agg-1/a1/s1/g1.20 job=A:agg-1 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b11
+t=6.600000 node=coord event=task_dispatch task=A:agg-1/a1/s2/g1.21 job=A:agg-1 attempt=1 shard=2 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b11
+t=6.600000 node=coord event=task_dispatch task=A:agg-1/a1/s3/g1.22 job=A:agg-1 attempt=1 shard=3 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b12
+t=6.600000 node=coord event=task_dispatch task=A:agg-1/a1/s4/g1.23 job=A:agg-1 attempt=1 shard=4 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b12
+t=6.600000 node=coord event=task_dispatch task=A:agg-1/a1/s5/g1.24 job=A:agg-1 attempt=1 shard=5 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b13
+t=6.600000 node=coord event=task_dispatch task=A:agg-1/a1/s6/g1.25 job=A:agg-1 attempt=1 shard=6 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b13
+t=6.610394 node=coord event=batch_assigned batch=worker-2/e1/b11 worker=worker-2 tasks=3 accepted=3 hb_seq=12
+t=6.640341 node=coord event=batch_assigned batch=worker-3/e1/b13 worker=worker-3 tasks=2 accepted=2 hb_seq=12
+t=6.650800 node=coord event=batch_assigned batch=worker-1/e1/b12 worker=worker-1 tasks=2 accepted=2 hb_seq=12
+t=6.883617 node=coord event=task_finished task=B:roll-0/a1/s2/g1.18 worker=worker-3 state=done outcome=aborted
+t=6.883617 node=coord event=batch_report batch=worker-3/e1/b10 worker=worker-3 tasks=1 failed=0
+t=6.900000 node=coord event=task_dispatch task=A:agg-1/a1/s7/g1.26 job=A:agg-1 attempt=1 shard=7 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b14
+t=6.979844 node=coord event=batch_assigned batch=worker-3/e1/b14 worker=worker-3 tasks=1 accepted=1 hb_seq=12
+t=7.037266 node=coord event=shard_committed job=B:roll-0 attempt=1 shard=0 task=B:roll-0/a1/s0/g1.17 worker=worker-1 speculative=true committed=6 shards=6
+t=7.037266 node=coord event=task_abort_request job=B:roll-0 shard=0 worker=worker-4 tasks=1 reason=shard_committed
+t=7.037266 node=coord event=job_state job=B:roll-0 attempt=1 old=MAPPING new=REDUCING reason=null
+t=7.037266 node=coord event=task_finished task=B:roll-0/a1/s0/g1.17 worker=worker-1 state=revoked outcome=map_complete
+t=7.037266 node=coord event=task_finished task=B:roll-0/a1/s0/g1.9 worker=worker-4 state=revoked outcome=map_complete
+t=7.037266 node=coord event=task_finished task=B:roll-0/a1/s1/g1.10 worker=worker-4 state=revoked outcome=map_complete
+t=7.037266 node=coord event=task_finished task=B:roll-0/a1/s2/g1.11 worker=worker-4 state=revoked outcome=map_complete
+t=7.037266 node=coord event=reduce_submit job=B:roll-0 attempt=1 op_id=reduce/B:roll-0/a1/r0 inputs=6
+t=7.092595 node=coord event=gpu_submit op_id=reduce/B:roll-0/a1/r0 units=1 attempt=1 state=PENDING
+t=7.301084 node=coord event=batch_report batch=worker-1/e1/b9 worker=worker-1 tasks=1 failed=0
+t=7.440602 node=coord event=gpu_op_terminal op_id=reduce/A:agg-0/a1/r0 state=SUCCEEDED
+t=7.440602 node=coord event=job_state job=A:agg-0 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=7.440602 node=coord event=job_succeeded job=A:agg-0 attempt=1 op_id=reduce/A:agg-0/a1/r0 count=512 checksum=f67b22f7b1b187b8
+t=7.520576 node=coord event=batch_report batch=worker-4/e1/b4 worker=worker-4 tasks=3 failed=0
+t=7.532889 node=coord event=shard_committed job=A:agg-1 attempt=1 shard=1 task=A:agg-1/a1/s1/g1.20 worker=worker-2 speculative=false committed=1 shards=8
+t=7.537727 node=coord event=gpu_release op_id=reduce/A:agg-0/a1/r0
+t=7.585517 node=coord event=gpu_released op_id=reduce/A:agg-0/a1/r0 via=hint
+t=7.656944 node=coord event=shard_committed job=A:agg-1 attempt=1 shard=5 task=A:agg-1/a1/s5/g1.24 worker=worker-3 speculative=false committed=2 shards=8
+t=7.672951 node=coord event=shard_committed job=A:agg-1 attempt=1 shard=2 task=A:agg-1/a1/s2/g1.21 worker=worker-2 speculative=false committed=3 shards=8
+t=8.173343 node=coord event=shard_committed job=A:agg-1 attempt=1 shard=4 task=A:agg-1/a1/s4/g1.23 worker=worker-1 speculative=false committed=4 shards=8
+t=8.360252 node=coord event=shard_committed job=A:agg-1 attempt=1 shard=0 task=A:agg-1/a1/s0/g1.19 worker=worker-2 speculative=false committed=5 shards=8
+t=8.415008 node=coord event=job_accepted job=B:roll-1 shards=6 records=32 units=1
+t=8.415008 node=coord event=job_state job=B:roll-1 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=8.415008 node=coord event=attempt_start job=B:roll-1 attempt=1 max_attempts=3
+t=8.415008 node=coord event=job_scheduled job=B:roll-1 attempt=1 shards=6 queued=6
+t=8.500000 node=coord event=task_dispatch task=B:roll-1/a1/s0/g1.27 job=B:roll-1 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b15
+t=8.500000 node=coord event=task_dispatch task=B:roll-1/a1/s1/g1.28 job=B:roll-1 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b15
+t=8.500000 node=coord event=task_dispatch task=B:roll-1/a1/s2/g1.29 job=B:roll-1 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b15
+t=8.500000 node=coord event=task_dispatch task=B:roll-1/a1/s3/g1.30 job=B:roll-1 attempt=1 shard=3 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b16
+t=8.526124 node=coord event=batch_assigned batch=worker-4/e1/b15 worker=worker-4 tasks=3 accepted=3 hb_seq=15
+t=8.526246 node=coord event=batch_assigned batch=worker-1/e1/b16 worker=worker-1 tasks=1 accepted=1 hb_seq=15
+t=8.629525 node=coord event=task_finished task=A:agg-1/a1/s0/g1.19 worker=worker-2 state=done outcome=committed
+t=8.629525 node=coord event=task_finished task=A:agg-1/a1/s1/g1.20 worker=worker-2 state=done outcome=committed
+t=8.629525 node=coord event=task_finished task=A:agg-1/a1/s2/g1.21 worker=worker-2 state=done outcome=committed
+t=8.629525 node=coord event=batch_report batch=worker-2/e1/b11 worker=worker-2 tasks=3 failed=0
+t=8.700000 node=coord event=task_dispatch task=B:roll-1/a1/s4/g1.31 job=B:roll-1 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b17
+t=8.700000 node=coord event=task_dispatch task=B:roll-1/a1/s5/g1.32 job=B:roll-1 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b17
+t=8.933907 node=coord event=gpu_op_terminal op_id=reduce/B:roll-0/a1/r0 state=SUCCEEDED
+t=8.933907 node=coord event=job_state job=B:roll-0 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=8.933907 node=coord event=job_succeeded job=B:roll-0 attempt=1 op_id=reduce/B:roll-0/a1/r0 count=192 checksum=bd601656c5198984
+t=8.939572 node=coord event=batch_assigned batch=worker-2/e1/b17 worker=worker-2 tasks=2 accepted=2 hb_seq=16
+t=8.951846 node=coord event=gpu_release op_id=reduce/B:roll-0/a1/r0
+t=9.140449 node=coord event=shard_committed job=A:agg-1 attempt=1 shard=7 task=A:agg-1/a1/s7/g1.26 worker=worker-3 speculative=false committed=6 shards=8
+t=9.200000 node=coord event=speculation_launch job=A:agg-1 attempt=1 shard=3 straggler=A:agg-1/a1/s3/g1.22 worker=worker-2 elapsed=2.6 straggler_after=2.5
+t=9.200000 node=coord event=task_dispatch task=A:agg-1/a1/s3/g1.33 job=A:agg-1 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b18
+t=9.217483 node=coord event=gpu_released op_id=reduce/B:roll-0/a1/r0 via=hint
+t=9.311559 node=coord event=task_finished task=A:agg-1/a1/s7/g1.26 worker=worker-3 state=done outcome=committed
+t=9.311559 node=coord event=batch_report batch=worker-3/e1/b14 worker=worker-3 tasks=1 failed=0
+t=9.472681 node=coord event=batch_assigned batch=worker-2/e1/b18 worker=worker-2 tasks=1 accepted=1 hb_seq=16
+t=9.652317 node=coord event=shard_committed job=B:roll-1 attempt=1 shard=0 task=B:roll-1/a1/s0/g1.27 worker=worker-4 speculative=false committed=1 shards=6
+t=9.788569 node=coord event=shard_committed job=B:roll-1 attempt=1 shard=2 task=B:roll-1/a1/s2/g1.29 worker=worker-4 speculative=false committed=2 shards=6
+t=10.569545 node=coord event=shard_committed job=B:roll-1 attempt=1 shard=1 task=B:roll-1/a1/s1/g1.28 worker=worker-4 speculative=false committed=3 shards=6
+t=10.584585 node=coord event=shard_committed job=A:agg-1 attempt=1 shard=6 task=A:agg-1/a1/s6/g1.25 worker=worker-3 speculative=false committed=7 shards=8
+t=10.771761 node=coord event=shard_committed job=B:roll-1 attempt=1 shard=5 task=B:roll-1/a1/s5/g1.32 worker=worker-2 speculative=false committed=4 shards=6
+t=10.776473 node=coord event=task_finished task=A:agg-1/a1/s5/g1.24 worker=worker-3 state=done outcome=committed
+t=10.776473 node=coord event=task_finished task=A:agg-1/a1/s6/g1.25 worker=worker-3 state=done outcome=committed
+t=10.776473 node=coord event=batch_report batch=worker-3/e1/b13 worker=worker-3 tasks=2 failed=0
+t=11.100000 node=coord event=speculation_launch job=B:roll-1 attempt=1 shard=3 straggler=B:roll-1/a1/s3/g1.30 worker=worker-3 elapsed=2.6 straggler_after=2.5
+t=11.100000 node=coord event=task_dispatch task=B:roll-1/a1/s3/g1.34 job=B:roll-1 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b19
+t=11.115330 node=coord event=task_finished task=B:roll-1/a1/s0/g1.27 worker=worker-4 state=done outcome=committed
+t=11.115330 node=coord event=task_finished task=B:roll-1/a1/s1/g1.28 worker=worker-4 state=done outcome=committed
+t=11.115330 node=coord event=task_finished task=B:roll-1/a1/s2/g1.29 worker=worker-4 state=done outcome=committed
+t=11.115330 node=coord event=batch_report batch=worker-4/e1/b15 worker=worker-4 tasks=3 failed=0
+t=11.126013 node=coord event=batch_assigned batch=worker-3/e1/b19 worker=worker-3 tasks=1 accepted=1 hb_seq=20
+t=11.141429 node=coord event=shard_committed job=A:agg-1 attempt=1 shard=3 task=A:agg-1/a1/s3/g1.33 worker=worker-2 speculative=true committed=8 shards=8
+t=11.141429 node=coord event=task_abort_request job=A:agg-1 shard=3 worker=worker-1 tasks=1 reason=shard_committed
+t=11.141429 node=coord event=job_state job=A:agg-1 attempt=1 old=MAPPING new=REDUCING reason=null
+t=11.141429 node=coord event=task_finished task=A:agg-1/a1/s3/g1.22 worker=worker-1 state=revoked outcome=map_complete
+t=11.141429 node=coord event=task_finished task=A:agg-1/a1/s3/g1.33 worker=worker-2 state=revoked outcome=map_complete
+t=11.141429 node=coord event=task_finished task=A:agg-1/a1/s4/g1.23 worker=worker-1 state=revoked outcome=map_complete
+t=11.141429 node=coord event=reduce_submit job=A:agg-1 attempt=1 op_id=reduce/A:agg-1/a1/r0 inputs=8
+t=11.184214 node=coord event=gpu_submit op_id=reduce/A:agg-1/a1/r0 units=1 attempt=1 state=PENDING
+t=11.300000 node=coord event=speculation_launch job=B:roll-1 attempt=1 shard=4 straggler=B:roll-1/a1/s4/g1.31 worker=worker-4 elapsed=2.6 straggler_after=2.5
+t=11.300000 node=coord event=task_dispatch task=B:roll-1/a1/s4/g1.35 job=B:roll-1 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b20
+t=11.328796 node=coord event=batch_assigned batch=worker-4/e1/b20 worker=worker-4 tasks=1 accepted=1 hb_seq=20
+t=11.493344 node=coord event=batch_report batch=worker-2/e1/b18 worker=worker-2 tasks=1 failed=0
+t=11.530286 node=coord event=batch_report batch=worker-1/e1/b12 worker=worker-1 tasks=2 failed=0
+t=11.934071 node=coord event=job_accepted job=A:agg-2 shards=8 records=64 units=1
+t=11.934071 node=coord event=job_state job=A:agg-2 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=11.934071 node=coord event=attempt_start job=A:agg-2 attempt=1 max_attempts=3
+t=11.934071 node=coord event=job_scheduled job=A:agg-2 attempt=1 shards=8 queued=8
+t=12.000000 node=coord event=task_dispatch task=A:agg-2/a1/s0/g1.36 job=A:agg-2 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b21
+t=12.000000 node=coord event=task_dispatch task=A:agg-2/a1/s1/g1.37 job=A:agg-2 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b21
+t=12.000000 node=coord event=task_dispatch task=A:agg-2/a1/s2/g1.38 job=A:agg-2 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b22
+t=12.000000 node=coord event=task_dispatch task=A:agg-2/a1/s3/g1.39 job=A:agg-2 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b22
+t=12.000000 node=coord event=task_dispatch task=A:agg-2/a1/s4/g1.40 job=A:agg-2 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b23
+t=12.000000 node=coord event=task_dispatch task=A:agg-2/a1/s5/g1.41 job=A:agg-2 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b23
+t=12.000000 node=coord event=task_dispatch task=A:agg-2/a1/s6/g1.42 job=A:agg-2 attempt=1 shard=6 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b24
+t=12.006248 node=coord event=batch_assigned batch=worker-4/e1/b23 worker=worker-4 tasks=2 accepted=2 hb_seq=21
+t=12.026329 node=coord event=batch_assigned batch=worker-1/e1/b21 worker=worker-1 tasks=2 accepted=2 hb_seq=22
+t=12.073678 node=coord event=batch_assigned batch=worker-3/e1/b22 worker=worker-3 tasks=2 accepted=2 hb_seq=22
+t=12.077852 node=coord event=shard_committed job=B:roll-1 attempt=1 shard=3 task=B:roll-1/a1/s3/g1.34 worker=worker-3 speculative=true committed=5 shards=6
+t=12.077852 node=coord event=task_abort_request job=B:roll-1 shard=3 worker=worker-1 tasks=1 reason=shard_committed
+t=12.107282 node=coord event=batch_assigned batch=worker-2/e1/b24 worker=worker-2 tasks=1 accepted=1 hb_seq=22
+t=12.377499 node=coord event=task_finished task=B:roll-1/a1/s3/g1.34 worker=worker-3 state=done outcome=committed
+t=12.377499 node=coord event=batch_report batch=worker-3/e1/b19 worker=worker-3 tasks=1 failed=0
+t=12.400000 node=coord event=task_dispatch task=A:agg-2/a1/s7/g1.43 job=A:agg-2 attempt=1 shard=7 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b25
+t=12.416972 node=coord event=batch_assigned batch=worker-3/e1/b25 worker=worker-3 tasks=1 accepted=1 hb_seq=22
+t=12.637968 node=coord event=job_accepted job=B:roll-2 shards=6 records=32 units=1
+t=12.637968 node=coord event=job_state job=B:roll-2 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=12.637968 node=coord event=attempt_start job=B:roll-2 attempt=1 max_attempts=3
+t=12.637968 node=coord event=job_scheduled job=B:roll-2 attempt=1 shards=6 queued=6
+t=12.694985 node=coord event=shard_committed job=A:agg-2 attempt=1 shard=0 task=A:agg-2/a1/s0/g1.36 worker=worker-1 speculative=false committed=1 shards=8
+t=12.740500 node=coord event=shard_committed job=B:roll-1 attempt=1 shard=4 task=B:roll-1/a1/s4/g1.31 worker=worker-2 speculative=false committed=6 shards=6
+t=12.740500 node=coord event=task_abort_request job=B:roll-1 shard=4 worker=worker-4 tasks=1 reason=shard_committed
+t=12.740500 node=coord event=job_state job=B:roll-1 attempt=1 old=MAPPING new=REDUCING reason=null
+t=12.740500 node=coord event=task_finished task=B:roll-1/a1/s3/g1.30 worker=worker-1 state=revoked outcome=map_complete
+t=12.740500 node=coord event=task_finished task=B:roll-1/a1/s4/g1.31 worker=worker-2 state=revoked outcome=map_complete
+t=12.740500 node=coord event=task_finished task=B:roll-1/a1/s4/g1.35 worker=worker-4 state=revoked outcome=map_complete
+t=12.740500 node=coord event=task_finished task=B:roll-1/a1/s5/g1.32 worker=worker-2 state=revoked outcome=map_complete
+t=12.740500 node=coord event=reduce_submit job=B:roll-1 attempt=1 op_id=reduce/B:roll-1/a1/r0 inputs=6
+t=12.756724 node=coord event=gpu_submit op_id=reduce/B:roll-1/a1/r0 units=1 attempt=1 state=PENDING
+t=12.800000 node=coord event=task_dispatch task=B:roll-2/a1/s0/g1.44 job=B:roll-2 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b26
+t=12.800000 node=coord event=task_dispatch task=B:roll-2/a1/s1/g1.45 job=B:roll-2 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b26
+t=12.800000 node=coord event=task_dispatch task=B:roll-2/a1/s2/g1.46 job=B:roll-2 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b27
+t=12.800000 node=coord event=task_dispatch task=B:roll-2/a1/s3/g1.47 job=B:roll-2 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b28
+t=12.818345 node=coord event=batch_assigned batch=worker-2/e1/b26 worker=worker-2 tasks=2 accepted=2 hb_seq=22
+t=12.843591 node=coord event=batch_assigned batch=worker-1/e1/b27 worker=worker-1 tasks=1 accepted=1 hb_seq=23
+t=12.875342 node=coord event=batch_assigned batch=worker-4/e1/b28 worker=worker-4 tasks=1 accepted=1 hb_seq=23
+t=12.945537 node=coord event=batch_report batch=worker-1/e1/b16 worker=worker-1 tasks=1 failed=0
+t=12.984314 node=coord event=shard_committed job=A:agg-2 attempt=1 shard=6 task=A:agg-2/a1/s6/g1.42 worker=worker-2 speculative=false committed=2 shards=8
+t=13.069324 node=coord event=batch_report batch=worker-4/e1/b20 worker=worker-4 tasks=1 failed=0
+t=13.126163 node=coord event=batch_report batch=worker-2/e1/b17 worker=worker-2 tasks=2 failed=0
+t=13.256288 node=coord event=shard_committed job=A:agg-2 attempt=1 shard=1 task=A:agg-2/a1/s1/g1.37 worker=worker-1 speculative=false committed=3 shards=8
+t=13.329403 node=coord event=task_finished task=A:agg-2/a1/s6/g1.42 worker=worker-2 state=done outcome=committed
+t=13.329403 node=coord event=batch_report batch=worker-2/e1/b24 worker=worker-2 tasks=1 failed=0
+t=13.340395 node=coord event=shard_committed job=A:agg-2 attempt=1 shard=5 task=A:agg-2/a1/s5/g1.41 worker=worker-4 speculative=false committed=4 shards=8
+t=13.400000 node=coord event=task_dispatch task=B:roll-2/a1/s4/g1.48 job=B:roll-2 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b29
+t=13.413328 node=coord event=shard_committed job=A:agg-2 attempt=1 shard=2 task=A:agg-2/a1/s2/g1.38 worker=worker-3 speculative=false committed=5 shards=8
+t=13.456473 node=coord event=batch_assigned batch=worker-2/e1/b29 worker=worker-2 tasks=1 accepted=1 hb_seq=24
+t=13.538354 node=coord event=task_finished task=A:agg-2/a1/s0/g1.36 worker=worker-1 state=done outcome=committed
+t=13.538354 node=coord event=task_finished task=A:agg-2/a1/s1/g1.37 worker=worker-1 state=done outcome=committed
+t=13.538354 node=coord event=batch_report batch=worker-1/e1/b21 worker=worker-1 tasks=2 failed=0
+t=13.600000 node=coord event=task_dispatch task=B:roll-2/a1/s5/g1.49 job=B:roll-2 attempt=1 shard=5 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b30
+t=13.629020 node=coord event=batch_assigned batch=worker-1/e1/b30 worker=worker-1 tasks=1 accepted=1 hb_seq=25
+t=13.814704 node=coord event=shard_committed job=B:roll-2 attempt=1 shard=2 task=B:roll-2/a1/s2/g1.46 worker=worker-1 speculative=false committed=1 shards=6
+t=13.916437 node=coord event=shard_committed job=A:agg-2 attempt=1 shard=3 task=A:agg-2/a1/s3/g1.39 worker=worker-3 speculative=false committed=6 shards=8
+t=14.026760 node=coord event=shard_committed job=B:roll-2 attempt=1 shard=0 task=B:roll-2/a1/s0/g1.44 worker=worker-2 speculative=false committed=2 shards=6
+t=14.043740 node=coord event=task_finished task=B:roll-2/a1/s2/g1.46 worker=worker-1 state=done outcome=committed
+t=14.043740 node=coord event=batch_report batch=worker-1/e1/b27 worker=worker-1 tasks=1 failed=0
+t=14.147747 node=coord event=shard_committed job=A:agg-2 attempt=1 shard=7 task=A:agg-2/a1/s7/g1.43 worker=worker-3 speculative=false committed=7 shards=8
+t=14.271416 node=coord event=gpu_op_terminal op_id=reduce/A:agg-1/a1/r0 state=SUCCEEDED
+t=14.271416 node=coord event=job_state job=A:agg-1 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=14.271416 node=coord event=job_succeeded job=A:agg-1 attempt=1 op_id=reduce/A:agg-1/a1/r0 count=512 checksum=825d645294c59a77
+t=14.301237 node=coord event=gpu_release op_id=reduce/A:agg-1/a1/r0
+t=14.353010 node=coord event=task_finished task=A:agg-2/a1/s2/g1.38 worker=worker-3 state=done outcome=committed
+t=14.353010 node=coord event=task_finished task=A:agg-2/a1/s3/g1.39 worker=worker-3 state=done outcome=committed
+t=14.353010 node=coord event=batch_report batch=worker-3/e1/b22 worker=worker-3 tasks=2 failed=0
+t=14.427403 node=coord event=task_finished task=A:agg-2/a1/s7/g1.43 worker=worker-3 state=done outcome=committed
+t=14.427403 node=coord event=batch_report batch=worker-3/e1/b25 worker=worker-3 tasks=1 failed=0
+t=14.600000 node=coord event=speculation_launch job=A:agg-2 attempt=1 shard=4 straggler=A:agg-2/a1/s4/g1.40 worker=worker-3 elapsed=2.6 straggler_after=2.5
+t=14.600000 node=coord event=task_dispatch task=A:agg-2/a1/s4/g1.50 job=A:agg-2 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b31
+t=14.610234 node=coord event=gpu_released op_id=reduce/A:agg-1/a1/r0 via=hint
+t=14.693635 node=coord event=batch_assigned batch=worker-3/e1/b31 worker=worker-3 tasks=1 accepted=1 hb_seq=26
+t=14.829270 node=coord event=shard_committed job=A:agg-2 attempt=1 shard=4 task=A:agg-2/a1/s4/g1.40 worker=worker-4 speculative=false committed=8 shards=8
+t=14.829270 node=coord event=task_abort_request job=A:agg-2 shard=4 worker=worker-3 tasks=1 reason=shard_committed
+t=14.829270 node=coord event=job_state job=A:agg-2 attempt=1 old=MAPPING new=REDUCING reason=null
+t=14.829270 node=coord event=task_finished task=A:agg-2/a1/s4/g1.40 worker=worker-4 state=revoked outcome=map_complete
+t=14.829270 node=coord event=task_finished task=A:agg-2/a1/s4/g1.50 worker=worker-3 state=revoked outcome=map_complete
+t=14.829270 node=coord event=task_finished task=A:agg-2/a1/s5/g1.41 worker=worker-4 state=revoked outcome=map_complete
+t=14.829270 node=coord event=reduce_submit job=A:agg-2 attempt=1 op_id=reduce/A:agg-2/a1/r0 inputs=8
+t=14.846185 node=coord event=gpu_submit op_id=reduce/A:agg-2/a1/r0 units=1 attempt=1 state=PENDING
+t=15.186904 node=coord event=shard_committed job=B:roll-2 attempt=1 shard=3 task=B:roll-2/a1/s3/g1.47 worker=worker-4 speculative=false committed=3 shards=6
+t=15.352969 node=coord event=batch_report batch=worker-3/e1/b31 worker=worker-3 tasks=1 failed=0
+t=15.400000 node=coord event=speculation_launch job=B:roll-2 attempt=1 shard=1 straggler=B:roll-2/a1/s1/g1.45 worker=worker-3 elapsed=2.6 straggler_after=2.5
+t=15.400000 node=coord event=task_dispatch task=B:roll-2/a1/s1/g1.51 job=B:roll-2 attempt=1 shard=1 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b32
+t=15.438629 node=coord event=batch_assigned batch=worker-3/e1/b32 worker=worker-3 tasks=1 accepted=1 hb_seq=28
+t=15.452988 node=coord event=shard_committed job=B:roll-2 attempt=1 shard=4 task=B:roll-2/a1/s4/g1.48 worker=worker-2 speculative=false committed=4 shards=6
+t=15.464833 node=coord event=batch_report batch=worker-4/e1/b23 worker=worker-4 tasks=2 failed=0
+t=15.490915 node=coord event=task_finished task=B:roll-2/a1/s3/g1.47 worker=worker-4 state=done outcome=committed
+t=15.490915 node=coord event=batch_report batch=worker-4/e1/b28 worker=worker-4 tasks=1 failed=0
+t=15.665167 node=coord event=task_finished task=B:roll-2/a1/s4/g1.48 worker=worker-2 state=done outcome=committed
+t=15.665167 node=coord event=batch_report batch=worker-2/e1/b29 worker=worker-2 tasks=1 failed=0
+t=15.743407 node=coord event=shard_committed job=B:roll-2 attempt=1 shard=5 task=B:roll-2/a1/s5/g1.49 worker=worker-1 speculative=false committed=5 shards=6
+t=15.956860 node=coord event=shard_committed job=B:roll-2 attempt=1 shard=1 task=B:roll-2/a1/s1/g1.45 worker=worker-2 speculative=false committed=6 shards=6
+t=15.956860 node=coord event=task_abort_request job=B:roll-2 shard=1 worker=worker-3 tasks=1 reason=shard_committed
+t=15.956860 node=coord event=job_state job=B:roll-2 attempt=1 old=MAPPING new=REDUCING reason=null
+t=15.956860 node=coord event=task_finished task=B:roll-2/a1/s0/g1.44 worker=worker-2 state=revoked outcome=map_complete
+t=15.956860 node=coord event=task_finished task=B:roll-2/a1/s1/g1.45 worker=worker-2 state=revoked outcome=map_complete
+t=15.956860 node=coord event=task_finished task=B:roll-2/a1/s1/g1.51 worker=worker-3 state=revoked outcome=map_complete
+t=15.956860 node=coord event=task_finished task=B:roll-2/a1/s5/g1.49 worker=worker-1 state=revoked outcome=map_complete
+t=15.956860 node=coord event=reduce_submit job=B:roll-2 attempt=1 op_id=reduce/B:roll-2/a1/r0 inputs=6
+t=15.997557 node=coord event=batch_report batch=worker-1/e1/b30 worker=worker-1 tasks=1 failed=0
+t=16.008648 node=coord event=gpu_submit op_id=reduce/B:roll-2/a1/r0 units=1 attempt=1 state=PENDING
+t=16.126232 node=coord event=batch_report batch=worker-2/e1/b26 worker=worker-2 tasks=2 failed=0
+t=16.494982 node=coord event=batch_report batch=worker-3/e1/b32 worker=worker-3 tasks=1 failed=0
+t=16.583152 node=coord event=gpu_op_terminal op_id=reduce/B:roll-1/a1/r0 state=SUCCEEDED
+t=16.583152 node=coord event=job_state job=B:roll-1 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=16.583152 node=coord event=job_succeeded job=B:roll-1 attempt=1 op_id=reduce/B:roll-1/a1/r0 count=192 checksum=002d00db074dfa60
+t=16.641333 node=coord event=gpu_release op_id=reduce/B:roll-1/a1/r0
+t=16.779813 node=coord event=job_accepted job=A:agg-3 shards=8 records=64 units=1
+t=16.779813 node=coord event=job_state job=A:agg-3 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=16.779813 node=coord event=attempt_start job=A:agg-3 attempt=1 max_attempts=3
+t=16.779813 node=coord event=job_scheduled job=A:agg-3 attempt=1 shards=8 queued=8
+t=16.784521 node=coord event=gpu_released op_id=reduce/B:roll-1/a1/r0 via=hint
+t=16.800000 node=coord event=task_dispatch task=A:agg-3/a1/s0/g1.52 job=A:agg-3 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b33
+t=16.800000 node=coord event=task_dispatch task=A:agg-3/a1/s1/g1.53 job=A:agg-3 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b33
+t=16.800000 node=coord event=task_dispatch task=A:agg-3/a1/s2/g1.54 job=A:agg-3 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b33
+t=16.800000 node=coord event=task_dispatch task=A:agg-3/a1/s3/g1.55 job=A:agg-3 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b34
+t=16.800000 node=coord event=task_dispatch task=A:agg-3/a1/s4/g1.56 job=A:agg-3 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b34
+t=16.800000 node=coord event=task_dispatch task=A:agg-3/a1/s5/g1.57 job=A:agg-3 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b34
+t=16.800000 node=coord event=task_dispatch task=A:agg-3/a1/s6/g1.58 job=A:agg-3 attempt=1 shard=6 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b35
+t=16.800000 node=coord event=task_dispatch task=A:agg-3/a1/s7/g1.59 job=A:agg-3 attempt=1 shard=7 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b35
+t=16.803194 node=coord event=batch_assigned batch=worker-2/e1/b34 worker=worker-2 tasks=3 accepted=3 hb_seq=29
+t=16.882876 node=coord event=batch_assigned batch=worker-3/e1/b35 worker=worker-3 tasks=2 accepted=2 hb_seq=30
+t=16.913047 node=coord event=batch_assigned batch=worker-1/e1/b33 worker=worker-1 tasks=3 accepted=3 hb_seq=31
+t=17.058333 node=coord event=gpu_op_terminal op_id=reduce/B:roll-2/a1/r0 state=SUCCEEDED
+t=17.058333 node=coord event=job_state job=B:roll-2 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=17.058333 node=coord event=job_succeeded job=B:roll-2 attempt=1 op_id=reduce/B:roll-2/a1/r0 count=192 checksum=ced95d2d5e495c7a
+t=17.176961 node=coord event=gpu_release op_id=reduce/B:roll-2/a1/r0
+t=17.382128 node=coord event=gpu_released op_id=reduce/B:roll-2/a1/r0 via=hint
+t=17.569753 node=coord event=shard_committed job=A:agg-3 attempt=1 shard=2 task=A:agg-3/a1/s2/g1.54 worker=worker-1 speculative=false committed=1 shards=8
+t=17.599661 node=coord event=gpu_op_terminal op_id=reduce/A:agg-2/a1/r0 state=SUCCEEDED
+t=17.599661 node=coord event=job_state job=A:agg-2 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=17.599661 node=coord event=job_succeeded job=A:agg-2 attempt=1 op_id=reduce/A:agg-2/a1/r0 count=512 checksum=3fa0ca197fe80a40
+t=17.619428 node=coord event=gpu_release op_id=reduce/A:agg-2/a1/r0
+t=17.803096 node=coord event=gpu_released op_id=reduce/A:agg-2/a1/r0 via=hint
+t=17.982253 node=coord event=shard_committed job=A:agg-3 attempt=1 shard=7 task=A:agg-3/a1/s7/g1.59 worker=worker-3 speculative=false committed=2 shards=8
+t=18.014674 node=coord event=shard_committed job=A:agg-3 attempt=1 shard=4 task=A:agg-3/a1/s4/g1.56 worker=worker-2 speculative=false committed=3 shards=8
+t=18.092321 node=coord event=shard_committed job=A:agg-3 attempt=1 shard=5 task=A:agg-3/a1/s5/g1.57 worker=worker-2 speculative=false committed=4 shards=8
+t=18.291518 node=coord event=job_accepted job=B:roll-3 shards=6 records=32 units=1
+t=18.291518 node=coord event=job_state job=B:roll-3 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=18.291518 node=coord event=attempt_start job=B:roll-3 attempt=1 max_attempts=3
+t=18.291518 node=coord event=job_scheduled job=B:roll-3 attempt=1 shards=6 queued=6
+t=18.300000 node=coord event=task_dispatch task=B:roll-3/a1/s0/g1.60 job=B:roll-3 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b36
+t=18.300000 node=coord event=task_dispatch task=B:roll-3/a1/s1/g1.61 job=B:roll-3 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b36
+t=18.300000 node=coord event=task_dispatch task=B:roll-3/a1/s2/g1.62 job=B:roll-3 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b36
+t=18.300000 node=coord event=task_dispatch task=B:roll-3/a1/s3/g1.63 job=B:roll-3 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b37
+t=18.317741 node=coord event=batch_assigned batch=worker-4/e1/b36 worker=worker-4 tasks=3 accepted=3 hb_seq=32
+t=18.354937 node=coord event=shard_committed job=A:agg-3 attempt=1 shard=3 task=A:agg-3/a1/s3/g1.55 worker=worker-2 speculative=false committed=5 shards=8
+t=18.385731 node=coord event=batch_assigned batch=worker-3/e1/b37 worker=worker-3 tasks=1 accepted=1 hb_seq=32
+t=18.407269 node=coord event=shard_committed job=A:agg-3 attempt=1 shard=0 task=A:agg-3/a1/s0/g1.52 worker=worker-1 speculative=false committed=6 shards=8
+t=18.533141 node=coord event=task_finished task=A:agg-3/a1/s3/g1.55 worker=worker-2 state=done outcome=committed
+t=18.533141 node=coord event=task_finished task=A:agg-3/a1/s4/g1.56 worker=worker-2 state=done outcome=committed
+t=18.533141 node=coord event=task_finished task=A:agg-3/a1/s5/g1.57 worker=worker-2 state=done outcome=committed
+t=18.533141 node=coord event=batch_report batch=worker-2/e1/b34 worker=worker-2 tasks=3 failed=0
+t=18.600000 node=coord event=task_dispatch task=B:roll-3/a1/s4/g1.64 job=B:roll-3 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b38
+t=18.600000 node=coord event=task_dispatch task=B:roll-3/a1/s5/g1.65 job=B:roll-3 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b38
+t=18.612722 node=coord event=batch_assigned batch=worker-2/e1/b38 worker=worker-2 tasks=2 accepted=2 hb_seq=32
+t=19.099117 node=coord event=shard_committed job=B:roll-3 attempt=1 shard=2 task=B:roll-3/a1/s2/g1.62 worker=worker-4 speculative=false committed=1 shards=6
+t=19.162169 node=coord event=shard_committed job=B:roll-3 attempt=1 shard=0 task=B:roll-3/a1/s0/g1.60 worker=worker-4 speculative=false committed=2 shards=6
+t=19.300000 node=coord event=speculation_launch job=A:agg-3 attempt=1 shard=1 straggler=A:agg-3/a1/s1/g1.53 worker=worker-2 elapsed=2.5 straggler_after=2.5
+t=19.300000 node=coord event=task_dispatch task=A:agg-3/a1/s1/g1.66 job=A:agg-3 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b39
+t=19.338328 node=coord event=shard_committed job=B:roll-3 attempt=1 shard=1 task=B:roll-3/a1/s1/g1.61 worker=worker-4 speculative=false committed=3 shards=6
+t=19.355745 node=coord event=shard_committed job=B:roll-3 attempt=1 shard=4 task=B:roll-3/a1/s4/g1.64 worker=worker-2 speculative=false committed=4 shards=6
+t=19.517137 node=coord event=task_finished task=B:roll-3/a1/s0/g1.60 worker=worker-4 state=done outcome=committed
+t=19.517137 node=coord event=task_finished task=B:roll-3/a1/s1/g1.61 worker=worker-4 state=done outcome=committed
+t=19.517137 node=coord event=task_finished task=B:roll-3/a1/s2/g1.62 worker=worker-4 state=done outcome=committed
+t=19.517137 node=coord event=batch_report batch=worker-4/e1/b36 worker=worker-4 tasks=3 failed=0
+t=19.557986 node=coord event=batch_assigned batch=worker-2/e1/b39 worker=worker-2 tasks=1 accepted=1 hb_seq=34
+t=19.600000 node=coord event=speculation_launch job=A:agg-3 attempt=1 shard=6 straggler=A:agg-3/a1/s6/g1.58 worker=worker-4 elapsed=2.8 straggler_after=2.5
+t=19.600000 node=coord event=task_dispatch task=A:agg-3/a1/s6/g1.67 job=A:agg-3 attempt=1 shard=6 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b40
+t=19.632898 node=coord event=batch_assigned batch=worker-4/e1/b40 worker=worker-4 tasks=1 accepted=1 hb_seq=35
+t=20.148450 node=coord event=shard_committed job=A:agg-3 attempt=1 shard=1 task=A:agg-3/a1/s1/g1.53 worker=worker-1 speculative=false committed=7 shards=8
+t=20.148450 node=coord event=task_abort_request job=A:agg-3 shard=1 worker=worker-2 tasks=1 reason=shard_committed
+t=20.424271 node=coord event=shard_committed job=B:roll-3 attempt=1 shard=3 task=B:roll-3/a1/s3/g1.63 worker=worker-3 speculative=false committed=5 shards=6
+t=20.499242 node=coord event=shard_committed job=A:agg-3 attempt=1 shard=6 task=A:agg-3/a1/s6/g1.58 worker=worker-3 speculative=false committed=8 shards=8
+t=20.499242 node=coord event=task_abort_request job=A:agg-3 shard=6 worker=worker-4 tasks=1 reason=shard_committed
+t=20.499242 node=coord event=job_state job=A:agg-3 attempt=1 old=MAPPING new=REDUCING reason=null
+t=20.499242 node=coord event=task_finished task=A:agg-3/a1/s0/g1.52 worker=worker-1 state=revoked outcome=map_complete
+t=20.499242 node=coord event=task_finished task=A:agg-3/a1/s1/g1.53 worker=worker-1 state=revoked outcome=map_complete
+t=20.499242 node=coord event=task_finished task=A:agg-3/a1/s1/g1.66 worker=worker-2 state=revoked outcome=map_complete
+t=20.499242 node=coord event=task_finished task=A:agg-3/a1/s2/g1.54 worker=worker-1 state=revoked outcome=map_complete
+t=20.499242 node=coord event=task_finished task=A:agg-3/a1/s6/g1.58 worker=worker-3 state=revoked outcome=map_complete
+t=20.499242 node=coord event=task_finished task=A:agg-3/a1/s6/g1.67 worker=worker-4 state=revoked outcome=map_complete
+t=20.499242 node=coord event=task_finished task=A:agg-3/a1/s7/g1.59 worker=worker-3 state=revoked outcome=map_complete
+t=20.499242 node=coord event=reduce_submit job=A:agg-3 attempt=1 op_id=reduce/A:agg-3/a1/r0 inputs=8
+t=20.512453 node=coord event=gpu_submit op_id=reduce/A:agg-3/a1/r0 units=1 attempt=1 state=PENDING
+t=20.552581 node=coord event=batch_report batch=worker-1/e1/b33 worker=worker-1 tasks=3 failed=0
+t=20.624961 node=coord event=task_finished task=B:roll-3/a1/s3/g1.63 worker=worker-3 state=done outcome=committed
+t=20.624961 node=coord event=batch_report batch=worker-3/e1/b37 worker=worker-3 tasks=1 failed=0
+t=20.714705 node=coord event=batch_report batch=worker-3/e1/b35 worker=worker-3 tasks=2 failed=0
+t=20.903235 node=coord event=batch_report batch=worker-2/e1/b39 worker=worker-2 tasks=1 failed=0
+t=21.100000 node=coord event=speculation_launch job=B:roll-3 attempt=1 shard=5 straggler=B:roll-3/a1/s5/g1.65 worker=worker-1 elapsed=2.5 straggler_after=2.5
+t=21.100000 node=coord event=task_dispatch task=B:roll-3/a1/s5/g1.68 job=B:roll-3 attempt=1 shard=5 worker=worker-1 epoch=1 speculative=true batch=worker-1/e1/b41
+t=21.132284 node=coord event=batch_report batch=worker-4/e1/b40 worker=worker-4 tasks=1 failed=0
+t=21.154556 node=coord event=batch_assigned batch=worker-1/e1/b41 worker=worker-1 tasks=1 accepted=1 hb_seq=38
+t=21.442095 node=coord event=job_accepted job=A:agg-4 shards=8 records=64 units=1
+t=21.442095 node=coord event=job_state job=A:agg-4 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=21.442095 node=coord event=attempt_start job=A:agg-4 attempt=1 max_attempts=3
+t=21.442095 node=coord event=job_scheduled job=A:agg-4 attempt=1 shards=8 queued=8
+t=21.500000 node=coord event=task_dispatch task=A:agg-4/a1/s0/g1.69 job=A:agg-4 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b42
+t=21.500000 node=coord event=task_dispatch task=A:agg-4/a1/s1/g1.70 job=A:agg-4 attempt=1 shard=1 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b42
+t=21.500000 node=coord event=task_dispatch task=A:agg-4/a1/s2/g1.71 job=A:agg-4 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b42
+t=21.500000 node=coord event=task_dispatch task=A:agg-4/a1/s3/g1.72 job=A:agg-4 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b43
+t=21.500000 node=coord event=task_dispatch task=A:agg-4/a1/s4/g1.73 job=A:agg-4 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b43
+t=21.500000 node=coord event=task_dispatch task=A:agg-4/a1/s5/g1.74 job=A:agg-4 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b43
+t=21.500000 node=coord event=task_dispatch task=A:agg-4/a1/s6/g1.75 job=A:agg-4 attempt=1 shard=6 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b44
+t=21.500000 node=coord event=task_dispatch task=A:agg-4/a1/s7/g1.76 job=A:agg-4 attempt=1 shard=7 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b44
+t=21.505235 node=coord event=batch_assigned batch=worker-3/e1/b42 worker=worker-3 tasks=3 accepted=3 hb_seq=38
+t=21.522183 node=coord event=batch_assigned batch=worker-4/e1/b43 worker=worker-4 tasks=3 accepted=3 hb_seq=38
+t=21.565924 node=coord event=batch_assigned batch=worker-1/e1/b44 worker=worker-1 tasks=2 accepted=2 hb_seq=39
+t=22.022324 node=coord event=gpu_op_terminal op_id=reduce/A:agg-3/a1/r0 state=SUCCEEDED
+t=22.022324 node=coord event=job_state job=A:agg-3 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=22.022324 node=coord event=job_succeeded job=A:agg-3 attempt=1 op_id=reduce/A:agg-3/a1/r0 count=512 checksum=ce8108f6c753c33b
+t=22.085585 node=coord event=gpu_release op_id=reduce/A:agg-3/a1/r0
+t=22.122705 node=coord event=shard_committed job=B:roll-3 attempt=1 shard=5 task=B:roll-3/a1/s5/g1.68 worker=worker-1 speculative=true committed=6 shards=6
+t=22.122705 node=coord event=task_abort_request job=B:roll-3 shard=5 worker=worker-2 tasks=1 reason=shard_committed
+t=22.122705 node=coord event=job_state job=B:roll-3 attempt=1 old=MAPPING new=REDUCING reason=null
+t=22.122705 node=coord event=task_finished task=B:roll-3/a1/s4/g1.64 worker=worker-2 state=revoked outcome=map_complete
+t=22.122705 node=coord event=task_finished task=B:roll-3/a1/s5/g1.65 worker=worker-2 state=revoked outcome=map_complete
+t=22.122705 node=coord event=task_finished task=B:roll-3/a1/s5/g1.68 worker=worker-1 state=revoked outcome=map_complete
+t=22.122705 node=coord event=reduce_submit job=B:roll-3 attempt=1 op_id=reduce/B:roll-3/a1/r0 inputs=6
+t=22.137559 node=coord event=gpu_submit op_id=reduce/B:roll-3/a1/r0 units=1 attempt=1 state=PENDING
+t=22.196184 node=coord event=shard_committed job=A:agg-4 attempt=1 shard=1 task=A:agg-4/a1/s1/g1.70 worker=worker-3 speculative=false committed=1 shards=8
+t=22.247086 node=coord event=gpu_released op_id=reduce/A:agg-3/a1/r0 via=hint
+t=22.396904 node=coord event=batch_report batch=worker-1/e1/b41 worker=worker-1 tasks=1 failed=0
+t=22.498917 node=coord event=shard_committed job=A:agg-4 attempt=1 shard=3 task=A:agg-4/a1/s3/g1.72 worker=worker-4 speculative=false committed=2 shards=8
+t=22.574983 node=coord event=shard_committed job=A:agg-4 attempt=1 shard=2 task=A:agg-4/a1/s2/g1.71 worker=worker-3 speculative=false committed=3 shards=8
+t=22.587201 node=coord event=batch_report batch=worker-2/e1/b38 worker=worker-2 tasks=2 failed=0
+t=22.781084 node=coord event=shard_committed job=A:agg-4 attempt=1 shard=4 task=A:agg-4/a1/s4/g1.73 worker=worker-4 speculative=false committed=4 shards=8
+t=23.221045 node=coord event=shard_committed job=A:agg-4 attempt=1 shard=0 task=A:agg-4/a1/s0/g1.69 worker=worker-3 speculative=false committed=5 shards=8
+t=23.488701 node=coord event=job_accepted job=B:roll-4 shards=6 records=32 units=1
+t=23.488701 node=coord event=job_state job=B:roll-4 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=23.488701 node=coord event=attempt_start job=B:roll-4 attempt=1 max_attempts=3
+t=23.488701 node=coord event=job_scheduled job=B:roll-4 attempt=1 shards=6 queued=6
+t=23.500000 node=coord event=task_dispatch task=B:roll-4/a1/s0/g1.77 job=B:roll-4 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b45
+t=23.500000 node=coord event=task_dispatch task=B:roll-4/a1/s1/g1.78 job=B:roll-4 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b45
+t=23.500000 node=coord event=task_dispatch task=B:roll-4/a1/s2/g1.79 job=B:roll-4 attempt=1 shard=2 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b45
+t=23.500000 node=coord event=task_dispatch task=B:roll-4/a1/s3/g1.80 job=B:roll-4 attempt=1 shard=3 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b46
+t=23.521836 node=coord event=batch_assigned batch=worker-1/e1/b46 worker=worker-1 tasks=1 accepted=1 hb_seq=43
+t=23.563717 node=coord event=batch_assigned batch=worker-2/e1/b45 worker=worker-2 tasks=3 accepted=3 hb_seq=42
+t=23.622980 node=coord event=shard_committed job=A:agg-4 attempt=1 shard=5 task=A:agg-4/a1/s5/g1.74 worker=worker-4 speculative=false committed=6 shards=8
+t=23.650134 node=coord event=task_finished task=A:agg-4/a1/s0/g1.69 worker=worker-3 state=done outcome=committed
+t=23.650134 node=coord event=task_finished task=A:agg-4/a1/s1/g1.70 worker=worker-3 state=done outcome=committed
+t=23.650134 node=coord event=task_finished task=A:agg-4/a1/s2/g1.71 worker=worker-3 state=done outcome=committed
+t=23.650134 node=coord event=batch_report batch=worker-3/e1/b42 worker=worker-3 tasks=3 failed=0
+t=23.700000 node=coord event=task_dispatch task=B:roll-4/a1/s4/g1.81 job=B:roll-4 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b47
+t=23.700000 node=coord event=task_dispatch task=B:roll-4/a1/s5/g1.82 job=B:roll-4 attempt=1 shard=5 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b47
+t=23.706000 node=coord event=batch_assigned batch=worker-3/e1/b47 worker=worker-3 tasks=2 accepted=2 hb_seq=42
+t=23.874368 node=coord event=task_finished task=A:agg-4/a1/s3/g1.72 worker=worker-4 state=done outcome=committed
+t=23.874368 node=coord event=task_finished task=A:agg-4/a1/s4/g1.73 worker=worker-4 state=done outcome=committed
+t=23.874368 node=coord event=task_finished task=A:agg-4/a1/s5/g1.74 worker=worker-4 state=done outcome=committed
+t=23.874368 node=coord event=batch_report batch=worker-4/e1/b43 worker=worker-4 tasks=3 failed=0
+t=24.000000 node=coord event=speculation_launch job=A:agg-4 attempt=1 shard=6 straggler=A:agg-4/a1/s6/g1.75 worker=worker-4 elapsed=2.5 straggler_after=2.5
+t=24.000000 node=coord event=task_dispatch task=A:agg-4/a1/s6/g1.83 job=A:agg-4 attempt=1 shard=6 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b48
+t=24.000000 node=coord event=speculation_launch job=A:agg-4 attempt=1 shard=7 straggler=A:agg-4/a1/s7/g1.76 worker=worker-4 elapsed=2.5 straggler_after=2.5
+t=24.000000 node=coord event=task_dispatch task=A:agg-4/a1/s7/g1.84 job=A:agg-4 attempt=1 shard=7 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b49
+t=24.053823 node=coord event=batch_assigned batch=worker-4/e1/b48 worker=worker-4 tasks=1 accepted=1 hb_seq=42
+t=24.061750 node=coord event=batch_assigned batch=worker-4/e1/b49 worker=worker-4 tasks=1 accepted=1 hb_seq=42
+t=24.198016 node=coord event=shard_committed job=A:agg-4 attempt=1 shard=6 task=A:agg-4/a1/s6/g1.75 worker=worker-1 speculative=false committed=7 shards=8
+t=24.198016 node=coord event=task_abort_request job=A:agg-4 shard=6 worker=worker-4 tasks=1 reason=shard_committed
+t=24.694625 node=coord event=shard_committed job=B:roll-4 attempt=1 shard=1 task=B:roll-4/a1/s1/g1.78 worker=worker-2 speculative=false committed=1 shards=6
+t=24.951778 node=coord event=shard_committed job=B:roll-4 attempt=1 shard=5 task=B:roll-4/a1/s5/g1.82 worker=worker-3 speculative=false committed=2 shards=6
+t=24.999914 node=coord event=shard_committed job=A:agg-4 attempt=1 shard=7 task=A:agg-4/a1/s7/g1.76 worker=worker-1 speculative=false committed=8 shards=8
+t=24.999914 node=coord event=task_abort_request job=A:agg-4 shard=7 worker=worker-4 tasks=1 reason=shard_committed
+t=24.999914 node=coord event=job_state job=A:agg-4 attempt=1 old=MAPPING new=REDUCING reason=null
+t=24.999914 node=coord event=task_finished task=A:agg-4/a1/s6/g1.75 worker=worker-1 state=revoked outcome=map_complete
+t=24.999914 node=coord event=task_finished task=A:agg-4/a1/s6/g1.83 worker=worker-4 state=revoked outcome=map_complete
+t=24.999914 node=coord event=task_finished task=A:agg-4/a1/s7/g1.76 worker=worker-1 state=revoked outcome=map_complete
+t=24.999914 node=coord event=task_finished task=A:agg-4/a1/s7/g1.84 worker=worker-4 state=revoked outcome=map_complete
+t=24.999914 node=coord event=reduce_submit job=A:agg-4 attempt=1 op_id=reduce/A:agg-4/a1/r0 inputs=8
+t=25.028836 node=coord event=gpu_submit op_id=reduce/A:agg-4/a1/r0 units=1 attempt=1 state=PENDING
+t=25.254286 node=coord event=batch_report batch=worker-4/e1/b48 worker=worker-4 tasks=1 failed=0
+t=25.292092 node=coord event=batch_report batch=worker-1/e1/b44 worker=worker-1 tasks=2 failed=0
+t=25.399343 node=coord event=batch_report batch=worker-4/e1/b49 worker=worker-4 tasks=1 failed=0
+t=25.744798 node=coord event=shard_committed job=B:roll-4 attempt=1 shard=2 task=B:roll-4/a1/s2/g1.79 worker=worker-2 speculative=false committed=3 shards=6
+t=25.785008 node=coord event=gpu_op_terminal op_id=reduce/B:roll-3/a1/r0 state=SUCCEEDED
+t=25.785008 node=coord event=job_state job=B:roll-3 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=25.785008 node=coord event=job_succeeded job=B:roll-3 attempt=1 op_id=reduce/B:roll-3/a1/r0 count=192 checksum=da559084f65a1e4d
+t=25.788892 node=coord event=gpu_release op_id=reduce/B:roll-3/a1/r0
+t=26.000000 node=coord event=speculation_launch job=B:roll-4 attempt=1 shard=0 straggler=B:roll-4/a1/s0/g1.77 worker=worker-4 elapsed=2.5 straggler_after=2.5
+t=26.000000 node=coord event=task_dispatch task=B:roll-4/a1/s0/g1.85 job=B:roll-4 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b50
+t=26.000000 node=coord event=speculation_launch job=B:roll-4 attempt=1 shard=3 straggler=B:roll-4/a1/s3/g1.80 worker=worker-4 elapsed=2.5 straggler_after=2.5
+t=26.000000 node=coord event=task_dispatch task=B:roll-4/a1/s3/g1.86 job=B:roll-4 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b51
+t=26.001145 node=coord event=gpu_released op_id=reduce/B:roll-3/a1/r0 via=hint
+t=26.059280 node=coord event=batch_assigned batch=worker-4/e1/b50 worker=worker-4 tasks=1 accepted=1 hb_seq=46
+t=26.059280 node=coord event=batch_assigned batch=worker-4/e1/b51 worker=worker-4 tasks=1 accepted=1 hb_seq=46
+t=26.200000 node=coord event=speculation_launch job=B:roll-4 attempt=1 shard=4 straggler=B:roll-4/a1/s4/g1.81 worker=worker-1 elapsed=2.5 straggler_after=2.5
+t=26.200000 node=coord event=task_dispatch task=B:roll-4/a1/s4/g1.87 job=B:roll-4 attempt=1 shard=4 worker=worker-1 epoch=1 speculative=true batch=worker-1/e1/b52
+t=26.219841 node=coord event=gpu_op_terminal op_id=reduce/A:agg-4/a1/r0 state=SUCCEEDED
+t=26.219841 node=coord event=job_state job=A:agg-4 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=26.219841 node=coord event=job_succeeded job=A:agg-4 attempt=1 op_id=reduce/A:agg-4/a1/r0 count=512 checksum=4882bfdcc2075da0
+t=26.226785 node=coord event=shard_committed job=B:roll-4 attempt=1 shard=3 task=B:roll-4/a1/s3/g1.80 worker=worker-1 speculative=false committed=4 shards=6
+t=26.226785 node=coord event=task_abort_request job=B:roll-4 shard=3 worker=worker-4 tasks=1 reason=shard_committed
+t=26.248181 node=coord event=batch_assigned batch=worker-1/e1/b52 worker=worker-1 tasks=1 accepted=1 hb_seq=48
+t=26.255345 node=coord event=gpu_release op_id=reduce/A:agg-4/a1/r0
+t=26.318807 node=coord event=gpu_released op_id=reduce/A:agg-4/a1/r0 via=hint
+t=26.372096 node=coord event=shard_committed job=B:roll-4 attempt=1 shard=4 task=B:roll-4/a1/s4/g1.81 worker=worker-3 speculative=false committed=5 shards=6
+t=26.372096 node=coord event=task_abort_request job=B:roll-4 shard=4 worker=worker-1 tasks=1 reason=shard_committed
+t=26.384404 node=coord event=job_accepted job=A:agg-5 shards=8 records=64 units=1
+t=26.384404 node=coord event=job_state job=A:agg-5 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=26.384404 node=coord event=attempt_start job=A:agg-5 attempt=1 max_attempts=3
+t=26.384404 node=coord event=job_scheduled job=A:agg-5 attempt=1 shards=8 queued=8
+t=26.400000 node=coord event=task_dispatch task=A:agg-5/a1/s0/g1.88 job=A:agg-5 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b53
+t=26.400000 node=coord event=task_dispatch task=A:agg-5/a1/s1/g1.89 job=A:agg-5 attempt=1 shard=1 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b54
+t=26.400000 node=coord event=task_dispatch task=A:agg-5/a1/s2/g1.90 job=A:agg-5 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b55
+t=26.427317 node=coord event=batch_assigned batch=worker-3/e1/b54 worker=worker-3 tasks=1 accepted=1 hb_seq=47
+t=26.448472 node=coord event=task_finished task=B:roll-4/a1/s3/g1.80 worker=worker-1 state=done outcome=committed
+t=26.448472 node=coord event=batch_report batch=worker-1/e1/b46 worker=worker-1 tasks=1 failed=0
+t=26.490219 node=coord event=batch_assigned batch=worker-1/e1/b53 worker=worker-1 tasks=1 accepted=1 hb_seq=48
+t=26.500000 node=coord event=task_dispatch task=A:agg-5/a1/s3/g1.91 job=A:agg-5 attempt=1 shard=3 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b56
+t=26.534293 node=coord event=batch_assigned batch=worker-4/e1/b55 worker=worker-4 tasks=1 accepted=1 hb_seq=47
+t=26.541194 node=coord event=batch_assigned batch=worker-1/e1/b56 worker=worker-1 tasks=1 accepted=1 hb_seq=48
+t=26.623456 node=coord event=task_finished task=B:roll-4/a1/s4/g1.81 worker=worker-3 state=done outcome=committed
+t=26.623456 node=coord event=task_finished task=B:roll-4/a1/s5/g1.82 worker=worker-3 state=done outcome=committed
+t=26.623456 node=coord event=batch_report batch=worker-3/e1/b47 worker=worker-3 tasks=2 failed=0
+t=26.700000 node=coord event=task_dispatch task=A:agg-5/a1/s4/g1.92 job=A:agg-5 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b57
+t=26.700000 node=coord event=task_dispatch task=A:agg-5/a1/s5/g1.93 job=A:agg-5 attempt=1 shard=5 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b57
+t=26.735812 node=coord event=batch_assigned batch=worker-3/e1/b57 worker=worker-3 tasks=2 accepted=2 hb_seq=47
+t=27.039803 node=coord event=task_finished task=B:roll-4/a1/s4/g1.87 worker=worker-1 state=done outcome=aborted
+t=27.039803 node=coord event=batch_report batch=worker-1/e1/b52 worker=worker-1 tasks=1 failed=0
+t=27.100000 node=coord event=task_dispatch task=A:agg-5/a1/s6/g1.94 job=A:agg-5 attempt=1 shard=6 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b58
+t=27.173085 node=coord event=batch_assigned batch=worker-1/e1/b58 worker=worker-1 tasks=1 accepted=1 hb_seq=49
+t=27.218080 node=coord event=task_finished task=B:roll-4/a1/s3/g1.86 worker=worker-4 state=done outcome=aborted
+t=27.218080 node=coord event=batch_report batch=worker-4/e1/b51 worker=worker-4 tasks=1 failed=0
+t=27.300000 node=coord event=task_dispatch task=A:agg-5/a1/s7/g1.95 job=A:agg-5 attempt=1 shard=7 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b59
+t=27.356457 node=coord event=batch_assigned batch=worker-4/e1/b59 worker=worker-4 tasks=1 accepted=1 hb_seq=49
+t=28.101023 node=coord event=job_accepted job=B:roll-5 shards=6 records=32 units=1
+t=28.101023 node=coord event=job_state job=B:roll-5 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=28.101023 node=coord event=attempt_start job=B:roll-5 attempt=1 max_attempts=3
+t=28.101023 node=coord event=job_scheduled job=B:roll-5 attempt=1 shards=6 queued=6
+t=28.650505 node=coord event=shard_committed job=A:agg-5 attempt=1 shard=2 task=A:agg-5/a1/s2/g1.90 worker=worker-4 speculative=false committed=1 shards=8
+t=28.675310 node=coord event=shard_committed job=A:agg-5 attempt=1 shard=6 task=A:agg-5/a1/s6/g1.94 worker=worker-1 speculative=false committed=2 shards=8
+t=28.883056 node=coord event=task_finished task=A:agg-5/a1/s6/g1.94 worker=worker-1 state=done outcome=committed
+t=28.883056 node=coord event=batch_report batch=worker-1/e1/b58 worker=worker-1 tasks=1 failed=0
+t=28.900000 node=coord event=task_dispatch task=B:roll-5/a1/s0/g1.96 job=B:roll-5 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b60
+t=28.928826 node=coord event=batch_assigned batch=worker-1/e1/b60 worker=worker-1 tasks=1 accepted=1 hb_seq=52
+t=28.975907 node=coord event=shard_committed job=A:agg-5 attempt=1 shard=0 task=A:agg-5/a1/s0/g1.88 worker=worker-1 speculative=false committed=3 shards=8
+t=29.005219 node=coord event=shard_committed job=A:agg-5 attempt=1 shard=1 task=A:agg-5/a1/s1/g1.89 worker=worker-3 speculative=false committed=4 shards=8
+t=29.063318 node=coord event=task_finished task=A:agg-5/a1/s2/g1.90 worker=worker-4 state=done outcome=committed
+t=29.063318 node=coord event=batch_report batch=worker-4/e1/b55 worker=worker-4 tasks=1 failed=0
+t=29.100000 node=coord event=task_dispatch task=B:roll-5/a1/s1/g1.97 job=B:roll-5 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b61
+t=29.172070 node=coord event=batch_assigned batch=worker-4/e1/b61 worker=worker-4 tasks=1 accepted=1 hb_seq=52
+t=29.193006 node=coord event=task_finished task=A:agg-5/a1/s0/g1.88 worker=worker-1 state=done outcome=committed
+t=29.193006 node=coord event=batch_report batch=worker-1/e1/b53 worker=worker-1 tasks=1 failed=0
+t=29.200000 node=coord event=task_dispatch task=B:roll-5/a1/s2/g1.98 job=B:roll-5 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b62
+t=29.230992 node=coord event=batch_assigned batch=worker-1/e1/b62 worker=worker-1 tasks=1 accepted=1 hb_seq=53
+t=29.265931 node=coord event=task_finished task=A:agg-5/a1/s1/g1.89 worker=worker-3 state=done outcome=committed
+t=29.265931 node=coord event=batch_report batch=worker-3/e1/b54 worker=worker-3 tasks=1 failed=0
+t=29.300000 node=coord event=task_dispatch task=B:roll-5/a1/s3/g1.99 job=B:roll-5 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b63
+t=29.313616 node=coord event=batch_assigned batch=worker-3/e1/b63 worker=worker-3 tasks=1 accepted=1 hb_seq=52
+t=29.546283 node=coord event=shard_committed job=B:roll-4 attempt=1 shard=0 task=B:roll-4/a1/s0/g1.85 worker=worker-4 speculative=true committed=6 shards=6
+t=29.546283 node=coord event=task_abort_request job=B:roll-4 shard=0 worker=worker-2 tasks=1 reason=shard_committed
+t=29.546283 node=coord event=job_state job=B:roll-4 attempt=1 old=MAPPING new=REDUCING reason=null
+t=29.546283 node=coord event=task_finished task=B:roll-4/a1/s0/g1.77 worker=worker-2 state=revoked outcome=map_complete
+t=29.546283 node=coord event=task_finished task=B:roll-4/a1/s0/g1.85 worker=worker-4 state=revoked outcome=map_complete
+t=29.546283 node=coord event=task_finished task=B:roll-4/a1/s1/g1.78 worker=worker-2 state=revoked outcome=map_complete
+t=29.546283 node=coord event=task_finished task=B:roll-4/a1/s2/g1.79 worker=worker-2 state=revoked outcome=map_complete
+t=29.546283 node=coord event=reduce_submit job=B:roll-4 attempt=1 op_id=reduce/B:roll-4/a1/r0 inputs=6
+t=29.593118 node=coord event=gpu_submit op_id=reduce/B:roll-4/a1/r0 units=1 attempt=1 state=PENDING
+t=29.600000 node=coord event=task_dispatch task=B:roll-5/a1/s4/g1.100 job=B:roll-5 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b64
+t=29.600000 node=coord event=task_dispatch task=B:roll-5/a1/s5/g1.101 job=B:roll-5 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b64
+t=29.600000 node=coord event=speculation_launch job=A:agg-5 attempt=1 shard=3 straggler=A:agg-5/a1/s3/g1.91 worker=worker-2 elapsed=3.1 straggler_after=2.5
+t=29.600000 node=coord event=task_dispatch task=A:agg-5/a1/s3/g1.102 job=A:agg-5 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b65
+t=29.600000 node=coord event=speculation_launch job=A:agg-5 attempt=1 shard=4 straggler=A:agg-5/a1/s4/g1.92 worker=worker-4 elapsed=2.9 straggler_after=2.5
+t=29.600000 node=coord event=task_dispatch task=A:agg-5/a1/s4/g1.103 job=A:agg-5 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b66
+t=29.628322 node=coord event=batch_assigned batch=worker-4/e1/b66 worker=worker-4 tasks=1 accepted=1 hb_seq=53
+t=29.700403 node=coord event=batch_report batch=worker-4/e1/b50 worker=worker-4 tasks=1 failed=0
+t=29.712580 node=coord event=batch_assigned batch=worker-2/e1/b64 worker=worker-2 tasks=2 accepted=2 hb_seq=53
+t=29.738194 node=coord event=batch_assigned batch=worker-2/e1/b65 worker=worker-2 tasks=1 accepted=1 hb_seq=53
+t=29.790400 node=coord event=shard_committed job=A:agg-5 attempt=1 shard=4 task=A:agg-5/a1/s4/g1.92 worker=worker-3 speculative=false committed=5 shards=8
+t=29.790400 node=coord event=task_abort_request job=A:agg-5 shard=4 worker=worker-4 tasks=1 reason=shard_committed
+t=29.925785 node=coord event=batch_report batch=worker-2/e1/b45 worker=worker-2 tasks=3 failed=0
+t=30.337936 node=coord event=shard_committed job=A:agg-5 attempt=1 shard=7 task=A:agg-5/a1/s7/g1.95 worker=worker-4 speculative=false committed=6 shards=8
+t=30.390651 node=coord event=shard_committed job=B:roll-5 attempt=1 shard=1 task=B:roll-5/a1/s1/g1.97 worker=worker-4 speculative=false committed=1 shards=6
+t=30.424121 node=coord event=shard_committed job=A:agg-5 attempt=1 shard=5 task=A:agg-5/a1/s5/g1.93 worker=worker-3 speculative=false committed=7 shards=8
+t=30.569744 node=coord event=task_finished task=A:agg-5/a1/s4/g1.92 worker=worker-3 state=done outcome=committed
+t=30.569744 node=coord event=task_finished task=A:agg-5/a1/s5/g1.93 worker=worker-3 state=done outcome=committed
+t=30.569744 node=coord event=batch_report batch=worker-3/e1/b57 worker=worker-3 tasks=2 failed=0
+t=30.595532 node=coord event=task_finished task=A:agg-5/a1/s7/g1.95 worker=worker-4 state=done outcome=committed
+t=30.595532 node=coord event=batch_report batch=worker-4/e1/b59 worker=worker-4 tasks=1 failed=0
+t=30.762685 node=coord event=shard_committed job=A:agg-5 attempt=1 shard=3 task=A:agg-5/a1/s3/g1.91 worker=worker-1 speculative=false committed=8 shards=8
+t=30.762685 node=coord event=task_abort_request job=A:agg-5 shard=3 worker=worker-2 tasks=1 reason=shard_committed
+t=30.762685 node=coord event=job_state job=A:agg-5 attempt=1 old=MAPPING new=REDUCING reason=null
+t=30.762685 node=coord event=task_finished task=A:agg-5/a1/s3/g1.102 worker=worker-2 state=revoked outcome=map_complete
+t=30.762685 node=coord event=task_finished task=A:agg-5/a1/s3/g1.91 worker=worker-1 state=revoked outcome=map_complete
+t=30.762685 node=coord event=task_finished task=A:agg-5/a1/s4/g1.103 worker=worker-4 state=revoked outcome=map_complete
+t=30.762685 node=coord event=reduce_submit job=A:agg-5 attempt=1 op_id=reduce/A:agg-5/a1/r0 inputs=8
+t=30.765560 node=coord event=task_finished task=B:roll-5/a1/s1/g1.97 worker=worker-4 state=done outcome=committed
+t=30.765560 node=coord event=batch_report batch=worker-4/e1/b61 worker=worker-4 tasks=1 failed=0
+t=30.803537 node=coord event=gpu_submit op_id=reduce/A:agg-5/a1/r0 units=1 attempt=1 state=PENDING
+t=30.840153 node=coord event=batch_report batch=worker-4/e1/b66 worker=worker-4 tasks=1 failed=0
+t=30.935123 node=coord event=shard_committed job=B:roll-5 attempt=1 shard=5 task=B:roll-5/a1/s5/g1.101 worker=worker-2 speculative=false committed=2 shards=6
+t=30.982609 node=coord event=batch_report batch=worker-1/e1/b56 worker=worker-1 tasks=1 failed=0
+t=31.096638 node=coord event=job_accepted job=A:agg-6 shards=8 records=64 units=1
+t=31.096638 node=coord event=job_state job=A:agg-6 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=31.096638 node=coord event=attempt_start job=A:agg-6 attempt=1 max_attempts=3
+t=31.096638 node=coord event=job_scheduled job=A:agg-6 attempt=1 shards=8 queued=8
+t=31.100000 node=coord event=task_dispatch task=A:agg-6/a1/s0/g1.104 job=A:agg-6 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b67
+t=31.100000 node=coord event=task_dispatch task=A:agg-6/a1/s1/g1.105 job=A:agg-6 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b67
+t=31.100000 node=coord event=task_dispatch task=A:agg-6/a1/s2/g1.106 job=A:agg-6 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b67
+t=31.100000 node=coord event=task_dispatch task=A:agg-6/a1/s3/g1.107 job=A:agg-6 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b68
+t=31.100000 node=coord event=task_dispatch task=A:agg-6/a1/s4/g1.108 job=A:agg-6 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b68
+t=31.100000 node=coord event=task_dispatch task=A:agg-6/a1/s5/g1.109 job=A:agg-6 attempt=1 shard=5 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b69
+t=31.100000 node=coord event=task_dispatch task=A:agg-6/a1/s6/g1.110 job=A:agg-6 attempt=1 shard=6 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b70
+t=31.135348 node=coord event=batch_assigned batch=worker-4/e1/b67 worker=worker-4 tasks=3 accepted=3 hb_seq=55
+t=31.164491 node=coord event=batch_assigned batch=worker-2/e1/b70 worker=worker-2 tasks=1 accepted=1 hb_seq=55
+t=31.179976 node=coord event=batch_assigned batch=worker-1/e1/b69 worker=worker-1 tasks=1 accepted=1 hb_seq=57
+t=31.238487 node=coord event=batch_assigned batch=worker-3/e1/b68 worker=worker-3 tasks=2 accepted=2 hb_seq=55
+t=31.274123 node=coord event=shard_committed job=B:roll-5 attempt=1 shard=4 task=B:roll-5/a1/s4/g1.100 worker=worker-2 speculative=false committed=3 shards=6
+t=31.316694 node=coord event=gpu_op_terminal op_id=reduce/B:roll-4/a1/r0 state=SUCCEEDED
+t=31.316694 node=coord event=job_state job=B:roll-4 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=31.316694 node=coord event=job_succeeded job=B:roll-4 attempt=1 op_id=reduce/B:roll-4/a1/r0 count=192 checksum=ad802dec781b3986
+t=31.351644 node=coord event=gpu_release op_id=reduce/B:roll-4/a1/r0
+t=31.409620 node=coord event=batch_report batch=worker-2/e1/b65 worker=worker-2 tasks=1 failed=0
+t=31.447701 node=coord event=gpu_released op_id=reduce/B:roll-4/a1/r0 via=hint
+t=31.469082 node=coord event=shard_committed job=B:roll-5 attempt=1 shard=0 task=B:roll-5/a1/s0/g1.96 worker=worker-1 speculative=false committed=4 shards=6
+t=31.624567 node=coord event=task_finished task=B:roll-5/a1/s4/g1.100 worker=worker-2 state=done outcome=committed
+t=31.624567 node=coord event=task_finished task=B:roll-5/a1/s5/g1.101 worker=worker-2 state=done outcome=committed
+t=31.624567 node=coord event=batch_report batch=worker-2/e1/b64 worker=worker-2 tasks=2 failed=0
+t=31.691906 node=coord event=task_finished task=B:roll-5/a1/s0/g1.96 worker=worker-1 state=done outcome=committed
+t=31.691906 node=coord event=batch_report batch=worker-1/e1/b60 worker=worker-1 tasks=1 failed=0
+t=31.700000 node=coord event=task_dispatch task=A:agg-6/a1/s7/g1.111 job=A:agg-6 attempt=1 shard=7 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b71
+t=31.700000 node=coord event=speculation_launch job=B:roll-5 attempt=1 shard=2 straggler=B:roll-5/a1/s2/g1.98 worker=worker-2 elapsed=2.5 straggler_after=2.5
+t=31.700000 node=coord event=task_dispatch task=B:roll-5/a1/s2/g1.112 job=B:roll-5 attempt=1 shard=2 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b72
+t=31.763704 node=coord event=batch_assigned batch=worker-2/e1/b71 worker=worker-2 tasks=1 accepted=1 hb_seq=56
+t=31.779096 node=coord event=batch_assigned batch=worker-2/e1/b72 worker=worker-2 tasks=1 accepted=1 hb_seq=56
+t=31.800000 node=coord event=speculation_launch job=B:roll-5 attempt=1 shard=3 straggler=B:roll-5/a1/s3/g1.99 worker=worker-1 elapsed=2.5 straggler_after=2.5
+t=31.800000 node=coord event=task_dispatch task=B:roll-5/a1/s3/g1.113 job=B:roll-5 attempt=1 shard=3 worker=worker-1 epoch=1 speculative=true batch=worker-1/e1/b73
+t=31.817832 node=coord event=batch_assigned batch=worker-1/e1/b73 worker=worker-1 tasks=1 accepted=1 hb_seq=58
+t=31.929847 node=coord event=shard_committed job=A:agg-6 attempt=1 shard=1 task=A:agg-6/a1/s1/g1.105 worker=worker-4 speculative=false committed=1 shards=8
+t=32.076261 node=coord event=shard_committed job=A:agg-6 attempt=1 shard=5 task=A:agg-6/a1/s5/g1.109 worker=worker-1 speculative=false committed=2 shards=8
+t=32.337225 node=coord event=shard_committed job=A:agg-6 attempt=1 shard=4 task=A:agg-6/a1/s4/g1.108 worker=worker-3 speculative=false committed=3 shards=8
+t=32.341808 node=coord event=shard_committed job=A:agg-6 attempt=1 shard=0 task=A:agg-6/a1/s0/g1.104 worker=worker-4 speculative=false committed=4 shards=8
+t=32.358329 node=coord event=task_finished task=A:agg-6/a1/s5/g1.109 worker=worker-1 state=done outcome=committed
+t=32.358329 node=coord event=batch_report batch=worker-1/e1/b69 worker=worker-1 tasks=1 failed=0
+t=32.729981 node=coord event=job_accepted job=B:roll-6 shards=6 records=32 units=1
+t=32.729981 node=coord event=job_state job=B:roll-6 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=32.729981 node=coord event=attempt_start job=B:roll-6 attempt=1 max_attempts=3
+t=32.729981 node=coord event=job_scheduled job=B:roll-6 attempt=1 shards=6 queued=6
+t=32.776764 node=coord event=shard_committed job=B:roll-5 attempt=1 shard=2 task=B:roll-5/a1/s2/g1.98 worker=worker-1 speculative=false committed=5 shards=6
+t=32.776764 node=coord event=task_abort_request job=B:roll-5 shard=2 worker=worker-2 tasks=1 reason=shard_committed
+t=32.800000 node=coord event=task_dispatch task=B:roll-6/a1/s0/g1.114 job=B:roll-6 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b74
+t=32.920971 node=coord event=batch_assigned batch=worker-1/e1/b74 worker=worker-1 tasks=1 accepted=1 hb_seq=60
+t=33.137974 node=coord event=task_finished task=B:roll-5/a1/s2/g1.98 worker=worker-1 state=done outcome=committed
+t=33.137974 node=coord event=batch_report batch=worker-1/e1/b62 worker=worker-1 tasks=1 failed=0
+t=33.200000 node=coord event=task_dispatch task=B:roll-6/a1/s1/g1.115 job=B:roll-6 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b75
+t=33.272459 node=coord event=batch_assigned batch=worker-1/e1/b75 worker=worker-1 tasks=1 accepted=1 hb_seq=60
+t=33.274051 node=coord event=shard_committed job=A:agg-6 attempt=1 shard=6 task=A:agg-6/a1/s6/g1.110 worker=worker-2 speculative=false committed=5 shards=8
+t=33.337932 node=coord event=task_finished task=B:roll-5/a1/s2/g1.112 worker=worker-2 state=done outcome=aborted
+t=33.337932 node=coord event=batch_report batch=worker-2/e1/b72 worker=worker-2 tasks=1 failed=0
+t=33.344636 node=coord event=shard_committed job=B:roll-5 attempt=1 shard=3 task=B:roll-5/a1/s3/g1.113 worker=worker-1 speculative=true committed=6 shards=6
+t=33.344636 node=coord event=task_abort_request job=B:roll-5 shard=3 worker=worker-3 tasks=1 reason=shard_committed
+t=33.344636 node=coord event=job_state job=B:roll-5 attempt=1 old=MAPPING new=REDUCING reason=null
+t=33.344636 node=coord event=task_finished task=B:roll-5/a1/s3/g1.113 worker=worker-1 state=revoked outcome=map_complete
+t=33.344636 node=coord event=task_finished task=B:roll-5/a1/s3/g1.99 worker=worker-3 state=revoked outcome=map_complete
+t=33.344636 node=coord event=reduce_submit job=B:roll-5 attempt=1 op_id=reduce/B:roll-5/a1/r0 inputs=6
+t=33.396914 node=coord event=gpu_submit op_id=reduce/B:roll-5/a1/r0 units=1 attempt=1 state=PENDING
+t=33.400000 node=coord event=task_dispatch task=B:roll-6/a1/s2/g1.116 job=B:roll-6 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b76
+t=33.400000 node=coord event=task_dispatch task=B:roll-6/a1/s3/g1.117 job=B:roll-6 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b77
+t=33.400000 node=coord event=task_dispatch task=B:roll-6/a1/s4/g1.118 job=B:roll-6 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b78
+t=33.400156 node=coord event=shard_committed job=A:agg-6 attempt=1 shard=7 task=A:agg-6/a1/s7/g1.111 worker=worker-2 speculative=false committed=6 shards=8
+t=33.424889 node=coord event=batch_assigned batch=worker-2/e1/b77 worker=worker-2 tasks=1 accepted=1 hb_seq=59
+t=33.427369 node=coord event=batch_assigned batch=worker-1/e1/b76 worker=worker-1 tasks=1 accepted=1 hb_seq=61
+t=33.480154 node=coord event=batch_assigned batch=worker-3/e1/b78 worker=worker-3 tasks=1 accepted=1 hb_seq=59
+t=33.543712 node=coord event=task_finished task=A:agg-6/a1/s7/g1.111 worker=worker-2 state=done outcome=committed
+t=33.543712 node=coord event=batch_report batch=worker-2/e1/b71 worker=worker-2 tasks=1 failed=0
+t=33.600000 node=coord event=task_dispatch task=B:roll-6/a1/s5/g1.119 job=B:roll-6 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b79
+t=33.643542 node=coord event=task_finished task=A:agg-6/a1/s6/g1.110 worker=worker-2 state=done outcome=committed
+t=33.643542 node=coord event=batch_report batch=worker-2/e1/b70 worker=worker-2 tasks=1 failed=0
+t=33.666104 node=coord event=shard_committed job=A:agg-6 attempt=1 shard=2 task=A:agg-6/a1/s2/g1.106 worker=worker-4 speculative=false committed=7 shards=8
+t=33.682669 node=coord event=batch_assigned batch=worker-2/e1/b79 worker=worker-2 tasks=1 accepted=1 hb_seq=60
+t=33.700000 node=coord event=speculation_launch job=A:agg-6 attempt=1 shard=3 straggler=A:agg-6/a1/s3/g1.107 worker=worker-2 elapsed=2.6 straggler_after=2.5
+t=33.700000 node=coord event=task_dispatch task=A:agg-6/a1/s3/g1.120 job=A:agg-6 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b80
+t=33.712416 node=coord event=batch_assigned batch=worker-2/e1/b80 worker=worker-2 tasks=1 accepted=1 hb_seq=60
+t=33.864961 node=coord event=batch_report batch=worker-1/e1/b73 worker=worker-1 tasks=1 failed=0
+t=33.865657 node=coord event=task_finished task=A:agg-6/a1/s0/g1.104 worker=worker-4 state=done outcome=committed
+t=33.865657 node=coord event=task_finished task=A:agg-6/a1/s1/g1.105 worker=worker-4 state=done outcome=committed
+t=33.865657 node=coord event=task_finished task=A:agg-6/a1/s2/g1.106 worker=worker-4 state=done outcome=committed
+t=33.865657 node=coord event=batch_report batch=worker-4/e1/b67 worker=worker-4 tasks=3 failed=0
+t=33.939690 node=coord event=batch_report batch=worker-3/e1/b63 worker=worker-3 tasks=1 failed=0
+t=34.316385 node=coord event=shard_committed job=B:roll-6 attempt=1 shard=2 task=B:roll-6/a1/s2/g1.116 worker=worker-1 speculative=false committed=1 shards=6
+t=34.560462 node=coord event=shard_committed job=A:agg-6 attempt=1 shard=3 task=A:agg-6/a1/s3/g1.120 worker=worker-2 speculative=true committed=8 shards=8
+t=34.560462 node=coord event=task_abort_request job=A:agg-6 shard=3 worker=worker-3 tasks=1 reason=shard_committed
+t=34.560462 node=coord event=job_state job=A:agg-6 attempt=1 old=MAPPING new=REDUCING reason=null
+t=34.560462 node=coord event=task_finished task=A:agg-6/a1/s3/g1.107 worker=worker-3 state=revoked outcome=map_complete
+t=34.560462 node=coord event=task_finished task=A:agg-6/a1/s3/g1.120 worker=worker-2 state=revoked outcome=map_complete
+t=34.560462 node=coord event=task_finished task=A:agg-6/a1/s4/g1.108 worker=worker-3 state=revoked outcome=map_complete
+t=34.560462 node=coord event=reduce_submit job=A:agg-6 attempt=1 op_id=reduce/A:agg-6/a1/r0 inputs=8
+t=34.578929 node=coord event=gpu_submit op_id=reduce/A:agg-6/a1/r0 units=1 attempt=1 state=PENDING
+t=34.669628 node=coord event=task_finished task=B:roll-6/a1/s2/g1.116 worker=worker-1 state=done outcome=committed
+t=34.669628 node=coord event=batch_report batch=worker-1/e1/b76 worker=worker-1 tasks=1 failed=0
+t=34.731858 node=coord event=shard_committed job=B:roll-6 attempt=1 shard=4 task=B:roll-6/a1/s4/g1.118 worker=worker-3 speculative=false committed=2 shards=6
+t=34.975517 node=coord event=batch_report batch=worker-2/e1/b80 worker=worker-2 tasks=1 failed=0
+t=35.101927 node=coord event=task_finished task=B:roll-6/a1/s4/g1.118 worker=worker-3 state=done outcome=committed
+t=35.101927 node=coord event=batch_report batch=worker-3/e1/b78 worker=worker-3 tasks=1 failed=0
+t=35.108736 node=coord event=batch_report batch=worker-3/e1/b68 worker=worker-3 tasks=2 failed=0
+t=35.377783 node=coord event=shard_committed job=B:roll-6 attempt=1 shard=0 task=B:roll-6/a1/s0/g1.114 worker=worker-1 speculative=false committed=3 shards=6
+t=35.471052 node=coord event=gpu_op_terminal op_id=reduce/A:agg-5/a1/r0 state=SUCCEEDED
+t=35.471052 node=coord event=job_state job=A:agg-5 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=35.471052 node=coord event=job_succeeded job=A:agg-5 attempt=1 op_id=reduce/A:agg-5/a1/r0 count=512 checksum=87683b2c2b976a66
+t=35.496514 node=coord event=gpu_release op_id=reduce/A:agg-5/a1/r0
+t=35.559939 node=coord event=task_finished task=B:roll-6/a1/s0/g1.114 worker=worker-1 state=done outcome=committed
+t=35.559939 node=coord event=batch_report batch=worker-1/e1/b74 worker=worker-1 tasks=1 failed=0
+t=35.700000 node=coord event=speculation_launch job=B:roll-6 attempt=1 shard=1 straggler=B:roll-6/a1/s1/g1.115 worker=worker-3 elapsed=2.5 straggler_after=2.5
+t=35.700000 node=coord event=task_dispatch task=B:roll-6/a1/s1/g1.121 job=B:roll-6 attempt=1 shard=1 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b81
+t=35.739823 node=coord event=batch_assigned batch=worker-3/e1/b81 worker=worker-3 tasks=1 accepted=1 hb_seq=62
+t=35.791147 node=coord event=gpu_released op_id=reduce/A:agg-5/a1/r0 via=status
+t=35.900000 node=coord event=speculation_launch job=B:roll-6 attempt=1 shard=3 straggler=B:roll-6/a1/s3/g1.117 worker=worker-4 elapsed=2.5 straggler_after=2.5
+t=35.900000 node=coord event=task_dispatch task=B:roll-6/a1/s3/g1.122 job=B:roll-6 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=true batch=worker-4/e1/b82
+t=35.915289 node=coord event=batch_assigned batch=worker-4/e1/b82 worker=worker-4 tasks=1 accepted=1 hb_seq=64
+t=36.035659 node=coord event=job_accepted job=A:agg-7 shards=8 records=64 units=1
+t=36.035659 node=coord event=job_state job=A:agg-7 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=36.035659 node=coord event=attempt_start job=A:agg-7 attempt=1 max_attempts=3
+t=36.035659 node=coord event=job_scheduled job=A:agg-7 attempt=1 shards=8 queued=8
+t=36.100000 node=coord event=task_dispatch task=A:agg-7/a1/s0/g1.123 job=A:agg-7 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b83
+t=36.100000 node=coord event=task_dispatch task=A:agg-7/a1/s1/g1.124 job=A:agg-7 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b83
+t=36.100000 node=coord event=task_dispatch task=A:agg-7/a1/s2/g1.125 job=A:agg-7 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b84
+t=36.100000 node=coord event=task_dispatch task=A:agg-7/a1/s3/g1.126 job=A:agg-7 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b84
+t=36.100000 node=coord event=task_dispatch task=A:agg-7/a1/s4/g1.127 job=A:agg-7 attempt=1 shard=4 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b85
+t=36.100000 node=coord event=task_dispatch task=A:agg-7/a1/s5/g1.128 job=A:agg-7 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b85
+t=36.100000 node=coord event=task_dispatch task=A:agg-7/a1/s6/g1.129 job=A:agg-7 attempt=1 shard=6 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b86
+t=36.135285 node=coord event=batch_assigned batch=worker-2/e1/b86 worker=worker-2 tasks=1 accepted=1 hb_seq=64
+t=36.135922 node=coord event=batch_assigned batch=worker-4/e1/b85 worker=worker-4 tasks=2 accepted=2 hb_seq=64
+t=36.139806 node=coord event=batch_assigned batch=worker-1/e1/b83 worker=worker-1 tasks=2 accepted=2 hb_seq=65
+t=36.154711 node=coord event=batch_assigned batch=worker-3/e1/b84 worker=worker-3 tasks=2 accepted=2 hb_seq=62
+t=36.464423 node=coord event=gpu_op_terminal op_id=reduce/A:agg-6/a1/r0 state=SUCCEEDED
+t=36.464423 node=coord event=job_state job=A:agg-6 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=36.464423 node=coord event=job_succeeded job=A:agg-6 attempt=1 op_id=reduce/A:agg-6/a1/r0 count=512 checksum=81e4a0ee56614fd7
+t=36.507297 node=coord event=gpu_release op_id=reduce/A:agg-6/a1/r0
+t=36.710342 node=coord event=shard_committed job=B:roll-6 attempt=1 shard=1 task=B:roll-6/a1/s1/g1.121 worker=worker-3 speculative=true committed=4 shards=6
+t=36.710342 node=coord event=task_abort_request job=B:roll-6 shard=1 worker=worker-1 tasks=1 reason=shard_committed
+t=36.723022 node=coord event=commit_lost task=B:roll-6/a1/s1/g1.115 worker=worker-1 winner=B:roll-6/a1/s1/g1.121
+t=36.770064 node=coord event=gpu_released op_id=reduce/A:agg-6/a1/r0 via=hint
+t=36.946582 node=coord event=task_finished task=B:roll-6/a1/s1/g1.121 worker=worker-3 state=done outcome=committed
+t=36.946582 node=coord event=batch_report batch=worker-3/e1/b81 worker=worker-3 tasks=1 failed=0
+t=37.000000 node=coord event=task_dispatch task=A:agg-7/a1/s7/g1.130 job=A:agg-7 attempt=1 shard=7 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b87
+t=37.016761 node=coord event=batch_assigned batch=worker-3/e1/b87 worker=worker-3 tasks=1 accepted=1 hb_seq=64
+t=37.057064 node=coord event=task_finished task=B:roll-6/a1/s1/g1.115 worker=worker-1 state=done outcome=duplicate
+t=37.057064 node=coord event=batch_report batch=worker-1/e1/b75 worker=worker-1 tasks=1 failed=0
+t=37.071891 node=coord event=shard_committed job=B:roll-6 attempt=1 shard=5 task=B:roll-6/a1/s5/g1.119 worker=worker-2 speculative=false committed=5 shards=6
+t=37.451800 node=coord event=shard_committed job=B:roll-6 attempt=1 shard=3 task=B:roll-6/a1/s3/g1.122 worker=worker-4 speculative=true committed=6 shards=6
+t=37.451800 node=coord event=task_abort_request job=B:roll-6 shard=3 worker=worker-2 tasks=1 reason=shard_committed
+t=37.451800 node=coord event=job_state job=B:roll-6 attempt=1 old=MAPPING new=REDUCING reason=null
+t=37.451800 node=coord event=task_finished task=B:roll-6/a1/s3/g1.117 worker=worker-2 state=revoked outcome=map_complete
+t=37.451800 node=coord event=task_finished task=B:roll-6/a1/s3/g1.122 worker=worker-4 state=revoked outcome=map_complete
+t=37.451800 node=coord event=task_finished task=B:roll-6/a1/s5/g1.119 worker=worker-2 state=revoked outcome=map_complete
+t=37.451800 node=coord event=reduce_submit job=B:roll-6 attempt=1 op_id=reduce/B:roll-6/a1/r0 inputs=6
+t=37.452768 node=coord event=shard_committed job=A:agg-7 attempt=1 shard=2 task=A:agg-7/a1/s2/g1.125 worker=worker-3 speculative=false committed=1 shards=8
+t=37.460700 node=coord event=gpu_submit op_id=reduce/B:roll-6/a1/r0 units=1 attempt=1 state=PENDING
+t=37.487769 node=coord event=batch_report batch=worker-2/e1/b79 worker=worker-2 tasks=1 failed=0
+t=37.699950 node=coord event=batch_report batch=worker-4/e1/b82 worker=worker-4 tasks=1 failed=0
+t=37.748383 node=coord event=gpu_op_terminal op_id=reduce/B:roll-5/a1/r0 state=SUCCEEDED
+t=37.748383 node=coord event=job_state job=B:roll-5 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=37.748383 node=coord event=job_succeeded job=B:roll-5 attempt=1 op_id=reduce/B:roll-5/a1/r0 count=192 checksum=c1d410d8be436d6e
+t=37.783991 node=coord event=gpu_release op_id=reduce/B:roll-5/a1/r0
+t=37.836125 node=coord event=gpu_released op_id=reduce/B:roll-5/a1/r0 via=hint
+t=37.907036 node=coord event=job_accepted job=B:roll-7 shards=6 records=32 units=1
+t=37.907036 node=coord event=job_state job=B:roll-7 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=37.907036 node=coord event=attempt_start job=B:roll-7 attempt=1 max_attempts=3
+t=37.907036 node=coord event=job_scheduled job=B:roll-7 attempt=1 shards=6 queued=6
+t=37.982544 node=coord event=shard_committed job=A:agg-7 attempt=1 shard=7 task=A:agg-7/a1/s7/g1.130 worker=worker-3 speculative=false committed=2 shards=8
+t=38.000000 node=coord event=task_dispatch task=B:roll-7/a1/s0/g1.131 job=B:roll-7 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b88
+t=38.000000 node=coord event=task_dispatch task=B:roll-7/a1/s1/g1.132 job=B:roll-7 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b88
+t=38.000000 node=coord event=task_dispatch task=B:roll-7/a1/s2/g1.133 job=B:roll-7 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b89
+t=38.000000 node=coord event=task_dispatch task=B:roll-7/a1/s3/g1.134 job=B:roll-7 attempt=1 shard=3 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b90
+t=38.023676 node=coord event=shard_committed job=A:agg-7 attempt=1 shard=6 task=A:agg-7/a1/s6/g1.129 worker=worker-2 speculative=false committed=3 shards=8
+t=38.023676 node=coord event=batch_assigned batch=worker-2/e1/b88 worker=worker-2 tasks=2 accepted=2 hb_seq=67
+t=38.039251 node=coord event=batch_assigned batch=worker-1/e1/b89 worker=worker-1 tasks=1 accepted=1 hb_seq=68
+t=38.075610 node=coord event=batch_assigned batch=worker-4/e1/b90 worker=worker-4 tasks=1 accepted=1 hb_seq=68
+t=38.108186 node=coord event=task_finished task=A:agg-7/a1/s7/g1.130 worker=worker-3 state=done outcome=committed
+t=38.108186 node=coord event=batch_report batch=worker-3/e1/b87 worker=worker-3 tasks=1 failed=0
+t=38.200000 node=coord event=task_dispatch task=B:roll-7/a1/s4/g1.135 job=B:roll-7 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b91
+t=38.267780 node=coord event=batch_report batch=worker-2/e1/b77 worker=worker-2 tasks=1 failed=0
+t=38.302047 node=coord event=task_finished task=A:agg-7/a1/s6/g1.129 worker=worker-2 state=done outcome=committed
+t=38.302047 node=coord event=batch_report batch=worker-2/e1/b86 worker=worker-2 tasks=1 failed=0
+t=38.343535 node=coord event=shard_committed job=A:agg-7 attempt=1 shard=3 task=A:agg-7/a1/s3/g1.126 worker=worker-3 speculative=false committed=4 shards=8
+t=38.400000 node=coord event=task_dispatch task=B:roll-7/a1/s5/g1.136 job=B:roll-7 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b92
+t=38.472837 node=coord event=batch_assigned batch=worker-2/e1/b92 worker=worker-2 tasks=1 accepted=1 hb_seq=68
+t=38.511307 node=coord event=batch_assigned batch=worker-3/e1/b91 worker=worker-3 tasks=1 accepted=1 hb_seq=67
+t=38.541613 node=coord event=task_finished task=A:agg-7/a1/s2/g1.125 worker=worker-3 state=done outcome=committed
+t=38.541613 node=coord event=task_finished task=A:agg-7/a1/s3/g1.126 worker=worker-3 state=done outcome=committed
+t=38.541613 node=coord event=batch_report batch=worker-3/e1/b84 worker=worker-3 tasks=2 failed=0
+t=38.600000 node=coord event=speculation_launch job=A:agg-7 attempt=1 shard=0 straggler=A:agg-7/a1/s0/g1.123 worker=worker-3 elapsed=2.5 straggler_after=2.5
+t=38.600000 node=coord event=task_dispatch task=A:agg-7/a1/s0/g1.137 job=A:agg-7 attempt=1 shard=0 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b93
+t=38.600000 node=coord event=speculation_launch job=A:agg-7 attempt=1 shard=1 straggler=A:agg-7/a1/s1/g1.124 worker=worker-3 elapsed=2.5 straggler_after=2.5
+t=38.600000 node=coord event=task_dispatch task=A:agg-7/a1/s1/g1.138 job=A:agg-7 attempt=1 shard=1 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b94
+t=38.626619 node=coord event=batch_assigned batch=worker-3/e1/b93 worker=worker-3 tasks=1 accepted=1 hb_seq=67
+t=38.626619 node=coord event=batch_assigned batch=worker-3/e1/b94 worker=worker-3 tasks=1 accepted=1 hb_seq=67
+t=38.824536 node=coord event=shard_committed job=A:agg-7 attempt=1 shard=1 task=A:agg-7/a1/s1/g1.124 worker=worker-1 speculative=false committed=5 shards=8
+t=38.824536 node=coord event=task_abort_request job=A:agg-7 shard=1 worker=worker-3 tasks=1 reason=shard_committed
+t=38.963388 node=coord event=shard_committed job=A:agg-7 attempt=1 shard=4 task=A:agg-7/a1/s4/g1.127 worker=worker-4 speculative=false committed=6 shards=8
+t=39.152034 node=coord event=shard_committed job=B:roll-7 attempt=1 shard=1 task=B:roll-7/a1/s1/g1.132 worker=worker-2 speculative=false committed=1 shards=6
+t=39.506704 node=coord event=shard_committed job=B:roll-7 attempt=1 shard=4 task=B:roll-7/a1/s4/g1.135 worker=worker-3 speculative=false committed=2 shards=6
+t=39.572400 node=coord event=shard_committed job=B:roll-7 attempt=1 shard=2 task=B:roll-7/a1/s2/g1.133 worker=worker-1 speculative=false committed=3 shards=6
+t=39.635046 node=coord event=task_finished task=A:agg-7/a1/s1/g1.138 worker=worker-3 state=done outcome=aborted
+t=39.635046 node=coord event=batch_report batch=worker-3/e1/b94 worker=worker-3 tasks=1 failed=0
+t=39.700000 node=coord event=speculation_launch job=A:agg-7 attempt=1 shard=5 straggler=A:agg-7/a1/s5/g1.128 worker=worker-3 elapsed=3.6 straggler_after=2.5
+t=39.700000 node=coord event=task_dispatch task=A:agg-7/a1/s5/g1.139 job=A:agg-7 attempt=1 shard=5 worker=worker-3 epoch=1 speculative=true batch=worker-3/e1/b95
+t=39.735849 node=coord event=shard_committed job=B:roll-7 attempt=1 shard=3 task=B:roll-7/a1/s3/g1.134 worker=worker-4 speculative=false committed=4 shards=6
+t=39.753293 node=coord event=batch_assigned batch=worker-3/e1/b95 worker=worker-3 tasks=1 accepted=1 hb_seq=69
+t=39.782210 node=coord event=shard_committed job=B:roll-7 attempt=1 shard=5 task=B:roll-7/a1/s5/g1.136 worker=worker-2 speculative=false committed=5 shards=6
+t=39.861858 node=coord event=task_finished task=B:roll-7/a1/s4/g1.135 worker=worker-3 state=done outcome=committed
+t=39.861858 node=coord event=batch_report batch=worker-3/e1/b91 worker=worker-3 tasks=1 failed=0
+t=39.882789 node=coord event=shard_committed job=A:agg-7 attempt=1 shard=0 task=A:agg-7/a1/s0/g1.123 worker=worker-1 speculative=false committed=7 shards=8
+t=39.882789 node=coord event=task_abort_request job=A:agg-7 shard=0 worker=worker-3 tasks=1 reason=shard_committed
+t=40.044709 node=coord event=task_finished task=B:roll-7/a1/s2/g1.133 worker=worker-1 state=done outcome=committed
+t=40.044709 node=coord event=batch_report batch=worker-1/e1/b89 worker=worker-1 tasks=1 failed=0
+t=40.098401 node=coord event=gpu_op_terminal op_id=reduce/B:roll-6/a1/r0 state=SUCCEEDED
+t=40.098401 node=coord event=job_state job=B:roll-6 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=40.098401 node=coord event=job_succeeded job=B:roll-6 attempt=1 op_id=reduce/B:roll-6/a1/r0 count=192 checksum=5d5fd9e9f81495fa
+t=40.114632 node=coord event=gpu_release op_id=reduce/B:roll-6/a1/r0
+t=40.174473 node=coord event=task_finished task=B:roll-7/a1/s5/g1.136 worker=worker-2 state=done outcome=committed
+t=40.174473 node=coord event=batch_report batch=worker-2/e1/b92 worker=worker-2 tasks=1 failed=0
+t=40.199893 node=coord event=gpu_released op_id=reduce/B:roll-6/a1/r0 via=hint
+t=40.270903 node=coord event=task_finished task=A:agg-7/a1/s0/g1.123 worker=worker-1 state=done outcome=committed
+t=40.270903 node=coord event=task_finished task=A:agg-7/a1/s1/g1.124 worker=worker-1 state=done outcome=committed
+t=40.270903 node=coord event=batch_report batch=worker-1/e1/b83 worker=worker-1 tasks=2 failed=0
+t=40.413970 node=coord event=task_finished task=B:roll-7/a1/s3/g1.134 worker=worker-4 state=done outcome=committed
+t=40.413970 node=coord event=batch_report batch=worker-4/e1/b90 worker=worker-4 tasks=1 failed=0
+t=40.500000 node=coord event=speculation_launch job=B:roll-7 attempt=1 shard=0 straggler=B:roll-7/a1/s0/g1.131 worker=worker-1 elapsed=2.5 straggler_after=2.5
+t=40.500000 node=coord event=task_dispatch task=B:roll-7/a1/s0/g1.140 job=B:roll-7 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=true batch=worker-1/e1/b96
+t=40.567383 node=coord event=batch_assigned batch=worker-1/e1/b96 worker=worker-1 tasks=1 accepted=1 hb_seq=72
+t=40.662663 node=coord event=task_finished task=A:agg-7/a1/s0/g1.137 worker=worker-3 state=done outcome=aborted
+t=40.662663 node=coord event=batch_report batch=worker-3/e1/b93 worker=worker-3 tasks=1 failed=0
+t=40.747622 node=coord event=shard_committed job=B:roll-7 attempt=1 shard=0 task=B:roll-7/a1/s0/g1.131 worker=worker-2 speculative=false committed=6 shards=6
+t=40.747622 node=coord event=task_abort_request job=B:roll-7 shard=0 worker=worker-1 tasks=1 reason=shard_committed
+t=40.747622 node=coord event=job_state job=B:roll-7 attempt=1 old=MAPPING new=REDUCING reason=null
+t=40.747622 node=coord event=task_finished task=B:roll-7/a1/s0/g1.131 worker=worker-2 state=revoked outcome=map_complete
+t=40.747622 node=coord event=task_finished task=B:roll-7/a1/s0/g1.140 worker=worker-1 state=revoked outcome=map_complete
+t=40.747622 node=coord event=task_finished task=B:roll-7/a1/s1/g1.132 worker=worker-2 state=revoked outcome=map_complete
+t=40.747622 node=coord event=reduce_submit job=B:roll-7 attempt=1 op_id=reduce/B:roll-7/a1/r0 inputs=6
+t=40.855286 node=coord event=gpu_submit op_id=reduce/B:roll-7/a1/r0 units=1 attempt=1 state=PENDING
+t=41.024673 node=coord event=batch_report batch=worker-2/e1/b88 worker=worker-2 tasks=2 failed=0
+t=41.027276 node=coord event=shard_committed job=A:agg-7 attempt=1 shard=5 task=A:agg-7/a1/s5/g1.128 worker=worker-4 speculative=false committed=8 shards=8
+t=41.027276 node=coord event=task_abort_request job=A:agg-7 shard=5 worker=worker-3 tasks=1 reason=shard_committed
+t=41.027276 node=coord event=job_state job=A:agg-7 attempt=1 old=MAPPING new=REDUCING reason=null
+t=41.027276 node=coord event=task_finished task=A:agg-7/a1/s4/g1.127 worker=worker-4 state=revoked outcome=map_complete
+t=41.027276 node=coord event=task_finished task=A:agg-7/a1/s5/g1.128 worker=worker-4 state=revoked outcome=map_complete
+t=41.027276 node=coord event=task_finished task=A:agg-7/a1/s5/g1.139 worker=worker-3 state=revoked outcome=map_complete
+t=41.027276 node=coord event=reduce_submit job=A:agg-7 attempt=1 op_id=reduce/A:agg-7/a1/r0 inputs=8
+t=41.066193 node=coord event=gpu_submit op_id=reduce/A:agg-7/a1/r0 units=1 attempt=1 state=PENDING
+t=41.200177 node=coord event=batch_report batch=worker-4/e1/b85 worker=worker-4 tasks=2 failed=0
+t=41.525283 node=coord event=job_accepted job=A:agg-8 shards=8 records=64 units=1
+t=41.525283 node=coord event=job_state job=A:agg-8 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=41.525283 node=coord event=attempt_start job=A:agg-8 attempt=1 max_attempts=3
+t=41.525283 node=coord event=job_scheduled job=A:agg-8 attempt=1 shards=8 queued=8
+t=41.600000 node=coord event=task_dispatch task=A:agg-8/a1/s0/g1.141 job=A:agg-8 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b97
+t=41.600000 node=coord event=task_dispatch task=A:agg-8/a1/s1/g1.142 job=A:agg-8 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b97
+t=41.600000 node=coord event=task_dispatch task=A:agg-8/a1/s2/g1.143 job=A:agg-8 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b97
+t=41.600000 node=coord event=task_dispatch task=A:agg-8/a1/s3/g1.144 job=A:agg-8 attempt=1 shard=3 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b98
+t=41.600000 node=coord event=task_dispatch task=A:agg-8/a1/s4/g1.145 job=A:agg-8 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b98
+t=41.600000 node=coord event=task_dispatch task=A:agg-8/a1/s5/g1.146 job=A:agg-8 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b98
+t=41.600000 node=coord event=task_dispatch task=A:agg-8/a1/s6/g1.147 job=A:agg-8 attempt=1 shard=6 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b99
+t=41.600000 node=coord event=task_dispatch task=A:agg-8/a1/s7/g1.148 job=A:agg-8 attempt=1 shard=7 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b99
+t=41.617137 node=coord event=batch_assigned batch=worker-2/e1/b98 worker=worker-2 tasks=3 accepted=3 hb_seq=74
+t=41.627257 node=coord event=batch_assigned batch=worker-3/e1/b99 worker=worker-3 tasks=2 accepted=2 hb_seq=72
+t=41.636060 node=coord event=batch_report batch=worker-3/e1/b95 worker=worker-3 tasks=1 failed=0
+t=41.673018 node=coord event=batch_report batch=worker-1/e1/b96 worker=worker-1 tasks=1 failed=0
+t=41.673018 node=coord event=batch_assigned batch=worker-1/e1/b97 worker=worker-1 tasks=3 accepted=3 hb_seq=74
+t=42.504627 node=coord event=shard_committed job=A:agg-8 attempt=1 shard=3 task=A:agg-8/a1/s3/g1.144 worker=worker-2 speculative=false committed=1 shards=8
+t=42.566130 node=coord event=shard_committed job=A:agg-8 attempt=1 shard=4 task=A:agg-8/a1/s4/g1.145 worker=worker-2 speculative=false committed=2 shards=8
+t=43.067757 node=coord event=shard_committed job=A:agg-8 attempt=1 shard=0 task=A:agg-8/a1/s0/g1.141 worker=worker-1 speculative=false committed=3 shards=8
+t=43.116150 node=coord event=shard_committed job=A:agg-8 attempt=1 shard=6 task=A:agg-8/a1/s6/g1.147 worker=worker-3 speculative=false committed=4 shards=8
+t=43.167653 node=coord event=job_accepted job=B:roll-8 shards=6 records=32 units=1
+t=43.167653 node=coord event=job_state job=B:roll-8 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=43.167653 node=coord event=attempt_start job=B:roll-8 attempt=1 max_attempts=3
+t=43.167653 node=coord event=job_scheduled job=B:roll-8 attempt=1 shards=6 queued=6
+t=43.200000 node=coord event=task_dispatch task=B:roll-8/a1/s0/g1.149 job=B:roll-8 attempt=1 shard=0 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b100
+t=43.200000 node=coord event=task_dispatch task=B:roll-8/a1/s1/g1.150 job=B:roll-8 attempt=1 shard=1 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b100
+t=43.200000 node=coord event=task_dispatch task=B:roll-8/a1/s2/g1.151 job=B:roll-8 attempt=1 shard=2 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b100
+t=43.200000 node=coord event=task_dispatch task=B:roll-8/a1/s3/g1.152 job=B:roll-8 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b101
+t=43.212581 node=coord event=batch_assigned batch=worker-3/e1/b101 worker=worker-3 tasks=1 accepted=1 hb_seq=75
+t=43.236205 node=coord event=batch_assigned batch=worker-4/e1/b100 worker=worker-4 tasks=3 accepted=3 hb_seq=77
+t=43.314431 node=coord event=shard_committed job=A:agg-8 attempt=1 shard=7 task=A:agg-8/a1/s7/g1.148 worker=worker-3 speculative=false committed=5 shards=8
+t=43.422142 node=coord event=shard_committed job=A:agg-8 attempt=1 shard=5 task=A:agg-8/a1/s5/g1.146 worker=worker-2 speculative=false committed=6 shards=8
+t=43.519129 node=coord event=task_finished task=A:agg-8/a1/s6/g1.147 worker=worker-3 state=done outcome=committed
+t=43.519129 node=coord event=task_finished task=A:agg-8/a1/s7/g1.148 worker=worker-3 state=done outcome=committed
+t=43.519129 node=coord event=batch_report batch=worker-3/e1/b99 worker=worker-3 tasks=2 failed=0
+t=43.600000 node=coord event=task_dispatch task=B:roll-8/a1/s4/g1.153 job=B:roll-8 attempt=1 shard=4 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b102
+t=43.600000 node=coord event=task_dispatch task=B:roll-8/a1/s5/g1.154 job=B:roll-8 attempt=1 shard=5 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b102
+t=43.649609 node=coord event=batch_assigned batch=worker-3/e1/b102 worker=worker-3 tasks=2 accepted=2 hb_seq=76
+t=43.976709 node=coord event=task_finished task=A:agg-8/a1/s3/g1.144 worker=worker-2 state=done outcome=committed
+t=43.976709 node=coord event=task_finished task=A:agg-8/a1/s4/g1.145 worker=worker-2 state=done outcome=committed
+t=43.976709 node=coord event=task_finished task=A:agg-8/a1/s5/g1.146 worker=worker-2 state=done outcome=committed
+t=43.976709 node=coord event=batch_report batch=worker-2/e1/b98 worker=worker-2 tasks=3 failed=0
+t=44.100000 node=coord event=speculation_launch job=A:agg-8 attempt=1 shard=1 straggler=A:agg-8/a1/s1/g1.142 worker=worker-2 elapsed=2.5 straggler_after=2.5
+t=44.100000 node=coord event=task_dispatch task=A:agg-8/a1/s1/g1.155 job=A:agg-8 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b103
+t=44.100000 node=coord event=speculation_launch job=A:agg-8 attempt=1 shard=2 straggler=A:agg-8/a1/s2/g1.143 worker=worker-2 elapsed=2.5 straggler_after=2.5
+t=44.100000 node=coord event=task_dispatch task=A:agg-8/a1/s2/g1.156 job=A:agg-8 attempt=1 shard=2 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b104
+t=44.116802 node=coord event=batch_assigned batch=worker-2/e1/b103 worker=worker-2 tasks=1 accepted=1 hb_seq=78
+t=44.160348 node=coord event=shard_committed job=B:roll-8 attempt=1 shard=1 task=B:roll-8/a1/s1/g1.150 worker=worker-4 speculative=false committed=1 shards=6
+t=44.166186 node=coord event=batch_assigned batch=worker-2/e1/b104 worker=worker-2 tasks=1 accepted=1 hb_seq=78
+t=44.204935 node=coord event=shard_committed job=A:agg-8 attempt=1 shard=2 task=A:agg-8/a1/s2/g1.143 worker=worker-1 speculative=false committed=7 shards=8
+t=44.204935 node=coord event=task_abort_request job=A:agg-8 shard=2 worker=worker-2 tasks=1 reason=shard_committed
+t=44.836398 node=coord event=task_finished task=A:agg-8/a1/s2/g1.156 worker=worker-2 state=done outcome=aborted
+t=44.836398 node=coord event=batch_report batch=worker-2/e1/b104 worker=worker-2 tasks=1 failed=0
+t=45.575110 node=coord event=shard_committed job=A:agg-8 attempt=1 shard=1 task=A:agg-8/a1/s1/g1.155 worker=worker-2 speculative=true committed=8 shards=8
+t=45.575110 node=coord event=task_abort_request job=A:agg-8 shard=1 worker=worker-1 tasks=1 reason=shard_committed
+t=45.575110 node=coord event=job_state job=A:agg-8 attempt=1 old=MAPPING new=REDUCING reason=null
+t=45.575110 node=coord event=task_finished task=A:agg-8/a1/s0/g1.141 worker=worker-1 state=revoked outcome=map_complete
+t=45.575110 node=coord event=task_finished task=A:agg-8/a1/s1/g1.142 worker=worker-1 state=revoked outcome=map_complete
+t=45.575110 node=coord event=task_finished task=A:agg-8/a1/s1/g1.155 worker=worker-2 state=revoked outcome=map_complete
+t=45.575110 node=coord event=task_finished task=A:agg-8/a1/s2/g1.143 worker=worker-1 state=revoked outcome=map_complete
+t=45.575110 node=coord event=reduce_submit job=A:agg-8 attempt=1 op_id=reduce/A:agg-8/a1/r0 inputs=8
+t=45.635623 node=coord event=shard_committed job=B:roll-8 attempt=1 shard=3 task=B:roll-8/a1/s3/g1.152 worker=worker-3 speculative=false committed=2 shards=6
+t=45.673777 node=coord event=gpu_op_terminal op_id=reduce/B:roll-7/a1/r0 state=SUCCEEDED
+t=45.673777 node=coord event=job_state job=B:roll-7 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=45.673777 node=coord event=job_succeeded job=B:roll-7 attempt=1 op_id=reduce/B:roll-7/a1/r0 count=192 checksum=76f6cd3ddea4f0c1
+t=45.724070 node=coord event=gpu_release op_id=reduce/B:roll-7/a1/r0
+t=45.744143 node=coord event=batch_report batch=worker-2/e1/b103 worker=worker-2 tasks=1 failed=0
+t=45.744993 node=coord event=gpu_submit op_id=reduce/A:agg-8/a1/r0 units=1 attempt=1 state=PENDING
+t=45.759405 node=coord event=gpu_op_terminal op_id=reduce/A:agg-7/a1/r0 state=SUCCEEDED
+t=45.759405 node=coord event=job_state job=A:agg-7 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=45.759405 node=coord event=job_succeeded job=A:agg-7 attempt=1 op_id=reduce/A:agg-7/a1/r0 count=512 checksum=558b7e2af59e2c49
+t=45.844110 node=coord event=task_finished task=B:roll-8/a1/s3/g1.152 worker=worker-3 state=done outcome=committed
+t=45.844110 node=coord event=batch_report batch=worker-3/e1/b101 worker=worker-3 tasks=1 failed=0
+t=45.928763 node=coord event=gpu_released op_id=reduce/B:roll-7/a1/r0 via=hint
+t=46.093983 node=coord event=gpu_release op_id=reduce/A:agg-7/a1/r0
+t=46.185460 node=coord event=shard_committed job=B:roll-8 attempt=1 shard=2 task=B:roll-8/a1/s2/g1.151 worker=worker-4 speculative=false committed=3 shards=6
+t=46.200000 node=coord event=speculation_launch job=B:roll-8 attempt=1 shard=0 straggler=B:roll-8/a1/s0/g1.149 worker=worker-1 elapsed=3.0 straggler_after=2.5
+t=46.200000 node=coord event=task_dispatch task=B:roll-8/a1/s0/g1.157 job=B:roll-8 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=true batch=worker-1/e1/b105
+t=46.200000 node=coord event=speculation_launch job=B:roll-8 attempt=1 shard=4 straggler=B:roll-8/a1/s4/g1.153 worker=worker-2 elapsed=2.6 straggler_after=2.5
+t=46.200000 node=coord event=task_dispatch task=B:roll-8/a1/s4/g1.158 job=B:roll-8 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=true batch=worker-2/e1/b106
+t=46.200000 node=coord event=speculation_launch job=B:roll-8 attempt=1 shard=5 straggler=B:roll-8/a1/s5/g1.154 worker=worker-1 elapsed=2.6 straggler_after=2.5
+t=46.200000 node=coord event=task_dispatch task=B:roll-8/a1/s5/g1.159 job=B:roll-8 attempt=1 shard=5 worker=worker-1 epoch=1 speculative=true batch=worker-1/e1/b107
+t=46.214366 node=coord event=gpu_released op_id=reduce/A:agg-7/a1/r0 via=hint
+t=46.227702 node=coord event=batch_assigned batch=worker-2/e1/b106 worker=worker-2 tasks=1 accepted=1 hb_seq=82
+t=46.268669 node=coord event=batch_assigned batch=worker-1/e1/b105 worker=worker-1 tasks=1 accepted=1 hb_seq=83
+t=46.268669 node=coord event=batch_assigned batch=worker-1/e1/b107 worker=worker-1 tasks=1 accepted=1 hb_seq=83
+t=46.268737 node=coord event=batch_report batch=worker-1/e1/b97 worker=worker-1 tasks=3 failed=0
+t=46.536099 node=coord event=shard_committed job=B:roll-8 attempt=1 shard=4 task=B:roll-8/a1/s4/g1.153 worker=worker-3 speculative=false committed=4 shards=6
+t=46.536099 node=coord event=task_abort_request job=B:roll-8 shard=4 worker=worker-2 tasks=1 reason=shard_committed
+t=46.641422 node=coord event=job_accepted job=A:agg-9 shards=8 records=64 units=1
+t=46.641422 node=coord event=job_state job=A:agg-9 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=46.641422 node=coord event=attempt_start job=A:agg-9 attempt=1 max_attempts=3
+t=46.641422 node=coord event=job_scheduled job=A:agg-9 attempt=1 shards=8 queued=8
+t=46.700000 node=coord event=task_dispatch task=A:agg-9/a1/s0/g1.160 job=A:agg-9 attempt=1 shard=0 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b108
+t=46.700000 node=coord event=task_dispatch task=A:agg-9/a1/s1/g1.161 job=A:agg-9 attempt=1 shard=1 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b108
+t=46.700000 node=coord event=task_dispatch task=A:agg-9/a1/s2/g1.162 job=A:agg-9 attempt=1 shard=2 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b109
+t=46.700000 node=coord event=task_dispatch task=A:agg-9/a1/s3/g1.163 job=A:agg-9 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b110
+t=46.731817 node=coord event=batch_assigned batch=worker-3/e1/b110 worker=worker-3 tasks=1 accepted=1 hb_seq=81
+t=46.739646 node=coord event=batch_assigned batch=worker-1/e1/b109 worker=worker-1 tasks=1 accepted=1 hb_seq=83
+t=46.759162 node=coord event=batch_assigned batch=worker-2/e1/b108 worker=worker-2 tasks=2 accepted=2 hb_seq=83
+t=47.312793 node=coord event=task_finished task=B:roll-8/a1/s4/g1.158 worker=worker-2 state=done outcome=aborted
+t=47.312793 node=coord event=batch_report batch=worker-2/e1/b106 worker=worker-2 tasks=1 failed=0
+t=47.400000 node=coord event=task_dispatch task=A:agg-9/a1/s4/g1.164 job=A:agg-9 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b111
+t=47.415096 node=coord event=batch_assigned batch=worker-2/e1/b111 worker=worker-2 tasks=1 accepted=1 hb_seq=84
+t=47.586029 node=coord event=shard_committed job=B:roll-8 attempt=1 shard=5 task=B:roll-8/a1/s5/g1.154 worker=worker-3 speculative=false committed=5 shards=6
+t=47.586029 node=coord event=task_abort_request job=B:roll-8 shard=5 worker=worker-1 tasks=1 reason=shard_committed
+t=47.777426 node=coord event=shard_committed job=B:roll-8 attempt=1 shard=0 task=B:roll-8/a1/s0/g1.157 worker=worker-1 speculative=true committed=6 shards=6
+t=47.777426 node=coord event=task_abort_request job=B:roll-8 shard=0 worker=worker-4 tasks=1 reason=shard_committed
+t=47.777426 node=coord event=job_state job=B:roll-8 attempt=1 old=MAPPING new=REDUCING reason=null
+t=47.777426 node=coord event=task_finished task=B:roll-8/a1/s0/g1.149 worker=worker-4 state=revoked outcome=map_complete
+t=47.777426 node=coord event=task_finished task=B:roll-8/a1/s0/g1.157 worker=worker-1 state=revoked outcome=map_complete
+t=47.777426 node=coord event=task_finished task=B:roll-8/a1/s1/g1.150 worker=worker-4 state=revoked outcome=map_complete
+t=47.777426 node=coord event=task_finished task=B:roll-8/a1/s2/g1.151 worker=worker-4 state=revoked outcome=map_complete
+t=47.777426 node=coord event=task_finished task=B:roll-8/a1/s4/g1.153 worker=worker-3 state=revoked outcome=map_complete
+t=47.777426 node=coord event=task_finished task=B:roll-8/a1/s5/g1.154 worker=worker-3 state=revoked outcome=map_complete
+t=47.777426 node=coord event=task_finished task=B:roll-8/a1/s5/g1.159 worker=worker-1 state=revoked outcome=map_complete
+t=47.777426 node=coord event=reduce_submit job=B:roll-8 attempt=1 op_id=reduce/B:roll-8/a1/r0 inputs=6
+t=47.777863 node=coord event=shard_committed job=A:agg-9 attempt=1 shard=1 task=A:agg-9/a1/s1/g1.161 worker=worker-2 speculative=false committed=1 shards=8
+t=47.800000 node=coord event=task_dispatch task=A:agg-9/a1/s5/g1.165 job=A:agg-9 attempt=1 shard=5 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b112
+t=47.800000 node=coord event=task_dispatch task=A:agg-9/a1/s6/g1.166 job=A:agg-9 attempt=1 shard=6 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b112
+t=47.800000 node=coord event=task_dispatch task=A:agg-9/a1/s7/g1.167 job=A:agg-9 attempt=1 shard=7 worker=worker-4 epoch=1 speculative=false batch=worker-4/e1/b112
+t=47.802989 node=coord event=gpu_submit op_id=reduce/B:roll-8/a1/r0 units=1 attempt=1 state=PENDING
+t=47.840020 node=coord event=job_accepted job=B:roll-9 shards=6 records=32 units=1
+t=47.840020 node=coord event=job_state job=B:roll-9 attempt=1 old=PENDING new=MAPPING reason=submitted
+t=47.840020 node=coord event=attempt_start job=B:roll-9 attempt=1 max_attempts=3
+t=47.840020 node=coord event=job_scheduled job=B:roll-9 attempt=1 shards=6 queued=6
+t=47.867687 node=coord event=batch_assigned batch=worker-4/e1/b112 worker=worker-4 tasks=3 accepted=3 hb_seq=85
+t=47.900000 node=coord event=task_dispatch task=B:roll-9/a1/s0/g1.168 job=B:roll-9 attempt=1 shard=0 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b113
+t=47.900000 node=coord event=task_dispatch task=B:roll-9/a1/s1/g1.169 job=B:roll-9 attempt=1 shard=1 worker=worker-1 epoch=1 speculative=false batch=worker-1/e1/b113
+t=47.900000 node=coord event=task_dispatch task=B:roll-9/a1/s2/g1.170 job=B:roll-9 attempt=1 shard=2 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b114
+t=47.900000 node=coord event=task_dispatch task=B:roll-9/a1/s3/g1.171 job=B:roll-9 attempt=1 shard=3 worker=worker-3 epoch=1 speculative=false batch=worker-3/e1/b114
+t=47.903639 node=coord event=batch_report batch=worker-3/e1/b102 worker=worker-3 tasks=2 failed=0
+t=47.914705 node=coord event=batch_assigned batch=worker-1/e1/b113 worker=worker-1 tasks=2 accepted=2 hb_seq=86
+t=47.963819 node=coord event=batch_assigned batch=worker-3/e1/b114 worker=worker-3 tasks=2 accepted=2 hb_seq=83
+t=47.976849 node=coord event=gpu_op_terminal op_id=reduce/A:agg-8/a1/r0 state=SUCCEEDED
+t=47.976849 node=coord event=job_state job=A:agg-8 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=47.976849 node=coord event=job_succeeded job=A:agg-8 attempt=1 op_id=reduce/A:agg-8/a1/r0 count=512 checksum=bdc7fa78e0137967
+t=48.030501 node=coord event=gpu_release op_id=reduce/A:agg-8/a1/r0
+t=48.052928 node=coord event=batch_report batch=worker-1/e1/b105 worker=worker-1 tasks=1 failed=0
+t=48.190691 node=coord event=gpu_released op_id=reduce/A:agg-8/a1/r0 via=hint
+t=48.288220 node=coord event=shard_committed job=A:agg-9 attempt=1 shard=0 task=A:agg-9/a1/s0/g1.160 worker=worker-2 speculative=false committed=2 shards=8
+t=48.426629 node=coord event=batch_report batch=worker-1/e1/b107 worker=worker-1 tasks=1 failed=0
+t=48.462651 node=coord event=shard_committed job=A:agg-9 attempt=1 shard=3 task=A:agg-9/a1/s3/g1.163 worker=worker-3 speculative=false committed=3 shards=8
+t=48.572773 node=coord event=batch_report batch=worker-4/e1/b100 worker=worker-4 tasks=3 failed=0
+t=48.608675 node=coord event=task_finished task=A:agg-9/a1/s0/g1.160 worker=worker-2 state=done outcome=committed
+t=48.608675 node=coord event=task_finished task=A:agg-9/a1/s1/g1.161 worker=worker-2 state=done outcome=committed
+t=48.608675 node=coord event=batch_report batch=worker-2/e1/b108 worker=worker-2 tasks=2 failed=0
+t=48.700000 node=coord event=task_dispatch task=B:roll-9/a1/s4/g1.172 job=B:roll-9 attempt=1 shard=4 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b115
+t=48.700000 node=coord event=task_dispatch task=B:roll-9/a1/s5/g1.173 job=B:roll-9 attempt=1 shard=5 worker=worker-2 epoch=1 speculative=false batch=worker-2/e1/b115
+t=48.706338 node=coord event=task_finished task=A:agg-9/a1/s3/g1.163 worker=worker-3 state=done outcome=committed
+t=48.706338 node=coord event=batch_report batch=worker-3/e1/b110 worker=worker-3 tasks=1 failed=0
+t=48.792163 node=coord event=batch_assigned batch=worker-2/e1/b115 worker=worker-2 tasks=2 accepted=2 hb_seq=86
+t=49.024981 node=coord event=gpu_op_terminal op_id=reduce/B:roll-8/a1/r0 state=SUCCEEDED
+t=49.024981 node=coord event=job_state job=B:roll-8 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=49.024981 node=coord event=job_succeeded job=B:roll-8 attempt=1 op_id=reduce/B:roll-8/a1/r0 count=192 checksum=85c067944d87325c
+t=49.100728 node=coord event=gpu_release op_id=reduce/B:roll-8/a1/r0
+t=49.208859 node=coord event=shard_committed job=A:agg-9 attempt=1 shard=6 task=A:agg-9/a1/s6/g1.166 worker=worker-4 speculative=false committed=4 shards=8
+t=49.265082 node=coord event=gpu_released op_id=reduce/B:roll-8/a1/r0 via=hint
+t=49.291253 node=coord event=shard_committed job=A:agg-9 attempt=1 shard=2 task=A:agg-9/a1/s2/g1.162 worker=worker-1 speculative=false committed=5 shards=8
+t=49.405379 node=coord event=shard_committed job=A:agg-9 attempt=1 shard=5 task=A:agg-9/a1/s5/g1.165 worker=worker-4 speculative=false committed=6 shards=8
+t=49.665624 node=coord event=task_finished task=A:agg-9/a1/s2/g1.162 worker=worker-1 state=done outcome=committed
+t=49.665624 node=coord event=batch_report batch=worker-1/e1/b109 worker=worker-1 tasks=1 failed=0
+t=49.684111 node=coord event=shard_committed job=B:roll-9 attempt=1 shard=3 task=B:roll-9/a1/s3/g1.171 worker=worker-3 speculative=false committed=1 shards=6
+t=49.687387 node=coord event=shard_committed job=B:roll-9 attempt=1 shard=0 task=B:roll-9/a1/s0/g1.168 worker=worker-1 speculative=false committed=2 shards=6
+t=49.742562 node=coord event=shard_committed job=A:agg-9 attempt=1 shard=4 task=A:agg-9/a1/s4/g1.164 worker=worker-2 speculative=false committed=7 shards=8
+t=49.768738 node=coord event=shard_committed job=B:roll-9 attempt=1 shard=2 task=B:roll-9/a1/s2/g1.170 worker=worker-3 speculative=false committed=3 shards=6
+t=49.844262 node=coord event=shard_committed job=B:roll-9 attempt=1 shard=1 task=B:roll-9/a1/s1/g1.169 worker=worker-1 speculative=false committed=4 shards=6
+t=49.962020 node=coord event=shard_committed job=B:roll-9 attempt=1 shard=4 task=B:roll-9/a1/s4/g1.172 worker=worker-2 speculative=false committed=5 shards=6
+t=50.024532 node=coord event=task_finished task=A:agg-9/a1/s4/g1.164 worker=worker-2 state=done outcome=committed
+t=50.024532 node=coord event=batch_report batch=worker-2/e1/b111 worker=worker-2 tasks=1 failed=0
+t=50.078661 node=coord event=shard_committed job=A:agg-9 attempt=1 shard=7 task=A:agg-9/a1/s7/g1.167 worker=worker-4 speculative=false committed=8 shards=8
+t=50.078661 node=coord event=job_state job=A:agg-9 attempt=1 old=MAPPING new=REDUCING reason=null
+t=50.078661 node=coord event=task_finished task=A:agg-9/a1/s5/g1.165 worker=worker-4 state=revoked outcome=map_complete
+t=50.078661 node=coord event=task_finished task=A:agg-9/a1/s6/g1.166 worker=worker-4 state=revoked outcome=map_complete
+t=50.078661 node=coord event=task_finished task=A:agg-9/a1/s7/g1.167 worker=worker-4 state=revoked outcome=map_complete
+t=50.078661 node=coord event=reduce_submit job=A:agg-9 attempt=1 op_id=reduce/A:agg-9/a1/r0 inputs=8
+t=50.102452 node=coord event=gpu_submit op_id=reduce/A:agg-9/a1/r0 units=1 attempt=1 state=PENDING
+t=50.148487 node=coord event=task_finished task=B:roll-9/a1/s2/g1.170 worker=worker-3 state=done outcome=committed
+t=50.148487 node=coord event=task_finished task=B:roll-9/a1/s3/g1.171 worker=worker-3 state=done outcome=committed
+t=50.148487 node=coord event=batch_report batch=worker-3/e1/b114 worker=worker-3 tasks=2 failed=0
+t=50.165295 node=coord event=task_finished task=B:roll-9/a1/s0/g1.168 worker=worker-1 state=done outcome=committed
+t=50.165295 node=coord event=task_finished task=B:roll-9/a1/s1/g1.169 worker=worker-1 state=done outcome=committed
+t=50.165295 node=coord event=batch_report batch=worker-1/e1/b113 worker=worker-1 tasks=2 failed=0
+t=50.379372 node=coord event=batch_report batch=worker-4/e1/b112 worker=worker-4 tasks=3 failed=0
+t=51.133552 node=coord event=shard_committed job=B:roll-9 attempt=1 shard=5 task=B:roll-9/a1/s5/g1.173 worker=worker-2 speculative=false committed=6 shards=6
+t=51.133552 node=coord event=job_state job=B:roll-9 attempt=1 old=MAPPING new=REDUCING reason=null
+t=51.133552 node=coord event=task_finished task=B:roll-9/a1/s4/g1.172 worker=worker-2 state=revoked outcome=map_complete
+t=51.133552 node=coord event=task_finished task=B:roll-9/a1/s5/g1.173 worker=worker-2 state=revoked outcome=map_complete
+t=51.133552 node=coord event=reduce_submit job=B:roll-9 attempt=1 op_id=reduce/B:roll-9/a1/r0 inputs=6
+t=51.148709 node=coord event=gpu_submit op_id=reduce/B:roll-9/a1/r0 units=1 attempt=1 state=PENDING
+t=51.337628 node=coord event=batch_report batch=worker-2/e1/b115 worker=worker-2 tasks=2 failed=0
+t=52.358749 node=coord event=gpu_op_terminal op_id=reduce/B:roll-9/a1/r0 state=SUCCEEDED
+t=52.358749 node=coord event=job_state job=B:roll-9 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=52.358749 node=coord event=job_succeeded job=B:roll-9 attempt=1 op_id=reduce/B:roll-9/a1/r0 count=192 checksum=446b328982296fe1
+t=52.447662 node=coord event=gpu_release op_id=reduce/B:roll-9/a1/r0
+t=52.489941 node=coord event=gpu_released op_id=reduce/B:roll-9/a1/r0 via=hint
+t=53.515485 node=coord event=gpu_op_terminal op_id=reduce/A:agg-9/a1/r0 state=SUCCEEDED
+t=53.515485 node=coord event=job_state job=A:agg-9 attempt=1 old=REDUCING new=SUCCEEDED reason=null
+t=53.515485 node=coord event=job_succeeded job=A:agg-9 attempt=1 op_id=reduce/A:agg-9/a1/r0 count=512 checksum=4a35347312c594ac
+t=53.602235 node=coord event=gpu_release op_id=reduce/A:agg-9/a1/r0
+t=53.863324 node=coord event=gpu_released op_id=reduce/A:agg-9/a1/r0 via=status

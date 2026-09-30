@@ -1,0 +1,1 @@
+[{"kind": "log", "event": "batch_report_abandoned", "min_count": 1}, {"kind": "log", "event": "gpu_submit_unknown", "min_count": 1}, {"kind": "log", "event": "task_finished", "outcome": "missing_from_heartbeat", "min_count": 1}]

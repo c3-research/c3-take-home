@@ -1,0 +1,13 @@
+# Network faults only: delay, loss, duplication, reordering and two partitions
+# (router cut off from two workers; the GPU cut off from the other two).
+network:
+  delay: {dist: exponential, mean: 0.01}
+  drop: 0.05
+  duplicate: 0.03
+  reorder: 0.08
+  reorder_window: 0.1
+  partitions:
+    - {at: 20.0, until: 24.0, groups: [["router-1"], ["worker-1", "worker-2"]]}
+    - {at: 40.0, until: 43.0, groups: [["gpu"], ["worker-3", "worker-4"]]}
+gpu:
+  latency: {dist: uniform, low: 0.2, high: 1.0}

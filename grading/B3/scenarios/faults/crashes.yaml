@@ -1,0 +1,17 @@
+nodes:
+  crashes:
+  - node: worker-*
+    rate_per_hour: 90
+    restart_after:
+    - 0.5
+    - 5.0
+  - node: coord
+    rate_per_hour: 30
+    restart_after:
+    - 0.5
+    - 4.0
+gpu:
+  latency:
+    dist: uniform
+    low: 0.5
+    high: 3.0

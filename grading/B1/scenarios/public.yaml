@@ -1,0 +1,59 @@
+name: public
+seed: 11
+end_at: 100.0
+quiesce_at: 70.0
+liveness_window: 25.0
+gpu:
+  capacity: 32
+  release_delay:
+    dist: uniform
+    low: 0.05
+    high: 0.3
+nodes:
+- name: coord
+  class: shardmr.coordinator:Coordinator
+- name: worker-{i}
+  count: 4
+  class: shardmr.worker:Worker
+client:
+  target: coord
+client_retry:
+  timeout: 2.0
+  max_attempts: 5
+  backoff: 0.5
+  retry_on:
+  - UNAVAILABLE
+faults: faults/stragglers.yaml
+workload:
+- repeat: 10
+  at: 1.0
+  every: 5.0
+  jitter: 1.0
+  action: submit_job
+  tenant: A
+  job_id: agg-{i}
+  shards: 8
+  records: 64
+  units: 1
+  duration: 0.5
+- repeat: 10
+  at: 2.5
+  every: 5.0
+  jitter: 1.0
+  action: submit_job
+  tenant: B
+  job_id: roll-{i}
+  shards: 6
+  records: 32
+  units: 1
+  duration: 0.5
+- repeat: 6
+  at: 6.0
+  every: 8.0
+  jitter: 2.0
+  action: job_status
+  tenant: A
+  job_id: agg-{i}
+expect:
+  all_actions_resolved_by: 95.0
+  no_unhandled_exceptions: true

@@ -1,0 +1,6 @@
+# GPU failures, lost submit replies and the UNAVAILABLE-after-accept quirk.
+gpu:
+  fail: 0.08
+  lost_reply: 0.08
+  accepted_reported_failed: 0.1
+  latency: {dist: uniform, low: 0.5, high: 3.0}

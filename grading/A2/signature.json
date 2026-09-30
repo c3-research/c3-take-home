@@ -1,0 +1,6 @@
+[
+  {"kind": "fault", "fault": "pause", "node": "router-1", "min_count": 1},
+  {"kind": "log", "event": "job_report_retry", "reason": "timeout", "min_count": 1},
+  {"kind": "log", "event": "lease_fenced", "node": "router-1", "min_count": 1},
+  {"kind": "log", "event": "gpu_capacity_wait", "min_count": 0, "max_count": 0}
+]

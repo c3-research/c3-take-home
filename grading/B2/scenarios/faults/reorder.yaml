@@ -1,0 +1,332 @@
+network:
+  delay:
+    dist: exponential
+    mean: 0.005
+  reorder: 0.5
+  reorder_window: 0.2
+  partitions:
+  - at: 4.0
+    until: 4.45
+    groups:
+    - - coord
+    - - worker-1
+  - at: 4.8
+    until: 5.25
+    groups:
+    - - coord
+    - - worker-2
+  - at: 5.6
+    until: 6.05
+    groups:
+    - - coord
+    - - worker-3
+  - at: 6.4
+    until: 6.85
+    groups:
+    - - coord
+    - - worker-4
+  - at: 7.2
+    until: 7.65
+    groups:
+    - - coord
+    - - worker-1
+  - at: 8.0
+    until: 8.45
+    groups:
+    - - coord
+    - - worker-2
+  - at: 8.8
+    until: 9.25
+    groups:
+    - - coord
+    - - worker-3
+  - at: 9.6
+    until: 10.05
+    groups:
+    - - coord
+    - - worker-4
+  - at: 10.4
+    until: 10.85
+    groups:
+    - - coord
+    - - worker-1
+  - at: 11.2
+    until: 11.65
+    groups:
+    - - coord
+    - - worker-2
+  - at: 12.0
+    until: 12.45
+    groups:
+    - - coord
+    - - worker-3
+  - at: 12.8
+    until: 13.25
+    groups:
+    - - coord
+    - - worker-4
+  - at: 13.6
+    until: 14.05
+    groups:
+    - - coord
+    - - worker-1
+  - at: 14.4
+    until: 14.85
+    groups:
+    - - coord
+    - - worker-2
+  - at: 15.2
+    until: 15.65
+    groups:
+    - - coord
+    - - worker-3
+  - at: 16.0
+    until: 16.45
+    groups:
+    - - coord
+    - - worker-4
+  - at: 16.8
+    until: 17.25
+    groups:
+    - - coord
+    - - worker-1
+  - at: 17.6
+    until: 18.05
+    groups:
+    - - coord
+    - - worker-2
+  - at: 18.4
+    until: 18.85
+    groups:
+    - - coord
+    - - worker-3
+  - at: 19.2
+    until: 19.65
+    groups:
+    - - coord
+    - - worker-4
+  - at: 20.0
+    until: 20.45
+    groups:
+    - - coord
+    - - worker-1
+  - at: 20.8
+    until: 21.25
+    groups:
+    - - coord
+    - - worker-2
+  - at: 21.6
+    until: 22.05
+    groups:
+    - - coord
+    - - worker-3
+  - at: 22.4
+    until: 22.85
+    groups:
+    - - coord
+    - - worker-4
+  - at: 23.2
+    until: 23.65
+    groups:
+    - - coord
+    - - worker-1
+  - at: 24.0
+    until: 24.45
+    groups:
+    - - coord
+    - - worker-2
+  - at: 24.8
+    until: 25.25
+    groups:
+    - - coord
+    - - worker-3
+  - at: 25.6
+    until: 26.05
+    groups:
+    - - coord
+    - - worker-4
+  - at: 26.4
+    until: 26.85
+    groups:
+    - - coord
+    - - worker-1
+  - at: 27.2
+    until: 27.65
+    groups:
+    - - coord
+    - - worker-2
+  - at: 28.0
+    until: 28.45
+    groups:
+    - - coord
+    - - worker-3
+  - at: 28.8
+    until: 29.25
+    groups:
+    - - coord
+    - - worker-4
+  - at: 29.6
+    until: 30.05
+    groups:
+    - - coord
+    - - worker-1
+  - at: 30.4
+    until: 30.85
+    groups:
+    - - coord
+    - - worker-2
+  - at: 31.2
+    until: 31.65
+    groups:
+    - - coord
+    - - worker-3
+  - at: 32.0
+    until: 32.45
+    groups:
+    - - coord
+    - - worker-4
+  - at: 32.8
+    until: 33.25
+    groups:
+    - - coord
+    - - worker-1
+  - at: 33.6
+    until: 34.05
+    groups:
+    - - coord
+    - - worker-2
+  - at: 34.4
+    until: 34.85
+    groups:
+    - - coord
+    - - worker-3
+  - at: 35.2
+    until: 35.65
+    groups:
+    - - coord
+    - - worker-4
+  - at: 36.0
+    until: 36.45
+    groups:
+    - - coord
+    - - worker-1
+  - at: 36.8
+    until: 37.25
+    groups:
+    - - coord
+    - - worker-2
+  - at: 37.6
+    until: 38.05
+    groups:
+    - - coord
+    - - worker-3
+  - at: 38.4
+    until: 38.85
+    groups:
+    - - coord
+    - - worker-4
+  - at: 39.2
+    until: 39.65
+    groups:
+    - - coord
+    - - worker-1
+  - at: 40.0
+    until: 40.45
+    groups:
+    - - coord
+    - - worker-2
+  - at: 40.8
+    until: 41.25
+    groups:
+    - - coord
+    - - worker-3
+  - at: 41.6
+    until: 42.05
+    groups:
+    - - coord
+    - - worker-4
+  - at: 42.4
+    until: 42.85
+    groups:
+    - - coord
+    - - worker-1
+  - at: 43.2
+    until: 43.65
+    groups:
+    - - coord
+    - - worker-2
+  - at: 44.0
+    until: 44.45
+    groups:
+    - - coord
+    - - worker-3
+  - at: 44.8
+    until: 45.25
+    groups:
+    - - coord
+    - - worker-4
+  - at: 45.6
+    until: 46.05
+    groups:
+    - - coord
+    - - worker-1
+  - at: 46.4
+    until: 46.85
+    groups:
+    - - coord
+    - - worker-2
+  - at: 47.2
+    until: 47.65
+    groups:
+    - - coord
+    - - worker-3
+  - at: 48.0
+    until: 48.45
+    groups:
+    - - coord
+    - - worker-4
+  - at: 48.8
+    until: 49.25
+    groups:
+    - - coord
+    - - worker-1
+  - at: 49.6
+    until: 50.05
+    groups:
+    - - coord
+    - - worker-2
+  - at: 50.4
+    until: 50.85
+    groups:
+    - - coord
+    - - worker-3
+  - at: 51.2
+    until: 51.65
+    groups:
+    - - coord
+    - - worker-4
+  - at: 52.0
+    until: 52.45
+    groups:
+    - - coord
+    - - worker-1
+  - at: 52.8
+    until: 53.25
+    groups:
+    - - coord
+    - - worker-2
+  - at: 53.6
+    until: 54.05
+    groups:
+    - - coord
+    - - worker-3
+  - at: 54.4
+    until: 54.85
+    groups:
+    - - coord
+    - - worker-4
+gpu:
+  latency:
+    dist: uniform
+    low: 0.1
+    high: 0.3

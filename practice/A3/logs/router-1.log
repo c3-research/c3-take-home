@@ -1,0 +1,504 @@
+t=0.000000 node=router-1 event=router_start boot=0 capacity=8 lease_s=2.0 regrant_after=2.504 jobs=0 leased=0 releasing=0 queued=0 reserved=0
+t=0.000609 node=router-1 event=worker_registered worker=worker-2 boot=0
+t=0.004194 node=router-1 event=worker_registered worker=worker-1 boot=0
+t=0.004629 node=router-1 event=worker_registered worker=worker-4 boot=0
+t=0.007048 node=router-1 event=worker_registered worker=worker-3 boot=0
+t=0.500976 node=router-1 event=job_accepted key=C/long0 tenant=C job_id=long0 units=1 duration=23.0 state=QUEUED
+t=0.535704 node=router-1 event=capacity_reserved key=C/long0 op_id=C/long0/a1 units=1 reserved=1 capacity=8
+t=0.535704 node=router-1 event=lease_granted key=C/long0 epoch=1 holder=worker-1 holder_boot=0 op_id=C/long0/a1 attempt=1 mode=run lease_s=2.0
+t=0.808910 node=router-1 event=job_accepted key=C/long1 tenant=C job_id=long1 units=1 duration=23.0 state=QUEUED
+t=1.051981 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=1.099359 node=router-1 event=capacity_reserved key=C/long1 op_id=C/long1/a1 units=1 reserved=2 capacity=8
+t=1.099359 node=router-1 event=lease_granted key=C/long1 epoch=1 holder=worker-3 holder_boot=0 op_id=C/long1/a1 attempt=1 mode=run lease_s=2.0
+t=1.102652 node=router-1 event=job_accepted key=C/long2 tenant=C job_id=long2 units=1 duration=23.0 state=QUEUED
+t=1.243065 node=router-1 event=job_accepted key=A/a0 tenant=A job_id=a0 units=2 duration=1.0 state=QUEUED
+t=1.253509 node=router-1 event=capacity_reserved key=C/long2 op_id=C/long2/a1 units=1 reserved=3 capacity=8
+t=1.253509 node=router-1 event=lease_granted key=C/long2 epoch=1 holder=worker-2 holder_boot=0 op_id=C/long2/a1 attempt=1 mode=run lease_s=2.0
+t=1.259100 node=router-1 event=capacity_reserved key=A/a0 op_id=A/a0/a1 units=2 reserved=5 capacity=8
+t=1.259100 node=router-1 event=lease_granted key=A/a0 epoch=1 holder=worker-4 holder_boot=0 op_id=A/a0/a1 attempt=1 mode=run lease_s=2.0
+t=1.560760 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=1.634394 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=1.768564 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=1.797437 node=router-1 event=lease_renewed key=A/a0 epoch=1 holder=worker-4
+t=2.001678 node=router-1 event=job_accepted key=C/c0 tenant=C job_id=c0 units=1 duration=2.0 state=QUEUED
+t=2.061737 node=router-1 event=capacity_reserved key=C/c0 op_id=C/c0/a1 units=1 reserved=6 capacity=8
+t=2.061737 node=router-1 event=lease_granted key=C/c0 epoch=1 holder=worker-4 holder_boot=0 op_id=C/c0/a1 attempt=1 mode=run lease_s=2.0
+t=2.065650 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=2.137713 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=2.280360 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=2.301507 node=router-1 event=lease_renewed key=A/a0 epoch=1 holder=worker-4
+t=2.577557 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=2.591578 node=router-1 event=lease_renewed key=C/c0 epoch=1 holder=worker-4
+t=2.673453 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=2.788315 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=2.808863 node=router-1 event=lease_renewed key=A/a0 epoch=1 holder=worker-4
+t=2.825263 node=router-1 event=report_applied key=A/a0 epoch=1 op_id=A/a0/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=2.825263 node=router-1 event=job_terminal key=A/a0 state=SUCCEEDED op_id=A/a0/a1 attempt=1 reason=report
+t=2.833809 node=router-1 event=release_requested key=A/a0 op_id=A/a0/a1
+t=3.095486 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=3.106212 node=router-1 event=lease_renewed key=C/c0 epoch=1 holder=worker-4
+t=3.184205 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=3.217497 node=router-1 event=job_accepted key=B/b0 tenant=B job_id=b0 units=7 duration=1.5 state=QUEUED
+t=3.303042 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=3.484004 node=router-1 event=dispatch_blocked key=B/b0 units=7 free=2
+t=3.586872 node=router-1 event=job_accepted key=A/a1 tenant=A job_id=a1 units=2 duration=1.0 state=QUEUED
+t=3.614379 node=router-1 event=lease_renewed key=C/c0 epoch=1 holder=worker-4
+t=3.618854 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=3.692177 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=3.811717 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=4.124312 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=4.139120 node=router-1 event=lease_renewed key=C/c0 epoch=1 holder=worker-4
+t=4.199602 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=4.317301 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=4.428421 node=router-1 event=release_observed key=A/a0 op_id=A/a0/a1 via=message polls=3
+t=4.428421 node=router-1 event=capacity_freed key=A/a0 op_id=A/a0/a1 units=2 reserved=4 capacity=8
+t=4.507084 node=router-1 event=job_accepted key=C/c1 tenant=C job_id=c1 units=1 duration=2.0 state=QUEUED
+t=4.629337 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=4.646688 node=router-1 event=lease_renewed key=C/c0 epoch=1 holder=worker-4
+t=4.703390 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=4.833834 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=5.140710 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=5.166342 node=router-1 event=lease_renewed key=C/c0 epoch=1 holder=worker-4
+t=5.214871 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=5.237479 node=router-1 event=report_applied key=C/c0 epoch=1 op_id=C/c0/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=5.237479 node=router-1 event=job_terminal key=C/c0 state=SUCCEEDED op_id=C/c0/a1 attempt=1 reason=report
+t=5.244552 node=router-1 event=release_requested key=C/c0 op_id=C/c0/a1
+t=5.358617 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=5.656820 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=5.729274 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=5.868685 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=6.123018 node=router-1 event=job_accepted key=A/a2 tenant=A job_id=a2 units=2 duration=1.0 state=QUEUED
+t=6.157338 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=6.232114 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=6.393596 node=router-1 event=release_observed key=C/c0 op_id=C/c0/a1 via=message polls=2
+t=6.393596 node=router-1 event=capacity_freed key=C/c0 op_id=C/c0/a1 units=1 reserved=3 capacity=8
+t=6.393993 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=6.665177 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=6.740963 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=6.915854 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=7.000675 node=router-1 event=job_accepted key=C/c2 tenant=C job_id=c2 units=1 duration=2.0 state=QUEUED
+t=7.172523 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=7.249984 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=7.427798 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=7.678925 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=7.758491 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=7.936323 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=8.000000 node=router-1 event=node_crash boot=0
+t=9.000000 node=router-1 event=node_restart boot=1
+t=9.000000 node=router-1 event=lease_restored key=C/long0 epoch=1 holder=worker-1 holder_boot=0
+t=9.000000 node=router-1 event=lease_restored key=C/long1 epoch=1 holder=worker-3 holder_boot=0
+t=9.000000 node=router-1 event=lease_restored key=C/long2 epoch=1 holder=worker-2 holder_boot=0
+t=9.000000 node=router-1 event=router_start boot=1 capacity=8 lease_s=2.0 regrant_after=2.504 jobs=10 leased=3 releasing=0 queued=5 reserved=3
+t=9.040315 node=router-1 event=worker_registered worker=worker-2 boot=0
+t=9.040315 node=router-1 event=dispatch_blocked key=B/b0 units=7 free=5
+t=9.063091 node=router-1 event=worker_registered worker=worker-4 boot=0
+t=9.082392 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=9.131908 node=router-1 event=worker_registered worker=worker-1 boot=0
+t=9.159573 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=9.325230 node=router-1 event=worker_registered worker=worker-3 boot=0
+t=9.345733 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=9.503352 node=router-1 event=job_accepted key=C/c3 tenant=C job_id=c3 units=1 duration=2.0 state=QUEUED
+t=9.600133 node=router-1 event=lease_renewed key=C/long0 epoch=1 holder=worker-1
+t=9.666614 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=9.860063 node=router-1 event=lease_renewed key=C/long2 epoch=1 holder=worker-2
+t=10.012338 node=router-1 event=cancel_noop key=C/c0 state=SUCCEEDED
+t=10.167902 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=10.288003 node=router-1 event=job_accepted key=A/a3 tenant=A job_id=a3 units=2 duration=1.0 state=QUEUED
+t=10.668736 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=11.037473 node=router-1 event=job_accepted key=A/a4 tenant=A job_id=a4 units=2 duration=1.0 state=QUEUED
+t=11.179393 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=11.687685 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=12.007500 node=router-1 event=job_accepted key=C/c4 tenant=C job_id=c4 units=1 duration=2.0 state=QUEUED
+t=12.189376 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=12.250000 node=router-1 event=lease_expired key=C/long0 epoch=1 holder=worker-1 cancel=false
+t=12.284259 node=router-1 event=lease_granted key=C/long0 epoch=2 holder=worker-4 holder_boot=0 op_id=C/long0/a1 attempt=1 mode=run lease_s=2.0
+t=12.500000 node=router-1 event=lease_expired key=C/long2 epoch=1 holder=worker-2 cancel=false
+t=12.707229 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=12.813808 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=13.000604 node=router-1 event=lease_granted key=C/long2 epoch=2 holder=worker-4 holder_boot=0 op_id=C/long2/a1 attempt=1 mode=run lease_s=2.0
+t=13.108407 node=router-1 event=job_accepted key=B/b1 tenant=B job_id=b1 units=7 duration=1.5 state=QUEUED
+t=13.218410 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=13.300475 node=router-1 event=job_terminal key=C/c1 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=13.330498 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=13.524744 node=router-1 event=lease_renewed key=C/long2 epoch=2 holder=worker-4
+t=13.728207 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=13.745566 node=router-1 event=job_accepted key=A/a5 tenant=A job_id=a5 units=2 duration=1.0 state=QUEUED
+t=13.830971 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=14.000000 node=router-1 event=node_crash boot=1
+t=15.000000 node=router-1 event=node_restart boot=2
+t=15.000000 node=router-1 event=lease_restored key=C/long0 epoch=2 holder=worker-4 holder_boot=0
+t=15.000000 node=router-1 event=lease_restored key=C/long1 epoch=1 holder=worker-3 holder_boot=0
+t=15.000000 node=router-1 event=lease_restored key=C/long2 epoch=2 holder=worker-4 holder_boot=0
+t=15.000000 node=router-1 event=router_start boot=2 capacity=8 lease_s=2.0 regrant_after=2.504 jobs=16 leased=3 releasing=0 queued=10 reserved=3
+t=15.135734 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=15.137961 node=router-1 event=worker_registered worker=worker-1 boot=0
+t=15.137961 node=router-1 event=dispatch_blocked key=B/b0 units=7 free=5
+t=15.222925 node=router-1 event=job_terminal key=C/c2 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=15.238929 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=15.434048 node=router-1 event=worker_registered worker=worker-3 boot=0
+t=15.481782 node=router-1 event=worker_registered worker=worker-4 boot=0
+t=15.486663 node=router-1 event=worker_registered worker=worker-2 boot=0
+t=15.654821 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=15.751210 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=15.822542 node=router-1 event=job_terminal key=C/c3 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=16.005188 node=router-1 event=job_accepted key=C/c5 tenant=C job_id=c5 units=1 duration=2.0 state=QUEUED
+t=16.158879 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=16.260866 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=16.364460 node=router-1 event=job_accepted key=A/a6 tenant=A job_id=a6 units=2 duration=1.0 state=QUEUED
+t=16.682416 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=16.765415 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=17.000271 node=router-1 event=job_accepted key=C/c6 tenant=C job_id=c6 units=1 duration=2.0 state=QUEUED
+t=17.189498 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=17.272736 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=17.697009 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=17.750000 node=router-1 event=lease_expired key=C/long2 epoch=2 holder=worker-4 cancel=false
+t=17.754290 node=router-1 event=lease_granted key=C/long2 epoch=3 holder=worker-1 holder_boot=0 op_id=C/long2/a1 attempt=1 mode=run lease_s=2.0
+t=17.774528 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=18.212889 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=18.259449 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=18.287490 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=18.715044 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=18.764636 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=18.792924 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=18.875886 node=router-1 event=job_accepted key=A/a7 tenant=A job_id=a7 units=2 duration=1.0 state=QUEUED
+t=19.233027 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=19.265166 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=19.298117 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=19.405349 node=router-1 event=job_terminal key=C/c4 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=19.505979 node=router-1 event=job_accepted key=C/c7 tenant=C job_id=c7 units=1 duration=2.0 state=QUEUED
+t=19.749735 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=19.775918 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=19.806625 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=20.000000 node=router-1 event=node_crash boot=2
+t=21.000000 node=router-1 event=node_restart boot=3
+t=21.000000 node=router-1 event=lease_restored key=C/long0 epoch=2 holder=worker-4 holder_boot=0
+t=21.000000 node=router-1 event=lease_restored key=C/long1 epoch=1 holder=worker-3 holder_boot=0
+t=21.000000 node=router-1 event=lease_restored key=C/long2 epoch=3 holder=worker-1 holder_boot=0
+t=21.000000 node=router-1 event=router_start boot=3 capacity=8 lease_s=2.0 regrant_after=2.504 jobs=21 leased=3 releasing=0 queued=12 reserved=3
+t=21.140509 node=router-1 event=worker_registered worker=worker-3 boot=0
+t=21.140509 node=router-1 event=dispatch_blocked key=B/b0 units=7 free=5
+t=21.159354 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=21.160028 node=router-1 event=job_accepted key=A/a8 tenant=A job_id=a8 units=2 duration=1.0 state=QUEUED
+t=21.187452 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=21.215760 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=21.301436 node=router-1 event=worker_registered worker=worker-2 boot=0
+t=21.475347 node=router-1 event=worker_registered worker=worker-4 boot=0
+t=21.533388 node=router-1 event=worker_registered worker=worker-1 boot=0
+t=21.673632 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=21.699527 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=21.718701 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=22.004989 node=router-1 event=job_accepted key=C/c8 tenant=C job_id=c8 units=1 duration=2.0 state=QUEUED
+t=22.185994 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=22.203879 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=22.250429 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=22.696957 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=22.708845 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=22.764831 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=23.201641 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=23.211769 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=23.272791 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=23.290748 node=router-1 event=job_terminal key=C/c5 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=23.423827 node=router-1 event=job_accepted key=B/b2 tenant=B job_id=b2 units=7 duration=1.5 state=QUEUED
+t=23.703646 node=router-1 event=lease_renewed key=C/long1 epoch=1 holder=worker-3
+t=23.717188 node=router-1 event=lease_renewed key=C/long2 epoch=3 holder=worker-1
+t=23.779716 node=router-1 event=lease_renewed key=C/long0 epoch=2 holder=worker-4
+t=23.869391 node=router-1 event=job_accepted key=A/a9 tenant=A job_id=a9 units=2 duration=1.0 state=QUEUED
+t=24.514485 node=router-1 event=job_accepted key=C/c9 tenant=C job_id=c9 units=1 duration=2.0 state=QUEUED
+t=25.243635 node=router-1 event=job_terminal key=C/c6 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=26.250000 node=router-1 event=lease_expired key=C/long1 epoch=1 holder=worker-3 cancel=false
+t=26.250000 node=router-1 event=lease_expired key=C/long2 epoch=3 holder=worker-1 cancel=false
+t=26.293280 node=router-1 event=job_accepted key=A/a10 tenant=A job_id=a10 units=2 duration=1.0 state=QUEUED
+t=26.500000 node=router-1 event=lease_expired key=C/long0 epoch=2 holder=worker-4 cancel=false
+t=27.005154 node=router-1 event=job_accepted key=C/c10 tenant=C job_id=c10 units=1 duration=2.0 state=QUEUED
+t=27.198173 node=router-1 event=job_terminal key=C/c7 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=28.572261 node=router-1 event=job_accepted key=A/a11 tenant=A job_id=a11 units=2 duration=1.0 state=QUEUED
+t=29.507021 node=router-1 event=job_accepted key=C/c11 tenant=C job_id=c11 units=1 duration=2.0 state=QUEUED
+t=29.604366 node=router-1 event=job_terminal key=C/long0 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=29.709036 node=router-1 event=job_terminal key=C/c8 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=31.000000 node=router-1 event=router_stats queued=19 leases=0 releasing=0 reserved=3 capacity=8 jobs=30 cancels=5 duplicates=0 expiries=3 fenced=0 grants=0 releases=0 renewals=18 reports=0 revocations=0 submitted=9
+t=31.003443 node=router-1 event=job_terminal key=C/long1 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=31.282639 node=router-1 event=job_accepted key=A/a12 tenant=A job_id=a12 units=2 duration=1.0 state=QUEUED
+t=31.282639 node=router-1 event=job_terminal key=C/c9 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=32.000161 node=router-1 event=job_accepted key=C/c12 tenant=C job_id=c12 units=1 duration=2.0 state=QUEUED
+t=32.595859 node=router-1 event=job_terminal key=C/long2 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=33.558660 node=router-1 event=job_accepted key=B/b3 tenant=B job_id=b3 units=7 duration=1.5 state=QUEUED
+t=33.871067 node=router-1 event=job_accepted key=A/a13 tenant=A job_id=a13 units=2 duration=1.0 state=QUEUED
+t=33.993553 node=router-1 event=job_terminal key=C/c10 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=34.509245 node=router-1 event=job_accepted key=C/c13 tenant=C job_id=c13 units=1 duration=2.0 state=QUEUED
+t=36.234646 node=router-1 event=job_accepted key=A/a14 tenant=A job_id=a14 units=2 duration=1.0 state=QUEUED
+t=37.002893 node=router-1 event=job_accepted key=C/c14 tenant=C job_id=c14 units=1 duration=2.0 state=QUEUED
+t=38.446204 node=router-1 event=job_terminal key=C/c12 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=38.490726 node=router-1 event=job_terminal key=C/c11 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=38.849642 node=router-1 event=job_accepted key=A/a15 tenant=A job_id=a15 units=2 duration=1.0 state=QUEUED
+t=39.229663 node=router-1 event=worker_registered worker=worker-4 boot=1
+t=39.236186 node=router-1 event=capacity_reserved key=A/a1 op_id=A/a1/a1 units=2 reserved=5 capacity=8
+t=39.236186 node=router-1 event=lease_granted key=A/a1 epoch=1 holder=worker-4 holder_boot=1 op_id=A/a1/a1 attempt=1 mode=run lease_s=2.0
+t=39.241535 node=router-1 event=capacity_reserved key=A/a2 op_id=A/a2/a1 units=2 reserved=7 capacity=8
+t=39.241535 node=router-1 event=lease_granted key=A/a2 epoch=1 holder=worker-4 holder_boot=1 op_id=A/a2/a1 attempt=1 mode=run lease_s=2.0
+t=39.388050 node=router-1 event=worker_registered worker=worker-1 boot=1
+t=39.392210 node=router-1 event=capacity_reserved key=C/c13 op_id=C/c13/a1 units=1 reserved=8 capacity=8
+t=39.392210 node=router-1 event=lease_granted key=C/c13 epoch=1 holder=worker-1 holder_boot=1 op_id=C/c13/a1 attempt=1 mode=run lease_s=2.0
+t=39.501111 node=router-1 event=worker_registered worker=worker-2 boot=1
+t=39.503941 node=router-1 event=job_accepted key=C/c15 tenant=C job_id=c15 units=1 duration=2.0 state=QUEUED
+t=39.603845 node=router-1 event=worker_registered worker=worker-3 boot=1
+t=39.762634 node=router-1 event=lease_renewed key=A/a1 epoch=1 holder=worker-4
+t=39.762634 node=router-1 event=lease_renewed key=A/a2 epoch=1 holder=worker-4
+t=39.912635 node=router-1 event=lease_renewed key=C/c13 epoch=1 holder=worker-1
+t=40.271477 node=router-1 event=lease_renewed key=A/a1 epoch=1 holder=worker-4
+t=40.273047 node=router-1 event=lease_renewed key=A/a2 epoch=1 holder=worker-4
+t=40.438832 node=router-1 event=lease_renewed key=C/c13 epoch=1 holder=worker-1
+t=40.692559 node=router-1 event=cancel_requested key=C/c13 state=LEASED epoch=1 op_id=C/c13/a1
+t=40.785085 node=router-1 event=lease_renewed key=A/a2 epoch=1 holder=worker-4
+t=40.798212 node=router-1 event=report_applied key=A/a1 epoch=1 op_id=A/a1/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=40.798212 node=router-1 event=job_terminal key=A/a1 state=SUCCEEDED op_id=A/a1/a1 attempt=1 reason=report
+t=40.810409 node=router-1 event=release_requested key=A/a1 op_id=A/a1/a1
+t=40.813474 node=router-1 event=report_applied key=A/a2 epoch=1 op_id=A/a2/a1 op_state=FAILED state=QUEUED attempt=2
+t=40.838146 node=router-1 event=release_requested key=A/a2 op_id=A/a2/a1
+t=40.954335 node=router-1 event=lease_renewed key=C/c13 epoch=1 holder=worker-1
+t=41.000000 node=router-1 event=router_stats queued=20 leases=1 releasing=2 reserved=8 capacity=8 jobs=39 cancels=12 duplicates=0 expiries=3 fenced=0 grants=3 releases=0 renewals=26 reports=2 revocations=0 submitted=18
+t=41.013222 node=router-1 event=job_accepted key=A/a16 tenant=A job_id=a16 units=2 duration=1.0 state=QUEUED
+t=41.456150 node=router-1 event=lease_renewed key=C/c13 epoch=1 holder=worker-1
+t=41.970628 node=router-1 event=lease_renewed key=C/c13 epoch=1 holder=worker-1
+t=42.013075 node=router-1 event=job_accepted key=C/c16 tenant=C job_id=c16 units=1 duration=2.0 state=QUEUED
+t=42.191813 node=router-1 event=release_observed key=A/a2 op_id=A/a2/a1 via=message polls=2
+t=42.191813 node=router-1 event=capacity_freed key=A/a2 op_id=A/a2/a1 units=2 reserved=6 capacity=8
+t=42.258184 node=router-1 event=report_applied key=C/c13 epoch=1 op_id=C/c13/a1 op_state=CANCELLED state=CANCELLED attempt=1
+t=42.258184 node=router-1 event=job_terminal key=C/c13 state=CANCELLED op_id=null attempt=1 reason=report
+t=42.261165 node=router-1 event=capacity_reserved key=A/a2 op_id=A/a2/a2 units=2 reserved=8 capacity=8
+t=42.261165 node=router-1 event=lease_granted key=A/a2 epoch=2 holder=worker-1 holder_boot=1 op_id=A/a2/a2 attempt=2 mode=run lease_s=2.0
+t=42.269184 node=router-1 event=release_requested key=C/c13 op_id=C/c13/a1
+t=42.384027 node=router-1 event=release_observed key=A/a1 op_id=A/a1/a1 via=message polls=3
+t=42.384027 node=router-1 event=capacity_freed key=A/a1 op_id=A/a1/a1 units=2 reserved=6 capacity=8
+t=42.566350 node=router-1 event=capacity_reserved key=A/a3 op_id=A/a3/a1 units=2 reserved=8 capacity=8
+t=42.566350 node=router-1 event=lease_granted key=A/a3 epoch=1 holder=worker-4 holder_boot=1 op_id=A/a3/a1 attempt=1 mode=run lease_s=2.0
+t=43.072489 node=router-1 event=lease_renewed key=A/a3 epoch=1 holder=worker-4
+t=43.539827 node=router-1 event=report_applied key=A/a2 epoch=2 op_id=A/a2/a2 op_state=SUCCEEDED state=SUCCEEDED attempt=2
+t=43.539827 node=router-1 event=job_terminal key=A/a2 state=SUCCEEDED op_id=A/a2/a2 attempt=2 reason=report
+t=43.549110 node=router-1 event=release_requested key=A/a2 op_id=A/a2/a2
+t=43.581703 node=router-1 event=lease_renewed key=A/a3 epoch=1 holder=worker-4
+t=43.593980 node=router-1 event=job_accepted key=A/a17 tenant=A job_id=a17 units=2 duration=1.0 state=QUEUED
+t=43.654919 node=router-1 event=release_observed key=C/c13 op_id=C/c13/a1 via=message polls=2
+t=43.654919 node=router-1 event=capacity_freed key=C/c13 op_id=C/c13/a1 units=1 reserved=7 capacity=8
+t=43.739072 node=router-1 event=job_accepted key=B/b4 tenant=B job_id=b4 units=7 duration=1.5 state=QUEUED
+t=43.772888 node=router-1 event=capacity_reserved key=C/c14 op_id=C/c14/a1 units=1 reserved=8 capacity=8
+t=43.772888 node=router-1 event=lease_granted key=C/c14 epoch=1 holder=worker-3 holder_boot=1 op_id=C/c14/a1 attempt=1 mode=run lease_s=2.0
+t=44.000000 node=router-1 event=node_crash boot=3
+t=45.000000 node=router-1 event=node_restart boot=4
+t=45.000000 node=router-1 event=lease_restored key=A/a3 epoch=1 holder=worker-4 holder_boot=1
+t=45.000000 node=router-1 event=lease_restored key=C/c14 epoch=1 holder=worker-3 holder_boot=1
+t=45.000000 node=router-1 event=recovery_audit key=C/long0 finding=terminal_with_held_op op_id=C/long0/a1
+t=45.000000 node=router-1 event=recovery_audit key=C/long1 finding=terminal_with_held_op op_id=C/long1/a1
+t=45.000000 node=router-1 event=recovery_audit key=C/long2 finding=terminal_with_held_op op_id=C/long2/a1
+t=45.000000 node=router-1 event=router_start boot=4 capacity=8 lease_s=2.0 regrant_after=2.504 jobs=43 leased=2 releasing=1 queued=21 reserved=8
+t=45.003102 node=router-1 event=worker_registered worker=worker-2 boot=1
+t=45.003102 node=router-1 event=dispatch_blocked key=B/b0 units=7 free=0
+t=45.019832 node=router-1 event=release_requested key=A/a2 op_id=A/a2/a2
+t=45.097966 node=router-1 event=cancel_requested key=C/c14 state=LEASED epoch=1 op_id=C/c14/a1
+t=45.148209 node=router-1 event=worker_registered worker=worker-1 boot=1
+t=45.206318 node=router-1 event=lease_renewed key=C/c14 epoch=1 holder=worker-3
+t=45.428417 node=router-1 event=worker_registered worker=worker-4 boot=1
+t=45.446596 node=router-1 event=worker_registered worker=worker-3 boot=1
+t=45.537833 node=router-1 event=release_observed key=A/a2 op_id=A/a2/a2 via=status polls=1
+t=45.537833 node=router-1 event=capacity_freed key=A/a2 op_id=A/a2/a2 units=2 reserved=6 capacity=8
+t=45.661393 node=router-1 event=report_applied key=C/c14 epoch=1 op_id=C/c14/a1 op_state=CANCELLED state=CANCELLED attempt=1
+t=45.661393 node=router-1 event=job_terminal key=C/c14 state=CANCELLED op_id=null attempt=1 reason=report
+t=45.669082 node=router-1 event=release_requested key=C/c14 op_id=C/c14/a1
+t=46.000066 node=router-1 event=job_accepted key=C/c17 tenant=C job_id=c17 units=1 duration=2.0 state=QUEUED
+t=46.258322 node=router-1 event=job_terminal key=C/c15 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=46.384850 node=router-1 event=job_accepted key=A/a18 tenant=A job_id=a18 units=2 duration=1.0 state=QUEUED
+t=47.011599 node=router-1 event=job_accepted key=C/c18 tenant=C job_id=c18 units=1 duration=2.0 state=QUEUED
+t=47.099670 node=router-1 event=release_observed key=C/c14 op_id=C/c14/a1 via=message polls=2
+t=47.099670 node=router-1 event=capacity_freed key=C/c14 op_id=C/c14/a1 units=1 reserved=5 capacity=8
+t=47.750000 node=router-1 event=lease_expired key=A/a3 epoch=1 holder=worker-4 cancel=false
+t=47.948029 node=router-1 event=lease_granted key=A/a3 epoch=2 holder=worker-2 holder_boot=1 op_id=A/a3/a1 attempt=1 mode=run lease_s=2.0
+t=47.975880 node=router-1 event=report_applied key=A/a3 epoch=2 op_id=A/a3/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=47.975880 node=router-1 event=job_terminal key=A/a3 state=SUCCEEDED op_id=A/a3/a1 attempt=1 reason=report
+t=47.979317 node=router-1 event=release_requested key=A/a3 op_id=A/a3/a1
+t=48.346837 node=router-1 event=job_terminal key=C/c16 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=48.727562 node=router-1 event=job_accepted key=A/a19 tenant=A job_id=a19 units=2 duration=1.0 state=QUEUED
+t=48.827484 node=router-1 event=release_observed key=A/a3 op_id=A/a3/a1 via=message polls=1
+t=48.827484 node=router-1 event=capacity_freed key=A/a3 op_id=A/a3/a1 units=2 reserved=3 capacity=8
+t=49.511027 node=router-1 event=job_accepted key=C/c19 tenant=C job_id=c19 units=1 duration=2.0 state=QUEUED
+t=50.000000 node=router-1 event=node_crash boot=4
+t=51.000000 node=router-1 event=node_restart boot=5
+t=51.000000 node=router-1 event=recovery_audit key=C/long0 finding=terminal_with_held_op op_id=C/long0/a1
+t=51.000000 node=router-1 event=recovery_audit key=C/long1 finding=terminal_with_held_op op_id=C/long1/a1
+t=51.000000 node=router-1 event=recovery_audit key=C/long2 finding=terminal_with_held_op op_id=C/long2/a1
+t=51.000000 node=router-1 event=router_start boot=5 capacity=8 lease_s=2.0 regrant_after=2.504 jobs=48 leased=0 releasing=0 queued=24 reserved=3
+t=51.088905 node=router-1 event=worker_registered worker=worker-3 boot=1
+t=51.088905 node=router-1 event=dispatch_blocked key=B/b0 units=7 free=5
+t=51.104346 node=router-1 event=job_terminal key=C/c17 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=51.115868 node=router-1 event=worker_registered worker=worker-1 boot=1
+t=51.185219 node=router-1 event=worker_registered worker=worker-2 boot=1
+t=51.211190 node=router-1 event=worker_registered worker=worker-4 boot=1
+t=54.320172 node=router-1 event=job_terminal key=C/c18 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=58.458609 node=router-1 event=job_terminal key=C/c19 state=CANCELLED op_id=null attempt=1 reason=cancel_queued
+t=61.000000 node=router-1 event=router_stats queued=21 leases=0 releasing=0 reserved=3 capacity=8 jobs=48 cancels=3 duplicates=0 expiries=0 fenced=0 grants=0 releases=0 renewals=0 reports=0 revocations=0 submitted=0
+t=61.089456 node=router-1 event=capacity_reserved key=A/a4 op_id=A/a4/a1 units=2 reserved=5 capacity=8
+t=61.089456 node=router-1 event=lease_granted key=A/a4 epoch=1 holder=worker-3 holder_boot=1 op_id=A/a4/a1 attempt=1 mode=run lease_s=2.0
+t=61.133448 node=router-1 event=capacity_reserved key=A/a5 op_id=A/a5/a1 units=2 reserved=7 capacity=8
+t=61.133448 node=router-1 event=lease_granted key=A/a5 epoch=1 holder=worker-1 holder_boot=1 op_id=A/a5/a1 attempt=1 mode=run lease_s=2.0
+t=61.605250 node=router-1 event=lease_renewed key=A/a4 epoch=1 holder=worker-3
+t=61.638947 node=router-1 event=lease_renewed key=A/a5 epoch=1 holder=worker-1
+t=62.124133 node=router-1 event=lease_renewed key=A/a4 epoch=1 holder=worker-3
+t=62.146494 node=router-1 event=lease_renewed key=A/a5 epoch=1 holder=worker-1
+t=62.625980 node=router-1 event=lease_renewed key=A/a4 epoch=1 holder=worker-3
+t=62.666298 node=router-1 event=lease_renewed key=A/a5 epoch=1 holder=worker-1
+t=62.719619 node=router-1 event=report_applied key=A/a5 epoch=1 op_id=A/a5/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=62.719619 node=router-1 event=job_terminal key=A/a5 state=SUCCEEDED op_id=A/a5/a1 attempt=1 reason=report
+t=62.730859 node=router-1 event=release_requested key=A/a5 op_id=A/a5/a1
+t=62.974502 node=router-1 event=report_applied key=A/a4 epoch=1 op_id=A/a4/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=62.974502 node=router-1 event=job_terminal key=A/a4 state=SUCCEEDED op_id=A/a4/a1 attempt=1 reason=report
+t=62.981541 node=router-1 event=release_requested key=A/a4 op_id=A/a4/a1
+t=64.470429 node=router-1 event=release_observed key=A/a4 op_id=A/a4/a1 via=message polls=2
+t=64.470429 node=router-1 event=capacity_freed key=A/a4 op_id=A/a4/a1 units=2 reserved=5 capacity=8
+t=64.529936 node=router-1 event=release_observed key=A/a5 op_id=A/a5/a1 via=message polls=3
+t=64.529936 node=router-1 event=capacity_freed key=A/a5 op_id=A/a5/a1 units=2 reserved=3 capacity=8
+t=64.568355 node=router-1 event=capacity_reserved key=A/a6 op_id=A/a6/a1 units=2 reserved=5 capacity=8
+t=64.568355 node=router-1 event=lease_granted key=A/a6 epoch=1 holder=worker-4 holder_boot=1 op_id=A/a6/a1 attempt=1 mode=run lease_s=2.0
+t=64.630674 node=router-1 event=capacity_reserved key=A/a7 op_id=A/a7/a1 units=2 reserved=7 capacity=8
+t=64.630674 node=router-1 event=lease_granted key=A/a7 epoch=1 holder=worker-1 holder_boot=1 op_id=A/a7/a1 attempt=1 mode=run lease_s=2.0
+t=65.074860 node=router-1 event=lease_renewed key=A/a6 epoch=1 holder=worker-4
+t=65.150678 node=router-1 event=lease_renewed key=A/a7 epoch=1 holder=worker-1
+t=65.600130 node=router-1 event=lease_renewed key=A/a6 epoch=1 holder=worker-4
+t=65.663660 node=router-1 event=lease_renewed key=A/a7 epoch=1 holder=worker-1
+t=66.101860 node=router-1 event=lease_renewed key=A/a6 epoch=1 holder=worker-4
+t=66.151686 node=router-1 event=report_applied key=A/a6 epoch=1 op_id=A/a6/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=66.151686 node=router-1 event=job_terminal key=A/a6 state=SUCCEEDED op_id=A/a6/a1 attempt=1 reason=report
+t=66.169213 node=router-1 event=release_requested key=A/a6 op_id=A/a6/a1
+t=66.177649 node=router-1 event=report_applied key=A/a7 epoch=1 op_id=A/a7/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=66.177649 node=router-1 event=job_terminal key=A/a7 state=SUCCEEDED op_id=A/a7/a1 attempt=1 reason=report
+t=66.180798 node=router-1 event=lease_fenced key=A/a7 epoch=1 current=1 holder=worker-1 state=SUCCEEDED
+t=66.186930 node=router-1 event=release_requested key=A/a7 op_id=A/a7/a1
+t=67.635276 node=router-1 event=release_observed key=A/a6 op_id=A/a6/a1 via=message polls=2
+t=67.635276 node=router-1 event=capacity_freed key=A/a6 op_id=A/a6/a1 units=2 reserved=5 capacity=8
+t=67.670934 node=router-1 event=release_observed key=A/a7 op_id=A/a7/a1 via=message polls=2
+t=67.670934 node=router-1 event=capacity_freed key=A/a7 op_id=A/a7/a1 units=2 reserved=3 capacity=8
+t=67.712155 node=router-1 event=capacity_reserved key=A/a8 op_id=A/a8/a1 units=2 reserved=5 capacity=8
+t=67.712155 node=router-1 event=lease_granted key=A/a8 epoch=1 holder=worker-4 holder_boot=1 op_id=A/a8/a1 attempt=1 mode=run lease_s=2.0
+t=67.746176 node=router-1 event=capacity_reserved key=A/a9 op_id=A/a9/a1 units=2 reserved=7 capacity=8
+t=67.746176 node=router-1 event=lease_granted key=A/a9 epoch=1 holder=worker-3 holder_boot=1 op_id=A/a9/a1 attempt=1 mode=run lease_s=2.0
+t=68.216789 node=router-1 event=lease_renewed key=A/a8 epoch=1 holder=worker-4
+t=68.251096 node=router-1 event=lease_renewed key=A/a9 epoch=1 holder=worker-3
+t=68.738215 node=router-1 event=lease_renewed key=A/a8 epoch=1 holder=worker-4
+t=68.760797 node=router-1 event=lease_renewed key=A/a9 epoch=1 holder=worker-3
+t=69.251683 node=router-1 event=lease_renewed key=A/a8 epoch=1 holder=worker-4
+t=69.258481 node=router-1 event=report_applied key=A/a8 epoch=1 op_id=A/a8/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=69.258481 node=router-1 event=job_terminal key=A/a8 state=SUCCEEDED op_id=A/a8/a1 attempt=1 reason=report
+t=69.260455 node=router-1 event=release_requested key=A/a8 op_id=A/a8/a1
+t=69.268092 node=router-1 event=lease_renewed key=A/a9 epoch=1 holder=worker-3
+t=69.293571 node=router-1 event=report_applied key=A/a9 epoch=1 op_id=A/a9/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=69.293571 node=router-1 event=job_terminal key=A/a9 state=SUCCEEDED op_id=A/a9/a1 attempt=1 reason=report
+t=69.298889 node=router-1 event=release_requested key=A/a9 op_id=A/a9/a1
+t=70.564116 node=router-1 event=release_observed key=A/a8 op_id=A/a8/a1 via=message polls=2
+t=70.564116 node=router-1 event=capacity_freed key=A/a8 op_id=A/a8/a1 units=2 reserved=5 capacity=8
+t=70.578050 node=router-1 event=capacity_reserved key=A/a10 op_id=A/a10/a1 units=2 reserved=7 capacity=8
+t=70.578050 node=router-1 event=lease_granted key=A/a10 epoch=1 holder=worker-3 holder_boot=1 op_id=A/a10/a1 attempt=1 mode=run lease_s=2.0
+t=70.938376 node=router-1 event=release_observed key=A/a9 op_id=A/a9/a1 via=message polls=3
+t=70.938376 node=router-1 event=capacity_freed key=A/a9 op_id=A/a9/a1 units=2 reserved=5 capacity=8
+t=70.971965 node=router-1 event=capacity_reserved key=A/a11 op_id=A/a11/a1 units=2 reserved=7 capacity=8
+t=70.971965 node=router-1 event=lease_granted key=A/a11 epoch=1 holder=worker-1 holder_boot=1 op_id=A/a11/a1 attempt=1 mode=run lease_s=2.0
+t=71.000000 node=router-1 event=router_stats queued=13 leases=2 releasing=0 reserved=7 capacity=8 jobs=48 cancels=3 duplicates=0 expiries=0 fenced=1 grants=8 releases=6 renewals=17 reports=6 revocations=0 submitted=0
+t=71.103882 node=router-1 event=lease_renewed key=A/a10 epoch=1 holder=worker-3
+t=71.472281 node=router-1 event=lease_renewed key=A/a11 epoch=1 holder=worker-1
+t=71.630563 node=router-1 event=lease_renewed key=A/a10 epoch=1 holder=worker-3
+t=71.986327 node=router-1 event=lease_renewed key=A/a11 epoch=1 holder=worker-1
+t=72.148116 node=router-1 event=report_applied key=A/a10 epoch=1 op_id=A/a10/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=72.148116 node=router-1 event=job_terminal key=A/a10 state=SUCCEEDED op_id=A/a10/a1 attempt=1 reason=report
+t=72.151631 node=router-1 event=release_requested key=A/a10 op_id=A/a10/a1
+t=72.152029 node=router-1 event=lease_fenced key=A/a10 epoch=1 current=1 holder=worker-3 state=SUCCEEDED
+t=72.495604 node=router-1 event=lease_renewed key=A/a11 epoch=1 holder=worker-1
+t=72.552128 node=router-1 event=report_applied key=A/a11 epoch=1 op_id=A/a11/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=72.552128 node=router-1 event=job_terminal key=A/a11 state=SUCCEEDED op_id=A/a11/a1 attempt=1 reason=report
+t=72.561073 node=router-1 event=release_requested key=A/a11 op_id=A/a11/a1
+t=73.030373 node=router-1 event=release_observed key=A/a10 op_id=A/a10/a1 via=message polls=1
+t=73.030373 node=router-1 event=capacity_freed key=A/a10 op_id=A/a10/a1 units=2 reserved=5 capacity=8
+t=73.045153 node=router-1 event=capacity_reserved key=A/a12 op_id=A/a12/a1 units=2 reserved=7 capacity=8
+t=73.045153 node=router-1 event=lease_granted key=A/a12 epoch=1 holder=worker-1 holder_boot=1 op_id=A/a12/a1 attempt=1 mode=run lease_s=2.0
+t=73.564665 node=router-1 event=lease_renewed key=A/a12 epoch=1 holder=worker-1
+t=73.792249 node=router-1 event=release_observed key=A/a11 op_id=A/a11/a1 via=message polls=2
+t=73.792249 node=router-1 event=capacity_freed key=A/a11 op_id=A/a11/a1 units=2 reserved=5 capacity=8
+t=73.919380 node=router-1 event=capacity_reserved key=A/a13 op_id=A/a13/a1 units=2 reserved=7 capacity=8
+t=73.919380 node=router-1 event=lease_granted key=A/a13 epoch=1 holder=worker-3 holder_boot=1 op_id=A/a13/a1 attempt=1 mode=run lease_s=2.0
+t=74.079910 node=router-1 event=lease_renewed key=A/a12 epoch=1 holder=worker-1
+t=74.437360 node=router-1 event=lease_renewed key=A/a13 epoch=1 holder=worker-3
+t=74.584539 node=router-1 event=lease_renewed key=A/a12 epoch=1 holder=worker-1
+t=74.643412 node=router-1 event=report_applied key=A/a12 epoch=1 op_id=A/a12/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=74.643412 node=router-1 event=job_terminal key=A/a12 state=SUCCEEDED op_id=A/a12/a1 attempt=1 reason=report
+t=74.655273 node=router-1 event=release_requested key=A/a12 op_id=A/a12/a1
+t=74.955697 node=router-1 event=lease_renewed key=A/a13 epoch=1 holder=worker-3
+t=75.456672 node=router-1 event=lease_renewed key=A/a13 epoch=1 holder=worker-3
+t=75.491683 node=router-1 event=report_applied key=A/a13 epoch=1 op_id=A/a13/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=75.491683 node=router-1 event=job_terminal key=A/a13 state=SUCCEEDED op_id=A/a13/a1 attempt=1 reason=report
+t=75.504030 node=router-1 event=release_requested key=A/a13 op_id=A/a13/a1
+t=75.811222 node=router-1 event=release_observed key=A/a12 op_id=A/a12/a1 via=message polls=2
+t=75.811222 node=router-1 event=capacity_freed key=A/a12 op_id=A/a12/a1 units=2 reserved=5 capacity=8
+t=75.937977 node=router-1 event=capacity_reserved key=A/a14 op_id=A/a14/a1 units=2 reserved=7 capacity=8
+t=75.937977 node=router-1 event=lease_granted key=A/a14 epoch=1 holder=worker-1 holder_boot=1 op_id=A/a14/a1 attempt=1 mode=run lease_s=2.0
+t=76.445907 node=router-1 event=lease_renewed key=A/a14 epoch=1 holder=worker-1
+t=76.956324 node=router-1 event=lease_renewed key=A/a14 epoch=1 holder=worker-1
+t=77.057540 node=router-1 event=release_observed key=A/a13 op_id=A/a13/a1 via=message polls=3
+t=77.057540 node=router-1 event=capacity_freed key=A/a13 op_id=A/a13/a1 units=2 reserved=5 capacity=8
+t=77.177618 node=router-1 event=capacity_reserved key=A/a15 op_id=A/a15/a1 units=2 reserved=7 capacity=8
+t=77.177618 node=router-1 event=lease_granted key=A/a15 epoch=1 holder=worker-4 holder_boot=1 op_id=A/a15/a1 attempt=1 mode=run lease_s=2.0
+t=77.465148 node=router-1 event=lease_renewed key=A/a14 epoch=1 holder=worker-1
+t=77.690177 node=router-1 event=lease_renewed key=A/a15 epoch=1 holder=worker-4
+t=77.972342 node=router-1 event=lease_renewed key=A/a14 epoch=1 holder=worker-1
+t=78.128397 node=router-1 event=report_applied key=A/a14 epoch=1 op_id=A/a14/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=78.128397 node=router-1 event=job_terminal key=A/a14 state=SUCCEEDED op_id=A/a14/a1 attempt=1 reason=report
+t=78.136095 node=router-1 event=release_requested key=A/a14 op_id=A/a14/a1
+t=78.205775 node=router-1 event=lease_renewed key=A/a15 epoch=1 holder=worker-4
+t=78.740337 node=router-1 event=lease_renewed key=A/a15 epoch=1 holder=worker-4
+t=79.051733 node=router-1 event=release_observed key=A/a14 op_id=A/a14/a1 via=message polls=1
+t=79.051733 node=router-1 event=capacity_freed key=A/a14 op_id=A/a14/a1 units=2 reserved=5 capacity=8
+t=79.061437 node=router-1 event=capacity_reserved key=A/a16 op_id=A/a16/a1 units=2 reserved=7 capacity=8
+t=79.061437 node=router-1 event=lease_granted key=A/a16 epoch=1 holder=worker-1 holder_boot=1 op_id=A/a16/a1 attempt=1 mode=run lease_s=2.0
+t=79.247123 node=router-1 event=lease_renewed key=A/a15 epoch=1 holder=worker-4
+t=79.367540 node=router-1 event=report_applied key=A/a15 epoch=1 op_id=A/a15/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=79.367540 node=router-1 event=job_terminal key=A/a15 state=SUCCEEDED op_id=A/a15/a1 attempt=1 reason=report
+t=79.388830 node=router-1 event=release_requested key=A/a15 op_id=A/a15/a1
+t=79.580441 node=router-1 event=lease_renewed key=A/a16 epoch=1 holder=worker-1
+t=80.086780 node=router-1 event=lease_renewed key=A/a16 epoch=1 holder=worker-1
+t=80.536339 node=router-1 event=release_observed key=A/a15 op_id=A/a15/a1 via=message polls=2
+t=80.536339 node=router-1 event=capacity_freed key=A/a15 op_id=A/a15/a1 units=2 reserved=5 capacity=8
+t=80.579312 node=router-1 event=capacity_reserved key=A/a17 op_id=A/a17/a1 units=2 reserved=7 capacity=8
+t=80.579312 node=router-1 event=lease_granted key=A/a17 epoch=1 holder=worker-1 holder_boot=1 op_id=A/a17/a1 attempt=1 mode=run lease_s=2.0
+t=80.588905 node=router-1 event=lease_renewed key=A/a16 epoch=1 holder=worker-1
+t=80.637209 node=router-1 event=report_applied key=A/a16 epoch=1 op_id=A/a16/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=80.637209 node=router-1 event=job_terminal key=A/a16 state=SUCCEEDED op_id=A/a16/a1 attempt=1 reason=report
+t=80.655903 node=router-1 event=release_requested key=A/a16 op_id=A/a16/a1
+t=81.000000 node=router-1 event=router_stats queued=7 leases=1 releasing=1 reserved=7 capacity=8 jobs=48 cancels=3 duplicates=0 expiries=0 fenced=2 grants=14 releases=12 renewals=39 reports=13 revocations=0 submitted=0
+t=81.086238 node=router-1 event=lease_renewed key=A/a17 epoch=1 holder=worker-1
+t=81.593799 node=router-1 event=lease_renewed key=A/a17 epoch=1 holder=worker-1
+t=81.601084 node=router-1 event=release_observed key=A/a16 op_id=A/a16/a1 via=message polls=1
+t=81.601084 node=router-1 event=capacity_freed key=A/a16 op_id=A/a16/a1 units=2 reserved=5 capacity=8
+t=81.671778 node=router-1 event=capacity_reserved key=A/a18 op_id=A/a18/a1 units=2 reserved=7 capacity=8
+t=81.671778 node=router-1 event=lease_granted key=A/a18 epoch=1 holder=worker-3 holder_boot=1 op_id=A/a18/a1 attempt=1 mode=run lease_s=2.0
+t=82.111478 node=router-1 event=lease_renewed key=A/a17 epoch=1 holder=worker-1
+t=82.196337 node=router-1 event=lease_renewed key=A/a18 epoch=1 holder=worker-3
+t=82.617019 node=router-1 event=lease_renewed key=A/a17 epoch=1 holder=worker-1
+t=82.705342 node=router-1 event=lease_renewed key=A/a18 epoch=1 holder=worker-3
+t=82.765587 node=router-1 event=report_applied key=A/a17 epoch=1 op_id=A/a17/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=82.765587 node=router-1 event=job_terminal key=A/a17 state=SUCCEEDED op_id=A/a17/a1 attempt=1 reason=report
+t=82.776895 node=router-1 event=release_requested key=A/a17 op_id=A/a17/a1
+t=83.223922 node=router-1 event=lease_renewed key=A/a18 epoch=1 holder=worker-3
+t=83.734369 node=router-1 event=lease_renewed key=A/a18 epoch=1 holder=worker-3
+t=83.866419 node=router-1 event=report_applied key=A/a18 epoch=1 op_id=A/a18/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=83.866419 node=router-1 event=job_terminal key=A/a18 state=SUCCEEDED op_id=A/a18/a1 attempt=1 reason=report
+t=83.887804 node=router-1 event=release_requested key=A/a18 op_id=A/a18/a1
+t=84.520531 node=router-1 event=release_observed key=A/a17 op_id=A/a17/a1 via=message polls=3
+t=84.520531 node=router-1 event=capacity_freed key=A/a17 op_id=A/a17/a1 units=2 reserved=5 capacity=8
+t=84.540044 node=router-1 event=capacity_reserved key=A/a19 op_id=A/a19/a1 units=2 reserved=7 capacity=8
+t=84.540044 node=router-1 event=lease_granted key=A/a19 epoch=1 holder=worker-1 holder_boot=1 op_id=A/a19/a1 attempt=1 mode=run lease_s=2.0
+t=85.044292 node=router-1 event=lease_renewed key=A/a19 epoch=1 holder=worker-1
+t=85.520330 node=router-1 event=release_observed key=A/a18 op_id=A/a18/a1 via=message polls=3
+t=85.520330 node=router-1 event=capacity_freed key=A/a18 op_id=A/a18/a1 units=2 reserved=5 capacity=8
+t=85.576661 node=router-1 event=lease_renewed key=A/a19 epoch=1 holder=worker-1
+t=86.070233 node=router-1 event=report_applied key=A/a19 epoch=1 op_id=A/a19/a1 op_state=SUCCEEDED state=SUCCEEDED attempt=1
+t=86.070233 node=router-1 event=job_terminal key=A/a19 state=SUCCEEDED op_id=A/a19/a1 attempt=1 reason=report
+t=86.080211 node=router-1 event=lease_fenced key=A/a19 epoch=1 current=1 holder=worker-1 state=SUCCEEDED
+t=86.084022 node=router-1 event=release_requested key=A/a19 op_id=A/a19/a1
+t=87.933059 node=router-1 event=release_observed key=A/a19 op_id=A/a19/a1 via=message polls=3
+t=87.933059 node=router-1 event=capacity_freed key=A/a19 op_id=A/a19/a1 units=2 reserved=3 capacity=8
+t=91.000000 node=router-1 event=router_stats queued=5 leases=0 releasing=0 reserved=3 capacity=8 jobs=48 cancels=3 duplicates=0 expiries=0 fenced=3 grants=16 releases=16 renewals=49 reports=16 revocations=0 submitted=0
+t=101.000000 node=router-1 event=router_stats queued=5 leases=0 releasing=0 reserved=3 capacity=8 jobs=48 cancels=3 duplicates=0 expiries=0 fenced=3 grants=16 releases=16 renewals=49 reports=16 revocations=0 submitted=0

@@ -1,0 +1,101 @@
+name: bug-2
+seed: 1
+end_at: 120.0
+quiesce_at: 80.0
+liveness_window: 30.0
+gpu:
+  capacity: 12
+  release_delay:
+    dist: uniform
+    low: 0.05
+    high: 0.3
+nodes:
+- name: coord
+  class: shardmr.coordinator:Coordinator
+- name: worker-{i}
+  count: 4
+  class: shardmr.worker:Worker
+client:
+  target: coord
+client_retry:
+  timeout: 2.0
+  max_attempts: 5
+  backoff: 0.5
+  retry_on:
+  - UNAVAILABLE
+faults:
+  network:
+    delay:
+      dist: exponential
+      mean: 0.005
+    drop: 0.005
+  nodes:
+    clocks:
+    - node: worker-*
+      drift_ppm:
+      - -200
+      - 200
+      offset:
+      - -0.25
+      - 0.25
+    - node: coord
+      drift_ppm:
+      - -200
+      - 200
+      offset: 0.25
+    pauses:
+    - node: worker-*
+      rate_per_hour: 60
+      duration:
+      - 0.2
+      - 2.0
+    - node: coord
+      rate_per_hour: 20
+      duration:
+      - 0.2
+      - 1.5
+  gpu:
+    fail: 0.02
+    latency:
+      dist: uniform
+      low: 0.5
+      high: 3.0
+workload:
+- repeat: 20
+  at: 1.0
+  every: 3.0
+  jitter: 1.0
+  action: submit_job
+  tenant: A
+  job_id: a{i}
+  shards: 6
+  records: 64
+  units: 1
+  duration: 1.0
+- repeat: 6
+  at: 4.0
+  every: 10.0
+  jitter: 2.0
+  action: submit_job
+  tenant: B
+  job_id: b{i}
+  shards: 8
+  records: 128
+  units: 2
+  duration: 1.5
+- repeat: 8
+  at: 5.0
+  every: 8.0
+  jitter: 2.0
+  action: job_status
+  tenant: A
+  job_id: a{i}
+expect:
+  all_actions_resolved_by: 115.0
+  no_unhandled_exceptions: true
+  rpc_requests_per_group_max:
+  - src: worker-*
+    dst: coord
+    method: register
+    group_by: worker
+    max: 8

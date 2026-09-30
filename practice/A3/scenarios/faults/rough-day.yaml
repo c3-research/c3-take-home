@@ -1,0 +1,23 @@
+# A rough afternoon: light network loss, the router restarting several times,
+# GPU operations failing often, short network cuts between the router and some
+# workers, and a 15 s outage between the router and every worker during which
+# the workers were restarted.
+network:
+  delay: {dist: exponential, mean: 0.005}
+  drop: 0.01
+  duplicate: 0.005
+  partitions:
+    - {at: 10.0, until: 13.5, groups: [["router-1"], ["worker-1", "worker-2"]]}
+    - {at: 24.0, until: 39.0, groups: [["router-1"], ["worker-*"]]}
+    - {at: 46.0, until: 49.5, groups: [["router-1"], ["worker-3", "worker-4"]]}
+nodes:
+  crashes:
+    - {node: "router-1", at: 8.0, restart_after: 1.0}
+    - {node: "router-1", at: 14.0, restart_after: 1.0}
+    - {node: "router-1", at: 20.0, restart_after: 1.0}
+    - {node: "router-1", at: 44.0, restart_after: 1.0}
+    - {node: "router-1", at: 50.0, restart_after: 1.0}
+    - {node: "worker-*", at: [25.0, 27.0], restart_after: [0.5, 2.0]}
+gpu:
+  fail: 0.25
+  latency: {dist: uniform, low: 0.2, high: 1.0}

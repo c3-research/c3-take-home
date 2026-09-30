@@ -1,0 +1,11 @@
+# Crash and restart: workers and the router crash at random (seeded) times and
+# come back after a short delay. Light network loss so retries are exercised.
+network:
+  delay: {dist: exponential, mean: 0.005}
+  drop: 0.01
+nodes:
+  crashes:
+    - {node: "worker-*", rate_per_hour: 90, restart_after: [0.5, 5.0]}
+    - {node: "router-1", rate_per_hour: 60, restart_after: [0.5, 4.0]}
+gpu:
+  latency: {dist: uniform, low: 0.2, high: 1.5}

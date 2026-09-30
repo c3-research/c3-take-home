@@ -1,0 +1,24 @@
+# Soak: the clean-baseline gate. Every fault type enabled (faults/soak.yaml).
+name: soak
+seed: 1
+end_at: 130.0
+quiesce_at: 90.0
+liveness_window: 30.0
+gpu: {capacity: 12, release_delay: {dist: uniform, low: 0.05, high: 0.5}}
+nodes:
+  - {name: router-1, class: "jobrouter.router:Router"}
+  - {name: "worker-{i}", count: 4, class: "jobrouter.worker:Worker"}
+service: {worker_slots: 2}
+client: {target: router-1}
+client_retry: {timeout: 1.0, max_attempts: 8, backoff: 0.5, retry_on: [UNAVAILABLE]}
+faults: faults/soak.yaml
+workload:
+  - {repeat: 75, at: 1.0, every: 1.0, jitter: 0.4, action: submit_job, tenant: A, job_id: "a{i}", units: 2, duration: 1.0}
+  - {repeat: 25, at: 1.5, every: 3.0, jitter: 1.0, action: submit_job, tenant: B, job_id: "b{i}", units: 3, duration: 2.0}
+  - {repeat: 20, at: 2.0, every: 4.0, action: submit_job, tenant: C, job_id: "c{i}", units: 1, duration: 3.0}
+  - {repeat: 20, at: 1.5, every: 4.0, jitter: 4.0, action: cancel_job, tenant: C, job_id: "c{i}"}
+  - {repeat: 10, at: 5.0, every: 8.0, jitter: 2.0, action: submit_job, tenant: A, job_id: "a{i}", units: 2, duration: 1.0}
+  - {repeat: 15, at: 10.0, every: 5.0, jitter: 1.0, action: job_status, tenant: B, job_id: "b{i}"}
+expect:
+  all_actions_resolved_by: 125.0
+  no_unhandled_exceptions: true

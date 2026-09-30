@@ -1,0 +1,26 @@
+# Every fault type the runtime supports, at soak intensity.
+network:
+  delay: {dist: exponential, mean: 0.005}
+  drop: 0.01
+  duplicate: 0.01
+  reorder: 0.02
+  reorder_window: 0.05
+  partitions:
+    - {at: 40.0, until: 43.0, groups: [["coord"], ["worker-2"]]}
+    - {at: 70.0, until: 71.5, groups: [["gpu"], ["worker-3"]]}
+nodes:
+  crashes:
+    - {node: "worker-*", rate_per_hour: 30, restart_after: [1.0, 5.0]}
+    - {node: coord, rate_per_hour: 12, restart_after: [1.0, 4.0]}
+    - {node: coord, at: [50.0, 60.0], restart_after: 2.0}
+  clocks:
+    - {node: "worker-*", drift_ppm: [-200, 200], offset: [-0.25, 0.25]}
+    - {node: coord, drift_ppm: [-200, 200], offset: 0.25}
+  pauses:
+    - {node: "worker-*", rate_per_hour: 30, duration: [0.2, 2.0]}
+    - {node: coord, rate_per_hour: 12, duration: [0.2, 1.5]}
+gpu:
+  fail: 0.03
+  lost_reply: 0.03
+  accepted_reported_failed: 0.03
+  latency: {dist: uniform, low: 0.5, high: 3.0}
