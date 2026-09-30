@@ -70,3 +70,5 @@ workload:
 expect:
   all_actions_resolved_by: 78.0
   no_unhandled_exceptions: true
+  outcomes_min:
+    ok: 24
